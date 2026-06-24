@@ -130,6 +130,36 @@ fn save_settings(settings: AppSettings) -> Result<(), String> {
     storage::save_settings(&settings)
 }
 
+#[tauri::command]
+async fn export_results(pin: String, state: tauri::State<'_, AppStateWrapper>) -> Result<String, String> {
+    let (players, title, mode_label) = {
+        let sessions = state.0.sessions.read().await;
+        let session = sessions.get(&pin).ok_or("Сессия не найдена".to_string())?;
+        let mut players = session.players.clone();
+        players.sort_by(|a, b| b.total_score.cmp(&a.total_score));
+        let title = session.quiz.title.clone();
+        let mode_label = match session.mode {
+            game::GameMode::Test => "Проверочная работа",
+            game::GameMode::LiveQuiz => "Викторина",
+        }.to_string();
+        (players, title, mode_label)
+    };
+
+    let desktop = std::env::var("USERPROFILE")
+        .map_err(|_| "Не удалось определить папку пользователя".to_string())?;
+    let path = format!("{}\\Desktop\\QuizKit_{}_{}.csv", desktop, title.replace('"', ""), pin);
+
+    let mut csv = String::new();
+    csv.push_str(&format!("QuizKit - {}\nРежим: {}\n\n", title, mode_label));
+    csv.push_str("Место;Никнейм;Баллы\n");
+    for (i, p) in players.iter().enumerate() {
+        csv.push_str(&format!("{};{};{}\n", i + 1, p.nickname, p.total_score));
+    }
+
+    std::fs::write(&path, &csv).map_err(|e| format!("Ошибка сохранения: {}", e))?;
+    Ok(path)
+}
+
 // ─── App Entry ───
 
 pub fn run() {
@@ -149,6 +179,7 @@ pub fn run() {
             get_server_info,
             get_settings,
             save_settings,
+            export_results,
         ]);
 
     #[cfg(desktop)]

@@ -206,6 +206,15 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
     wsRef.current?.send(JSON.stringify({ type: 'end_game', pin }))
   }
 
+  const handleExport = async () => {
+    try {
+      const path = await invoke<string>('export_results', { pin })
+      alert('✅ Результаты сохранены:\n' + path)
+    } catch (e) {
+      alert('❌ Ошибка экспорта: ' + e)
+    }
+  }
+
   const doneCount = progress.filter(p => p.done).length
 
   return (
@@ -442,7 +451,10 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
               </div>
             ))}
           </div>
-          <button className="btn btn-secondary" onClick={onBack}>← На главную</button>
+          <div className="final-actions">
+            <button className="btn btn-secondary" onClick={onBack}>← На главную</button>
+            <button className="btn btn-primary" onClick={handleExport}>📊 Экспорт CSV</button>
+          </div>
         </div>
       )}
 
