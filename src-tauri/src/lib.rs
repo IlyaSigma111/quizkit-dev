@@ -149,7 +149,7 @@ async fn export_results(pin: String, state: tauri::State<'_, AppStateWrapper>) -
         .map_err(|_| "Не удалось определить папку пользователя".to_string())?;
     let path = format!("{}\\Desktop\\QuizKit_{}_{}.csv", desktop, title.replace('"', ""), pin);
 
-    let mut csv = String::new();
+    let mut csv = String::from("\u{FEFF}"); // UTF-8 BOM for Excel
     csv.push_str(&format!("QuizKit - {}\nРежим: {}\n\n", title, mode_label));
     csv.push_str("Место;Никнейм;Баллы\n");
     for (i, p) in players.iter().enumerate() {
