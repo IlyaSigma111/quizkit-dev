@@ -103,28 +103,26 @@ footer a:hover{color:#ededef}
 <script>
 const CATS = {
   '❄️': 'Зимние праздники',
-  '🌸': 'Весенние праздники',
   '☀️': 'Летние праздники',
   '🍂': 'Осенние праздники'
 }
 
 const QUIZZES = [
-  { file:'new-year.json', icon:'🎄', cat:'❄️', title:'Новый год', desc:'История ёлки, оливье и главный фильм страны.', questions:5, time:'10-15с' },
-  { file:'student-day.json', icon:'📖', cat:'❄️', title:'День студента (Татьянин день)', desc:'Московский университет, Ломоносов и студенческие традиции.', questions:5, time:'10-15с' },
-  { file:'valentines-day.json', icon:'💝', cat:'❄️', title:'День святого Валентина', desc:'Кто такой Валентин, валентинки и традиции со всего мира.', questions:5, time:'10-15с' },
-  { file:'defender-day.json', icon:'🎖️', cat:'❄️', title:'День защитника Отечества', desc:'Красная армия, история праздника и военные традиции.', questions:5, time:'10-15с' },
+  { file:'heroes-day.json', icon:'🏅', cat:'❄️', title:'День Героев Отечества', desc:'Герои России, ордена и подвиги.', questions:23 },
+  { file:'constitution-day.json', icon:'📜', cat:'❄️', title:'День Конституции', desc:'Основной закон, права человека и история главного документа.', questions:27 },
+  { file:'grandpa-frost-birthday.json', icon:'🎅', cat:'❄️', title:'День рождения Деда Мороза', desc:'Великий Устюг, Снегурочка и зимняя сказка.', questions:27 },
+  { file:'new-year.json', icon:'🎄', cat:'❄️', title:'Новый год', desc:'Ёлка, оливье и главный фильм страны.', questions:28 },
 
-  { file:'womens-day.json', icon:'🌷', cat:'🌸', title:'8 Марта', desc:'Клара Цеткин, тюльпаны и революция.', questions:5, time:'10-15с' },
-  { file:'cosmonautics-day.json', icon:'🚀', cat:'🌸', title:'День космонавтики', desc:'Гагарин, Восток-1 и главный конструктор Королёв.', questions:5, time:'10-15с' },
-  { file:'labor-day.json', icon:'🌿', cat:'🌸', title:'Праздник Весны и Труда', desc:'История Первомая, СССР и чикагские рабочие.', questions:5, time:'10-15с' },
-  { file:'victory-day.json', icon:'🏅', cat:'🌸', title:'День Победы', desc:'Великая Отечественная, Знамя Победы и парады.', questions:5, time:'10-15с' },
+  { file:'family-day.json', icon:'💛', cat:'☀️', title:'День семьи, любви и верности', desc:'Пётр и Феврония, ромашки и семейные ценности.', questions:25 },
+  { file:'baptism-day.json', icon:'⛪', cat:'☀️', title:'День Крещения Руси', desc:'Князь Владимир, православие и история христианства.', questions:26 },
+  { file:'flag-day.json', icon:'🇷🇺', cat:'☀️', title:'День Государственного флага', desc:'Бело-сине-красный, история флага и символы России.', questions:25 },
 
-  { file:'russia-day.json', icon:'🇷🇺', cat:'☀️', title:'День России', desc:'Суверенитет, президенты и государственные символы.', questions:5, time:'10-15с' },
-  { file:'family-day.json', icon:'💛', cat:'☀️', title:'День семьи, любви и верности', desc:'Пётр и Феврония, ромашки и семейные ценности.', questions:5, time:'10-15с' },
-
-  { file:'knowledge-day.json', icon:'📚', cat:'🍂', title:'День знаний', desc:'Первое сентября, линейки и традиции первоклассников.', questions:5, time:'10-15с' },
-  { file:'teachers-day.json', icon:'🍎', cat:'🍂', title:'День учителя', desc:'Педагогика, цветы и мировые традиции.', questions:5, time:'10-15с' },
-  { file:'unity-day.json', icon:'🤝', cat:'🍂', title:'День народного единства', desc:'Минин и Пожарский, ополчение и история 4 ноября.', questions:5, time:'10-15с' },
+  { file:'knowledge-day.json', icon:'📚', cat:'🍂', title:'День знаний', desc:'Первое сентября, линейки и традиции первоклассников.', questions:27 },
+  { file:'elderly-day.json', icon:'👴', cat:'🍂', title:'День пожилых людей', desc:'Уважение к старшим, геронтология и забота.', questions:26 },
+  { file:'teachers-day.json', icon:'🍎', cat:'🍂', title:'День учителя', desc:'Педагогика, цветы и мировые традиции.', questions:25 },
+  { file:'fathers-day.json', icon:'👨', cat:'🍂', title:'День отца', desc:'Роль отца, семейные традиции и известные папы.', questions:24 },
+  { file:'mothers-day.json', icon:'👩', cat:'🍂', title:'День матери', desc:'Материнство, любовь и забота о детях.', questions:24 },
+  { file:'unity-day.json', icon:'🤝', cat:'🍂', title:'День народного единства', desc:'Минин и Пожарский, ополчение и история 4 ноября.', questions:26 },
 ]
 
 const CONFIG_URL = 'https://raw.githubusercontent.com/IlyaSigma111/quizkit/master/quizzes/'
@@ -197,7 +195,6 @@ function render() {
         <div class="desc">${q.desc}</div>
         <div class="meta">
           <span>📝 ${q.questions} вопросов</span>
-          <span>⏱ ${q.time}</span>
         </div>
         <div class="btns">
           <button class="btn btn-secondary" onclick='openModal(${JSON.stringify(q).replace(/'/g,"&#39;")})'>👁 Посмотреть</button>
