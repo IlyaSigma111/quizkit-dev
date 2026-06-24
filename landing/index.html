@@ -4,109 +4,116 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>QuizKit — викторины и проверочные работы в классе</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🦉</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%236366F1'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white' font-weight='800'>Q</text></svg>">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#08080e;color:#ededef;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:'Outfit','Work Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#080812;color:#e8e8f0;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-::selection{background:rgba(120,80,255,.35)}
+::selection{background:rgba(99,102,241,.35)}
 
 /* ─── Background Orbs ─── */
 .bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.bg .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.15}
-.bg .orb:nth-child(1){width:600px;height:600px;background:#7850ff;top:-200px;left:-100px;animation:orbFloat 20s ease-in-out infinite}
-.bg .orb:nth-child(2){width:500px;height:500px;background:#ff50a0;bottom:-150px;right:-80px;animation:orbFloat 25s ease-in-out infinite reverse}
-.bg .orb:nth-child(3){width:400px;height:400px;background:#50c8ff;top:50%;left:50%;transform:translate(-50%,-50%);animation:orbFloat 18s ease-in-out infinite 5s}
+.bg .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.12}
+.bg .orb:nth-child(1){width:600px;height:600px;background:#6366F1;top:-200px;left:-100px;animation:orbFloat 20s ease-in-out infinite}
+.bg .orb:nth-child(2){width:500px;height:500px;background:#10B981;bottom:-150px;right:-80px;animation:orbFloat 25s ease-in-out infinite reverse}
+.bg .orb:nth-child(3){width:400px;height:400px;background:#818CF8;top:50%;left:50%;transform:translate(-50%,-50%);animation:orbFloat 18s ease-in-out infinite 5s}
 @keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-60px) scale(1.1)}66%{transform:translate(-30px,40px) scale(.9)}}
 
 /* ─── Nav ─── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rgba(8,8,14,.75);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.05);transition:transform .35s}
-.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
-.nav-logo{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#ededef}
-.nav-logo svg{width:22px;height:22px;flex-shrink:0}
-.nav-right{display:flex;align-items:center;gap:20px}
-.nav-right a{font-size:13px;color:#787888;transition:color .2s}
-.nav-right a:hover{color:#ededef}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rgba(8,8,18,.7);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.05);transition:transform .35s}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:700;color:#e8e8f0;letter-spacing:-.3px}
+.nav-logo svg{width:24px;height:24px;flex-shrink:0}
+.nav-right{display:flex;align-items:center;gap:24px}
+.nav-right a{font-size:13px;color:#7878a0;transition:color .2s;font-weight:500}
+.nav-right a:hover{color:#e8e8f0}
 .nav-right .btn{padding:7px 18px;font-size:12px}
 
 /* ─── Hero ─── */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 70px;position:relative;z-index:1}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;font-size:12px;font-weight:500;background:rgba(120,80,255,.12);color:#a080ff;border:1px solid rgba(120,80,255,.15);margin-bottom:24px;letter-spacing:.3px}
-.hero h1{font-size:clamp(36px,6.5vw,72px);font-weight:700;letter-spacing:-2px;line-height:1.06;max-width:820px;background:linear-gradient(135deg,#f0eff5 0%,#a080ff 50%,#ff70b0 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{font-size:clamp(15px,1.8vw,18px);color:#686878;max-width:580px;margin-top:18px;line-height:1.5}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;font-size:12px;font-weight:500;background:rgba(99,102,241,.12);color:#a5b4fc;border:1px solid rgba(99,102,241,.15);margin-bottom:24px;letter-spacing:.3px}
+.hero h1{font-size:clamp(36px,6.5vw,72px);font-weight:800;letter-spacing:-2px;line-height:1.06;max-width:820px;background:linear-gradient(135deg,#e8e8f0 0%,#a5b4fc 50%,#6ee7b7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:clamp(15px,1.8vw,18px);color:#7878a0;max-width:580px;margin-top:18px;line-height:1.5}
 .hero-btns{display:flex;gap:10px;margin-top:32px;flex-wrap:wrap;justify-content:center}
 .hero-stats{display:flex;gap:36px;margin-top:48px}
-.hero-stats span{font-size:13px;color:#585868;display:flex;align-items:center;gap:6px}
+.hero-stats span{font-size:13px;color:#6868a0;display:flex;align-items:center;gap:6px}
 .hero-stats span svg{width:16px;height:16px;opacity:.5}
 
 /* ─── Buttons ─── */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;border:none;letter-spacing:0;position:relative}
-.btn-primary{background:#7850ff;color:#fff}
-.btn-primary:hover{background:#6840ef;transform:translateY(-2px);box-shadow:0 8px 30px rgba(120,80,255,.25)}
-.btn-secondary{background:rgba(255,255,255,.06);color:#ededef;border:1px solid rgba(255,255,255,.08)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;border:none;letter-spacing:0;position:relative;font-family:inherit}
+.btn-primary{background:#6366F1;color:#fff}
+.btn-primary:hover{background:#5558e6;transform:translateY(-2px);box-shadow:0 8px 30px rgba(99,102,241,.25)}
+.btn-secondary{background:rgba(255,255,255,.06);color:#e8e8f0;border:1px solid rgba(255,255,255,.08)}
 .btn-secondary:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.14);transform:translateY(-2px)}
-.btn-ghost{background:transparent;color:#787888;padding:13px 16px}
-.btn-ghost:hover{color:#ededef}
-.btn-download{background:#7850ff;color:#fff;padding:16px 32px;font-size:15px;border-radius:12px}
-.btn-download:hover{background:#6840ef;transform:translateY(-2px);box-shadow:0 8px 30px rgba(120,80,255,.25)}
+.btn-ghost{background:transparent;color:#7878a0;padding:13px 16px}
+.btn-ghost:hover{color:#e8e8f0}
+.btn-download{background:#6366F1;color:#fff;padding:16px 32px;font-size:15px;border-radius:12px}
+.btn-download:hover{background:#5558e6;transform:translateY(-2px);box-shadow:0 8px 30px rgba(99,102,241,.25)}
 .btn-download small{font-weight:400;opacity:.7;font-size:11px;display:block;margin-top:2px}
-.btn-outline{background:transparent;color:#ededef;border:1px solid rgba(255,255,255,.12);padding:16px 32px;font-size:15px;border-radius:12px}
+.btn-outline{background:transparent;color:#e8e8f0;border:1px solid rgba(255,255,255,.12);padding:16px 32px;font-size:15px;border-radius:12px}
 .btn-outline:hover{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.2);transform:translateY(-2px)}
+.btn-emerald{background:#10B981;color:#fff;padding:16px 32px;font-size:15px;border-radius:12px}
+.btn-emerald:hover{background:#059669;transform:translateY(-2px);box-shadow:0 8px 30px rgba(16,185,129,.25)}
 
 /* ─── Sections ─── */
 section{padding:100px 24px;position:relative;z-index:1}
 .section-inner{max-width:1000px;margin:0 auto}
-.section-label{font-size:12px;font-weight:600;color:#7850ff;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
-.section-title{font-size:clamp(26px,3.5vw,40px);font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:14px;color:#ededef}
-.section-desc{color:#686878;font-size:15px;max-width:520px;line-height:1.6}
+.section-label{font-size:12px;font-weight:600;color:#6366F1;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
+.section-title{font-size:clamp(26px,3.5vw,40px);font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:14px;color:#e8e8f0}
+.section-desc{color:#7878a0;font-size:15px;max-width:520px;line-height:1.6}
+
+/* ─── Glass Cards ─── */
+.glass{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;transition:all .3s cubic-bezier(.4,0,.2,1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.glass:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.glass-icon{width:44px;height:44px;border-radius:12px;background:rgba(99,102,241,.12);display:flex;align-items:center;justify-content:center;margin-bottom:16px;border:1px solid rgba(99,102,241,.1)}
+.glass-icon svg{width:20px;height:20px;color:#a5b4fc}
 
 /* ─── Steps ─── */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:40px}
-.step{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:28px 24px;transition:all .25s}
-.step:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);transform:translateY(-4px)}
-.step-icon{width:40px;height:40px;border-radius:10px;background:rgba(120,80,255,.1);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:14px}
-.step h3{font-size:15px;font-weight:600;margin-bottom:4px;color:#ededef}
-.step p{color:#686878;font-size:13px;line-height:1.5}
+.step{padding:32px 24px}
+.step h3{font-size:16px;font-weight:600;margin-bottom:6px;color:#e8e8f0}
+.step p{color:#7878a0;font-size:13px;line-height:1.5}
 
 /* ─── Features ─── */
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px;margin-top:40px}
-.feature-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:28px 24px;transition:all .25s}
-.feature-card:hover{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1);transform:translateY(-4px)}
-.feature-icon{width:36px;height:36px;border-radius:8px;background:rgba(120,80,255,.1);display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:12px}
-.feature-card h3{font-size:14px;font-weight:600;margin-bottom:4px}
-.feature-card p{color:#686878;font-size:13px;line-height:1.5}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin-top:40px}
+.feature-card{padding:32px 24px}
+.feature-card h3{font-size:15px;font-weight:600;margin-bottom:4px;color:#e8e8f0}
+.feature-card p{color:#7878a0;font-size:13px;line-height:1.5}
 
 /* ─── Download Section ─── */
 .download-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:40px}
-.download-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:32px;text-align:center;transition:all .25s}
-.download-card:hover{border-color:rgba(255,255,255,.12);transform:translateY(-4px)}
-.download-card .os-icon{font-size:36px;margin-bottom:12px}
-.download-card h3{font-size:16px;font-weight:600;margin-bottom:4px}
-.download-card p{color:#686878;font-size:13px;margin-bottom:16px}
-.download-card .file-info{font-size:11px;color:#585868;margin-top:8px}
+.download-card{padding:36px 24px;text-align:center;position:relative;cursor:default}
+.download-card .os-icon{width:48px;height:48px;margin:0 auto 14px;border-radius:12px;background:rgba(99,102,241,.1);display:flex;align-items:center;justify-content:center;border:1px solid rgba(99,102,241,.08)}
+.download-card .os-icon svg{width:24px;height:24px;color:#a5b4fc}
+.download-card h3{font-size:17px;font-weight:600;margin-bottom:4px;color:#e8e8f0}
+.download-card p{color:#7878a0;font-size:13px;margin-bottom:20px}
+.download-card .file-info{font-size:11px;color:#5858a0;margin-top:8px}
 .download-card.soon{opacity:.4;pointer-events:none}
-.download-card.soon::after{content:'Скоро';position:absolute;top:12px;right:12px;font-size:10px;font-weight:600;color:#a080ff;background:rgba(120,80,255,.12);padding:3px 10px;border-radius:100px}
+.download-card.soon::after{content:'Скоро';position:absolute;top:14px;right:14px;font-size:10px;font-weight:600;color:#a5b4fc;background:rgba(99,102,241,.12);padding:3px 10px;border-radius:100px}
 
 /* ─── FAQ ─── */
 .faq-list{max-width:660px;margin-top:36px;display:flex;flex-direction:column}
 .faq-item{border-bottom:1px solid rgba(255,255,255,.06)}
-.faq-q{width:100%;padding:18px 0;background:none;border:none;color:#ededef;font-size:14px;font-weight:500;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .2s}
-.faq-q:hover{color:#a080ff}
-.faq-q .arrow{font-size:10px;color:#585868;transition:transform .3s;flex-shrink:0}
+.faq-q{width:100%;padding:20px 0;background:none;border:none;color:#e8e8f0;font-size:15px;font-weight:500;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .2s;font-family:inherit}
+.faq-q:hover{color:#a5b4fc}
+.faq-q .arrow{font-size:10px;color:#5858a0;transition:transform .3s;flex-shrink:0}
 .faq-item.open .faq-q .arrow{transform:rotate(180deg)}
-.faq-a{padding:0 0 18px;color:#686878;font-size:13px;line-height:1.7;display:none}
+.faq-a{padding:0 0 20px;color:#7878a0;font-size:13px;line-height:1.7;display:none}
 .faq-item.open .faq-a{display:block}
 
 /* ─── CTA ─── */
 .cta{text-align:center;padding:100px 24px}
 .cta h2{font-size:clamp(26px,3.5vw,38px);font-weight:700;margin-bottom:10px}
-.cta p{color:#686878;margin-bottom:24px;font-size:15px}
+.cta p{color:#7878a0;margin-bottom:28px;font-size:15px}
 
 /* ─── Footer ─── */
-footer{padding:40px 24px;border-top:1px solid rgba(255,255,255,.05);max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;color:#585868;font-size:12px;position:relative;z-index:1}
-footer a{color:#686878;transition:color .2s}
-footer a:hover{color:#ededef}
+footer{padding:40px 24px;border-top:1px solid rgba(255,255,255,.05);max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;color:#5858a0;font-size:12px;position:relative;z-index:1}
+footer a{color:#7878a0;transition:color .2s}
+footer a:hover{color:#e8e8f0}
 .footer-links{display:flex;gap:16px}
 
 /* ─── Responsive ─── */
@@ -129,7 +136,7 @@ footer a:hover{color:#ededef}
 <nav>
 <div class="nav-inner">
   <a href="#" class="nav-logo">
-    <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="2" opacity=".15"/><path d="M50 22c-8 0-14 6-14 14v6h-4c-3 0-6 3-6 6v24c0 3 3 6 6 6h36c3 0 6-3 6-6V48c0-3-3-6-6-6h-4v-6c0-8-6-14-14-14zm-8 20V36a8 8 0 1116 0v6H42zm-6 10h28v20H36V52z" fill="currentColor"/><circle cx="50" cy="60" r="4" fill="currentColor" opacity=".4"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
     QuizKit
   </a>
   <div class="nav-right">
@@ -143,11 +150,11 @@ footer a:hover{color:#ededef}
 </nav>
 
 <section class="hero">
-  <div class="hero-badge">🆕 Версия 0.1.0</div>
+  <div class="hero-badge">Версия 0.1.0</div>
   <h1>Викторины и проверочные работы — без интернета и установки</h1>
   <p>Учитель запускает один .exe — класс подключается по QR-коду. Никаких регистраций, серверов и приложений для учеников.</p>
   <div class="hero-btns">
-  <a href="https://github.com/IlyaSigma111/quizkit/releases/download/v0.1.0-beta/ilya-klass.exe" download="QuizKit.exe" class="btn-download">⬇ Скачать для Windows</a>
+  <a href="https://github.com/IlyaSigma111/quizkit/releases/download/v0.1.0-beta/ilya-klass.exe" download="QuizKit.exe" class="btn-download">Скачать для Windows</a>
     <a href="#how" class="btn-outline">Как работает</a>
   </div>
   <div class="hero-stats">
@@ -164,23 +171,31 @@ footer a:hover{color:#ededef}
   <h2 class="section-title">От запуска до первого ответа — меньше минуты</h2>
   <p class="section-desc">Никакой подготовки. Просто запустите программу и покажите QR на экране.</p>
   <div class="steps">
-    <div class="step">
-      <div class="step-icon">📦</div>
+    <div class="step glass">
+      <div class="glass-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
       <h3>Скачайте .exe</h3>
       <p>Один файл. Ничего устанавливать не нужно. Просто запустите.</p>
     </div>
-    <div class="step">
-      <div class="step-icon">✏️</div>
+    <div class="step glass">
+      <div class="glass-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+      </div>
       <h3>Создайте квиз</h3>
       <p>Встроенный редактор: вопросы, ответы, баллы, импорт из JSON.</p>
     </div>
-    <div class="step">
-      <div class="step-icon">▶️</div>
+    <div class="step glass">
+      <div class="glass-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </div>
       <h3>Запустите игру</h3>
       <p>Выберите режим — на экране появится QR-код. Ученики сканируют.</p>
     </div>
-    <div class="step">
-      <div class="step-icon">📱</div>
+    <div class="step glass">
+      <div class="glass-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div>
       <h3>Ученики в деле</h3>
       <p>Открыли в браузере — ввели имя — отвечают. Всё, никаких приложений.</p>
     </div>
@@ -194,12 +209,48 @@ footer a:hover{color:#ededef}
   <h2 class="section-title">Всё для активной работы в классе</h2>
   <p class="section-desc">Два режима, живая статистика и таблица лидеров — и никаких регистраций.</p>
   <div class="features">
-    <div class="feature-card"><div class="feature-icon">🎮</div><h3>Два формата</h3><p>Проверочная работа — каждый в своём темпе. Викторина — все одновременно на время.</p></div>
-    <div class="feature-card"><div class="feature-icon">📱</div><h3>Без установки для учеников</h3><p>Открывают страницу по QR — без приложений, регистраций и СМС. Просто браузер.</p></div>
-    <div class="feature-card"><div class="feature-icon">📊</div><h3>Живая статистика</h3><p>На экране учителя: кто ответил, сколько баллов, распределение ответов.</p></div>
-    <div class="feature-card"><div class="feature-icon">🏆</div><h3>Таблица лидеров</h3><p>После каждого раунда и в финале — рейтинг с баллами. Соревновательный дух.</p></div>
-    <div class="feature-card"><div class="feature-icon">📂</div><h3>Импорт из JSON</h3><p>Готовьте вопросы в любом текстовом редакторе и импортируйте одним кликом.</p></div>
-    <div class="feature-card"><div class="feature-icon">🔒</div><h3>Локально и безопасно</h3><p>Сервер работает в вашей сети. Никаких внешних серверов и интернета.</p></div>
+    <div class="feature-card glass">
+      <div class="glass-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+      </div>
+      <h3>Два формата</h3>
+      <p>Проверочная работа — каждый в своём темпе. Викторина — все одновременно на время.</p>
+    </div>
+    <div class="feature-card glass">
+      <div class="glass-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div>
+      <h3>Без установки для учеников</h3>
+      <p>Открывают страницу по QR — без приложений, регистраций и СМС. Просто браузер.</p>
+    </div>
+    <div class="feature-card glass">
+      <div class="glass-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
+      <h3>Живая статистика</h3>
+      <p>На экране учителя: кто ответил, сколько баллов, распределение ответов.</p>
+    </div>
+    <div class="feature-card glass">
+      <div class="glass-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <h3>Таблица лидеров</h3>
+      <p>После каждого раунда и в финале — рейтинг с баллами. Соревновательный дух.</p>
+    </div>
+    <div class="feature-card glass">
+      <div class="glass-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <h3>Импорт из JSON</h3>
+      <p>Готовьте вопросы в любом текстовом редакторе и импортируйте одним кликом.</p>
+    </div>
+    <div class="feature-card glass">
+      <div class="glass-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <h3>Локально и безопасно</h3>
+      <p>Сервер работает в вашей сети. Никаких внешних серверов и интернета.</p>
+    </div>
   </div>
 </div>
 </section>
@@ -210,31 +261,37 @@ footer a:hover{color:#ededef}
   <h2 class="section-title">Попробуйте прямо сейчас</h2>
   <p class="section-desc" style="margin:0 auto">Скачайте бета-версию и проведите свою первую викторину за пару минут</p>
   <div class="download-grid">
-    <a href="https://github.com/IlyaSigma111/quizkit/releases/download/v0.1.0-beta/ilya-klass.exe" download="QuizKit.exe" class="download-card" style="text-decoration:none;display:block;position:relative">
-      <div class="os-icon">🪟</div>
+    <a href="https://github.com/IlyaSigma111/quizkit/releases/download/v0.1.0-beta/ilya-klass.exe" download="QuizKit.exe" class="download-card glass" style="text-decoration:none;display:block">
+      <div class="os-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 8h6"/><path d="M9 12h6"/><path d="M9 16h4"/></svg>
+      </div>
       <h3>Windows 10 / 11</h3>
-      <p>x64 • one .exe</p>
-      <span class="btn-download" style="display:inline-flex;font-size:13px;padding:10px 20px">⬇ Скачать</span>
+      <p>x64 • один .exe</p>
+      <span class="btn-download" style="display:inline-flex;font-size:13px;padding:10px 20px">Скачать</span>
       <div class="file-info">~10 МБ • портабельная версия</div>
     </a>
-    <div class="download-card soon" style="position:relative">
-      <div class="os-icon">🍎</div>
+    <div class="download-card glass soon" style="position:relative">
+      <div class="os-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
+      </div>
       <h3>macOS</h3>
       <p>Intel & Apple Silicon</p>
-      <span class="btn-download" style="display:inline-flex;font-size:13px;padding:10px 20px;opacity:.5">⬇ Скачать</span>
+      <span class="btn-download" style="display:inline-flex;font-size:13px;padding:10px 20px;opacity:.5">Скачать</span>
       <div class="file-info">Скоро будет доступна</div>
     </div>
-    <div class="download-card soon" style="position:relative">
-      <div class="os-icon">🐧</div>
+    <div class="download-card glass soon" style="position:relative">
+      <div class="os-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13.5h3.1A7.9 7.9 0 0 0 13 5.6V2"/><path d="M22 10.5h-3.1A7.9 7.9 0 0 0 11 18.4V22"/><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/></svg>
+      </div>
       <h3>Linux</h3>
       <p>AppImage / deb</p>
-      <span class="btn-download" style="display:inline-flex;font-size:13px;padding:10px 20px;opacity:.5">⬇ Скачать</span>
+      <span class="btn-download" style="display:inline-flex;font-size:13px;padding:10px 20px;opacity:.5">Скачать</span>
       <div class="file-info">Скоро будет доступна</div>
     </div>
   </div>
-  <div style="margin-top:28px;font-size:13px;color:#585868">
-    <span>📦 Версия 0.1.0 beta — </span>
-    <a href="https://github.com/IlyaSigma111/quizkit/releases" style="color:#a080ff">Все релизы на GitHub</a>
+  <div style="margin-top:28px;font-size:13px;color:#5858a0">
+    <span>Версия 0.1.0 beta — </span>
+    <a href="https://github.com/IlyaSigma111/quizkit/releases" style="color:#a5b4fc">Все релизы на GitHub</a>
   </div>
 </div>
 </section>
@@ -247,7 +304,7 @@ footer a:hover{color:#ededef}
     <div class="faq-item"><button class="faq-q">Нужен ли интернет для работы? <span class="arrow">▼</span></button><div class="faq-a">Нет. Приложение создаёт локальный веб-сервер в вашей Wi-Fi сети. Ученики подключаются к нему через браузер — внешний интернет не требуется.</div></div>
     <div class="faq-item"><button class="faq-q">Что нужно ученикам? <span class="arrow">▼</span></button><div class="faq-a">Только телефон с камерой и браузером. Наводят камеру на QR — открывается страница, вводят имя и отвечают. Никаких приложений, регистраций и аккаунтов.</div></div>
     <div class="faq-item"><button class="faq-q">Сколько учеников может играть одновременно? <span class="arrow">▼</span></button><div class="faq-a">Ограничений по софту нет. Реальное ограничение — пропускная способность вашей Wi-Fi сети и мощность компьютера учителя. 30+ человек работают стабильно.</div></div>
-    <div class="faq-item"><button class="faq-q">Можно ли импортировать вопросы из файла? <span class="arrow">▼</span></button><div class="faq-a">Да. В редакторе есть кнопка «📂 JSON» — загружайте .json с вопросами и ответами в нужном формате. Шаблон покажет сама программа.</div></div>
+    <div class="faq-item"><button class="faq-q">Можно ли импортировать вопросы из файла? <span class="arrow">▼</span></button><div class="faq-a">Да. В редакторе есть кнопка «JSON» — загружайте .json с вопросами и ответами в нужном формате. Шаблон покажет сама программа.</div></div>
     <div class="faq-item"><button class="faq-q">Это безопасно? Не украдут ли данные? <span class="arrow">▼</span></button><div class="faq-a">Всё работает локально — данные не уходят за пределы вашей сети. Приложение не собирает никакую личную информацию. На первом запуске Windows попросит разрешение на доступ к сети — это нормально.</div></div>
     <div class="faq-item"><button class="faq-q">На чём написано приложение? <span class="arrow">▼</span></button><div class="faq-a">Бэкенд на Rust (Tauri v2, axum), фронтенд — React + TypeScript. Всё компилируется в один .exe без зависимостей.</div></div>
   </div>
@@ -257,11 +314,11 @@ footer a:hover{color:#ededef}
 <section class="cta">
   <h2>Готовы попробовать?</h2>
   <p>Скачайте — и через 2 минуты класс уже отвечает на вопросы</p>
-  <a href="#download" class="btn-download">⬇ Скачать для Windows</a>
+  <a href="#download" class="btn-emerald">Скачать для Windows</a>
 </section>
 
 <footer>
-  <div>🦉 QuizKit — викторины для класса</div>
+  <div>QuizKit — викторины для класса</div>
   <div class="footer-links">
     <a href="https://github.com/IlyaSigma111/quizkit">GitHub</a>
     <a href="https://github.com/IlyaSigma111/quizkit/issues">Обратная связь</a>
@@ -272,5 +329,6 @@ footer a:hover{color:#ededef}
 document.querySelectorAll('.faq-q').forEach(b=>b.addEventListener('click',function(){this.parentElement.classList.toggle('open')}))
 let lastScroll=0;window.addEventListener('scroll',()=>{const y=window.scrollY;const n=document.querySelector('nav');if(n){n.style.transform=y>lastScroll&&y>60?'translateY(-100%)':'translateY(0)';lastScroll=y}},{passive:true})
 </script>
+
 </body>
 </html>

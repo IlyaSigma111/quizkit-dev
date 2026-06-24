@@ -127,7 +127,8 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
           + Создать квиз
         </button>
         <button className="btn btn-secondary" onClick={handleImport}>
-          📂 JSON
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          JSON
         </button>
         <input ref={fileRef} type="file" accept=".json" style={{ display: 'none' }} onChange={handleFileChange} />
       </div>
@@ -150,7 +151,10 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
           <div className="create-actions">
             <button className="btn btn-primary" onClick={handleCreate}>Создать</button>
             <button className="btn btn-secondary" onClick={() => setShowCreate(false)}>Отмена</button>
-            <button className="btn btn-secondary" onClick={() => setShowTemplate(true)} style={{ marginLeft: 'auto' }}>📋 Формат JSON</button>
+            <button className="btn btn-secondary" onClick={() => setShowTemplate(true)} style={{ marginLeft: 'auto' }}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              Формат JSON
+            </button>
           </div>
         </div>
       )}
@@ -167,13 +171,16 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
             {quiz.description && <p className="quiz-desc">{quiz.description}</p>}
             <div className="quiz-card-actions">
               <button className="btn btn-play" onClick={() => setShowModePicker(quiz.id)}>
-                ▶ Играть
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Играть
               </button>
               <button className="btn btn-secondary" onClick={() => onEditQuiz(quiz.id)}>
-                ✏ Править
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                Править
               </button>
               <button className="btn btn-danger" onClick={() => handleDelete(quiz.id)}>
-                🗑 Удалить
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                Удалить
               </button>
             </div>
           </div>
@@ -191,17 +198,23 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
             <h3>Выберите формат</h3>
             <div className="mode-options">
               <button className="mode-option" onClick={() => handleStart(showModePicker, 'test', 'auto')}>
-                <span className="mode-icon">📝</span>
+                <span className="mode-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                </span>
                 <span className="mode-title">Проверочная работа</span>
                 <span className="mode-desc">Каждый ученик отвечает в своём темпе</span>
               </button>
               <button className="mode-option" onClick={() => handleStart(showModePicker, 'live', 'auto')}>
-                <span className="mode-icon">🎮</span>
+                <span className="mode-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </span>
                 <span className="mode-title">Викторина (авто)</span>
                 <span className="mode-desc">Таймер на каждый вопрос, авто-переход</span>
               </button>
               <button className="mode-option" onClick={() => handleStart(showModePicker, 'live', 'manual')}>
-                <span className="mode-icon">👆</span>
+                <span className="mode-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </span>
                 <span className="mode-title">Викторина (вручную)</span>
                 <span className="mode-desc">Учитель сам листает вопросы</span>
               </button>
@@ -214,9 +227,9 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
       {showTemplate && (
         <div className="modal-overlay" onClick={() => setShowTemplate(false)}>
           <div className="mode-picker" onClick={(e) => e.stopPropagation()} style={{ maxWidth: 560 }}>
-            <h3>📋 Формат JSON для импорта</h3>
+            <h3>Формат JSON для импорта</h3>
             <p style={{ fontSize: 13, color: 'var(--text-secondary)', textAlign: 'center' }}>
-              Создай .json файл с такой структурой и импортируй через кнопку «📂 JSON»
+              Создай .json файл с такой структурой и импортируй через кнопку «JSON»
             </p>
             <pre style={{
               width: '100%', padding: 16, background: 'var(--bg-input)',
@@ -228,7 +241,7 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
               <button className="btn btn-secondary" style={{ flex: 1 }} onClick={() => {
                 navigator.clipboard.writeText(TEMPLATE_JSON)
                 alert('Шаблон скопирован!')
-              }}>📋 Копировать</button>
+              }}>Копировать</button>
               <button className="btn btn-secondary" style={{ flex: 1 }} onClick={() => setShowTemplate(false)}>Закрыть</button>
             </div>
           </div>

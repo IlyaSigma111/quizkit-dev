@@ -233,8 +233,8 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
           <div className="lobby-players-col">
             <h2>{
               mode === 'LiveQuiz'
-                ? '🎯 Викторина'
-                : '📝 Проверочная работа'
+                ? 'Викторина'
+                : 'Проверочная работа'
             }</h2>
             <div className="player-list lobby-players">
               <h3>Ученики ({players.length})</h3>
@@ -250,7 +250,7 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
             </div>
             {players.length >= 1 && (
               <button className="btn btn-primary btn-start" onClick={handleStart}>
-                🚀 Начать
+                Начать
               </button>
             )}
           </div>
@@ -306,14 +306,14 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
                   />
                 </div>
                 <span className="pr-info">
-                  {p.done ? '✅ Готово' : `${Math.min(p.question_index, p.total_questions)}/${p.total_questions}`}
+                  {p.done ? 'Готово' : `${Math.min(p.question_index, p.total_questions)}/${p.total_questions}`}
                 </span>
                 <span className="pr-score">{p.score} б.</span>
               </div>
             ))}
           </div>
           <button className="btn btn-danger" onClick={handleEnd}>
-            ⏹ Завершить
+            Завершить
           </button>
         </div>
       )}
@@ -374,7 +374,7 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
                 </span>
               </div>
               <div className="rr-correct">
-                ✅ Правильный ответ: <strong>Вариант {roundResults.correct_index + 1}</strong>
+                Правильный ответ: <strong>Вариант {roundResults.correct_index + 1}</strong>
               </div>
               <div className="rr-bars">
                 {roundResults.histogram.map((count, i) => {
@@ -404,11 +404,11 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
               </div>
               <div className="rr-divider" />
               <div className="rr-lb">
-                <h3>🏆 Таблица лидеров</h3>
+                <h3>Таблица лидеров</h3>
                 <div className="rr-lb-rows">
                   {roundResults.leaderboard.map((p, idx) => (
                     <div key={p.id} className={`rr-lb-row ${idx < 3 ? 'top' : ''}`}>
-                      <span className="rr-lb-rank">{(idx < 3 ? ['🥇', '🥈', '🥉'][idx] : `#${p.rank}`)}</span>
+                      <span className="rr-lb-rank">{(idx < 3 ? ['#1', '#2', '#3'][idx] : `#${p.rank}`)}</span>
                       <span className="rr-lb-name">{p.nickname}</span>
                       <span className="rr-lb-score">{p.total_score} баллов</span>
                     </div>
@@ -432,11 +432,11 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
 
       {status === 'final' && (
         <div className="final-screen">
-          <h2>🏆 Игра завершена!</h2>
+          <h2>Игра завершена!</h2>
           <div className="podium">
             {leaderboard.slice(0, 3).map((p, i) => (
               <div key={p.id} className={`podium-item place-${i + 1}`}>
-                <div className="podium-emoji">{['🥇', '🥈', '🥉'][i]}</div>
+                <div className="podium-emoji">{['#1', '#2', '#3'][i]}</div>
                 <div className="podium-name">{p.nickname}</div>
                 <div className="podium-score">{p.total_score}</div>
               </div>
@@ -453,7 +453,10 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
           </div>
           <div className="final-actions">
             <button className="btn btn-secondary" onClick={onBack}>← На главную</button>
-            <button className="btn btn-primary" onClick={handleExport}>📊 Экспорт CSV</button>
+            <button className="btn btn-primary" onClick={handleExport}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Экспорт CSV
+            </button>
           </div>
         </div>
       )}

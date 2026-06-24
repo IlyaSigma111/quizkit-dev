@@ -15,21 +15,21 @@ type Props = {
 }
 
 const MODES = [
-  { value: 'test', label: 'Проверочная работа', icon: '📝', desc: 'Каждый в своём темпе' },
-  { value: 'live', label: 'Викторина', icon: '🎯', desc: 'Все одновременно на время' },
+  { value: 'test', label: 'Проверочная работа', icon: '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>', desc: 'Каждый в своём темпе' },
+  { value: 'live', label: 'Викторина', icon: '<polygon points="5 3 19 12 5 21 5 3"/>', desc: 'Все одновременно на время' },
 ]
 
 const ADVANCES = [
-  { value: 'auto', label: 'Автоматически', icon: '⏱️', desc: 'Таймер по умолчанию' },
-  { value: 'manual', label: 'Вручную', icon: '👆', desc: 'Учитель переключает вопросы' },
+  { value: 'auto', label: 'Автоматически', icon: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>', desc: 'Таймер по умолчанию' },
+  { value: 'manual', label: 'Вручную', icon: '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>', desc: 'Учитель переключает вопросы' },
 ]
 
 const THEMES = [
-  { value: 'spline', label: 'Spline Dark', icon: '🌙', desc: 'Минималистичный тёмный' },
-  { value: 'purple', label: 'Пурпурное стекло', icon: '🔮', desc: 'Тёмный с фиолетовым акцентом' },
-  { value: 'ocean', label: 'Океан', icon: '🌊', desc: 'Синяя глубина' },
-  { value: 'forest', label: 'Лес', icon: '🌿', desc: 'Зелёный спокойный' },
-  { value: 'sunset', label: 'Закат', icon: '🌅', desc: 'Тёплый оранжевый' },
+  { value: 'spline', label: 'Spline Dark', icon: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>', desc: 'Минималистичный тёмный' },
+  { value: 'purple', label: 'Пурпурное стекло', icon: '<circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20"/>', desc: 'Тёмный с фиолетовым акцентом' },
+  { value: 'ocean', label: 'Океан', icon: '<path d="M2 12h20"/><path d="M2 6h20"/><path d="M2 18h20"/>', desc: 'Синяя глубина' },
+  { value: 'forest', label: 'Лес', icon: '<path d="M12 2L2 12l3 0 0 8 6 0 0-4 2 0 0 4 6 0 0-8 3 0z"/>', desc: 'Зелёный спокойный' },
+  { value: 'sunset', label: 'Закат', icon: '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>', desc: 'Тёплый оранжевый' },
 ]
 
 export function Settings({ onBack, onThemeChange }: Props) {
@@ -64,7 +64,7 @@ export function Settings({ onBack, onThemeChange }: Props) {
     <div className="settings-page">
       <div className="settings-header">
         <button className="btn btn-secondary" onClick={onBack}>← Назад</button>
-        <h2>⚙️ Настройки</h2>
+        <h2>Настройки</h2>
         <div style={{ flex: 1 }} />
       </div>
 
@@ -78,7 +78,9 @@ export function Settings({ onBack, onThemeChange }: Props) {
                 className={`settings-card ${settings.default_mode === m.value ? 'selected' : ''}`}
                 onClick={() => update({ default_mode: m.value })}
               >
-                <span className="settings-card-icon">{m.icon}</span>
+                <span className="settings-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" dangerouslySetInnerHTML={{ __html: m.icon }} />
+                </span>
                 <span className="settings-card-title">{m.label}</span>
                 <span className="settings-card-desc">{m.desc}</span>
               </button>
@@ -95,7 +97,9 @@ export function Settings({ onBack, onThemeChange }: Props) {
                 className={`settings-card ${settings.default_advance === a.value ? 'selected' : ''}`}
                 onClick={() => update({ default_advance: a.value })}
               >
-                <span className="settings-card-icon">{a.icon}</span>
+                <span className="settings-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" dangerouslySetInnerHTML={{ __html: a.icon }} />
+                </span>
                 <span className="settings-card-title">{a.label}</span>
                 <span className="settings-card-desc">{a.desc}</span>
               </button>
@@ -117,7 +121,9 @@ export function Settings({ onBack, onThemeChange }: Props) {
                   invoke('save_settings', { settings: newSettings }).catch(() => {})
                 }}
               >
-                <span className="settings-card-icon">{t.icon}</span>
+                <span className="settings-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" dangerouslySetInnerHTML={{ __html: t.icon }} />
+                </span>
                 <span className="settings-card-title">{t.label}</span>
                 <span className="settings-card-desc">{t.desc}</span>
                 <span className="theme-swatch" />
