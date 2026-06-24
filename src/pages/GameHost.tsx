@@ -198,9 +198,6 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
     <div className="game-host">
       <div className="game-header">
         <button className="btn btn-secondary" onClick={onBack}>← Выйти</button>
-        <div className="pin-display">
-          PIN: <strong>{pin}</strong>
-        </div>
         <div className="connection-info">
           {serverInfo && (
             <span>Сервер: <strong>{serverInfo.ip}:{serverInfo.port}</strong></span>
@@ -216,7 +213,6 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
                 ? '🎯 Викторина'
                 : '📝 Проверочная работа'
             }</h2>
-            <div className="big-pin">{pin}</div>
             <div className="player-list lobby-players">
               <h3>Ученики ({players.length})</h3>
               {players.length === 0 ? (

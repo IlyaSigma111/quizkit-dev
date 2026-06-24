@@ -111,9 +111,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .lobby-layout{display:flex;gap:24px;flex:1;align-items:stretch}
 .lobby-players-col{flex:1;display:flex;flex-direction:column;gap:16px;padding:24px;background:var(--bg-card);border-radius:var(--radius);border:1px solid var(--border);min-width:0}
 .lobby-players-col h2{font-size:18px}
-.lobby-qr-col{display:flex;flex-direction:column;justify-content:center;min-width:220px}
+.lobby-qr-col{display:flex;flex-direction:column;justify-content:center;min-width:200px;max-width:220px}
 .lobby-players .player-chips{display:flex;flex-wrap:wrap;gap:6px}
-.lobby-players .player-chip{padding:8px 14px;background:var(--bg-input);border-radius:8px;font-size:14px;border:1px solid var(--border);max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lobby-players .player-chip{padding:8px 14px;background:var(--bg-input);border-radius:8px;font-size:14px;border:1px solid var(--border);max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .big-pin{font-size:64px;font-weight:800;color:var(--primary);letter-spacing:12px;padding:12px 32px;background:var(--bg-card);border-radius:var(--radius);border:2px dashed rgba(124,92,252,.3)}
 .lobby-hint{color:var(--text-secondary);font-size:13px;line-height:1.6}
 .player-list{width:100%;max-width:380px}
