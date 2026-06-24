@@ -185,7 +185,6 @@ function render() {
     grid.className = 'quiz-grid'
 
     items.forEach(q => {
-      const url = CONFIG_URL + q.file
       const card = document.createElement('div')
       card.className = 'quiz-card'
       card.innerHTML = `
@@ -198,7 +197,7 @@ function render() {
         </div>
         <div class="btns">
           <button class="btn btn-secondary" onclick='openModal(${JSON.stringify(q).replace(/'/g,"&#39;")})'>👁 Посмотреть</button>
-          <a href="${url}" download="${q.file}" class="btn btn-primary">⬇ Скачать</a>
+          <a href="${q.file}" download="${q.file}" class="btn btn-primary">⬇ Скачать</a>
         </div>
       `
       grid.appendChild(card)
