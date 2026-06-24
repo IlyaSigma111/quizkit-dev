@@ -21,19 +21,20 @@ pub async fn start_server(state: Arc<AppState>, preferred_port: u16) {
         .layer(CorsLayer::permissive())
         .with_state(state.clone());
 
-    // Try preferred port, fallback to OS-assigned
+    // Try sequential ports, fallback to OS-assigned
     let actual_port;
-    let listener = {
-        let addr = SocketAddr::from(([0, 0, 0, 0], preferred_port));
-        if let Ok(l) = tokio::net::TcpListener::bind(addr).await {
-            actual_port = l.local_addr().unwrap().port();
-            l
-        } else {
-            let addr = SocketAddr::from(([0, 0, 0, 0], 0));
-            let l = tokio::net::TcpListener::bind(addr).await.unwrap();
-            actual_port = l.local_addr().unwrap().port();
-            l
+    let listener = 'found: loop {
+        for port in preferred_port..=preferred_port + 200 {
+            let addr = SocketAddr::from(([0, 0, 0, 0], port));
+            if let Ok(l) = tokio::net::TcpListener::bind(addr).await {
+                actual_port = l.local_addr().unwrap().port();
+                break 'found l;
+            }
         }
+        let addr = SocketAddr::from(([0, 0, 0, 0], 0));
+        let l = tokio::net::TcpListener::bind(addr).await.unwrap();
+        actual_port = l.local_addr().unwrap().port();
+        break 'found l;
     };
 
     *state.server_port.write().await = actual_port;
