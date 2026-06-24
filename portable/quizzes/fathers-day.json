@@ -1,0 +1,558 @@
+{
+  "title": "День отца",
+  "questions": [
+    {
+      "text": "В каком году День отца стал официальным в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "2020",
+          "is_correct": false
+        },
+        {
+          "text": "2021",
+          "is_correct": true
+        },
+        {
+          "text": "2022",
+          "is_correct": false
+        },
+        {
+          "text": "2023",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Когда отмечают День отца в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Первое воскресенье октября",
+          "is_correct": false
+        },
+        {
+          "text": "Третье воскресенье октября",
+          "is_correct": true
+        },
+        {
+          "text": "Последнее воскресенье октября",
+          "is_correct": false
+        },
+        {
+          "text": "15 октября",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В какой стране впервые появился День отца?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "США",
+          "is_correct": true
+        },
+        {
+          "text": "Германия",
+          "is_correct": false
+        },
+        {
+          "text": "Англия",
+          "is_correct": false
+        },
+        {
+          "text": "Франция",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком году День отца впервые отметили в США?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1909",
+          "is_correct": false
+        },
+        {
+          "text": "1910",
+          "is_correct": true
+        },
+        {
+          "text": "1912",
+          "is_correct": false
+        },
+        {
+          "text": "1915",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто инициировал День отца в США?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Миссис Додд",
+          "is_correct": true
+        },
+        {
+          "text": "Миссис Джонс",
+          "is_correct": false
+        },
+        {
+          "text": "Миссис Смит",
+          "is_correct": false
+        },
+        {
+          "text": "Миссис Браун",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой цветок считается символом Дня отца?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Роза",
+          "is_correct": true
+        },
+        {
+          "text": "Тюльпан",
+          "is_correct": false
+        },
+        {
+          "text": "Гвоздика",
+          "is_correct": false
+        },
+        {
+          "text": "Ромашка",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали одного из главных богов-отцов в древнегреческой мифологии?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Зевс",
+          "is_correct": true
+        },
+        {
+          "text": "Посейдон",
+          "is_correct": false
+        },
+        {
+          "text": "Аид",
+          "is_correct": false
+        },
+        {
+          "text": "Гермес",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали отца в древнеримской мифологии?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Юпитер",
+          "is_correct": true
+        },
+        {
+          "text": "Марс",
+          "is_correct": false
+        },
+        {
+          "text": "Сатурн",
+          "is_correct": false
+        },
+        {
+          "text": "Аполлон",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто был отцом Ярослава Мудрого?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Владимир Святославич",
+          "is_correct": true
+        },
+        {
+          "text": "Святослав Игоревич",
+          "is_correct": false
+        },
+        {
+          "text": "Олег Вещий",
+          "is_correct": false
+        },
+        {
+          "text": "Игорь Рюрикович",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется праздник, когда отцы водят детей в школу?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "День отца",
+          "is_correct": true
+        },
+        {
+          "text": "Папин день",
+          "is_correct": false
+        },
+        {
+          "text": "День папы",
+          "is_correct": false
+        },
+        {
+          "text": "Праздник пап",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько детей было у царя Алексея Михайловича?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "8",
+          "is_correct": false
+        },
+        {
+          "text": "10",
+          "is_correct": false
+        },
+        {
+          "text": "12",
+          "is_correct": true
+        },
+        {
+          "text": "14",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто был отцом Петра I?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Алексей Михайлович",
+          "is_correct": true
+        },
+        {
+          "text": "Фёдор Алексеевич",
+          "is_correct": false
+        },
+        {
+          "text": "Иван Алексеевич",
+          "is_correct": false
+        },
+        {
+          "text": "Михаил Фёдорович",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется папа в итальянском языке?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Padre",
+          "is_correct": false
+        },
+        {
+          "text": "Papà",
+          "is_correct": true
+        },
+        {
+          "text": "Babbo",
+          "is_correct": false
+        },
+        {
+          "text": "Figlio",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется папа в испанском языке?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Padre",
+          "is_correct": false
+        },
+        {
+          "text": "Papá",
+          "is_correct": true
+        },
+        {
+          "text": "Papa",
+          "is_correct": false
+        },
+        {
+          "text": "Viejo",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой фильм про отца стал классикой советского кино?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Москва слезам не верит",
+          "is_correct": false
+        },
+        {
+          "text": "Судьба человека",
+          "is_correct": false
+        },
+        {
+          "text": "Отец солдата",
+          "is_correct": true
+        },
+        {
+          "text": "Баллада о солдате",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется книга Льва Толстого об отце?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Детство",
+          "is_correct": true
+        },
+        {
+          "text": "Отрочество",
+          "is_correct": false
+        },
+        {
+          "text": "Юность",
+          "is_correct": false
+        },
+        {
+          "text": "Отец",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В какой пьесе Чехова есть персонаж-отец?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Вишнёвый сад",
+          "is_correct": false
+        },
+        {
+          "text": "Три сестры",
+          "is_correct": false
+        },
+        {
+          "text": "Дядя Ваня",
+          "is_correct": true
+        },
+        {
+          "text": "Чайка",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто был отцом Александра Македонского?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Филипп II",
+          "is_correct": true
+        },
+        {
+          "text": "Филипп III",
+          "is_correct": false
+        },
+        {
+          "text": "Аминта III",
+          "is_correct": false
+        },
+        {
+          "text": "Пердикка II",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой праздник отмечают в третье воскресенье октября?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "День матери",
+          "is_correct": false
+        },
+        {
+          "text": "День отца",
+          "is_correct": true
+        },
+        {
+          "text": "День семьи",
+          "is_correct": false
+        },
+        {
+          "text": "День ребёнка",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько дней длится отцовство по закону РФ после рождения?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "3 дня",
+          "is_correct": true
+        },
+        {
+          "text": "5 дней",
+          "is_correct": false
+        },
+        {
+          "text": "7 дней",
+          "is_correct": false
+        },
+        {
+          "text": "10 дней",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой орден вручают отцам в России за заслуги?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Орден Родительской славы",
+          "is_correct": true
+        },
+        {
+          "text": "Медаль Отцовство",
+          "is_correct": false
+        },
+        {
+          "text": "Орден Папа",
+          "is_correct": false
+        },
+        {
+          "text": "Медаль За отца",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется день, когда папа может всё?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "День отца",
+          "is_correct": true
+        },
+        {
+          "text": "Выходной",
+          "is_correct": false
+        },
+        {
+          "text": "Воскресенье",
+          "is_correct": false
+        },
+        {
+          "text": "Праздник",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали отца Пушкина?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Александр Сергеевич",
+          "is_correct": false
+        },
+        {
+          "text": "Сергей Львович",
+          "is_correct": true
+        },
+        {
+          "text": "Лев Александрович",
+          "is_correct": false
+        },
+        {
+          "text": "Алексей Михайлович",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали отца Лермонтова?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Юрий Петрович",
+          "is_correct": true
+        },
+        {
+          "text": "Михаил Юрьевич",
+          "is_correct": false
+        },
+        {
+          "text": "Пётр Юрьевич",
+          "is_correct": false
+        },
+        {
+          "text": "Алексей Юрьевич",
+          "is_correct": false
+        }
+      ]
+    }
+  ],
+  "description": "18 октября — проверь свои знания о роли отца в семье и истории праздника"
+}

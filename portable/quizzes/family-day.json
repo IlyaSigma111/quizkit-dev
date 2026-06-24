@@ -1,0 +1,581 @@
+{
+  "title": "День семьи, любви и верности",
+  "questions": [
+    {
+      "text": "В честь каких святых установлен этот праздник?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Пётр и Павел",
+          "is_correct": false
+        },
+        {
+          "text": "Пётр и Феврония",
+          "is_correct": true
+        },
+        {
+          "text": "Сергий и Екатерина",
+          "is_correct": false
+        },
+        {
+          "text": "Алексей и Мария",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком году День семьи, любви и верности стал официальным праздником в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "2005",
+          "is_correct": false
+        },
+        {
+          "text": "2008",
+          "is_correct": true
+        },
+        {
+          "text": "2012",
+          "is_correct": false
+        },
+        {
+          "text": "2015",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой цветок является символом этого праздника?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Роза",
+          "is_correct": false
+        },
+        {
+          "text": "Ромашка",
+          "is_correct": true
+        },
+        {
+          "text": "Тюльпан",
+          "is_correct": false
+        },
+        {
+          "text": "Василёк",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком городе находится памятник Петру и Февронии?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Москва",
+          "is_correct": false
+        },
+        {
+          "text": "Владимир",
+          "is_correct": false
+        },
+        {
+          "text": "Муром",
+          "is_correct": true
+        },
+        {
+          "text": "Суздаль",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько детей было у Петра и Февронии?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Ни одного",
+          "is_correct": true
+        },
+        {
+          "text": "Двое",
+          "is_correct": false
+        },
+        {
+          "text": "Трое",
+          "is_correct": false
+        },
+        {
+          "text": "Четверо",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой князь правил в Муроме во времена Петра и Февронии?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Андрей Боголюбский",
+          "is_correct": false
+        },
+        {
+          "text": "Юрий Долгорукий",
+          "is_correct": false
+        },
+        {
+          "text": "Давыд Юрьевич",
+          "is_correct": true
+        },
+        {
+          "text": "Всеволод Большое Гнездо",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком веке жили Пётр и Феврония?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "XII",
+          "is_correct": false
+        },
+        {
+          "text": "XIII",
+          "is_correct": true
+        },
+        {
+          "text": "XIV",
+          "is_correct": false
+        },
+        {
+          "text": "XV",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что символизирует ромашка в этом празднике?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Любовь и верность",
+          "is_correct": true
+        },
+        {
+          "text": "Богатство",
+          "is_correct": false
+        },
+        {
+          "text": "Здоровье",
+          "is_correct": false
+        },
+        {
+          "text": "Мудрость",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто написал повесть о Петре и Февронии?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Ермолай-Еразм",
+          "is_correct": true
+        },
+        {
+          "text": "Нестор Летописец",
+          "is_correct": false
+        },
+        {
+          "text": "Авраамий Палицын",
+          "is_correct": false
+        },
+        {
+          "text": "Сильвестр",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой подвиг совершил Пётр до встречи с Февронией?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Победил змея",
+          "is_correct": true
+        },
+        {
+          "text": "Построил храм",
+          "is_correct": false
+        },
+        {
+          "text": "Собрал войско",
+          "is_correct": false
+        },
+        {
+          "text": "Написал икону",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали брата Петра, который правил в Муроме до него?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Ярослав",
+          "is_correct": false
+        },
+        {
+          "text": "Святослав",
+          "is_correct": false
+        },
+        {
+          "text": "Павел",
+          "is_correct": true
+        },
+        {
+          "text": "Глеб",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой дар получила Феврония от природы?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Дар исцеления",
+          "is_correct": true
+        },
+        {
+          "text": "Дар пророчества",
+          "is_correct": false
+        },
+        {
+          "text": "Дар красоты",
+          "is_correct": false
+        },
+        {
+          "text": "Дар мудрости",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как Феврония исцелила Петра в первый раз?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Травами",
+          "is_correct": false
+        },
+        {
+          "text": "Молитвой",
+          "is_correct": false
+        },
+        {
+          "text": "Хлебной закваской",
+          "is_correct": true
+        },
+        {
+          "text": "Водой",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Почему Пётр снова заболел после первого исцеления?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Нарушил обещание жениться",
+          "is_correct": true
+        },
+        {
+          "text": "Встретился со змеем",
+          "is_correct": false
+        },
+        {
+          "text": "Не поверил Февронии",
+          "is_correct": false
+        },
+        {
+          "text": "Съел запретную пищу",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как бояре отнеслись к тому, что Феврония стала княгиней?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Обрадовались",
+          "is_correct": false
+        },
+        {
+          "text": "Возмутились",
+          "is_correct": true
+        },
+        {
+          "text": "Не заметили",
+          "is_correct": false
+        },
+        {
+          "text": "Помогали ей",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какое условие поставила Феврония, покидая Муром?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Забрала с собой Петра",
+          "is_correct": true
+        },
+        {
+          "text": "Забрала богатство",
+          "is_correct": false
+        },
+        {
+          "text": "Забрала икону",
+          "is_correct": false
+        },
+        {
+          "text": "Забрала своих слуг",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Куда отправились Пётр и Феврония после изгнания?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "В Киев",
+          "is_correct": false
+        },
+        {
+          "text": "В Новгород",
+          "is_correct": false
+        },
+        {
+          "text": "В Рязань",
+          "is_correct": true
+        },
+        {
+          "text": "В Москву",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что произошло после того, как бояре попросили Петра и Февронию вернуться?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Они вернулись",
+          "is_correct": true
+        },
+        {
+          "text": "Они отказались",
+          "is_correct": false
+        },
+        {
+          "text": "Они отправились в монастырь",
+          "is_correct": false
+        },
+        {
+          "text": "Они ушли в другой город",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком монастыре приняли постриг Пётр и Феврония?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Киево-Печерском",
+          "is_correct": false
+        },
+        {
+          "text": "Спасо-Преображенском",
+          "is_correct": false
+        },
+        {
+          "text": "Борисоглебском",
+          "is_correct": true
+        },
+        {
+          "text": "Новоспасском",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В какие дни поминают Петра и Февронию в церкви?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "8 июля и 25 июня",
+          "is_correct": true
+        },
+        {
+          "text": "8 июля и 19 сентября",
+          "is_correct": false
+        },
+        {
+          "text": "8 июля и 25 октября",
+          "is_correct": false
+        },
+        {
+          "text": "8 июля и 7 ноября",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой моральный урок несёт история Петра и Февронии?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Любовь и верность",
+          "is_correct": true
+        },
+        {
+          "text": "Богатство и слава",
+          "is_correct": false
+        },
+        {
+          "text": "Мудрость и знание",
+          "is_correct": false
+        },
+        {
+          "text": "Сила и власть",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали слугу Петра, который нашёл Февронию?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Иван",
+          "is_correct": false
+        },
+        {
+          "text": "Андрей",
+          "is_correct": true
+        },
+        {
+          "text": "Георгий",
+          "is_correct": false
+        },
+        {
+          "text": "Дмитрий",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Феврония была дочерью кого?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Боярина",
+          "is_correct": false
+        },
+        {
+          "text": "Князя",
+          "is_correct": false
+        },
+        {
+          "text": "Пчеловода",
+          "is_correct": true
+        },
+        {
+          "text": "Священника",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько лет Петру и Февронии было на момент смерти?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Около 60",
+          "is_correct": false
+        },
+        {
+          "text": "Около 70",
+          "is_correct": true
+        },
+        {
+          "text": "Около 80",
+          "is_correct": false
+        },
+        {
+          "text": "Около 90",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком храме покоятся мощи Петра и Февронии?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Троицком монастыре в Муроме",
+          "is_correct": true
+        },
+        {
+          "text": "Успенском соборе во Владимире",
+          "is_correct": false
+        },
+        {
+          "text": "Софийском соборе в Новгороде",
+          "is_correct": false
+        },
+        {
+          "text": "Храме Христа Спасителя в Москве",
+          "is_correct": false
+        }
+      ]
+    }
+  ],
+  "description": "8 июля — проверь свои знания о святых Петре и Февронии и семейных ценностях"
+}

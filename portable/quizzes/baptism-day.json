@@ -1,0 +1,604 @@
+{
+  "title": "День Крещения Руси",
+  "questions": [
+    {
+      "text": "В каком году произошло Крещение Руси?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "862",
+          "is_correct": false
+        },
+        {
+          "text": "988",
+          "is_correct": true
+        },
+        {
+          "text": "1054",
+          "is_correct": false
+        },
+        {
+          "text": "1111",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали князя, который крестил Русь?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Олег",
+          "is_correct": false
+        },
+        {
+          "text": "Игорь",
+          "is_correct": false
+        },
+        {
+          "text": "Владимир",
+          "is_correct": true
+        },
+        {
+          "text": "Ярослав",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком городе Владимир принял крещение?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Киев",
+          "is_correct": false
+        },
+        {
+          "text": "Херсонес (Корсунь)",
+          "is_correct": true
+        },
+        {
+          "text": "Новгород",
+          "is_correct": false
+        },
+        {
+          "text": "Смоленск",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какое имя в крещении получил князь Владимир?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Алексей",
+          "is_correct": false
+        },
+        {
+          "text": "Василий",
+          "is_correct": true
+        },
+        {
+          "text": "Андрей",
+          "is_correct": false
+        },
+        {
+          "text": "Александр",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто был отцом Владимира?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Игорь Рюрикович",
+          "is_correct": false
+        },
+        {
+          "text": "Святослав Игоревич",
+          "is_correct": true
+        },
+        {
+          "text": "Ярополк Святославич",
+          "is_correct": false
+        },
+        {
+          "text": "Олег Святославич",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали мать Владимира?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Ольга",
+          "is_correct": false
+        },
+        {
+          "text": "Предслава",
+          "is_correct": false
+        },
+        {
+          "text": "Малуша",
+          "is_correct": true
+        },
+        {
+          "text": "Рогнеда",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какое прозвище было у Владимира до крещения?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Великий",
+          "is_correct": false
+        },
+        {
+          "text": "Мудрый",
+          "is_correct": false
+        },
+        {
+          "text": "Красное Солнышко",
+          "is_correct": true
+        },
+        {
+          "text": "Грозный",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком городе Владимир впервые установил языческих идолов?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "В Киеве",
+          "is_correct": true
+        },
+        {
+          "text": "В Новгороде",
+          "is_correct": false
+        },
+        {
+          "text": "В Смоленске",
+          "is_correct": false
+        },
+        {
+          "text": "В Полоцке",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какие веры рассматривал Владимир перед выбором религии?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Ислам, иудаизм, католичество",
+          "is_correct": false
+        },
+        {
+          "text": "Ислам, иудаизм, христианство",
+          "is_correct": true
+        },
+        {
+          "text": "Ислам, буддизм, христианство",
+          "is_correct": false
+        },
+        {
+          "text": "Иудаизм, буддизм, католичество",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какая вера не понравилась Владимиру из-за запрета на свинину?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Иудаизм",
+          "is_correct": false
+        },
+        {
+          "text": "Ислам",
+          "is_correct": true
+        },
+        {
+          "text": "Католичество",
+          "is_correct": false
+        },
+        {
+          "text": "Буддизм",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали корсунскую царевну, на которой женился Владимир?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Анна",
+          "is_correct": true
+        },
+        {
+          "text": "Софья",
+          "is_correct": false
+        },
+        {
+          "text": "Елена",
+          "is_correct": false
+        },
+        {
+          "text": "Ирина",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком городе Владимир уничтожил языческих идолов?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "В Киеве",
+          "is_correct": true
+        },
+        {
+          "text": "В Новгороде",
+          "is_correct": false
+        },
+        {
+          "text": "В Муроме",
+          "is_correct": false
+        },
+        {
+          "text": "В Смоленске",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Когда был крещён Киев?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "988 год, 1 июня",
+          "is_correct": false
+        },
+        {
+          "text": "988 год, 1 июля",
+          "is_correct": false
+        },
+        {
+          "text": "988 год, 1 августа",
+          "is_correct": true
+        },
+        {
+          "text": "988 год, 1 сентября",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Где происходило массовое крещение киевлян?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "На Днепре",
+          "is_correct": true
+        },
+        {
+          "text": "На Волге",
+          "is_correct": false
+        },
+        {
+          "text": "На Неве",
+          "is_correct": false
+        },
+        {
+          "text": "На Оке",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какие новшества привнесло Крещение Руси?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Алфавит и образование",
+          "is_correct": true
+        },
+        {
+          "text": "Чай и кофе",
+          "is_correct": false
+        },
+        {
+          "text": "Парламент",
+          "is_correct": false
+        },
+        {
+          "text": "Университеты",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто создал славянскую азбуку в это время?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Сергий Радонежский",
+          "is_correct": false
+        },
+        {
+          "text": "Кирилл и Мефодий",
+          "is_correct": true
+        },
+        {
+          "text": "Борис и Глеб",
+          "is_correct": false
+        },
+        {
+          "text": "Андрей Боголюбский",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто из сыновей Владимира первым принял христианство?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Борис",
+          "is_correct": true
+        },
+        {
+          "text": "Глеб",
+          "is_correct": false
+        },
+        {
+          "text": "Ярослав",
+          "is_correct": false
+        },
+        {
+          "text": "Святополк",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как назывался первый митрополит Киевский, поставленный при Владимире?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Иларион",
+          "is_correct": false
+        },
+        {
+          "text": "Михаил",
+          "is_correct": true
+        },
+        {
+          "text": "Алексей",
+          "is_correct": false
+        },
+        {
+          "text": "Пётр",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком веке был построен первый каменный храм в Киеве — Десятинная церковь?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "IX век",
+          "is_correct": false
+        },
+        {
+          "text": "X век",
+          "is_correct": true
+        },
+        {
+          "text": "XI век",
+          "is_correct": false
+        },
+        {
+          "text": "XII век",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что символизировало Крещение Руси?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Объединение государства",
+          "is_correct": true
+        },
+        {
+          "text": "Распад государства",
+          "is_correct": false
+        },
+        {
+          "text": "Начало монгольского ига",
+          "is_correct": false
+        },
+        {
+          "text": "Конец язычества",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто стал первым русским митрополитом из русских?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Иларион",
+          "is_correct": true
+        },
+        {
+          "text": "Алексей",
+          "is_correct": false
+        },
+        {
+          "text": "Пётр",
+          "is_correct": false
+        },
+        {
+          "text": "Филипп",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называлась должность князя в церкви?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Глава церкви",
+          "is_correct": false
+        },
+        {
+          "text": "Экзарх",
+          "is_correct": false
+        },
+        {
+          "text": "Патриарх",
+          "is_correct": false
+        },
+        {
+          "text": "Ктитор",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Какой князь был назван Равноапостольным?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Владимир",
+          "is_correct": true
+        },
+        {
+          "text": "Олег",
+          "is_correct": false
+        },
+        {
+          "text": "Ярослав",
+          "is_correct": false
+        },
+        {
+          "text": "Святослав",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком монастыре сохранились первые русские летописи о Крещении?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Киево-Печерском",
+          "is_correct": true
+        },
+        {
+          "text": "Новоспасском",
+          "is_correct": false
+        },
+        {
+          "text": "Андрониковом",
+          "is_correct": false
+        },
+        {
+          "text": "Симоновом",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько лет продолжалось языческое правление Владимира до крещения?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Около 10",
+          "is_correct": true
+        },
+        {
+          "text": "Около 15",
+          "is_correct": false
+        },
+        {
+          "text": "Около 20",
+          "is_correct": false
+        },
+        {
+          "text": "Около 25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком году было принято решение праздновать День Крещения Руси на государственном уровне?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "2005",
+          "is_correct": false
+        },
+        {
+          "text": "2008",
+          "is_correct": false
+        },
+        {
+          "text": "2010",
+          "is_correct": true
+        },
+        {
+          "text": "2012",
+          "is_correct": false
+        }
+      ]
+    }
+  ],
+  "description": "28 июля — проверь свои знания о событии, изменившем историю"
+}

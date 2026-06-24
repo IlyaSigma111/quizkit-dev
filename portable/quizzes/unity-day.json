@@ -1,0 +1,604 @@
+{
+  "title": "День народного единства",
+  "questions": [
+    {
+      "text": "В каком году произошло освобождение Москвы от польских интервентов?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1610",
+          "is_correct": false
+        },
+        {
+          "text": "1611",
+          "is_correct": false
+        },
+        {
+          "text": "1612",
+          "is_correct": true
+        },
+        {
+          "text": "1613",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто возглавил народное ополчение в 1612 году?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Минин и Пожарский",
+          "is_correct": true
+        },
+        {
+          "text": "Скопин-Шуйский",
+          "is_correct": false
+        },
+        {
+          "text": "Лжедмитрий I",
+          "is_correct": false
+        },
+        {
+          "text": "Борис Годунов",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кем был Кузьма Минин по происхождению?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Князь",
+          "is_correct": false
+        },
+        {
+          "text": "Боярин",
+          "is_correct": false
+        },
+        {
+          "text": "Купец",
+          "is_correct": true
+        },
+        {
+          "text": "Крестьянин",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой князь командовал войском в ополчении?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Дмитрий Пожарский",
+          "is_correct": true
+        },
+        {
+          "text": "Василий Шуйский",
+          "is_correct": false
+        },
+        {
+          "text": "Михаил Скопин-Шуйский",
+          "is_correct": false
+        },
+        {
+          "text": "Иван Сусанин",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой подвиг совершил Иван Сусанин в это время?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Собрал войско",
+          "is_correct": false
+        },
+        {
+          "text": "Завёл поляков в болото",
+          "is_correct": true
+        },
+        {
+          "text": "Написал воззвание",
+          "is_correct": false
+        },
+        {
+          "text": "Построил крепость",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком городе было сформировано ополчение?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Москва",
+          "is_correct": false
+        },
+        {
+          "text": "Новгород",
+          "is_correct": false
+        },
+        {
+          "text": "Нижний Новгород",
+          "is_correct": true
+        },
+        {
+          "text": "Ярославль",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком году День народного единства стал праздником в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "2003",
+          "is_correct": false
+        },
+        {
+          "text": "2004",
+          "is_correct": false
+        },
+        {
+          "text": "2005",
+          "is_correct": true
+        },
+        {
+          "text": "2006",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой современный праздник был заменён на День народного единства?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "День Октябрьской революции",
+          "is_correct": true
+        },
+        {
+          "text": "День труда",
+          "is_correct": false
+        },
+        {
+          "text": "День независимости",
+          "is_correct": false
+        },
+        {
+          "text": "День России",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто был царём в период Смутного времени?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Борис Годунов",
+          "is_correct": false
+        },
+        {
+          "text": "Василий Шуйский",
+          "is_correct": false
+        },
+        {
+          "text": "Лжедмитрий I",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Как называлась династия, прервавшаяся в 1598 году?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Рюриковичи",
+          "is_correct": true
+        },
+        {
+          "text": "Романовы",
+          "is_correct": false
+        },
+        {
+          "text": "Гедиминовичи",
+          "is_correct": false
+        },
+        {
+          "text": "Калита",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто был отцом первого царя из династии Романовых?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Филарет",
+          "is_correct": true
+        },
+        {
+          "text": "Никон",
+          "is_correct": false
+        },
+        {
+          "text": "Аввакум",
+          "is_correct": false
+        },
+        {
+          "text": "Гермоген",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какого цвета была икона, с которой пошли в ополчение?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Красная",
+          "is_correct": true
+        },
+        {
+          "text": "Синяя",
+          "is_correct": false
+        },
+        {
+          "text": "Зелёная",
+          "is_correct": false
+        },
+        {
+          "text": "Золотая",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какая крепость была осаждена в 1612 году?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Кремль",
+          "is_correct": true
+        },
+        {
+          "text": "Китай-город",
+          "is_correct": false
+        },
+        {
+          "text": "Белый город",
+          "is_correct": false
+        },
+        {
+          "text": "Земляной город",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какую роль сыграла икона Казанской Божьей Матери?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Боевое знамя",
+          "is_correct": false
+        },
+        {
+          "text": "Вдохновение",
+          "is_correct": false
+        },
+        {
+          "text": "Покровительство",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Какой храм в Москве связан с этим событием?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Храм Василия Блаженного",
+          "is_correct": false
+        },
+        {
+          "text": "Казанский собор",
+          "is_correct": true
+        },
+        {
+          "text": "Успенский собор",
+          "is_correct": false
+        },
+        {
+          "text": "Архангельский собор",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали польского короля в это время?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Сигизмунд III",
+          "is_correct": true
+        },
+        {
+          "text": "Владислав IV",
+          "is_correct": false
+        },
+        {
+          "text": "Ян II Казимир",
+          "is_correct": false
+        },
+        {
+          "text": "Станислав II",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько лет длилось Смутное время?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "10 лет",
+          "is_correct": false
+        },
+        {
+          "text": "12 лет",
+          "is_correct": false
+        },
+        {
+          "text": "15 лет",
+          "is_correct": true
+        },
+        {
+          "text": "20 лет",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой съезд избрал Михаила Романова на царство?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Боярская дума",
+          "is_correct": false
+        },
+        {
+          "text": "Земский собор",
+          "is_correct": true
+        },
+        {
+          "text": "Вече",
+          "is_correct": false
+        },
+        {
+          "text": "Сход",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какое прозвище было у Дмитрия Пожарского?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Грозный",
+          "is_correct": false
+        },
+        {
+          "text": "Храбрый",
+          "is_correct": false
+        },
+        {
+          "text": "Статный",
+          "is_correct": true
+        },
+        {
+          "text": "Косой",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как назывался первый ополченческий отряд?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Дружина",
+          "is_correct": false
+        },
+        {
+          "text": "Рать",
+          "is_correct": false
+        },
+        {
+          "text": "Ополчение",
+          "is_correct": true
+        },
+        {
+          "text": "Сотня",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто был патриархом в этот период?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Гермоген",
+          "is_correct": true
+        },
+        {
+          "text": "Никон",
+          "is_correct": false
+        },
+        {
+          "text": "Иов",
+          "is_correct": false
+        },
+        {
+          "text": "Илларион",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой город был столицей России в 1612 году?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Киев",
+          "is_correct": false
+        },
+        {
+          "text": "Владимир",
+          "is_correct": false
+        },
+        {
+          "text": "Москва",
+          "is_correct": true
+        },
+        {
+          "text": "Смоленск",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько человек было в ополчении Минина и Пожарского?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "~5000",
+          "is_correct": false
+        },
+        {
+          "text": "~10000",
+          "is_correct": true
+        },
+        {
+          "text": "~15000",
+          "is_correct": false
+        },
+        {
+          "text": "~20000",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой современный памятник посвящён этому событию?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Медный всадник",
+          "is_correct": false
+        },
+        {
+          "text": "Памятник Минину и Пожарскому",
+          "is_correct": true
+        },
+        {
+          "text": "Александровская колонна",
+          "is_correct": false
+        },
+        {
+          "text": "Памятник Сусанину",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что символизирует День народного единства?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Победу над врагом",
+          "is_correct": false
+        },
+        {
+          "text": "Единство народа",
+          "is_correct": false
+        },
+        {
+          "text": "Окончание Смуты",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "В каком году была освобождена Москва полностью?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1612",
+          "is_correct": true
+        },
+        {
+          "text": "1613",
+          "is_correct": false
+        },
+        {
+          "text": "1614",
+          "is_correct": false
+        },
+        {
+          "text": "1615",
+          "is_correct": false
+        }
+      ]
+    }
+  ],
+  "description": "4 ноября — проверь свои знания о событиях 1612 года и героях Смутного времени"
+}
