@@ -1,0 +1,166 @@
+mod embedded;
+mod game;
+mod server;
+mod storage;
+
+use game::AppSettings;
+
+use game::*;
+use std::sync::Arc;
+use std::time::{SystemTime, UNIX_EPOCH};
+
+struct AppStateWrapper(Arc<AppState>);
+
+// ─── Tauri Commands ───
+
+#[tauri::command]
+fn get_quizzes() -> Vec<Quiz> {
+    storage::load_quizzes()
+}
+
+#[tauri::command]
+fn create_quiz(title: String, description: String) -> Quiz {
+    let quiz = Quiz {
+        id: storage::generate_id(),
+        title,
+        description,
+        questions: Vec::new(),
+        created_at: format!("{}", SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_millis()),
+    };
+    storage::save_quiz(&quiz).ok();
+    quiz
+}
+
+#[tauri::command]
+fn save_quiz(quiz: Quiz) -> Result<(), String> {
+    storage::save_quiz(&quiz)
+}
+
+#[tauri::command]
+fn get_quiz(id: String) -> Option<Quiz> {
+    storage::get_quiz(&id)
+}
+
+#[tauri::command]
+fn delete_quiz(id: String) -> Result<(), String> {
+    storage::delete_quiz(&id)
+}
+
+#[tauri::command]
+async fn start_game(
+    quiz_id: String,
+    mode: String,
+    advance: String,
+    state: tauri::State<'_, AppStateWrapper>,
+) -> Result<GameSession, String> {
+    let quiz = storage::get_quiz(&quiz_id)
+        .ok_or_else(|| "Квиз не найден".to_string())?;
+
+    let game_mode = match mode.as_str() {
+        "test" => GameMode::Test,
+        "live" => GameMode::LiveQuiz,
+        _ => return Err("Неверный режим".to_string()),
+    };
+
+    let advance_mode = match advance.as_str() {
+        "auto" => AdvanceMode::Auto,
+        "manual" => AdvanceMode::Manual,
+        _ => AdvanceMode::Auto,
+    };
+
+    let pin = format!("{:06}", rand::random::<u32>() % 1000000);
+
+    let session = GameSession {
+        pin: pin.clone(),
+        quiz,
+        status: GameStatus::Lobby,
+        mode: game_mode,
+        advance: advance_mode,
+        current_question_index: 0,
+        players: Vec::new(),
+        answers: Vec::new(),
+        player_progress: std::collections::HashMap::new(),
+        question_start_time: 0,
+        server_port: 0,
+    };
+
+    state.0.sessions.write().await.insert(pin.clone(), session.clone());
+    state.0.ws_senders.write().await.insert(pin.clone(), Vec::new());
+    state.0.host_senders.write().await.insert(pin.clone(), Vec::new());
+
+    Ok(session)
+}
+
+#[tauri::command]
+async fn get_game_state(
+    pin: String,
+    state: tauri::State<'_, AppStateWrapper>,
+) -> Result<Option<GameSession>, String> {
+    Ok(state.0.sessions.read().await.get(&pin).cloned())
+}
+
+#[tauri::command]
+async fn get_server_info(
+    state: tauri::State<'_, AppStateWrapper>,
+) -> Result<ServerInfoResult, String> {
+    let ip = local_ip_address::local_ip()
+        .map_err(|e| format!("Не удалось определить IP: {}", e))?
+        .to_string();
+
+    let port = state.0.server_port.read().await.clone();
+    let local_url = format!("http://{}:{}/player", ip, port);
+
+    Ok(ServerInfoResult { ip, port, local_url })
+}
+
+#[derive(serde::Serialize)]
+pub struct ServerInfoResult {
+    pub ip: String,
+    pub port: u16,
+    pub local_url: String,
+}
+
+#[tauri::command]
+fn get_settings() -> AppSettings {
+    storage::load_settings()
+}
+
+#[tauri::command]
+fn save_settings(settings: AppSettings) -> Result<(), String> {
+    storage::save_settings(&settings)
+}
+
+// ─── App Entry ───
+
+pub fn run() {
+    let app_state = Arc::new(AppState::new());
+
+    let builder = tauri::Builder::default()
+        .plugin(tauri_plugin_opener::init())
+        .manage(AppStateWrapper(app_state.clone()))
+        .invoke_handler(tauri::generate_handler![
+            get_quizzes,
+            create_quiz,
+            save_quiz,
+            get_quiz,
+            delete_quiz,
+            start_game,
+            get_game_state,
+            get_server_info,
+            get_settings,
+            save_settings,
+        ]);
+
+    #[cfg(desktop)]
+    let builder = builder.setup(move |_app| {
+        let state_clone = app_state.clone();
+        tauri::async_runtime::spawn(async move {
+            server::start_server(state_clone, 9876).await;
+            // port is stored inside start_server now
+        });
+        Ok(())
+    });
+
+    builder.run(tauri::generate_context!())
+        .expect("error while running tauri application");
+}

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>ИльЯкласс</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0b0b12;color:#e8e8ed;min-height:100dvh;display:flex;align-items:center;justify-content:center;-webkit-font-smoothing:antialiased}
+.player-app{width:100%;max-width:400px;min-height:100dvh;padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.screen{display:none;width:100%}
+.screen.active{display:flex;flex-direction:column;align-items:center;gap:16px;animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+h2{font-size:22px;text-align:center;font-weight:700}
+.input-group{width:100%;display:flex;flex-direction:column;gap:6px}
+.input-group label{font-size:13px;color:#6b6b7b;font-weight:500}
+.input-group input{width:100%;padding:14px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:10px;color:#e8e8ed;font-size:18px;text-align:center;letter-spacing:2px;transition:border-color .2s}
+.input-group input:focus{outline:none;border-color:#7c5cfc!important}
+.btn{width:100%;padding:14px 24px;border:none;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.2px;font-family:inherit}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:#7c5cfc;color:#fff}
+.btn-primary:hover{background:#6a4de0}
+.btn-primary:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.error{color:#e74c3c;font-size:13px;text-align:center;background:rgba(231,76,60,.1);padding:8px 14px;border-radius:8px;width:100%;display:none}
+.error.show{display:block}
+.waiting-screen{gap:16px;padding-top:20px}
+.spinner{width:40px;height:40px;border:3px solid rgba(255,255,255,.06);border-top-color:#7c5cfc;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pulse{animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.answers-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;margin-top:8px}
+.answer-btn{padding:20px 14px;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;color:#fff;display:flex;flex-direction:column;align-items:center;gap:8px;transition:all .12s;min-height:90px;font-family:inherit}
+.answer-btn:active{transform:scale(.95)}
+.answer-btn:disabled{opacity:.35;cursor:not-allowed;transform:none!important}
+.answer-btn.correct{border:3px solid #2ecc71;opacity:1!important}
+.answer-btn.wrong{border:3px solid #e74c3c;opacity:1!important}
+.answer-btn .shape{font-size:26px}
+.answer-btn .text{font-size:13px;text-align:center;line-height:1.3}
+.q-text{font-size:20px;text-align:center;line-height:1.35;margin:4px 0;font-weight:700}
+.q-progress{font-size:13px;color:#6b6b7b;align-self:flex-start;font-weight:500}
+.timer-bar{width:100%;height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden}
+.timer-fill{height:100%;background:#7c5cfc;transition:width 1s linear;border-radius:3px}
+.result-screen{gap:20px;padding-top:30px}
+.result-icon{font-size:56px}
+.result-points{font-size:32px;font-weight:800;color:#2ecc71}
+.result-points.wrong{color:#e74c3c}
+.wait-hint{color:#6b6b7b;font-size:14px;text-align:center}
+.countdown-screen{gap:20px;padding-top:40px}
+.countdown-number{font-size:80px;font-weight:900;color:#7c5cfc;animation:countPulse .6s ease}
+@keyframes countPulse{0%{transform:scale(1.6);opacity:0}50%{opacity:1}to{transform:scale(1)}}
+.round-results-screen{gap:14px;padding-top:16px}
+.round-results-title{font-size:17px;font-weight:700;color:#2ecc71;text-align:center}
+.complete-screen{gap:20px;padding-top:30px}
+.complete-icon{font-size:64px}
+.complete-score{font-size:44px;font-weight:800;color:#7c5cfc}
+.final-item{display:flex;justify-content:space-between;padding:12px 16px;background:rgba(255,255,255,.04);border-radius:8px;width:100%;margin-bottom:4px;border:1px solid rgba(255,255,255,.06)}
+.final-item:hover{background:rgba(255,255,255,.06)}
+.final-item.me{border-color:#7c5cfc}
+.join-logo{font-size:44px;margin-bottom:4px}
+</style>
+</head>
+<body>
+<div class="player-app" id="app">
+
+<div id="joinScreen" class="screen active">
+<div class="join-logo">🦉</div>
+<h2>ИльЯкласс</h2>
+<p style="color:#6b6b7b;text-align:center;font-size:13px">Введи никнейм, чтобы присоединиться</p>
+<div class="input-group"><label>Твой никнейм</label><input type="text" id="nameInput" maxlength="20" placeholder="Ученик..." autocomplete="off"></div>
+<div id="joinError" class="error"></div>
+<button class="btn btn-primary" id="joinBtn">Присоединиться</button>
+</div>
+
+<div id="waitingScreen" class="screen waiting-screen">
+<div class="spinner"></div>
+<h2>Ожидание...</h2>
+<p class="wait-hint" id="waitingHint">Подключаемся к серверу...</p>
+<div id="lobbyInfo" style="display:none;text-align:center;gap:4px;flex-direction:column;width:100%">
+<p style="color:#6b6b7b;font-size:13px">В лобби</p>
+<p style="font-size:36px;font-weight:800;color:#7c5cfc" id="lobbyCount">0</p>
+<p id="lobbyPlayersList" style="color:#6b6b7b;font-size:12px;line-height:1.5;margin-top:4px"></p>
+</div>
+</div>
+
+<div id="countdownScreen" class="screen countdown-screen">
+<div class="countdown-number" id="countdownNumber">3</div>
+<h2>Приготовьтесь!</h2>
+</div>
+
+<div id="roundResultsScreen" class="screen round-results-screen">
+<div class="round-results-title" id="roundResultsTitle">⏳ Ждём ответы...</div>
+<div id="roundHistogram" style="width:100%"></div>
+</div>
+
+<div id="questionScreen" class="screen">
+<p class="q-progress" id="qProgress">Вопрос 1 / 5</p>
+<h2 class="q-text" id="qText"></h2>
+<div class="answers-grid" id="answersContainer"></div>
+</div>
+
+<div id="resultScreen" class="screen result-screen">
+<div class="result-icon" id="resultIcon">✅</div>
+<h2 id="resultTitle">Правильно!</h2>
+<div class="result-points" id="resultPoints">+10</div>
+<button class="btn btn-primary" id="nextBtn" style="display:none">Далее →</button>
+</div>
+
+<div id="completeScreen" class="screen complete-screen">
+<div class="complete-icon">🎉</div>
+<h2>Проверочная работа завершена!</h2>
+<p style="color:#6b6b7b;font-size:14px">Твой результат</p>
+<div class="complete-score" id="completeScore">0</div>
+<p class="wait-hint pulse">Ожидаем остальных...</p>
+</div>
+
+<div id="finalScreen" class="screen">
+<h2>🏆 Итоги</h2>
+<div id="finalLeaderboard" style="width:100%;margin-top:12px"></div>
+<p style="margin-top:12px;font-size:13px;color:#6b6b7b">Можно закрыть страницу</p>
+</div>
+
+</div>
+<script>
+let ws=null,playerId='',nickname='',currentPin='';
+const urlPin=(new URLSearchParams(window.location.search).get('pin')||'').trim();
+let connTimeout=null;
+
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));const el=document.getElementById(id);if(el)el.classList.add('active')}
+function showErr(msg){const e=document.getElementById('joinError');e.textContent=msg;e.classList.add('show')}
+function hideErr(){document.getElementById('joinError').classList.remove('show')}
+
+function joinGame(){
+const name=document.getElementById('nameInput').value.trim();
+hideErr();
+if(!name){showErr('Введи никнейм');return}
+if(!urlPin||urlPin.length!==6){showErr('Неверный PIN в ссылке');return}
+nickname=name;currentPin=urlPin;
+const host=window.location.host;
+if(!host){showErr('Ошибка адреса страницы');return}
+show('waitingScreen');
+document.getElementById('waitingHint').textContent='Подключаемся к серверу...';
+if(ws){try{ws.close()}catch(e){}}
+ws=new WebSocket('ws://'+host+'/ws');
+connTimeout=setTimeout(()=>{
+if(ws&&ws.readyState!==WebSocket.OPEN){
+ws.close();show('joinScreen');showErr('Сервер не отвечает. Проверьте подключение к Wi-Fi')
+}},8000);
+ws.onopen=()=>{if(connTimeout){clearTimeout(connTimeout);connTimeout=null}document.getElementById('waitingHint').textContent='Вход в лобби...';ws.send(JSON.stringify({type:'join',pin:urlPin,nickname:name}))};
+ws.onmessage=e=>{try{handle(JSON.parse(e.data))}catch(ex){console.error('WS msg error:',ex)}};
+ws.onerror=()=>{if(connTimeout){clearTimeout(connTimeout);connTimeout=null}show('joinScreen');showErr('Ошибка подключения к серверу')};
+ws.onclose=()=>{if(connTimeout){clearTimeout(connTimeout);connTimeout=null}if(!document.getElementById('joinScreen').classList.contains('active')){show('joinScreen');showErr('Соединение потеряно')}};
+}
+
+function handle(msg){
+switch(msg.type){
+case'lobby_joined':{playerId=msg.player_id;document.getElementById('waitingHint').textContent='Учитель скоро начнёт игру';const li=document.getElementById('lobbyInfo');li.style.display='flex';const cnt=document.getElementById('lobbyCount');const lst=document.getElementById('lobbyPlayersList');if(msg.players){cnt.textContent=msg.players.length;const others=msg.players.filter(p=>p.id!==playerId);lst.innerHTML=others.length?'В игре: '+others.map(p=>p.nickname).join(', '):'Вы первый!'};break}
+case'lobby_error':show('joinScreen');showErr(msg.error);try{ws.close()}catch(e){}break;
+case'game_starting':showCountdown(msg);break;
+case'question':showQuestion(msg);break;
+case'answer_result':showResult(msg);break;
+case'round_results':showRoundResults(msg);break;
+case'test_complete':showComplete(msg);break;
+case'final_results':showFinal(msg);break;
+}
+}
+
+let countdownTimer=null,timerInterval=null;
+
+function showCountdown(msg){
+let n=msg.countdown||3;
+const el=document.getElementById('countdownNumber');
+const animate=()=>{el.textContent=n;el.style.animation='none';void el.offsetWidth;el.style.animation='countPulse .6s ease'};
+animate();
+if(countdownTimer)clearInterval(countdownTimer);
+countdownTimer=setInterval(()=>{n--;if(n>0){animate()}else{clearInterval(countdownTimer);countdownTimer=null;show('questionScreen')}},1000);
+show('countdownScreen');
+}
+
+function showRoundResults(msg){
+show('roundResultsScreen');
+const title=document.getElementById('roundResultsTitle');
+const COLORS=['#FF4444','#4488FF','#FFBB33','#44CC44'],SHAPES=['△','◇','○','☆'];
+const cont=document.getElementById('roundHistogram');cont.innerHTML='';
+const total=(msg.histogram||[]).reduce((a,b)=>a+b,0);
+const max=Math.max(...(msg.histogram||[1]),1);
+title.textContent='✅ Результаты раунда — '+total+' ответов';
+if(msg.histogram){
+const barsDiv=document.createElement('div');barsDiv.style.cssText='width:100%;display:flex;flex-direction:column;gap:8px';
+msg.histogram.forEach((count,i)=>{
+const isCorrect=i===msg.correct_index;
+const pct=total>0?Math.round(count/total*100):0;
+const row=document.createElement('div');row.style.cssText='display:flex;align-items:center;gap:8px';
+const lbl=document.createElement('div');lbl.style.cssText='font-size:12px;color:#6b6b7b;min-width:70px';
+lbl.innerHTML=(isCorrect?'✅ ':'')+SHAPES[i]+' В.'+(i+1);
+const track=document.createElement('div');track.style.cssText='flex:1;height:12px;background:rgba(255,255,255,.04);border-radius:6px;overflow:hidden';
+const fill=document.createElement('div');fill.style.cssText='height:100%;border-radius:6px;transition:width .5s ease;min-width:4px';
+fill.style.width=(count/max*100)+'%';
+fill.style.background=isCorrect?'#2ecc71':(COLORS[i]||'#666');
+track.appendChild(fill);row.appendChild(lbl);row.appendChild(track);
+const stat=document.createElement('span');stat.style.cssText='font-size:13px;font-weight:700;color:'+(isCorrect?'#2ecc71':'#e8e8ed')+';min-width:50px;text-align:right';
+stat.textContent=count+' ('+pct+'%)';
+row.appendChild(stat);barsDiv.appendChild(row)});cont.appendChild(barsDiv)}
+if(msg.leaderboard&&msg.leaderboard.length){
+const div=document.createElement('div');div.style.cssText='margin-top:16px;width:100%';
+const h=document.createElement('h3');h.style.cssText='font-size:16px;font-weight:700;margin-bottom:10px';h.textContent='🏆 Таблица';div.appendChild(h);
+msg.leaderboard.forEach((p,idx)=>{
+const d=document.createElement('div');d.className='final-item'+(p.id===playerId?' me':'');
+d.innerHTML='<span>'+(idx<3?['🥇','🥈','🥉'][idx]:'#'+p.rank)+' '+p.nickname+'</span><span style="color:#2ecc71;font-weight:600">'+p.total_score+' б</span>';
+div.appendChild(d)});cont.appendChild(div)}
+}
+
+function showQuestion(msg){
+show('questionScreen');
+if(timerInterval)clearInterval(timerInterval);
+document.getElementById('qProgress').textContent='Вопрос '+(msg.index+1)+' / '+msg.total;
+document.getElementById('qText').textContent=msg.question.text;
+const c=['#FF4444','#4488FF','#FFBB33','#44CC44'],shapes=['△','◇','○','☆'];
+const cont=document.getElementById('answersContainer');cont.innerHTML='';
+msg.question.answers.forEach((a,i)=>{const b=document.createElement('button');b.className='answer-btn';b.style.backgroundColor=c[i];b.innerHTML='<span class="shape">'+shapes[i]+'</span><span class="text">'+a.text+'</span>';b.onclick=()=>submitAnswer(i);b.id='ans-'+i;cont.appendChild(b)});
+const sec=msg.question.time_seconds;
+if(sec&&sec>0){
+let remain=sec;
+let tb=document.getElementById('timerBar');
+if(!tb){tb=document.createElement('div');tb.className='timer-bar';tb.id='timerBar';tb.innerHTML='<div class="timer-fill" id="timerFill" style="width:100%"></div>';document.getElementById('questionScreen').insertBefore(tb,document.getElementById('qProgress').nextSibling)}
+document.getElementById('timerFill').style.width='100%';
+const update=()=>{remain=Math.max(0,remain-1);const f=document.getElementById('timerFill');if(f)f.style.width=(remain/sec*100)+'%';if(remain<=0)clearInterval(timerInterval)};
+timerInterval=setInterval(update,1000)
+}
+}
+
+function submitAnswer(i){
+document.querySelectorAll('.answer-btn').forEach(b=>b.disabled=true);
+if(ws&&ws.readyState===WebSocket.OPEN)ws.send(JSON.stringify({type:'submit_answer',pin:currentPin,answer_index:i}));
+else show('joinScreen'),showErr('Нет соединения с сервером')
+}
+
+function showResult(msg){
+show('resultScreen');
+if(msg.correct){document.getElementById('resultIcon').textContent='✅';document.getElementById('resultTitle').textContent='Правильно!';document.getElementById('resultPoints').className='result-points'}
+else{document.getElementById('resultIcon').textContent='❌';document.getElementById('resultTitle').textContent='Неправильно';document.getElementById('resultPoints').className='result-points wrong'}
+document.getElementById('resultPoints').textContent='+'+msg.points;
+const nb=document.getElementById('nextBtn');
+if(msg.show_next){nb.style.display='';nb.onclick=()=>{if(ws&&ws.readyState===WebSocket.OPEN)ws.send(JSON.stringify({type:'next_question',pin:currentPin}))}}
+else{nb.style.display='none'}
+}
+
+function showComplete(msg){show('completeScreen');document.getElementById('completeScore').textContent=msg.score+' баллов'}
+function showFinal(msg){
+show('finalScreen');
+const lb=msg.leaderboard||[];
+const c=document.getElementById('finalLeaderboard');c.innerHTML='';
+lb.forEach(p=>{const d=document.createElement('div');d.className='final-item'+(p.id===playerId?' me':'');d.innerHTML='<span>'+p.rank+'. '+p.nickname+'</span><span style="color:#2ecc71;font-weight:600">'+p.total_score+' б</span>';c.appendChild(d)})
+}
+
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&document.getElementById('joinScreen').classList.contains('active')&&!document.getElementById('joinBtn').disabled)joinGame()});
+document.getElementById('joinBtn').addEventListener('click',joinGame);
+document.getElementById('nameInput').focus();
+</script>
+</body>
+</html>

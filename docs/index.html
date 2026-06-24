@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ИльЯкласс — викторины и проверочные работы в классе</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0b0b12;color:#e8e8ed;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(124,92,252,.3)}
+
+/* ─── Nav ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 32px;background:rgba(11,11,18,.8);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);transition:transform .35s}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:700;color:#e8e8ed}
+.nav-logo span{font-size:20px}
+.nav-right{display:flex;align-items:center;gap:24px}
+.nav-right a{font-size:14px;color:#8a8a9a;transition:color .2s}
+.nav-right a:hover{color:#e8e8ed}
+
+/* ─── Hero ─── */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 32px 80px;background:#0b0b12;position:relative}
+.hero h1{font-size:clamp(42px,7vw,80px);font-weight:700;letter-spacing:-2px;line-height:1.08;color:#e8e8ed;max-width:800px}
+.hero h1 em{font-style:normal;color:#7c5cfc}
+.hero p{font-size:clamp(16px,2vw,20px);color:#6b6b7b;max-width:600px;margin-top:20px;line-height:1.5}
+.hero-btns{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap;justify-content:center}
+.hero-note{margin-top:60px;display:flex;gap:40px;flex-wrap:wrap;justify-content:center}
+.hero-note-item{display:flex;align-items:center;gap:8px;color:#6b6b7b;font-size:13px}
+
+/* ─── Buttons ─── */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;border:none;letter-spacing:0}
+.btn-primary{background:#7c5cfc;color:#fff}
+.btn-primary:hover{background:#6a4de0;transform:translateY(-1px)}
+.btn-secondary{background:rgba(255,255,255,.06);color:#e8e8ed;border:1px solid rgba(255,255,255,.08)}
+.btn-secondary:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15)}
+
+/* ─── Sections ─── */
+section{padding:120px 32px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{font-size:13px;font-weight:600;color:#7c5cfc;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
+.section-title{font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:16px}
+.section-desc{color:#6b6b7b;font-size:16px;max-width:560px;line-height:1.6}
+
+/* ─── Steps ─── */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;margin-top:48px}
+.step{padding:0}
+.step-num{font-size:48px;font-weight:700;color:rgba(124,92,252,.15);line-height:1;margin-bottom:12px}
+.step h3{font-size:17px;font-weight:600;margin-bottom:6px;color:#e8e8ed}
+.step p{color:#6b6b7b;font-size:14px;line-height:1.5}
+
+/* ─── Features ─── */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;margin-top:48px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden}
+.feature-card{padding:40px 32px;background:#0b0b12;transition:background .2s}
+.feature-card:hover{background:rgba(255,255,255,.02)}
+.feature-icon{font-size:28px;margin-bottom:14px}
+.feature-card h3{font-size:16px;font-weight:600;margin-bottom:6px}
+.feature-card p{color:#6b6b7b;font-size:14px;line-height:1.5}
+
+/* ─── FAQ ─── */
+.faq-list{max-width:700px;margin-top:40px;display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(255,255,255,.06)}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.06)}
+.faq-q{width:100%;padding:20px 0;background:none;border:none;color:#e8e8ed;font-size:15px;font-weight:500;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .2s}
+.faq-q:hover{color:#7c5cfc}
+.faq-q .arrow{font-size:10px;color:#6b6b7b;transition:transform .3s}
+.faq-item.open .faq-q .arrow{transform:rotate(180deg)}
+.faq-a{padding:0 0 20px;color:#6b6b7b;font-size:14px;line-height:1.7;display:none}
+.faq-item.open .faq-a{display:block}
+
+/* ─── CTA ─── */
+.cta{text-align:center;padding:100px 32px}
+.cta h2{font-size:clamp(28px,4vw,40px);font-weight:700;margin-bottom:12px}
+.cta p{color:#6b6b7b;margin-bottom:28px}
+
+/* ─── Footer ─── */
+footer{padding:48px 32px;border-top:1px solid rgba(255,255,255,.06);max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;color:#6b6b7b;font-size:13px}
+footer a{color:#8a8a9a;transition:color .2s}
+footer a:hover{color:#e8e8ed}
+.footer-links{display:flex;gap:20px}
+
+@media(max-width:768px){.nav-right a{display:none}.hero-note{gap:20px;flex-direction:column;align-items:center}footer{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-inner">
+<div class="nav-logo"><span>🦉</span> ИльЯкласс</div>
+<div class="nav-right">
+<a href="#how">Как работает</a>
+<a href="#features">Возможности</a>
+<a href="#faq">FAQ</a>
+<a href="#download" class="btn btn-primary" style="padding:8px 20px;font-size:13px">Скачать</a>
+</div>
+</div>
+</nav>
+
+<section class="hero">
+<h1>Проверочные работы и&nbsp;викторины <em>без&nbsp;установки</em> для учеников</h1>
+<p>Учитель запускает один .exe — класс подключается по QR-коду. Никаких регистраций, никаких приложений.</p>
+<div class="hero-btns">
+<a href="#how" class="btn btn-secondary">Как это работает</a>
+<a href="#download" class="btn btn-primary">Скачать beta</a>
+</div>
+<div class="hero-note">
+<span class="hero-note-item">📦 Один .exe</span>
+<span class="hero-note-item">🔗 QR-код для входа</span>
+<span class="hero-note-item">⚡ Мгновенный старт</span>
+<span class="hero-note-item">🔒 Локальная сеть</span>
+</div>
+</section>
+
+<section id="how">
+<div class="section-inner">
+<div class="section-label">Как работает</div>
+<h2 class="section-title">От запуска до первого ответа — меньше минуты</h2>
+<p class="section-desc">Всё, что нужно — компьютер учителя и телефон у каждого ученика.</p>
+<div class="steps">
+<div class="step"><div class="step-num">01</div><h3>Скачайте .exe</h3><p>Один файл. Ничего не нужно устанавливать. Просто запустите.</p></div>
+<div class="step"><div class="step-num">02</div><h3>Создайте квиз</h3><p>Встроенный редактор: добавляйте вопросы, ответы, настраивайте баллы.</p></div>
+<div class="step"><div class="step-num">03</div><h3>Запустите игру</h3><p>Выберите формат и покажите QR-код на проекторе или экране.</p></div>
+<div class="step"><div class="step-num">04</div><h3>Ученики в игре</h3><p>Навели камеру — ввели никнейм — отвечают. Всё в браузере.</p></div>
+</div>
+</div>
+</section>
+
+<section id="features">
+<div class="section-inner">
+<div class="section-label">Возможности</div>
+<h2 class="section-title">Всё для активной работы в классе</h2>
+<p class="section-desc">Два режима, живая статистика, таблица лидеров — и никаких регистраций.</p>
+<div class="features">
+<div class="feature-card"><div class="feature-icon">🎮</div><h3>Два формата</h3><p>Проверочная работа — каждый в своём темпе. Викторина — все одновременно на время.</p></div>
+<div class="feature-card"><div class="feature-icon">📱</div><h3>Без установки</h3><p>Ученики открывают страницу по QR — без приложений, регистраций и СМС.</p></div>
+<div class="feature-card"><div class="feature-icon">📊</div><h3>Живая статистика</h3><p>На экране учителя: кто ответил, сколько баллов, гистограмма ответов.</p></div>
+<div class="feature-card"><div class="feature-icon">🏆</div><h3>Таблица лидеров</h3><p>После каждого раунда и в конце — рейтинг с баллами. Соревновательный дух.</p></div>
+<div class="feature-card"><div class="feature-icon">⚡</div><h3>Мгновенный запуск</h3><p>Создали квиз — показали QR — класс отвечает. Без подготовки.</p></div>
+<div class="feature-card"><div class="feature-icon">🔒</div><h3>Локально и безопасно</h3><p>Всё работает в вашей сети. Никаких внешних серверов и интернета.</p></div>
+</div>
+</div>
+</section>
+
+<section id="faq">
+<div class="section-inner">
+<div class="section-label">FAQ</div>
+<h2 class="section-title">Ответы на вопросы</h2>
+<div class="faq-list">
+<div class="faq-item"><button class="faq-q">Нужен ли интернет? <span class="arrow">▼</span></button><div class="faq-a">Нет. Приложение создаёт локальный сервер в вашей Wi-Fi сети. Ученики подключаются к нему — интернет не требуется.</div></div>
+<div class="faq-item"><button class="faq-q">Что нужно ученикам? <span class="arrow">▼</span></button><div class="faq-a">Только телефон с камерой и браузером. Никаких приложений, регистраций, аккаунтов.</div></div>
+<div class="faq-item"><button class="faq-q">Сколько учеников может подключиться? <span class="arrow">▼</span></button><div class="faq-a">Ограничений нет. Зависит только от мощности вашего Wi-Fi и компьютера.</div></div>
+<div class="faq-item"><button class="faq-q">На чём работает приложение? <span class="arrow">▼</span></button><div class="faq-a">Rust + Tauri v2. Интерфейс — React. Сервер — встроенный axum. Всё в одном .exe.</div></div>
+<div class="faq-item"><button class="faq-q">А если брандмауэр? <span class="arrow">▼</span></button><div class="faq-a">При первом запуске Windows спросит разрешение — нажмите «Разрешить». Для локальной сети это безопасно.</div></div>
+</div>
+</div>
+</section>
+
+<section class="cta" id="download">
+<h2>Попробуйте сами</h2>
+<p>Скачайте beta — и проведите свою первую викторину за пару минут</p>
+<a href="#" class="btn btn-primary" onclick="return false" style="opacity:.5;cursor:not-allowed;pointer-events:none">⬇ Скачать beta</a>
+<br><small style="display:inline-block;margin-top:12px;color:#6b6b7b;font-size:13px">Скоро будет доступна</small>
+</section>
+
+<footer>
+<div>🦉 ИльЯкласс — викторины для класса</div>
+<div class="footer-links">
+<a href="https://github.com/IlyaSigma111/ilyaklass">GitHub</a>
+<a href="https://github.com/anomalyco/opencode/issues">Обратная связь</a>
+</div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(b=>b.addEventListener('click',function(){this.parentElement.classList.toggle('open')}))
+let lastScroll=0;window.addEventListener('scroll',()=>{const y=window.scrollY;document.querySelector('nav').style.transform=y>lastScroll&&y>60?'translateY(-100%)':'translateY(0)';lastScroll=y},{passive:true})
+</script>
+</body>
+</html>
