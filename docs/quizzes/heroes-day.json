@@ -1,1 +1,534 @@
-{"title":"День Героев Отечества","questions":[{"question":"В каком году был учреждён День Героев Отечества?","answers":["2005","2007","2010","2012"],"correct":1,"points":10},{"question":"Кто был первым кавалером ордена Святого Георгия?","answers":["Суворов","Кутузов","Екатерина II","Пётр I"],"correct":2,"points":10},{"question":"Сколько степеней имеет орден Святого Георгия?","answers":["3","4","5","6"],"correct":1,"points":10},{"question":"Какой герой Советского Союза стал дважды героем?","answers":["Жуков","Чуйков","Рокоссовский","Конев"],"correct":0,"points":10},{"question":"Какое звание присваивают героям РФ?","answers":["Герой РФ","Герой Советского Союза","Герой труда","Герой войны"],"correct":0,"points":10},{"question":"Кто был героем Отечественной войны 1812 года?","answers":["Кутузов","Багратион","Барклай-де-Толли","Все перечисленные"],"correct":3,"points":10},{"question":"Какой подвиг совершил Александр Матросов?","answers":["Закрыл амбразуру","Подорвал танк","Сбил самолёт","Переправился через реку"],"correct":0,"points":10},{"question":"Сколько Героев Советского Союза в годы войны?","answers":["~10000","~12000","~15000","~20000"],"correct":1,"points":10},{"question":"Какое звание получил Юрий Гагарин?","answers":["Герой Советского Союза","Герой РФ","Герой труда","Герой космоса"],"correct":0,"points":10},{"question":"Кто был первым героем РФ?","answers":["Покрышкин","Гагарин","Ельцин","Путин"],"correct":2,"points":10},{"question":"Какой подвиг совершил Николай Гастелло?","answers":["Направил горящий самолёт на врага","Подорвал мост","Сбил 10 самолётов","Переправил груз"],"correct":0,"points":10},{"question":"Как называется высшее звание в РФ?","answers":["Герой РФ","Герой труда","Заслуженный деятель","Народный герой"],"correct":0,"points":10},{"question":"Кто был героем-партизаном в годы войны?","answers":["Ковпак","Фёдоров","Медведев","Все перечисленные"],"correct":3,"points":10},{"question":"Какой подвиг совершила Зоя Космодемьянская?","answers":["Подожгла дом с немцами","Сбила самолёт","Переправила груз","Собрала разведку"],"correct":0,"points":10},{"question":"Как звали лётчика, сбившего 59 самолётов?","answers":["Покрышкин","Гастелло","Кожедуб","Матросов"],"correct":2,"points":10},{"question":"Какой подвиг совершил Иван Сусанин?","answers":["Завёл врагов в болото","Собрал ополчение","Написал воззвание","Построил крепость"],"correct":0,"points":10},{"question":"Как называется памятник героям в Москве?","answers":["Вечный огонь","Могила неизвестного солдата","Памятник героям","Монумент победы"],"correct":1,"points":10},{"question":"Сколько Героев РФ среди космонавтов?","answers":["~10","~15","~20","~25"],"correct":1,"points":10},{"question":"Какой подвиг совершил Анатолий Соловьёв?","answers":["Совершил выход в космос","Сбил самолёт","Подорвал танк","Закрыл амбразуру"],"correct":0,"points":10},{"question":"Как называется орден для героев труда?","answers":["Герой труда РФ","Заслуженный деятель","Народный деятель","Герой профессии"],"correct":0,"points":10},{"question":"Кто из героев стал маршалом?","answers":["Жуков","Рокоссовский","Конев","Все перечисленные"],"correct":3,"points":10},{"question":"Какой праздник отмечают 9 декабря?","answers":["День Героев Отечества","День Конституции","День победы","День независимости"],"correct":0,"points":10},{"question":"Сколько героев РФ получили звание посмертно?","answers":["~500","~1000","~1500","~2000"],"correct":0,"points":10}]}
+{
+  "title": "День Героев Отечества",
+  "questions": [
+    {
+      "text": "В каком году был учреждён День Героев Отечества?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "2005",
+          "is_correct": false
+        },
+        {
+          "text": "2007",
+          "is_correct": true
+        },
+        {
+          "text": "2010",
+          "is_correct": false
+        },
+        {
+          "text": "2012",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто был первым кавалером ордена Святого Георгия?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Суворов",
+          "is_correct": false
+        },
+        {
+          "text": "Кутузов",
+          "is_correct": false
+        },
+        {
+          "text": "Екатерина II",
+          "is_correct": true
+        },
+        {
+          "text": "Пётр I",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько степеней имеет орден Святого Георгия?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "3",
+          "is_correct": false
+        },
+        {
+          "text": "4",
+          "is_correct": true
+        },
+        {
+          "text": "5",
+          "is_correct": false
+        },
+        {
+          "text": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой герой Советского Союза стал дважды героем?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Жуков",
+          "is_correct": true
+        },
+        {
+          "text": "Чуйков",
+          "is_correct": false
+        },
+        {
+          "text": "Рокоссовский",
+          "is_correct": false
+        },
+        {
+          "text": "Конев",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какое звание присваивают героям РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Герой РФ",
+          "is_correct": true
+        },
+        {
+          "text": "Герой Советского Союза",
+          "is_correct": false
+        },
+        {
+          "text": "Герой труда",
+          "is_correct": false
+        },
+        {
+          "text": "Герой войны",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто был героем Отечественной войны 1812 года?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Кутузов",
+          "is_correct": false
+        },
+        {
+          "text": "Багратион",
+          "is_correct": false
+        },
+        {
+          "text": "Барклай-де-Толли",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Какой подвиг совершил Александр Матросов?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Закрыл амбразуру",
+          "is_correct": true
+        },
+        {
+          "text": "Подорвал танк",
+          "is_correct": false
+        },
+        {
+          "text": "Сбил самолёт",
+          "is_correct": false
+        },
+        {
+          "text": "Переправился через реку",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько Героев Советского Союза в годы войны?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "~10000",
+          "is_correct": false
+        },
+        {
+          "text": "~12000",
+          "is_correct": true
+        },
+        {
+          "text": "~15000",
+          "is_correct": false
+        },
+        {
+          "text": "~20000",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какое звание получил Юрий Гагарин?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Герой Советского Союза",
+          "is_correct": true
+        },
+        {
+          "text": "Герой РФ",
+          "is_correct": false
+        },
+        {
+          "text": "Герой труда",
+          "is_correct": false
+        },
+        {
+          "text": "Герой космоса",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто был первым героем РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Покрышкин",
+          "is_correct": false
+        },
+        {
+          "text": "Гагарин",
+          "is_correct": false
+        },
+        {
+          "text": "Ельцин",
+          "is_correct": true
+        },
+        {
+          "text": "Путин",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой подвиг совершил Николай Гастелло?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Направил горящий самолёт на врага",
+          "is_correct": true
+        },
+        {
+          "text": "Подорвал мост",
+          "is_correct": false
+        },
+        {
+          "text": "Сбил 10 самолётов",
+          "is_correct": false
+        },
+        {
+          "text": "Переправил груз",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется высшее звание в РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Герой РФ",
+          "is_correct": true
+        },
+        {
+          "text": "Герой труда",
+          "is_correct": false
+        },
+        {
+          "text": "Заслуженный деятель",
+          "is_correct": false
+        },
+        {
+          "text": "Народный герой",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто был героем-партизаном в годы войны?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Ковпак",
+          "is_correct": false
+        },
+        {
+          "text": "Фёдоров",
+          "is_correct": false
+        },
+        {
+          "text": "Медведев",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Какой подвиг совершила Зоя Космодемьянская?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Подожгла дом с немцами",
+          "is_correct": true
+        },
+        {
+          "text": "Сбила самолёт",
+          "is_correct": false
+        },
+        {
+          "text": "Переправила груз",
+          "is_correct": false
+        },
+        {
+          "text": "Собрала разведку",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали лётчика, сбившего 59 самолётов?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Покрышкин",
+          "is_correct": false
+        },
+        {
+          "text": "Гастелло",
+          "is_correct": false
+        },
+        {
+          "text": "Кожедуб",
+          "is_correct": true
+        },
+        {
+          "text": "Матросов",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой подвиг совершил Иван Сусанин?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Завёл врагов в болото",
+          "is_correct": true
+        },
+        {
+          "text": "Собрал ополчение",
+          "is_correct": false
+        },
+        {
+          "text": "Написал воззвание",
+          "is_correct": false
+        },
+        {
+          "text": "Построил крепость",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется памятник героям в Москве?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Вечный огонь",
+          "is_correct": false
+        },
+        {
+          "text": "Могила неизвестного солдата",
+          "is_correct": true
+        },
+        {
+          "text": "Памятник героям",
+          "is_correct": false
+        },
+        {
+          "text": "Монумент победы",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько Героев РФ среди космонавтов?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "~10",
+          "is_correct": false
+        },
+        {
+          "text": "~15",
+          "is_correct": true
+        },
+        {
+          "text": "~20",
+          "is_correct": false
+        },
+        {
+          "text": "~25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой подвиг совершил Анатолий Соловьёв?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Совершил выход в космос",
+          "is_correct": true
+        },
+        {
+          "text": "Сбил самолёт",
+          "is_correct": false
+        },
+        {
+          "text": "Подорвал танк",
+          "is_correct": false
+        },
+        {
+          "text": "Закрыл амбразуру",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется орден для героев труда?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Герой труда РФ",
+          "is_correct": true
+        },
+        {
+          "text": "Заслуженный деятель",
+          "is_correct": false
+        },
+        {
+          "text": "Народный деятель",
+          "is_correct": false
+        },
+        {
+          "text": "Герой профессии",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто из героев стал маршалом?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Жуков",
+          "is_correct": false
+        },
+        {
+          "text": "Рокоссовский",
+          "is_correct": false
+        },
+        {
+          "text": "Конев",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Какой праздник отмечают 9 декабря?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "День Героев Отечества",
+          "is_correct": true
+        },
+        {
+          "text": "День Конституции",
+          "is_correct": false
+        },
+        {
+          "text": "День победы",
+          "is_correct": false
+        },
+        {
+          "text": "День независимости",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько героев РФ получили звание посмертно?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "~500",
+          "is_correct": true
+        },
+        {
+          "text": "~1000",
+          "is_correct": false
+        },
+        {
+          "text": "~1500",
+          "is_correct": false
+        },
+        {
+          "text": "~2000",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

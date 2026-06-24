@@ -1,1 +1,626 @@
-{"title":"День рождения Деда Мороза","questions":[{"question":"В каком году была официально установлена резиденция Деда Мороза в Великом Устюге?","answers":["1998","1999","2000","2001"],"correct":0,"points":10},{"question":"Сколько лет Деду Морозу?","answers":["~1000","~1500","~2000","~2500"],"correct":2,"points":10},{"question":"Как звали Деда Мороза в древнеславянской мифологии?","answers":["Морозко","Мороз Иванович","Коляда","Зимник"],"correct":0,"points":10},{"question":"Какой цвет у шубы Деда Мороза?","answers":["Красный","Синий","Зелёный","Белый"],"correct":1,"points":10},{"question":"Какие сапоги носит Дед Мороз?","answers":["Валенки","Сапоги","Лапти","Унты"],"correct":0,"points":10},{"question":"Какой посох у Деда Мороза?","answers":["Деревянный","Серебряный","Золотой","Ледяной"],"correct":0,"points":10},{"question":"Сколько оленей в упряжке Деда Мороза?","answers":["3","4","5","6"],"correct":1,"points":10},{"question":"Как звали первого Деда Мороза в России?","answers":["Морозко","Коляда","Водяной","Леший"],"correct":0,"points":10},{"question":"Где находится почта Деда Мороза?","answers":["Москва","Великий Устюг","Кострома","Ярославль"],"correct":1,"points":10},{"question":"Сколько писем получает Дед Мороз за год?","answers":["~100 тыс.","~200 тыс.","~500 тыс.","~1 млн"],"correct":1,"points":10},{"question":"Как называется костюм Деда Мороза?","answers":["Шуба","Кафтан","Тулуп","Полушубок"],"correct":1,"points":10},{"question":"Какой головной убор у Деда Мороза?","answers":["Шапка","Колпак","Тюбетейка","Ушанка"],"correct":0,"points":10},{"question":"Сколько резиденций у Деда Мороза в России?","answers":["1","2","3","4"],"correct":1,"points":10},{"question":"Как звали помощника Деда Мороза?","answers":["Снегурочка","Снежная королева","Зимушка","Метелица"],"correct":0,"points":10},{"question":"Сколько лет Снегурочке?","answers":["~100","~200","~300","~400"],"correct":0,"points":10},{"question":"Как звали деда мороза в финской традиции?","answers":["Йоулупукки","Санта-Клаус","Пэр Ноель","Святой Николай"],"correct":0,"points":10},{"question":"Сколько стран отмечают День рождения Деда Мороза?","answers":["~10","~20","~30","~40"],"correct":1,"points":10},{"question":"Какой символ у Деда Мороза?","answers":["Снег","Ёлка","Посох","Все перечисленные"],"correct":3,"points":10},{"question":"Как звали писателя, который придумал Снегурочку?","answers":["Островский","Даль","Толстой","Пушкин"],"correct":0,"points":10},{"question":"Сколько сказок о Деде Морозе существует?","answers":["~10","~20","~30","~40"],"correct":2,"points":10},{"question":"Какой инструмент у Деда Мороза?","answers":["Колокольчик","Посох","Рожок","Бубен"],"correct":1,"points":10},{"question":"Какой цвет у бороды Деда Мороза?","answers":["Белый","Серый","Седой","Белоснежный"],"correct":3,"points":10},{"question":"Сколько месяцев в году работает Дед Мороз?","answers":["6","9","12","3"],"correct":2,"points":10},{"question":"Как называется дом Деда Мороза?","answers":["Терем","Дворец","Резиденция","Все перечисленные"],"correct":3,"points":10},{"question":"Сколько друзей у Деда Мороза?","answers":["~10","~20","~30","~40"],"correct":2,"points":10},{"question":"Какой праздник отмечают 25 декабря?","answers":["День рождения Деда Мороза","Новый год","Рождество","Коляда"],"correct":0,"points":10},{"question":"Сколько лет исполняется Деду Морозу в 2026 году?","answers":["~2020","~2025","~2026","~2030"],"correct":2,"points":10}]}
+{
+  "title": "День рождения Деда Мороза",
+  "questions": [
+    {
+      "text": "В каком году была официально установлена резиденция Деда Мороза в Великом Устюге?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1998",
+          "is_correct": true
+        },
+        {
+          "text": "1999",
+          "is_correct": false
+        },
+        {
+          "text": "2000",
+          "is_correct": false
+        },
+        {
+          "text": "2001",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько лет Деду Морозу?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "~1000",
+          "is_correct": false
+        },
+        {
+          "text": "~1500",
+          "is_correct": false
+        },
+        {
+          "text": "~2000",
+          "is_correct": true
+        },
+        {
+          "text": "~2500",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали Деда Мороза в древнеславянской мифологии?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Морозко",
+          "is_correct": true
+        },
+        {
+          "text": "Мороз Иванович",
+          "is_correct": false
+        },
+        {
+          "text": "Коляда",
+          "is_correct": false
+        },
+        {
+          "text": "Зимник",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой цвет у шубы Деда Мороза?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Красный",
+          "is_correct": false
+        },
+        {
+          "text": "Синий",
+          "is_correct": true
+        },
+        {
+          "text": "Зелёный",
+          "is_correct": false
+        },
+        {
+          "text": "Белый",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какие сапоги носит Дед Мороз?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Валенки",
+          "is_correct": true
+        },
+        {
+          "text": "Сапоги",
+          "is_correct": false
+        },
+        {
+          "text": "Лапти",
+          "is_correct": false
+        },
+        {
+          "text": "Унты",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой посох у Деда Мороза?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Деревянный",
+          "is_correct": true
+        },
+        {
+          "text": "Серебряный",
+          "is_correct": false
+        },
+        {
+          "text": "Золотой",
+          "is_correct": false
+        },
+        {
+          "text": "Ледяной",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько оленей в упряжке Деда Мороза?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "3",
+          "is_correct": false
+        },
+        {
+          "text": "4",
+          "is_correct": true
+        },
+        {
+          "text": "5",
+          "is_correct": false
+        },
+        {
+          "text": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали первого Деда Мороза в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Морозко",
+          "is_correct": true
+        },
+        {
+          "text": "Коляда",
+          "is_correct": false
+        },
+        {
+          "text": "Водяной",
+          "is_correct": false
+        },
+        {
+          "text": "Леший",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Где находится почта Деда Мороза?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Москва",
+          "is_correct": false
+        },
+        {
+          "text": "Великий Устюг",
+          "is_correct": true
+        },
+        {
+          "text": "Кострома",
+          "is_correct": false
+        },
+        {
+          "text": "Ярославль",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько писем получает Дед Мороз за год?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "~100 тыс.",
+          "is_correct": false
+        },
+        {
+          "text": "~200 тыс.",
+          "is_correct": true
+        },
+        {
+          "text": "~500 тыс.",
+          "is_correct": false
+        },
+        {
+          "text": "~1 млн",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется костюм Деда Мороза?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Шуба",
+          "is_correct": false
+        },
+        {
+          "text": "Кафтан",
+          "is_correct": true
+        },
+        {
+          "text": "Тулуп",
+          "is_correct": false
+        },
+        {
+          "text": "Полушубок",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой головной убор у Деда Мороза?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Шапка",
+          "is_correct": true
+        },
+        {
+          "text": "Колпак",
+          "is_correct": false
+        },
+        {
+          "text": "Тюбетейка",
+          "is_correct": false
+        },
+        {
+          "text": "Ушанка",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько резиденций у Деда Мороза в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1",
+          "is_correct": false
+        },
+        {
+          "text": "2",
+          "is_correct": true
+        },
+        {
+          "text": "3",
+          "is_correct": false
+        },
+        {
+          "text": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали помощника Деда Мороза?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Снегурочка",
+          "is_correct": true
+        },
+        {
+          "text": "Снежная королева",
+          "is_correct": false
+        },
+        {
+          "text": "Зимушка",
+          "is_correct": false
+        },
+        {
+          "text": "Метелица",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько лет Снегурочке?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "~100",
+          "is_correct": true
+        },
+        {
+          "text": "~200",
+          "is_correct": false
+        },
+        {
+          "text": "~300",
+          "is_correct": false
+        },
+        {
+          "text": "~400",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали деда мороза в финской традиции?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Йоулупукки",
+          "is_correct": true
+        },
+        {
+          "text": "Санта-Клаус",
+          "is_correct": false
+        },
+        {
+          "text": "Пэр Ноель",
+          "is_correct": false
+        },
+        {
+          "text": "Святой Николай",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько стран отмечают День рождения Деда Мороза?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "~10",
+          "is_correct": false
+        },
+        {
+          "text": "~20",
+          "is_correct": true
+        },
+        {
+          "text": "~30",
+          "is_correct": false
+        },
+        {
+          "text": "~40",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой символ у Деда Мороза?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Снег",
+          "is_correct": false
+        },
+        {
+          "text": "Ёлка",
+          "is_correct": false
+        },
+        {
+          "text": "Посох",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Как звали писателя, который придумал Снегурочку?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Островский",
+          "is_correct": true
+        },
+        {
+          "text": "Даль",
+          "is_correct": false
+        },
+        {
+          "text": "Толстой",
+          "is_correct": false
+        },
+        {
+          "text": "Пушкин",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько сказок о Деде Морозе существует?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "~10",
+          "is_correct": false
+        },
+        {
+          "text": "~20",
+          "is_correct": false
+        },
+        {
+          "text": "~30",
+          "is_correct": true
+        },
+        {
+          "text": "~40",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой инструмент у Деда Мороза?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Колокольчик",
+          "is_correct": false
+        },
+        {
+          "text": "Посох",
+          "is_correct": true
+        },
+        {
+          "text": "Рожок",
+          "is_correct": false
+        },
+        {
+          "text": "Бубен",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой цвет у бороды Деда Мороза?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Белый",
+          "is_correct": false
+        },
+        {
+          "text": "Серый",
+          "is_correct": false
+        },
+        {
+          "text": "Седой",
+          "is_correct": false
+        },
+        {
+          "text": "Белоснежный",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Сколько месяцев в году работает Дед Мороз?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "6",
+          "is_correct": false
+        },
+        {
+          "text": "9",
+          "is_correct": false
+        },
+        {
+          "text": "12",
+          "is_correct": true
+        },
+        {
+          "text": "3",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется дом Деда Мороза?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Терем",
+          "is_correct": false
+        },
+        {
+          "text": "Дворец",
+          "is_correct": false
+        },
+        {
+          "text": "Резиденция",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Сколько друзей у Деда Мороза?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "~10",
+          "is_correct": false
+        },
+        {
+          "text": "~20",
+          "is_correct": false
+        },
+        {
+          "text": "~30",
+          "is_correct": true
+        },
+        {
+          "text": "~40",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой праздник отмечают 25 декабря?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "День рождения Деда Мороза",
+          "is_correct": true
+        },
+        {
+          "text": "Новый год",
+          "is_correct": false
+        },
+        {
+          "text": "Рождество",
+          "is_correct": false
+        },
+        {
+          "text": "Коляда",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько лет исполняется Деду Морозу в 2026 году?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "~2020",
+          "is_correct": false
+        },
+        {
+          "text": "~2025",
+          "is_correct": false
+        },
+        {
+          "text": "~2026",
+          "is_correct": true
+        },
+        {
+          "text": "~2030",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

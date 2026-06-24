@@ -1,1 +1,580 @@
-{"title":"День учителя","questions":[{"question":"В каком году День учителя стал всемирным праздником?","answers":["1985","1990","1994","2000"],"correct":2,"points":10},{"question":"Кем был первый учитель в Древней Греции?","answers":["Раб","Свободный гражданин","Жрец","Философ"],"correct":0,"points":10},{"question":"Как называлась первая школа в Древнем Египте?","answers":["Дом жизни","Дом мудрости","Дом знаний","Дом письма"],"correct":0,"points":10},{"question":"Какой великий педагог создал свою систему обучения?","answers":["Коменский","Песталоцци","Дистервег","Ушинский"],"correct":0,"points":10},{"question":"Кто считается отцом русской педагогики?","answers":["Ломоносов","Ушинский","Толстой","Пирогов"],"correct":1,"points":10},{"question":"Как называлась книга Ушинского для начального обучения?","answers":["Азбука","Родное слово","Детский мир","Первый учебник"],"correct":1,"points":10},{"question":"Сколько лет учился в школе в Древней Руси?","answers":["2 года","3 года","5 лет","7 лет"],"correct":2,"points":10},{"question":"Как называлась школа в средневековой Европе?","answers":["Университет","Гимназия","Кафедральная школа","Академия"],"correct":2,"points":10},{"question":"Какая страна ввела первый закон об образовании?","answers":["Англия","Франция","Германия","Шотландия"],"correct":3,"points":10},{"question":"Как называется система образования в России после 9 класса?","answers":["Среднее общее","Среднее профессиональное","Высшее","Начальное"],"correct":1,"points":10},{"question":"Какой документ выдают после 9 класса?","answers":["Аттестат","Диплом","Свидетельство","Сертификат"],"correct":0,"points":10},{"question":"Какой предмет называется алгебра?","answers":["Раздел математики","Язык","Наука о природе","История"],"correct":0,"points":10},{"question":"Как звали учителя Александра Македонского?","answers":["Платон","Аристотель","Сократ","Диоген"],"correct":1,"points":10},{"question":"Какой предмет не изучали в древнерусской школе?","answers":["Грамматика","Риторика","Физика","Диалектика"],"correct":2,"points":10},{"question":"В каком веке появились первые университеты в Европе?","answers":["XI","XII","XIII","XIV"],"correct":1,"points":10},{"question":"Как назывался первый университет в Европе?","answers":["Болонский","Парижский","Оксфордский","Кембриджский"],"correct":0,"points":10},{"question":"Кто ввёл классно-урочную систему?","answers":["Коменский","Песталоцци","Ушинский","Локк"],"correct":0,"points":10},{"question":"Сколько длится урок в российской школе?","answers":["35 минут","40 минут","45 минут","50 минут"],"correct":2,"points":10},{"question":"Как называется перерыв между уроками?","answers":["Отдых","Перемена","Стоп-тайм","Брейк"],"correct":1,"points":10},{"question":"Как называют учителя в английской школе?","answers":["Teacher","Professor","Tutor","Mentor"],"correct":0,"points":10},{"question":"Какой праздник отмечают учителя в России?","answers":["День учителя","День педагога","День школы","День знаний"],"correct":0,"points":10},{"question":"Какая профессия самая древняя?","answers":["Врач","Учитель","Строитель","Кузнец"],"correct":1,"points":10},{"question":"Что такое педагогика в переводе с греческого?","answers":["Воспитание","Учение","Детовождение","Наставничество"],"correct":2,"points":10},{"question":"Как называется система оценивания в школе?","answers":["Бальная","Оценочная","Балльная","Сортовая"],"correct":2,"points":10},{"question":"Какой документ подтверждает профессиональную пригодность учителя?","answers":["Диплом","Сертификат","Аттестат","Лицензия"],"correct":0,"points":10}]}
+{
+  "title": "День учителя",
+  "questions": [
+    {
+      "text": "В каком году День учителя стал всемирным праздником?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1985",
+          "is_correct": false
+        },
+        {
+          "text": "1990",
+          "is_correct": false
+        },
+        {
+          "text": "1994",
+          "is_correct": true
+        },
+        {
+          "text": "2000",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кем был первый учитель в Древней Греции?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Раб",
+          "is_correct": true
+        },
+        {
+          "text": "Свободный гражданин",
+          "is_correct": false
+        },
+        {
+          "text": "Жрец",
+          "is_correct": false
+        },
+        {
+          "text": "Философ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называлась первая школа в Древнем Египте?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Дом жизни",
+          "is_correct": true
+        },
+        {
+          "text": "Дом мудрости",
+          "is_correct": false
+        },
+        {
+          "text": "Дом знаний",
+          "is_correct": false
+        },
+        {
+          "text": "Дом письма",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой великий педагог создал свою систему обучения?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Коменский",
+          "is_correct": true
+        },
+        {
+          "text": "Песталоцци",
+          "is_correct": false
+        },
+        {
+          "text": "Дистервег",
+          "is_correct": false
+        },
+        {
+          "text": "Ушинский",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто считается отцом русской педагогики?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Ломоносов",
+          "is_correct": false
+        },
+        {
+          "text": "Ушинский",
+          "is_correct": true
+        },
+        {
+          "text": "Толстой",
+          "is_correct": false
+        },
+        {
+          "text": "Пирогов",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называлась книга Ушинского для начального обучения?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Азбука",
+          "is_correct": false
+        },
+        {
+          "text": "Родное слово",
+          "is_correct": true
+        },
+        {
+          "text": "Детский мир",
+          "is_correct": false
+        },
+        {
+          "text": "Первый учебник",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько лет учился в школе в Древней Руси?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "2 года",
+          "is_correct": false
+        },
+        {
+          "text": "3 года",
+          "is_correct": false
+        },
+        {
+          "text": "5 лет",
+          "is_correct": true
+        },
+        {
+          "text": "7 лет",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называлась школа в средневековой Европе?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Университет",
+          "is_correct": false
+        },
+        {
+          "text": "Гимназия",
+          "is_correct": false
+        },
+        {
+          "text": "Кафедральная школа",
+          "is_correct": true
+        },
+        {
+          "text": "Академия",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какая страна ввела первый закон об образовании?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Англия",
+          "is_correct": false
+        },
+        {
+          "text": "Франция",
+          "is_correct": false
+        },
+        {
+          "text": "Германия",
+          "is_correct": false
+        },
+        {
+          "text": "Шотландия",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Как называется система образования в России после 9 класса?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Среднее общее",
+          "is_correct": false
+        },
+        {
+          "text": "Среднее профессиональное",
+          "is_correct": true
+        },
+        {
+          "text": "Высшее",
+          "is_correct": false
+        },
+        {
+          "text": "Начальное",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой документ выдают после 9 класса?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Аттестат",
+          "is_correct": true
+        },
+        {
+          "text": "Диплом",
+          "is_correct": false
+        },
+        {
+          "text": "Свидетельство",
+          "is_correct": false
+        },
+        {
+          "text": "Сертификат",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой предмет называется алгебра?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Раздел математики",
+          "is_correct": true
+        },
+        {
+          "text": "Язык",
+          "is_correct": false
+        },
+        {
+          "text": "Наука о природе",
+          "is_correct": false
+        },
+        {
+          "text": "История",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали учителя Александра Македонского?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Платон",
+          "is_correct": false
+        },
+        {
+          "text": "Аристотель",
+          "is_correct": true
+        },
+        {
+          "text": "Сократ",
+          "is_correct": false
+        },
+        {
+          "text": "Диоген",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой предмет не изучали в древнерусской школе?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Грамматика",
+          "is_correct": false
+        },
+        {
+          "text": "Риторика",
+          "is_correct": false
+        },
+        {
+          "text": "Физика",
+          "is_correct": true
+        },
+        {
+          "text": "Диалектика",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком веке появились первые университеты в Европе?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "XI",
+          "is_correct": false
+        },
+        {
+          "text": "XII",
+          "is_correct": true
+        },
+        {
+          "text": "XIII",
+          "is_correct": false
+        },
+        {
+          "text": "XIV",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как назывался первый университет в Европе?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Болонский",
+          "is_correct": true
+        },
+        {
+          "text": "Парижский",
+          "is_correct": false
+        },
+        {
+          "text": "Оксфордский",
+          "is_correct": false
+        },
+        {
+          "text": "Кембриджский",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто ввёл классно-урочную систему?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Коменский",
+          "is_correct": true
+        },
+        {
+          "text": "Песталоцци",
+          "is_correct": false
+        },
+        {
+          "text": "Ушинский",
+          "is_correct": false
+        },
+        {
+          "text": "Локк",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько длится урок в российской школе?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "35 минут",
+          "is_correct": false
+        },
+        {
+          "text": "40 минут",
+          "is_correct": false
+        },
+        {
+          "text": "45 минут",
+          "is_correct": true
+        },
+        {
+          "text": "50 минут",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется перерыв между уроками?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Отдых",
+          "is_correct": false
+        },
+        {
+          "text": "Перемена",
+          "is_correct": true
+        },
+        {
+          "text": "Стоп-тайм",
+          "is_correct": false
+        },
+        {
+          "text": "Брейк",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называют учителя в английской школе?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Teacher",
+          "is_correct": true
+        },
+        {
+          "text": "Professor",
+          "is_correct": false
+        },
+        {
+          "text": "Tutor",
+          "is_correct": false
+        },
+        {
+          "text": "Mentor",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой праздник отмечают учителя в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "День учителя",
+          "is_correct": true
+        },
+        {
+          "text": "День педагога",
+          "is_correct": false
+        },
+        {
+          "text": "День школы",
+          "is_correct": false
+        },
+        {
+          "text": "День знаний",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какая профессия самая древняя?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Врач",
+          "is_correct": false
+        },
+        {
+          "text": "Учитель",
+          "is_correct": true
+        },
+        {
+          "text": "Строитель",
+          "is_correct": false
+        },
+        {
+          "text": "Кузнец",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что такое педагогика в переводе с греческого?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Воспитание",
+          "is_correct": false
+        },
+        {
+          "text": "Учение",
+          "is_correct": false
+        },
+        {
+          "text": "Детовождение",
+          "is_correct": true
+        },
+        {
+          "text": "Наставничество",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется система оценивания в школе?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Бальная",
+          "is_correct": false
+        },
+        {
+          "text": "Оценочная",
+          "is_correct": false
+        },
+        {
+          "text": "Балльная",
+          "is_correct": true
+        },
+        {
+          "text": "Сортовая",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой документ подтверждает профессиональную пригодность учителя?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Диплом",
+          "is_correct": true
+        },
+        {
+          "text": "Сертификат",
+          "is_correct": false
+        },
+        {
+          "text": "Аттестат",
+          "is_correct": false
+        },
+        {
+          "text": "Лицензия",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

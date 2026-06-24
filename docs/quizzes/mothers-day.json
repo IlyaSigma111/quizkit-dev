@@ -1,1 +1,557 @@
-{"title":"День матери","questions":[{"question":"В каком году День матери стал официальным в России?","answers":["1995","1998","2000","2005"],"correct":1,"points":10},{"question":"Когда отмечают День матери в России?","answers":["Последнее воскресенье ноября","Первое воскресенье ноября","Третье воскресенье ноября","15 ноября"],"correct":0,"points":10},{"question":"В какой стране впервые появился День матери?","answers":["США","Англия","Германия","Франция"],"correct":1,"points":10},{"question":"Кто была первой матерью в мире?","answers":["Ева","Адам","Мария","Сара"],"correct":0,"points":10},{"question":"Как звали мать Иисуса Христа?","answers":["Мария","Елизавета","Анна","Иоанна"],"correct":0,"points":10},{"question":"Сколько детей было у Богоматери?","answers":["Один","Два","Три","Четыре"],"correct":0,"points":10},{"question":"Как звали мать Александра Македонского?","answers":["Олимпия","Европа","Азия","Роксана"],"correct":0,"points":10},{"question":"Как звали мать Юлия Цезаря?","answers":["Аурелия","Кальпурния","Сервилия","Юлия"],"correct":0,"points":10},{"question":"Какой цветок является символом Дня матери?","answers":["Гвоздика","Роза","Тюльпан","Мимоза"],"correct":0,"points":10},{"question":"Какая икона считается покровительницей матерей?","answers":["Казанская","Владимирская","Тихвинская","Все перечисленные"],"correct":3,"points":10},{"question":"Сколько детей было у Николая II?","answers":["3","4","5","6"],"correct":2,"points":10},{"question":"Как звали мать Пушкина?","answers":["Надежда Осиповна","Мария Алексеевна","Анна Сергеевна","Екатерина Павловна"],"correct":0,"points":10},{"question":"Как звали мать Лермонтова?","answers":["Мария Михайловна","Анна Алексеевна","Екатерина Ивановна","Татьяна Петровна"],"correct":0,"points":10},{"question":"Как звали мать Горького?","answers":["Варвара Васильевна","Анна Максимовна","Надежда Ивановна","Екатерина Андреевна"],"correct":0,"points":10},{"question":"Что такое материнский инстинкт?","answers":["Забота о детях","Любовь к детям","Защита детей","Все перечисленные"],"correct":3,"points":10},{"question":"Как называется наука о материнстве?","answers":["Матерноведение","Педиатрия","Психология","Социология"],"correct":0,"points":10},{"question":"Сколько женских месяцев в году?","answers":["10","11","12","13"],"correct":2,"points":10},{"question":"Какой праздник считается женским?","answers":["8 марта","14 февраля","23 февраля","День матери"],"correct":0,"points":10},{"question":"Как звали мать первого космонавта Гагарина?","answers":["Анна Тимофеевна","Мария Ивановна","Екатерина Петровна","Ольга Николаевна"],"correct":0,"points":10},{"question":"Сколько детей в среднем в российской семье?","answers":["1","2","3","4"],"correct":1,"points":10},{"question":"Как называется пособие для матерей в РФ?","answers":["Материнский капитал","Детское пособие","Пособие на ребёнка","Все перечисленные"],"correct":3,"points":10},{"question":"Какой орган в России занимается защитой материнства?","answers":["Минтруд","Минздрав","Минобразование","Все перечисленные"],"correct":0,"points":10},{"question":"Как звали мать Дмитрия Менделеева?","answers":["Мария Дмитриевна","Анна Ивановна","Екатерина Петровна","Надежда Михайловна"],"correct":0,"points":10},{"question":"Как звали мать Петра I?","answers":["Наталья Кирилловна","Анна Леопольдовна","Екатерина Алексеевна","Мария Ильинична"],"correct":0,"points":10}]}
+{
+  "title": "День матери",
+  "questions": [
+    {
+      "text": "В каком году День матери стал официальным в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1995",
+          "is_correct": false
+        },
+        {
+          "text": "1998",
+          "is_correct": true
+        },
+        {
+          "text": "2000",
+          "is_correct": false
+        },
+        {
+          "text": "2005",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Когда отмечают День матери в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Последнее воскресенье ноября",
+          "is_correct": true
+        },
+        {
+          "text": "Первое воскресенье ноября",
+          "is_correct": false
+        },
+        {
+          "text": "Третье воскресенье ноября",
+          "is_correct": false
+        },
+        {
+          "text": "15 ноября",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В какой стране впервые появился День матери?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "США",
+          "is_correct": false
+        },
+        {
+          "text": "Англия",
+          "is_correct": true
+        },
+        {
+          "text": "Германия",
+          "is_correct": false
+        },
+        {
+          "text": "Франция",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто была первой матерью в мире?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Ева",
+          "is_correct": true
+        },
+        {
+          "text": "Адам",
+          "is_correct": false
+        },
+        {
+          "text": "Мария",
+          "is_correct": false
+        },
+        {
+          "text": "Сара",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали мать Иисуса Христа?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Мария",
+          "is_correct": true
+        },
+        {
+          "text": "Елизавета",
+          "is_correct": false
+        },
+        {
+          "text": "Анна",
+          "is_correct": false
+        },
+        {
+          "text": "Иоанна",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько детей было у Богоматери?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Один",
+          "is_correct": true
+        },
+        {
+          "text": "Два",
+          "is_correct": false
+        },
+        {
+          "text": "Три",
+          "is_correct": false
+        },
+        {
+          "text": "Четыре",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали мать Александра Македонского?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Олимпия",
+          "is_correct": true
+        },
+        {
+          "text": "Европа",
+          "is_correct": false
+        },
+        {
+          "text": "Азия",
+          "is_correct": false
+        },
+        {
+          "text": "Роксана",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали мать Юлия Цезаря?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Аурелия",
+          "is_correct": true
+        },
+        {
+          "text": "Кальпурния",
+          "is_correct": false
+        },
+        {
+          "text": "Сервилия",
+          "is_correct": false
+        },
+        {
+          "text": "Юлия",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой цветок является символом Дня матери?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Гвоздика",
+          "is_correct": true
+        },
+        {
+          "text": "Роза",
+          "is_correct": false
+        },
+        {
+          "text": "Тюльпан",
+          "is_correct": false
+        },
+        {
+          "text": "Мимоза",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какая икона считается покровительницей матерей?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Казанская",
+          "is_correct": false
+        },
+        {
+          "text": "Владимирская",
+          "is_correct": false
+        },
+        {
+          "text": "Тихвинская",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Сколько детей было у Николая II?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "3",
+          "is_correct": false
+        },
+        {
+          "text": "4",
+          "is_correct": false
+        },
+        {
+          "text": "5",
+          "is_correct": true
+        },
+        {
+          "text": "6",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали мать Пушкина?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Надежда Осиповна",
+          "is_correct": true
+        },
+        {
+          "text": "Мария Алексеевна",
+          "is_correct": false
+        },
+        {
+          "text": "Анна Сергеевна",
+          "is_correct": false
+        },
+        {
+          "text": "Екатерина Павловна",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали мать Лермонтова?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Мария Михайловна",
+          "is_correct": true
+        },
+        {
+          "text": "Анна Алексеевна",
+          "is_correct": false
+        },
+        {
+          "text": "Екатерина Ивановна",
+          "is_correct": false
+        },
+        {
+          "text": "Татьяна Петровна",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали мать Горького?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Варвара Васильевна",
+          "is_correct": true
+        },
+        {
+          "text": "Анна Максимовна",
+          "is_correct": false
+        },
+        {
+          "text": "Надежда Ивановна",
+          "is_correct": false
+        },
+        {
+          "text": "Екатерина Андреевна",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что такое материнский инстинкт?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Забота о детях",
+          "is_correct": false
+        },
+        {
+          "text": "Любовь к детям",
+          "is_correct": false
+        },
+        {
+          "text": "Защита детей",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Как называется наука о материнстве?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Матерноведение",
+          "is_correct": true
+        },
+        {
+          "text": "Педиатрия",
+          "is_correct": false
+        },
+        {
+          "text": "Психология",
+          "is_correct": false
+        },
+        {
+          "text": "Социология",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько женских месяцев в году?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "10",
+          "is_correct": false
+        },
+        {
+          "text": "11",
+          "is_correct": false
+        },
+        {
+          "text": "12",
+          "is_correct": true
+        },
+        {
+          "text": "13",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой праздник считается женским?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "8 марта",
+          "is_correct": true
+        },
+        {
+          "text": "14 февраля",
+          "is_correct": false
+        },
+        {
+          "text": "23 февраля",
+          "is_correct": false
+        },
+        {
+          "text": "День матери",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали мать первого космонавта Гагарина?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Анна Тимофеевна",
+          "is_correct": true
+        },
+        {
+          "text": "Мария Ивановна",
+          "is_correct": false
+        },
+        {
+          "text": "Екатерина Петровна",
+          "is_correct": false
+        },
+        {
+          "text": "Ольга Николаевна",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько детей в среднем в российской семье?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1",
+          "is_correct": false
+        },
+        {
+          "text": "2",
+          "is_correct": true
+        },
+        {
+          "text": "3",
+          "is_correct": false
+        },
+        {
+          "text": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется пособие для матерей в РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Материнский капитал",
+          "is_correct": false
+        },
+        {
+          "text": "Детское пособие",
+          "is_correct": false
+        },
+        {
+          "text": "Пособие на ребёнка",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Какой орган в России занимается защитой материнства?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Минтруд",
+          "is_correct": true
+        },
+        {
+          "text": "Минздрав",
+          "is_correct": false
+        },
+        {
+          "text": "Минобразование",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали мать Дмитрия Менделеева?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Мария Дмитриевна",
+          "is_correct": true
+        },
+        {
+          "text": "Анна Ивановна",
+          "is_correct": false
+        },
+        {
+          "text": "Екатерина Петровна",
+          "is_correct": false
+        },
+        {
+          "text": "Надежда Михайловна",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали мать Петра I?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Наталья Кирилловна",
+          "is_correct": true
+        },
+        {
+          "text": "Анна Леопольдовна",
+          "is_correct": false
+        },
+        {
+          "text": "Екатерина Алексеевна",
+          "is_correct": false
+        },
+        {
+          "text": "Мария Ильинична",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,626 @@
-{"title":"День знаний","questions":[{"question":"В каком году День знаний стал официальным праздником в СССР?","answers":["1980","1984","1991","1995"],"correct":1,"points":10},{"question":"Как называлась первая школа на Руси?","answers":["Гимназия","Училище","Школа князя Владимира","Академия"],"correct":2,"points":10},{"question":"В каком году открылась первая школа в Киеве?","answers":["988","1010","1054","1100"],"correct":0,"points":10},{"question":"Какой император ввёл обязательное начальное образование в России?","answers":["Пётр I","Александр II","Николай I","Екатерина II"],"correct":1,"points":10},{"question":"Что символизирует звонок на 1 сентября?","answers":["Начало учёбы","Конец лета","Праздник","Перемену"],"correct":0,"points":10},{"question":"Какая страна первой в мире ввела обязательное образование?","answers":["Англия","Франция","Германия","Россия"],"correct":2,"points":10},{"question":"Как называются первые три года обучения в российской школе?","answers":["Начальная школа","Основная школа","Средняя школа","Младшая школа"],"correct":0,"points":10},{"question":"Сколько классов в российской школе обычно?","answers":["9","10","11","12"],"correct":2,"points":10},{"question":"Какой предмет появился в школах России в 2025 году?","answers":["Технология","Семьеведение","Робототехника","Программирование"],"correct":1,"points":10},{"question":"Как звали первого учителя на Руси?","answers":["Кирилл","Мефодий","Нестор","Иларион"],"correct":0,"points":10},{"question":"В каком году в России ввели ЕГЭ?","answers":["2001","2003","2005","2007"],"correct":0,"points":10},{"question":"Сколько баллов можно получить за ЕГЭ по русскому языку?","answers":["100","80","60","120"],"correct":0,"points":10},{"question":"Как называется форма обучения без отрыва от работы?","answers":["Очная","Заочная","Вечерняя","Дистанционная"],"correct":1,"points":10},{"question":"Какой предмет не изучают в начальной школе?","answers":["Математика","Русский язык","Физика","Литература"],"correct":2,"points":10},{"question":"Как называется школьный журнал для оценок?","answers":["Дневник","Тетрадь","Классный журнал","Ведомость"],"correct":2,"points":10},{"question":"Что вручают ученикам на последнем звонке?","answers":["Медаль","Диплом","Аттестат","Грамоту"],"correct":2,"points":10},{"question":"Какой праздник отмечают учителя?","answers":["День учителя","День образования","День школы","День педагога"],"correct":0,"points":10},{"question":"Когда отмечается День учителя в России?","answers":["1 сентября","5 октября","1 октября","10 октября"],"correct":1,"points":10},{"question":"Как назывался первый университет в России?","answers":["МГУ","СПбГУ","Казанский университет","Томский университет"],"correct":0,"points":10},{"question":"В каком году основали МГУ?","answers":["1725","1755","1762","1800"],"correct":1,"points":10},{"question":"Кто открыл первый университет в России?","answers":["Пётр I","Елизавета Петровна","Екатерина II","Александр I"],"correct":1,"points":10},{"question":"Как называется самый длинный урок в школе?","answers":["Математика","Русский","Физкультура","Перемена"],"correct":3,"points":10},{"question":"Что означают каникулы в переводе с латыни?","answers":["Отдых","Собачья жара","Учёба","Праздник"],"correct":1,"points":10},{"question":"Сколько длится учебный год в российской школе?","answers":["8 месяцев","9 месяцев","10 месяцев","11 месяцев"],"correct":1,"points":10},{"question":"Какие бывают каникулы в школе?","answers":["Летние, зимние, весенние","Осенние, летние, зимние","Осенние, зимние, весенние, летние","Зимние, весенние, летние"],"correct":2,"points":10},{"question":"Как называется процесс перехода в следующий класс?","answers":["Аттестация","Перевод","Экзамен","Зачёт"],"correct":1,"points":10},{"question":"Какой праздник отмечают 1 сентября во многих странах?","answers":["День знаний","День труда","День мира","День книги"],"correct":0,"points":10}]}
+{
+  "title": "День знаний",
+  "questions": [
+    {
+      "text": "В каком году День знаний стал официальным праздником в СССР?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1980",
+          "is_correct": false
+        },
+        {
+          "text": "1984",
+          "is_correct": true
+        },
+        {
+          "text": "1991",
+          "is_correct": false
+        },
+        {
+          "text": "1995",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называлась первая школа на Руси?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Гимназия",
+          "is_correct": false
+        },
+        {
+          "text": "Училище",
+          "is_correct": false
+        },
+        {
+          "text": "Школа князя Владимира",
+          "is_correct": true
+        },
+        {
+          "text": "Академия",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком году открылась первая школа в Киеве?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "988",
+          "is_correct": true
+        },
+        {
+          "text": "1010",
+          "is_correct": false
+        },
+        {
+          "text": "1054",
+          "is_correct": false
+        },
+        {
+          "text": "1100",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой император ввёл обязательное начальное образование в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Пётр I",
+          "is_correct": false
+        },
+        {
+          "text": "Александр II",
+          "is_correct": true
+        },
+        {
+          "text": "Николай I",
+          "is_correct": false
+        },
+        {
+          "text": "Екатерина II",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что символизирует звонок на 1 сентября?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Начало учёбы",
+          "is_correct": true
+        },
+        {
+          "text": "Конец лета",
+          "is_correct": false
+        },
+        {
+          "text": "Праздник",
+          "is_correct": false
+        },
+        {
+          "text": "Перемену",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какая страна первой в мире ввела обязательное образование?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Англия",
+          "is_correct": false
+        },
+        {
+          "text": "Франция",
+          "is_correct": false
+        },
+        {
+          "text": "Германия",
+          "is_correct": true
+        },
+        {
+          "text": "Россия",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называются первые три года обучения в российской школе?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Начальная школа",
+          "is_correct": true
+        },
+        {
+          "text": "Основная школа",
+          "is_correct": false
+        },
+        {
+          "text": "Средняя школа",
+          "is_correct": false
+        },
+        {
+          "text": "Младшая школа",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько классов в российской школе обычно?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "9",
+          "is_correct": false
+        },
+        {
+          "text": "10",
+          "is_correct": false
+        },
+        {
+          "text": "11",
+          "is_correct": true
+        },
+        {
+          "text": "12",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой предмет появился в школах России в 2025 году?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Технология",
+          "is_correct": false
+        },
+        {
+          "text": "Семьеведение",
+          "is_correct": true
+        },
+        {
+          "text": "Робототехника",
+          "is_correct": false
+        },
+        {
+          "text": "Программирование",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали первого учителя на Руси?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Кирилл",
+          "is_correct": true
+        },
+        {
+          "text": "Мефодий",
+          "is_correct": false
+        },
+        {
+          "text": "Нестор",
+          "is_correct": false
+        },
+        {
+          "text": "Иларион",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком году в России ввели ЕГЭ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "2001",
+          "is_correct": true
+        },
+        {
+          "text": "2003",
+          "is_correct": false
+        },
+        {
+          "text": "2005",
+          "is_correct": false
+        },
+        {
+          "text": "2007",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько баллов можно получить за ЕГЭ по русскому языку?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "100",
+          "is_correct": true
+        },
+        {
+          "text": "80",
+          "is_correct": false
+        },
+        {
+          "text": "60",
+          "is_correct": false
+        },
+        {
+          "text": "120",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется форма обучения без отрыва от работы?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Очная",
+          "is_correct": false
+        },
+        {
+          "text": "Заочная",
+          "is_correct": true
+        },
+        {
+          "text": "Вечерняя",
+          "is_correct": false
+        },
+        {
+          "text": "Дистанционная",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой предмет не изучают в начальной школе?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Математика",
+          "is_correct": false
+        },
+        {
+          "text": "Русский язык",
+          "is_correct": false
+        },
+        {
+          "text": "Физика",
+          "is_correct": true
+        },
+        {
+          "text": "Литература",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется школьный журнал для оценок?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Дневник",
+          "is_correct": false
+        },
+        {
+          "text": "Тетрадь",
+          "is_correct": false
+        },
+        {
+          "text": "Классный журнал",
+          "is_correct": true
+        },
+        {
+          "text": "Ведомость",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что вручают ученикам на последнем звонке?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Медаль",
+          "is_correct": false
+        },
+        {
+          "text": "Диплом",
+          "is_correct": false
+        },
+        {
+          "text": "Аттестат",
+          "is_correct": true
+        },
+        {
+          "text": "Грамоту",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой праздник отмечают учителя?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "День учителя",
+          "is_correct": true
+        },
+        {
+          "text": "День образования",
+          "is_correct": false
+        },
+        {
+          "text": "День школы",
+          "is_correct": false
+        },
+        {
+          "text": "День педагога",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Когда отмечается День учителя в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1 сентября",
+          "is_correct": false
+        },
+        {
+          "text": "5 октября",
+          "is_correct": true
+        },
+        {
+          "text": "1 октября",
+          "is_correct": false
+        },
+        {
+          "text": "10 октября",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как назывался первый университет в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "МГУ",
+          "is_correct": true
+        },
+        {
+          "text": "СПбГУ",
+          "is_correct": false
+        },
+        {
+          "text": "Казанский университет",
+          "is_correct": false
+        },
+        {
+          "text": "Томский университет",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком году основали МГУ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1725",
+          "is_correct": false
+        },
+        {
+          "text": "1755",
+          "is_correct": true
+        },
+        {
+          "text": "1762",
+          "is_correct": false
+        },
+        {
+          "text": "1800",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто открыл первый университет в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Пётр I",
+          "is_correct": false
+        },
+        {
+          "text": "Елизавета Петровна",
+          "is_correct": true
+        },
+        {
+          "text": "Екатерина II",
+          "is_correct": false
+        },
+        {
+          "text": "Александр I",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется самый длинный урок в школе?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Математика",
+          "is_correct": false
+        },
+        {
+          "text": "Русский",
+          "is_correct": false
+        },
+        {
+          "text": "Физкультура",
+          "is_correct": false
+        },
+        {
+          "text": "Перемена",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Что означают каникулы в переводе с латыни?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Отдых",
+          "is_correct": false
+        },
+        {
+          "text": "Собачья жара",
+          "is_correct": true
+        },
+        {
+          "text": "Учёба",
+          "is_correct": false
+        },
+        {
+          "text": "Праздник",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько длится учебный год в российской школе?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "8 месяцев",
+          "is_correct": false
+        },
+        {
+          "text": "9 месяцев",
+          "is_correct": true
+        },
+        {
+          "text": "10 месяцев",
+          "is_correct": false
+        },
+        {
+          "text": "11 месяцев",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какие бывают каникулы в школе?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Летние, зимние, весенние",
+          "is_correct": false
+        },
+        {
+          "text": "Осенние, летние, зимние",
+          "is_correct": false
+        },
+        {
+          "text": "Осенние, зимние, весенние, летние",
+          "is_correct": true
+        },
+        {
+          "text": "Зимние, весенние, летние",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется процесс перехода в следующий класс?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Аттестация",
+          "is_correct": false
+        },
+        {
+          "text": "Перевод",
+          "is_correct": true
+        },
+        {
+          "text": "Экзамен",
+          "is_correct": false
+        },
+        {
+          "text": "Зачёт",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой праздник отмечают 1 сентября во многих странах?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "День знаний",
+          "is_correct": true
+        },
+        {
+          "text": "День труда",
+          "is_correct": false
+        },
+        {
+          "text": "День мира",
+          "is_correct": false
+        },
+        {
+          "text": "День книги",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}

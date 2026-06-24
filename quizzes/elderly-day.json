@@ -1,1 +1,603 @@
-{"title":"День пожилых людей","questions":[{"question":"В каком году был учреждён День пожилых людей в России?","answers":["1990","1992","1995","2000"],"correct":1,"points":10},{"question":"В каком году Генеральная Ассамблея ООН провозгласила этот день?","answers":["1990","1991","1992","1993"],"correct":0,"points":10},{"question":"Какой возраст считается началом пожилого возраста?","answers":["55 лет","60 лет","65 лет","70 лет"],"correct":1,"points":10},{"question":"Сколько пожилых людей в России?","answers":["~20 млн","~25 млн","~30 млн","~35 млн"],"correct":2,"points":10},{"question":"Как называется наука о пожилом возрасте?","answers":["Геронтология","Педиатрия","Терапия","Неврология"],"correct":0,"points":10},{"question":"Как называется врач, который лечит пожилых?","answers":["Геронтолог","Терапевт","Невролог","Кардиолог"],"correct":0,"points":10},{"question":"Какая проблема часто встречается у пожилых?","answers":["Остеопороз","Сахарный диабет","Деменция","Все перечисленные"],"correct":3,"points":10},{"question":"Как называется болезнь Альцгеймера?","answers":["Деменция","Паркинсон","Депрессия","Инсульт"],"correct":0,"points":10},{"question":"Как называется учреждение для пожилых?","answers":["Дом престарелых","Пансионат","Интернат","Все перечисленные"],"correct":3,"points":10},{"question":"Какой закон защищает пожилых в РФ?","answers":["ФЗ О социальном обслуживании","ФЗ О здравоохранении","ФЗ О пенсиях","Все перечисленные"],"correct":3,"points":10},{"question":"Какая организация помогает пожилым в России?","answers":["Социальная защита","Пенсионный фонд","Минздрав","Все перечисленные"],"correct":3,"points":10},{"question":"Сколько лет длится пенсионный возраст в России?","answers":["60 лет (жен.) / 65 лет (муж.)","55 лет (жен.) / 60 лет (муж.)","65 лет (жен.) / 70 лет (муж.)","60 лет (жен.) / 60 лет (муж.)"],"correct":0,"points":10},{"question":"Как называется день памяти пожилых?","answers":["День пожилого человека","День стариков","День мудрости","День уважения"],"correct":0,"points":10},{"question":"Какой цвет символизирует уважение к пожилым?","answers":["Белый","Красный","Жёлтый","Синий"],"correct":0,"points":10},{"question":"Как звали первого геронтолога в России?","answers":["Богомолец","Павлов","Мечников","Сеченов"],"correct":0,"points":10},{"question":"Сколько университетов в России обучают геронтологов?","answers":["~10","~15","~20","~25"],"correct":1,"points":10},{"question":"Какая международная организация защищает права пожилых?","answers":["ВОЗ","ООН","ЮНЕСКО","ВТО"],"correct":0,"points":10},{"question":"Сколько стран празднуют этот день?","answers":["~50","~100","~150","~200"],"correct":2,"points":10},{"question":"Какой регион России самый пожилой?","answers":["Москва","Санкт-Петербург","Тверская область","Краснодарский край"],"correct":2,"points":10},{"question":"Какой самый частый диагноз у пожилых?","answers":["Гипертония","Диабет","Остеохондроз","Все перечисленные"],"correct":3,"points":10},{"question":"Как называется программа социальной поддержки пожилых?","answers":["Социальная помощь","Пенсия","Льготы","Все перечисленные"],"correct":3,"points":10},{"question":"Сколько ветеранов Великой Отечественной войны в России?","answers":["~10 тыс.","~20 тыс.","~30 тыс.","~40 тыс."],"correct":0,"points":10},{"question":"Как звали писателя, который писал о старости?","answers":["Толстой","Достоевский","Чехов","Булгаков"],"correct":0,"points":10},{"question":"Как называется фильм о пожилых?","answers":["Москва слезам не верит","Доживём до понедельника","Старики-разбойники","Вокзал для двоих"],"correct":2,"points":10},{"question":"Как называется специальность по уходу за пожилыми?","answers":["Сиделка","Медсестра","Санитар","Все перечисленные"],"correct":0,"points":10},{"question":"Какой символ у этого дня?","answers":["Свеча","Колокол","Цветок","Звезда"],"correct":0,"points":10}]}
+{
+  "title": "День пожилых людей",
+  "questions": [
+    {
+      "text": "В каком году был учреждён День пожилых людей в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1990",
+          "is_correct": false
+        },
+        {
+          "text": "1992",
+          "is_correct": true
+        },
+        {
+          "text": "1995",
+          "is_correct": false
+        },
+        {
+          "text": "2000",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком году Генеральная Ассамблея ООН провозгласила этот день?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1990",
+          "is_correct": true
+        },
+        {
+          "text": "1991",
+          "is_correct": false
+        },
+        {
+          "text": "1992",
+          "is_correct": false
+        },
+        {
+          "text": "1993",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой возраст считается началом пожилого возраста?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "55 лет",
+          "is_correct": false
+        },
+        {
+          "text": "60 лет",
+          "is_correct": true
+        },
+        {
+          "text": "65 лет",
+          "is_correct": false
+        },
+        {
+          "text": "70 лет",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько пожилых людей в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "~20 млн",
+          "is_correct": false
+        },
+        {
+          "text": "~25 млн",
+          "is_correct": false
+        },
+        {
+          "text": "~30 млн",
+          "is_correct": true
+        },
+        {
+          "text": "~35 млн",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется наука о пожилом возрасте?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Геронтология",
+          "is_correct": true
+        },
+        {
+          "text": "Педиатрия",
+          "is_correct": false
+        },
+        {
+          "text": "Терапия",
+          "is_correct": false
+        },
+        {
+          "text": "Неврология",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется врач, который лечит пожилых?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Геронтолог",
+          "is_correct": true
+        },
+        {
+          "text": "Терапевт",
+          "is_correct": false
+        },
+        {
+          "text": "Невролог",
+          "is_correct": false
+        },
+        {
+          "text": "Кардиолог",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какая проблема часто встречается у пожилых?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Остеопороз",
+          "is_correct": false
+        },
+        {
+          "text": "Сахарный диабет",
+          "is_correct": false
+        },
+        {
+          "text": "Деменция",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Как называется болезнь Альцгеймера?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Деменция",
+          "is_correct": true
+        },
+        {
+          "text": "Паркинсон",
+          "is_correct": false
+        },
+        {
+          "text": "Депрессия",
+          "is_correct": false
+        },
+        {
+          "text": "Инсульт",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется учреждение для пожилых?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Дом престарелых",
+          "is_correct": false
+        },
+        {
+          "text": "Пансионат",
+          "is_correct": false
+        },
+        {
+          "text": "Интернат",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Какой закон защищает пожилых в РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "ФЗ О социальном обслуживании",
+          "is_correct": false
+        },
+        {
+          "text": "ФЗ О здравоохранении",
+          "is_correct": false
+        },
+        {
+          "text": "ФЗ О пенсиях",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Какая организация помогает пожилым в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Социальная защита",
+          "is_correct": false
+        },
+        {
+          "text": "Пенсионный фонд",
+          "is_correct": false
+        },
+        {
+          "text": "Минздрав",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Сколько лет длится пенсионный возраст в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "60 лет (жен.) / 65 лет (муж.)",
+          "is_correct": true
+        },
+        {
+          "text": "55 лет (жен.) / 60 лет (муж.)",
+          "is_correct": false
+        },
+        {
+          "text": "65 лет (жен.) / 70 лет (муж.)",
+          "is_correct": false
+        },
+        {
+          "text": "60 лет (жен.) / 60 лет (муж.)",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется день памяти пожилых?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "День пожилого человека",
+          "is_correct": true
+        },
+        {
+          "text": "День стариков",
+          "is_correct": false
+        },
+        {
+          "text": "День мудрости",
+          "is_correct": false
+        },
+        {
+          "text": "День уважения",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой цвет символизирует уважение к пожилым?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Белый",
+          "is_correct": true
+        },
+        {
+          "text": "Красный",
+          "is_correct": false
+        },
+        {
+          "text": "Жёлтый",
+          "is_correct": false
+        },
+        {
+          "text": "Синий",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали первого геронтолога в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Богомолец",
+          "is_correct": true
+        },
+        {
+          "text": "Павлов",
+          "is_correct": false
+        },
+        {
+          "text": "Мечников",
+          "is_correct": false
+        },
+        {
+          "text": "Сеченов",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько университетов в России обучают геронтологов?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "~10",
+          "is_correct": false
+        },
+        {
+          "text": "~15",
+          "is_correct": true
+        },
+        {
+          "text": "~20",
+          "is_correct": false
+        },
+        {
+          "text": "~25",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какая международная организация защищает права пожилых?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "ВОЗ",
+          "is_correct": true
+        },
+        {
+          "text": "ООН",
+          "is_correct": false
+        },
+        {
+          "text": "ЮНЕСКО",
+          "is_correct": false
+        },
+        {
+          "text": "ВТО",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько стран празднуют этот день?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "~50",
+          "is_correct": false
+        },
+        {
+          "text": "~100",
+          "is_correct": false
+        },
+        {
+          "text": "~150",
+          "is_correct": true
+        },
+        {
+          "text": "~200",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой регион России самый пожилой?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Москва",
+          "is_correct": false
+        },
+        {
+          "text": "Санкт-Петербург",
+          "is_correct": false
+        },
+        {
+          "text": "Тверская область",
+          "is_correct": true
+        },
+        {
+          "text": "Краснодарский край",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой самый частый диагноз у пожилых?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Гипертония",
+          "is_correct": false
+        },
+        {
+          "text": "Диабет",
+          "is_correct": false
+        },
+        {
+          "text": "Остеохондроз",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Как называется программа социальной поддержки пожилых?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Социальная помощь",
+          "is_correct": false
+        },
+        {
+          "text": "Пенсия",
+          "is_correct": false
+        },
+        {
+          "text": "Льготы",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Сколько ветеранов Великой Отечественной войны в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "~10 тыс.",
+          "is_correct": true
+        },
+        {
+          "text": "~20 тыс.",
+          "is_correct": false
+        },
+        {
+          "text": "~30 тыс.",
+          "is_correct": false
+        },
+        {
+          "text": "~40 тыс.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали писателя, который писал о старости?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Толстой",
+          "is_correct": true
+        },
+        {
+          "text": "Достоевский",
+          "is_correct": false
+        },
+        {
+          "text": "Чехов",
+          "is_correct": false
+        },
+        {
+          "text": "Булгаков",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется фильм о пожилых?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Москва слезам не верит",
+          "is_correct": false
+        },
+        {
+          "text": "Доживём до понедельника",
+          "is_correct": false
+        },
+        {
+          "text": "Старики-разбойники",
+          "is_correct": true
+        },
+        {
+          "text": "Вокзал для двоих",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется специальность по уходу за пожилыми?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Сиделка",
+          "is_correct": true
+        },
+        {
+          "text": "Медсестра",
+          "is_correct": false
+        },
+        {
+          "text": "Санитар",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой символ у этого дня?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Свеча",
+          "is_correct": true
+        },
+        {
+          "text": "Колокол",
+          "is_correct": false
+        },
+        {
+          "text": "Цветок",
+          "is_correct": false
+        },
+        {
+          "text": "Звезда",
+          "is_correct": false
+        }
+      ]
+    }
+  ]
+}
