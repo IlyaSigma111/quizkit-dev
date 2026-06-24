@@ -1,0 +1,61 @@
+{
+  "title": "Наука и технологии",
+  "description": "Физика, химия, биология и изобретения — отличный набор для классной викторины",
+  "questions": [
+    {
+      "text": "Из чего состоит вода?",
+      "time_seconds": 15,
+      "points": 10,
+      "answers": [
+        { "text": "Кислород и азот", "is_correct": false },
+        { "text": "Водород и кислород", "is_correct": true },
+        { "text": "Водород и гелий", "is_correct": false },
+        { "text": "Кислород и углерод", "is_correct": false }
+      ]
+    },
+    {
+      "text": "Кто изобрёл телефон?",
+      "time_seconds": 15,
+      "points": 10,
+      "answers": [
+        { "text": "Томас Эдисон", "is_correct": false },
+        { "text": "Александр Белл", "is_correct": true },
+        { "text": "Никола Тесла", "is_correct": false },
+        { "text": "Гульельмо Маркони", "is_correct": false }
+      ]
+    },
+    {
+      "text": "Сколько костей в теле взрослого человека?",
+      "time_seconds": 20,
+      "points": 10,
+      "answers": [
+        { "text": "106", "is_correct": false },
+        { "text": "206", "is_correct": true },
+        { "text": "306", "is_correct": false },
+        { "text": "156", "is_correct": false }
+      ]
+    },
+    {
+      "text": "Какой газ преобладает в атмосфере Земли?",
+      "time_seconds": 15,
+      "points": 10,
+      "answers": [
+        { "text": "Кислород", "is_correct": false },
+        { "text": "Углекислый газ", "is_correct": false },
+        { "text": "Азот", "is_correct": true },
+        { "text": "Аргон", "is_correct": false }
+      ]
+    },
+    {
+      "text": "Какая планета известна как Красная планета?",
+      "time_seconds": 10,
+      "points": 5,
+      "answers": [
+        { "text": "Венера", "is_correct": false },
+        { "text": "Марс", "is_correct": true },
+        { "text": "Юпитер", "is_correct": false },
+        { "text": "Сатурн", "is_correct": false }
+      ]
+    }
+  ]
+}

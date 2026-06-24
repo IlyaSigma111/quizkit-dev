@@ -1,0 +1,61 @@
+{
+  "title": "География мира",
+  "description": "Столицы, реки, горы и океаны — проверь знания географии",
+  "questions": [
+    {
+      "text": "Какая река самая длинная в мире?",
+      "time_seconds": 20,
+      "points": 10,
+      "answers": [
+        { "text": "Амазонка", "is_correct": false },
+        { "text": "Нил", "is_correct": true },
+        { "text": "Миссисипи", "is_correct": false },
+        { "text": "Янцзы", "is_correct": false }
+      ]
+    },
+    {
+      "text": "Столица Австралии — это:",
+      "time_seconds": 15,
+      "points": 10,
+      "answers": [
+        { "text": "Сидней", "is_correct": false },
+        { "text": "Мельбурн", "is_correct": false },
+        { "text": "Канберра", "is_correct": true },
+        { "text": "Перт", "is_correct": false }
+      ]
+    },
+    {
+      "text": "Какая пустыня самая большая на Земле?",
+      "time_seconds": 20,
+      "points": 10,
+      "answers": [
+        { "text": "Сахара", "is_correct": true },
+        { "text": "Гоби", "is_correct": false },
+        { "text": "Калахари", "is_correct": false },
+        { "text": "Атакама", "is_correct": false }
+      ]
+    },
+    {
+      "text": "Сколько океанов на планете Земля?",
+      "time_seconds": 15,
+      "points": 10,
+      "answers": [
+        { "text": "3", "is_correct": false },
+        { "text": "4", "is_correct": false },
+        { "text": "5", "is_correct": true },
+        { "text": "6", "is_correct": false }
+      ]
+    },
+    {
+      "text": "Какая гора самая высокая в мире?",
+      "time_seconds": 15,
+      "points": 10,
+      "answers": [
+        { "text": "К2", "is_correct": false },
+        { "text": "Эверест", "is_correct": true },
+        { "text": "Монблан", "is_correct": false },
+        { "text": "Аконкагуа", "is_correct": false }
+      ]
+    }
+  ]
+}

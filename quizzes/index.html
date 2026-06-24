@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Готовые квизы — QuizKit</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🦉</text></svg>">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#08080e;color:#ededef;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(120,80,255,.35)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rgba(8,8,14,.75);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.05)}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#ededef}
+.nav-logo svg{width:22px;height:22px}
+
+.hero{text-align:center;padding:120px 24px 60px}
+.hero h1{font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-1px;margin-bottom:10px}
+.hero p{color:#686878;font-size:15px;max-width:500px;margin:0 auto}
+
+.quiz-grid{max-width:1000px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.quiz-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;transition:all .25s;display:flex;flex-direction:column}
+.quiz-card:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);transform:translateY(-4px)}
+.quiz-card .icon{font-size:32px;margin-bottom:10px}
+.quiz-card h3{font-size:16px;font-weight:600;margin-bottom:4px}
+.quiz-card .desc{color:#686878;font-size:13px;margin-bottom:12px;flex:1;line-height:1.5}
+.quiz-card .meta{display:flex;gap:12px;font-size:12px;color:#585868;margin-bottom:14px}
+.quiz-card .meta span{display:flex;align-items:center;gap:4px}
+.quiz-card .btn-download{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 18px;background:#7850ff;color:#fff;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;border:none;font-family:inherit}
+.quiz-card .btn-download:hover{background:#6840ef;transform:translateY(-1px);box-shadow:0 4px 16px rgba(120,80,255,.25)}
+
+footer{text-align:center;padding:32px 24px;color:#585868;font-size:12px;border-top:1px solid rgba(255,255,255,.05)}
+footer a{color:#686878}
+footer a:hover{color:#ededef}
+
+.badge{display:inline-block;padding:2px 8px;border-radius:100px;font-size:10px;font-weight:600;background:rgba(120,80,255,.12);color:#a080ff;margin-top:6px}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-inner">
+  <a href="https://ilyasigma111.github.io/quizkit/" class="nav-logo">
+    <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="2" opacity=".15"/><path d="M50 22c-8 0-14 6-14 14v6h-4c-3 0-6 3-6 6v24c0 3 3 6 6 6h36c3 0 6-3 6-6V48c0-3-3-6-6-6h-4v-6c0-8-6-14-14-14zm-8 20V36a8 8 0 1116 0v6H42zm-6 10h28v20H36V52z" fill="currentColor"/><circle cx="50" cy="60" r="4" fill="currentColor" opacity=".4"/></svg>
+    QuizKit
+  </a>
+  <a href="https://ilyasigma111.github.io/quizkit/" style="font-size:13px;color:#787888">← На главную</a>
+</div>
+</nav>
+
+<div class="hero">
+  <h1>📚 Готовые квизы</h1>
+  <p>Скачивай тематические подборки вопросов и запускай в QuizKit одним кликом</p>
+</div>
+
+<div class="quiz-grid" id="quizGrid"></div>
+
+<footer>
+  <a href="https://github.com/IlyaSigma111/quizkit">GitHub</a> &middot; 
+  <a href="https://github.com/IlyaSigma111/quizkit/issues">Предложить квиз</a>
+</footer>
+
+<script>
+const QUIZZES = [
+  { file: 'geography-world.json', icon: '🌍', title: 'География мира', desc: 'Столицы, реки, горы и океаны. Базовый набор для классной викторины.', questions: 5, time: '15-20с' },
+  { file: 'science-general.json', icon: '🔬', title: 'Наука и технологии', desc: 'Физика, химия, биология и великие изобретения.', questions: 5, time: '10-20с' },
+]
+
+CONFIG_URL = 'https://raw.githubusercontent.com/IlyaSigma111/quizkit/master/quizzes/'
+
+async function loadQuizMeta(file) {
+  try {
+    const r = await fetch(CONFIG_URL + file)
+    const data = await r.json()
+    return { questions: data.questions?.length || 0 }
+  } catch { return { questions: '?' } }
+}
+
+async function render() {
+  const grid = document.getElementById('quizGrid')
+  grid.innerHTML = ''
+  for (const q of QUIZZES) {
+    const url = CONFIG_URL + q.file
+    const card = document.createElement('div')
+    card.className = 'quiz-card'
+    card.innerHTML = `
+      <div class="icon">${q.icon}</div>
+      <h3>${q.title}</h3>
+      <div class="desc">${q.desc}</div>
+      <div class="meta">
+        <span>📝 ${q.questions} вопросов</span>
+        <span>⏱ ${q.time}</span>
+      </div>
+      <a href="${url}" download="${q.file}" class="btn-download">⬇ Скачать JSON</a>
+    `
+    grid.appendChild(card)
+  }
+}
+
+render()
+</script>
+</body>
+</html>
