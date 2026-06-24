@@ -101,7 +101,7 @@ pub enum ServerMessage {
     #[serde(rename = "answer_result")]
     AnswerResult { correct: bool, points: u32, score: u32, correct_index: usize, show_next: bool },
     #[serde(rename = "round_results")]
-    RoundResults { histogram: Vec<u32>, correct_index: usize, leaderboard: Vec<PlayerData> },
+    RoundResults { histogram: Vec<u32>, correct_index: usize, leaderboard: Vec<PlayerData>, next_in: u32 },
     #[serde(rename = "test_complete")]
     TestComplete { score: u32, total_questions: usize },
     #[serde(rename = "progress")]

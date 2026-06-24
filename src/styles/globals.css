@@ -123,6 +123,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 @keyframes chipIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
 .qr-section{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px;background:var(--bg-card);border-radius:var(--radius);border:1px solid var(--border)}
 .qr-url{font-size:14px;font-weight:700;color:var(--primary)}
+.qr-expanded{display:flex;flex-direction:column;align-items:center;gap:16px;padding:32px;background:var(--bg-card);border-radius:var(--radius);border:1px solid var(--border);animation:fadeIn .2s ease}
+.qr-expanded svg{display:block}
 .qr-url-secondary{font-size:12px;color:var(--text-secondary);margin-top:2px}
 .qr-hint{color:var(--text-secondary);font-size:11px;opacity:.6}
 .wait-hint{color:var(--text-secondary);font-size:13px}
@@ -244,6 +246,8 @@ input:focus{outline:none;border-color:var(--primary)!important}
 .rr-lb-rank{font-size:16px;width:30px;text-align:center}
 .rr-lb-name{flex:1;font-size:14px;font-weight:500}
 .rr-lb-score{font-size:14px;font-weight:700;color:var(--success)}
+.rr-next-timer{font-size:14px;color:var(--text-secondary);text-align:center;padding:10px;animation:pulse 1.5s infinite}
+.rr-next-timer strong{color:var(--primary);font-size:16px}
 .histogram-row{display:flex;align-items:center;gap:8px;margin-bottom:10px}
 .histogram-label{font-size:12px;color:var(--text-secondary);min-width:80px;text-align:right}
 .histogram-bar-wrap{flex:1;height:20px;background:rgba(42,42,69,.6);border-radius:4px;overflow:hidden}
@@ -284,6 +288,7 @@ input:focus{outline:none;border-color:var(--primary)!important}
 .settings-actions{display:flex;gap:10px;margin-top:4px}
 .settings-error{color:var(--danger);font-size:13px;text-align:center}
 
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}

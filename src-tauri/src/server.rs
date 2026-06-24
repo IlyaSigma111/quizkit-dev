@@ -176,16 +176,37 @@ async fn handle_socket(socket: WebSocket, state: Arc<AppState>) {
                                 if advance_mode == AdvanceMode::Auto {
                                     let state_clone = state.clone();
                                     let pin_clone = pin.clone();
-                                    let duration = {
+                                    let total = {
                                         let sessions = state.sessions.read().await;
-                                        sessions.get(&pin)
-                                            .and_then(|s| s.quiz.questions.first())
-                                            .map(|q| q.time_seconds)
-                                            .unwrap_or(10)
+                                        sessions.get(&pin).map(|s| s.quiz.questions.len()).unwrap_or(0)
                                     };
                                     tokio::spawn(async move {
-                                        tokio::time::sleep(tokio::time::Duration::from_secs(duration as u64)).await;
-                                        show_round_results(&state_clone, &pin_clone).await;
+                                        for q_idx in 0..total {
+                                            let duration = {
+                                                let sessions = state_clone.sessions.read().await;
+                                                sessions.get(&pin_clone)
+                                                    .and_then(|s| s.quiz.questions.get(q_idx))
+                                                    .map(|q| q.time_seconds)
+                                                    .unwrap_or(10)
+                                            };
+                                            tokio::time::sleep(tokio::time::Duration::from_secs(duration as u64)).await;
+
+                                            if q_idx + 1 < total {
+                                                show_round_results_with_next(&state_clone, &pin_clone, 3).await;
+                                                tokio::time::sleep(tokio::time::Duration::from_secs(3)).await;
+                                                let mut sessions = state_clone.sessions.write().await;
+                                                if let Some(session) = sessions.get_mut(&pin_clone) {
+                                                    session.current_question_index = q_idx + 1;
+                                                    session.answers.clear();
+                                                }
+                                                drop(sessions);
+                                                broadcast_question(&state_clone, &pin_clone, q_idx + 1).await;
+                                            } else {
+                                                show_round_results_with_next(&state_clone, &pin_clone, 4).await;
+                                                tokio::time::sleep(tokio::time::Duration::from_secs(4)).await;
+                                                show_final_results(&state_clone, &pin_clone).await;
+                                            }
+                                        }
                                     });
                                 }
                             }
@@ -534,6 +555,10 @@ async fn broadcast_question(state: &Arc<AppState>, pin: &str, index: usize) {
 }
 
 async fn show_round_results(state: &Arc<AppState>, pin: &str) {
+    show_round_results_with_next(state, pin, 0).await;
+}
+
+async fn show_round_results_with_next(state: &Arc<AppState>, pin: &str, next_in: u32) {
     let sessions = state.sessions.read().await;
     if let Some(session) = sessions.get(pin) {
         let q_idx = session.current_question_index;
@@ -561,6 +586,7 @@ async fn show_round_results(state: &Arc<AppState>, pin: &str) {
                 histogram,
                 correct_index: correct_idx,
                 leaderboard: leaderboard.clone(),
+                next_in,
             }).unwrap();
 
             if let Some(host_senders) = state.host_senders.read().await.get(pin) {

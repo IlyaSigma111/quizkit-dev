@@ -38,6 +38,7 @@ type RoundResultsData = {
   histogram: number[]
   correct_index: number
   leaderboard: { id: string; nickname: string; total_score: number; rank: number }[]
+  next_in: number
 }
 
 const COLORS = ['#FF4444', '#4488FF', '#FFBB33', '#44CC44']
@@ -45,6 +46,7 @@ const SHAPES = ['△', '◇', '○', '☆']
 
 export function GameHost({ pin, serverInfo, onBack }: Props) {
   const [status, setStatus] = useState<'lobby' | 'active' | 'final'>('lobby')
+  const [qrExpanded, setQrExpanded] = useState(false)
   const [mode, setMode] = useState<'Test' | 'LiveQuiz'>('Test')
   const [advance, setAdvance] = useState<'Auto' | 'Manual'>('Auto')
   const [players, setPlayers] = useState<LobbyPlayer[]>([])
@@ -58,11 +60,13 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
   const [answeredCount, setAnsweredCount] = useState(0)
   const [totalPlayers, setTotalPlayers] = useState(0)
   const [roundResults, setRoundResults] = useState<RoundResultsData | null>(null)
+  const [nextIn, setNextIn] = useState(0)
   const [timerWidth, setTimerWidth] = useState(100)
 
   const wsRef = useRef<WebSocket | null>(null)
   const timerRef = useRef<number | null>(null)
   const countdownRef = useRef<number | null>(null)
+  const nextInRef = useRef<number | null>(null)
 
   const connect = useCallback(() => {
     if (!serverInfo || serverInfo.port === 0) return
@@ -114,7 +118,17 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
 
         case 'round_results':
           if (timerRef.current) { clearInterval(timerRef.current); timerRef.current = null }
-          setRoundResults({ histogram: msg.histogram, correct_index: msg.correct_index, leaderboard: msg.leaderboard })
+          if (nextInRef.current) { clearInterval(nextInRef.current); nextInRef.current = null }
+          setRoundResults({ histogram: msg.histogram, correct_index: msg.correct_index, leaderboard: msg.leaderboard, next_in: msg.next_in })
+          if (msg.next_in > 0) {
+            setNextIn(msg.next_in)
+            let rem = msg.next_in
+            nextInRef.current = window.setInterval(() => {
+              rem--
+              if (rem <= 0) { setNextIn(0); if (nextInRef.current) { clearInterval(nextInRef.current); nextInRef.current = null } }
+              else setNextIn(rem)
+            }, 1000)
+          }
           break
 
         case 'progress':
@@ -240,6 +254,10 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
                     size={180}
                     bgColor="transparent"
                     fgColor="#e8e8f0"
+                    style={{ cursor: 'pointer', transition: 'transform .15s' }}
+                    onClick={() => setQrExpanded(true)}
+                    onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.03)')}
+                    onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
                   />
                   <p className="qr-url">{serverInfo.ip}:{serverInfo.port}</p>
                   <p className="qr-hint">Наведи камеру</p>
@@ -388,6 +406,11 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
                   ))}
                 </div>
               </div>
+              {nextIn > 0 && (
+                <div className="rr-next-timer">
+                  Следующий вопрос через <strong>{nextIn}с</strong>
+                </div>
+              )}
               {advance === 'Manual' && (
                 <button className="btn btn-primary" onClick={handleNextQuestion} style={{ alignSelf: 'center' }}>
                   ➡ Следующий вопрос
@@ -420,6 +443,22 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
             ))}
           </div>
           <button className="btn btn-secondary" onClick={onBack}>← На главную</button>
+        </div>
+      )}
+
+      {qrExpanded && serverInfo && (
+        <div className="modal-overlay" onClick={() => setQrExpanded(false)}>
+          <div className="qr-expanded" onClick={e => e.stopPropagation()}>
+            <QRCodeSVG
+              value={`http://${serverInfo.ip}:${serverInfo.port}/player?pin=${pin}`}
+              size={320}
+              bgColor="transparent"
+              fgColor="#e8e8f0"
+            />
+            <p className="qr-url">{serverInfo.ip}:{serverInfo.port}</p>
+            <p className="qr-hint">Наведи камеру на QR</p>
+            <button className="btn btn-secondary" onClick={() => setQrExpanded(false)}>Закрыть</button>
+          </div>
         </div>
       )}
     </div>
