@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QuizKit — викторины и проверочные работы в классе</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🦉</text></svg>">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#08080e;color:#ededef;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(120,80,255,.35)}
+
+/* ─── Background Orbs ─── */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.15}
+.bg .orb:nth-child(1){width:600px;height:600px;background:#7850ff;top:-200px;left:-100px;animation:orbFloat 20s ease-in-out infinite}
+.bg .orb:nth-child(2){width:500px;height:500px;background:#ff50a0;bottom:-150px;right:-80px;animation:orbFloat 25s ease-in-out infinite reverse}
+.bg .orb:nth-child(3){width:400px;height:400px;background:#50c8ff;top:50%;left:50%;transform:translate(-50%,-50%);animation:orbFloat 18s ease-in-out infinite 5s}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-60px) scale(1.1)}66%{transform:translate(-30px,40px) scale(.9)}}
+
+/* ─── Nav ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rgba(8,8,14,.75);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.05);transition:transform .35s}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#ededef}
+.nav-logo svg{width:22px;height:22px;flex-shrink:0}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-right a{font-size:13px;color:#787888;transition:color .2s}
+.nav-right a:hover{color:#ededef}
+.nav-right .btn{padding:7px 18px;font-size:12px}
+
+/* ─── Hero ─── */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 70px;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;font-size:12px;font-weight:500;background:rgba(120,80,255,.12);color:#a080ff;border:1px solid rgba(120,80,255,.15);margin-bottom:24px;letter-spacing:.3px}
+.hero h1{font-size:clamp(36px,6.5vw,72px);font-weight:700;letter-spacing:-2px;line-height:1.06;max-width:820px;background:linear-gradient(135deg,#f0eff5 0%,#a080ff 50%,#ff70b0 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:clamp(15px,1.8vw,18px);color:#686878;max-width:580px;margin-top:18px;line-height:1.5}
+.hero-btns{display:flex;gap:10px;margin-top:32px;flex-wrap:wrap;justify-content:center}
+.hero-stats{display:flex;gap:36px;margin-top:48px}
+.hero-stats span{font-size:13px;color:#585868;display:flex;align-items:center;gap:6px}
+.hero-stats span svg{width:16px;height:16px;opacity:.5}
+
+/* ─── Buttons ─── */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;border:none;letter-spacing:0;position:relative}
+.btn-primary{background:#7850ff;color:#fff}
+.btn-primary:hover{background:#6840ef;transform:translateY(-2px);box-shadow:0 8px 30px rgba(120,80,255,.25)}
+.btn-secondary{background:rgba(255,255,255,.06);color:#ededef;border:1px solid rgba(255,255,255,.08)}
+.btn-secondary:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.14);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#787888;padding:13px 16px}
+.btn-ghost:hover{color:#ededef}
+.btn-download{background:#7850ff;color:#fff;padding:16px 32px;font-size:15px;border-radius:12px}
+.btn-download:hover{background:#6840ef;transform:translateY(-2px);box-shadow:0 8px 30px rgba(120,80,255,.25)}
+.btn-download small{font-weight:400;opacity:.7;font-size:11px;display:block;margin-top:2px}
+.btn-outline{background:transparent;color:#ededef;border:1px solid rgba(255,255,255,.12);padding:16px 32px;font-size:15px;border-radius:12px}
+.btn-outline:hover{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.2);transform:translateY(-2px)}
+
+/* ─── Sections ─── */
+section{padding:100px 24px;position:relative;z-index:1}
+.section-inner{max-width:1000px;margin:0 auto}
+.section-label{font-size:12px;font-weight:600;color:#7850ff;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
+.section-title{font-size:clamp(26px,3.5vw,40px);font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:14px;color:#ededef}
+.section-desc{color:#686878;font-size:15px;max-width:520px;line-height:1.6}
+
+/* ─── Steps ─── */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:40px}
+.step{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:28px 24px;transition:all .25s}
+.step:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);transform:translateY(-4px)}
+.step-icon{width:40px;height:40px;border-radius:10px;background:rgba(120,80,255,.1);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:14px}
+.step h3{font-size:15px;font-weight:600;margin-bottom:4px;color:#ededef}
+.step p{color:#686878;font-size:13px;line-height:1.5}
+
+/* ─── Features ─── */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px;margin-top:40px}
+.feature-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:28px 24px;transition:all .25s}
+.feature-card:hover{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1);transform:translateY(-4px)}
+.feature-icon{width:36px;height:36px;border-radius:8px;background:rgba(120,80,255,.1);display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:12px}
+.feature-card h3{font-size:14px;font-weight:600;margin-bottom:4px}
+.feature-card p{color:#686878;font-size:13px;line-height:1.5}
+
+/* ─── Download Section ─── */
+.download-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:40px}
+.download-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:32px;text-align:center;transition:all .25s}
+.download-card:hover{border-color:rgba(255,255,255,.12);transform:translateY(-4px)}
+.download-card .os-icon{font-size:36px;margin-bottom:12px}
+.download-card h3{font-size:16px;font-weight:600;margin-bottom:4px}
+.download-card p{color:#686878;font-size:13px;margin-bottom:16px}
+.download-card .file-info{font-size:11px;color:#585868;margin-top:8px}
+.download-card.soon{opacity:.4;pointer-events:none}
+.download-card.soon::after{content:'Скоро';position:absolute;top:12px;right:12px;font-size:10px;font-weight:600;color:#a080ff;background:rgba(120,80,255,.12);padding:3px 10px;border-radius:100px}
+
+/* ─── FAQ ─── */
+.faq-list{max-width:660px;margin-top:36px;display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.06)}
+.faq-q{width:100%;padding:18px 0;background:none;border:none;color:#ededef;font-size:14px;font-weight:500;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .2s}
+.faq-q:hover{color:#a080ff}
+.faq-q .arrow{font-size:10px;color:#585868;transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-q .arrow{transform:rotate(180deg)}
+.faq-a{padding:0 0 18px;color:#686878;font-size:13px;line-height:1.7;display:none}
+.faq-item.open .faq-a{display:block}
+
+/* ─── CTA ─── */
+.cta{text-align:center;padding:100px 24px}
+.cta h2{font-size:clamp(26px,3.5vw,38px);font-weight:700;margin-bottom:10px}
+.cta p{color:#686878;margin-bottom:24px;font-size:15px}
+
+/* ─── Footer ─── */
+footer{padding:40px 24px;border-top:1px solid rgba(255,255,255,.05);max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;color:#585868;font-size:12px;position:relative;z-index:1}
+footer a{color:#686878;transition:color .2s}
+footer a:hover{color:#ededef}
+.footer-links{display:flex;gap:16px}
+
+/* ─── Responsive ─── */
+@media(max-width:768px){
+  .nav-right a:not(.btn){display:none}
+  .hero-stats{flex-direction:column;gap:12px;align-items:center}
+  .download-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div class="bg">
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+</div>
+
+<nav>
+<div class="nav-inner">
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="2" opacity=".15"/><path d="M50 22c-8 0-14 6-14 14v6h-4c-3 0-6 3-6 6v24c0 3 3 6 6 6h36c3 0 6-3 6-6V48c0-3-3-6-6-6h-4v-6c0-8-6-14-14-14zm-8 20V36a8 8 0 1116 0v6H42zm-6 10h28v20H36V52z" fill="currentColor"/><circle cx="50" cy="60" r="4" fill="currentColor" opacity=".4"/></svg>
+    QuizKit
+  </a>
+  <div class="nav-right">
+    <a href="#how">Как работает</a>
+    <a href="#features">Возможности</a>
+    <a href="#faq">FAQ</a>
+    <a href="#download" class="btn btn-primary">Скачать</a>
+  </div>
+</div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">🆕 Версия 0.1.0</div>
+  <h1>Викторины и проверочные работы — без интернета и установки</h1>
+  <p>Учитель запускает один .exe — класс подключается по QR-коду. Никаких регистраций, серверов и приложений для учеников.</p>
+  <div class="hero-btns">
+    <a href="#download" class="btn-download">⬇ Скачать для Windows</a>
+    <a href="#how" class="btn-outline">Как работает</a>
+  </div>
+  <div class="hero-stats">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> Один .exe</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="12" r="3"/><path d="M12 7v2"/><path d="M12 15v2"/></svg> QR-код для входа</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Мгновенный старт</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Локальная сеть</span>
+  </div>
+</section>
+
+<section id="how">
+<div class="section-inner">
+  <div class="section-label">Как работает</div>
+  <h2 class="section-title">От запуска до первого ответа — меньше минуты</h2>
+  <p class="section-desc">Никакой подготовки. Просто запустите программу и покажите QR на экране.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-icon">📦</div>
+      <h3>Скачайте .exe</h3>
+      <p>Один файл. Ничего устанавливать не нужно. Просто запустите.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">✏️</div>
+      <h3>Создайте квиз</h3>
+      <p>Встроенный редактор: вопросы, ответы, баллы, импорт из JSON.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">▶️</div>
+      <h3>Запустите игру</h3>
+      <p>Выберите режим — на экране появится QR-код. Ученики сканируют.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">📱</div>
+      <h3>Ученики в деле</h3>
+      <p>Открыли в браузере — ввели имя — отвечают. Всё, никаких приложений.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="features">
+<div class="section-inner">
+  <div class="section-label">Возможности</div>
+  <h2 class="section-title">Всё для активной работы в классе</h2>
+  <p class="section-desc">Два режима, живая статистика и таблица лидеров — и никаких регистраций.</p>
+  <div class="features">
+    <div class="feature-card"><div class="feature-icon">🎮</div><h3>Два формата</h3><p>Проверочная работа — каждый в своём темпе. Викторина — все одновременно на время.</p></div>
+    <div class="feature-card"><div class="feature-icon">📱</div><h3>Без установки для учеников</h3><p>Открывают страницу по QR — без приложений, регистраций и СМС. Просто браузер.</p></div>
+    <div class="feature-card"><div class="feature-icon">📊</div><h3>Живая статистика</h3><p>На экране учителя: кто ответил, сколько баллов, распределение ответов.</p></div>
+    <div class="feature-card"><div class="feature-icon">🏆</div><h3>Таблица лидеров</h3><p>После каждого раунда и в финале — рейтинг с баллами. Соревновательный дух.</p></div>
+    <div class="feature-card"><div class="feature-icon">📂</div><h3>Импорт из JSON</h3><p>Готовьте вопросы в любом текстовом редакторе и импортируйте одним кликом.</p></div>
+    <div class="feature-card"><div class="feature-icon">🔒</div><h3>Локально и безопасно</h3><p>Сервер работает в вашей сети. Никаких внешних серверов и интернета.</p></div>
+  </div>
+</div>
+</section>
+
+<section id="download">
+<div class="section-inner" style="text-align:center">
+  <div class="section-label">Скачать</div>
+  <h2 class="section-title">Попробуйте прямо сейчас</h2>
+  <p class="section-desc" style="margin:0 auto">Скачайте бета-версию и проведите свою первую викторину за пару минут</p>
+  <div class="download-grid">
+    <a href="https://github.com/IlyaSigma111/quizkit/releases/latest/download/quizkit-windows-x64.exe" class="download-card" style="text-decoration:none;display:block;position:relative">
+      <div class="os-icon">🪟</div>
+      <h3>Windows 10 / 11</h3>
+      <p>x64 • one .exe</p>
+      <span class="btn-download" style="display:inline-flex;font-size:13px;padding:10px 20px">⬇ Скачать</span>
+      <div class="file-info">~10 МБ • портабельная версия</div>
+    </a>
+    <div class="download-card soon" style="position:relative">
+      <div class="os-icon">🍎</div>
+      <h3>macOS</h3>
+      <p>Intel & Apple Silicon</p>
+      <span class="btn-download" style="display:inline-flex;font-size:13px;padding:10px 20px;opacity:.5">⬇ Скачать</span>
+      <div class="file-info">Скоро будет доступна</div>
+    </div>
+    <div class="download-card soon" style="position:relative">
+      <div class="os-icon">🐧</div>
+      <h3>Linux</h3>
+      <p>AppImage / deb</p>
+      <span class="btn-download" style="display:inline-flex;font-size:13px;padding:10px 20px;opacity:.5">⬇ Скачать</span>
+      <div class="file-info">Скоро будет доступна</div>
+    </div>
+  </div>
+  <div style="margin-top:28px;font-size:13px;color:#585868">
+    <span>📦 Версия 0.1.0 beta — </span>
+    <a href="https://github.com/IlyaSigma111/quizkit/releases" style="color:#a080ff">Все релизы на GitHub</a>
+  </div>
+</div>
+</section>
+
+<section id="faq">
+<div class="section-inner">
+  <div class="section-label">FAQ</div>
+  <h2 class="section-title">Частые вопросы</h2>
+  <div class="faq-list">
+    <div class="faq-item"><button class="faq-q">Нужен ли интернет для работы? <span class="arrow">▼</span></button><div class="faq-a">Нет. Приложение создаёт локальный веб-сервер в вашей Wi-Fi сети. Ученики подключаются к нему через браузер — внешний интернет не требуется.</div></div>
+    <div class="faq-item"><button class="faq-q">Что нужно ученикам? <span class="arrow">▼</span></button><div class="faq-a">Только телефон с камерой и браузером. Наводят камеру на QR — открывается страница, вводят имя и отвечают. Никаких приложений, регистраций и аккаунтов.</div></div>
+    <div class="faq-item"><button class="faq-q">Сколько учеников может играть одновременно? <span class="arrow">▼</span></button><div class="faq-a">Ограничений по софту нет. Реальное ограничение — пропускная способность вашей Wi-Fi сети и мощность компьютера учителя. 30+ человек работают стабильно.</div></div>
+    <div class="faq-item"><button class="faq-q">Можно ли импортировать вопросы из файла? <span class="arrow">▼</span></button><div class="faq-a">Да. В редакторе есть кнопка «📂 JSON» — загружайте .json с вопросами и ответами в нужном формате. Шаблон покажет сама программа.</div></div>
+    <div class="faq-item"><button class="faq-q">Это безопасно? Не украдут ли данные? <span class="arrow">▼</span></button><div class="faq-a">Всё работает локально — данные не уходят за пределы вашей сети. Приложение не собирает никакую личную информацию. На первом запуске Windows попросит разрешение на доступ к сети — это нормально.</div></div>
+    <div class="faq-item"><button class="faq-q">На чём написано приложение? <span class="arrow">▼</span></button><div class="faq-a">Бэкенд на Rust (Tauri v2, axum), фронтенд — React + TypeScript. Всё компилируется в один .exe без зависимостей.</div></div>
+  </div>
+</div>
+</section>
+
+<section class="cta">
+  <h2>Готовы попробовать?</h2>
+  <p>Скачайте — и через 2 минуты класс уже отвечает на вопросы</p>
+  <a href="#download" class="btn-download">⬇ Скачать для Windows</a>
+</section>
+
+<footer>
+  <div>🦉 QuizKit — викторины для класса</div>
+  <div class="footer-links">
+    <a href="https://github.com/IlyaSigma111/quizkit">GitHub</a>
+    <a href="https://github.com/IlyaSigma111/quizkit/issues">Обратная связь</a>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(b=>b.addEventListener('click',function(){this.parentElement.classList.toggle('open')}))
+let lastScroll=0;window.addEventListener('scroll',()=>{const y=window.scrollY;const n=document.querySelector('nav');if(n){n.style.transform=y>lastScroll&&y>60?'translateY(-100%)':'translateY(0)';lastScroll=y}},{passive:true})
+</script>
+</body>
+</html>
