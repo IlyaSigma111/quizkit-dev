@@ -7,6 +7,7 @@ type AppSettings = {
   default_time_seconds: number
   default_points: number
   theme: string
+  internet_check: boolean
 }
 
 type Props = {
@@ -30,6 +31,10 @@ const THEMES = [
   { value: 'ocean', label: 'Океан', icon: '<path d="M2 12h20"/><path d="M2 6h20"/><path d="M2 18h20"/>', desc: 'Синяя глубина' },
   { value: 'forest', label: 'Лес', icon: '<path d="M12 2L2 12l3 0 0 8 6 0 0-4 2 0 0 4 6 0 0-8 3 0z"/>', desc: 'Зелёный спокойный' },
   { value: 'sunset', label: 'Закат', icon: '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>', desc: 'Тёплый оранжевый' },
+  { value: 'rose', label: 'Роза', icon: '<circle cx="12" cy="12" r="10"/><path d="M12 2C6 2 2 6 2 12s4 10 10 10"/>', desc: 'Розово-коралловый' },
+  { value: 'sky', label: 'Небо', icon: '<path d="M2 12h20"/><path d="M6 6h4"/><path d="M14 18h6"/>', desc: 'Голубой и свежий' },
+  { value: 'violet', label: 'Фиалка', icon: '<polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/>', desc: 'Фиолетовый акцент' },
+  { value: 'cyberpunk', label: 'Киберпанк', icon: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/>', desc: 'Неон и контраст' },
 ]
 
 export function Settings({ onBack, onThemeChange }: Props) {
@@ -156,6 +161,15 @@ export function Settings({ onBack, onThemeChange }: Props) {
               />
             </label>
           </div>
+          <label className="internet-check-settings">
+            <input
+              type="checkbox"
+              checked={settings.internet_check}
+              onChange={(e) => update({ internet_check: e.target.checked })}
+            />
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Обнаруживать мобильный интернет у учеников
+          </label>
         </div>
 
         {error && <div className="settings-error">{error}</div>}
