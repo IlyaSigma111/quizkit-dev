@@ -178,6 +178,8 @@ pub struct AppSettings {
     pub default_points: u32,
     #[serde(default = "default_theme")]
     pub theme: String,
+    #[serde(default = "default_style")]
+    pub style: String,
 }
 
 fn default_mode() -> String { "test".to_string() }
@@ -185,6 +187,7 @@ fn default_advance() -> String { "auto".to_string() }
 fn default_time_seconds() -> u32 { 30 }
 fn default_points() -> u32 { 10 }
 fn default_theme() -> String { "spline".to_string() }
+fn default_style() -> String { "editorial".to_string() }
 
 impl Default for AppSettings {
     fn default() -> Self {
@@ -194,6 +197,7 @@ impl Default for AppSettings {
             default_time_seconds: 30,
             default_points: 10,
             theme: "spline".to_string(),
+            style: "editorial".to_string(),
         }
     }
 }

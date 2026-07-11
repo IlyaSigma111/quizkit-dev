@@ -259,7 +259,7 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
               {serverInfo ? (
                 <>
                   <QRCodeSVG
-                    value={`http://${serverInfo.ip}:${serverInfo.port}/player?pin=${pin}&theme=${document.documentElement.className.replace('theme-','')}`}
+                    value={`http://${serverInfo.ip}:${serverInfo.port}/player?pin=${pin}&theme=${document.documentElement.className.match(/theme-(\S+)/)?.[1]||'spline'}&style=${document.documentElement.className.match(/style-(\S+)/)?.[1]||'editorial'}`}
                     size={180}
                     bgColor="transparent"
                     fgColor="#e8e8f0"
@@ -465,7 +465,7 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
         <div className="modal-overlay" onClick={() => setQrExpanded(false)}>
           <div className="qr-expanded" onClick={e => e.stopPropagation()}>
             <QRCodeSVG
-               value={`http://${serverInfo.ip}:${serverInfo.port}/player?pin=${pin}&theme=${document.documentElement.className.replace('theme-','')}`}
+               value={`http://${serverInfo.ip}:${serverInfo.port}/player?pin=${pin}&theme=${document.documentElement.className.match(/theme-(\S+)/)?.[1]||'spline'}&style=${document.documentElement.className.match(/style-(\S+)/)?.[1]||'editorial'}`}
               size={320}
               bgColor="transparent"
               fgColor="#e8e8f0"

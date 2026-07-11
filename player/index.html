@@ -26,6 +26,13 @@ body.theme-mint{--bg:linear-gradient(135deg,#0a1a12,#0f241a,#0a1a12);--bg-card:r
 body.theme-lavender{--bg:linear-gradient(135deg,#12101a,#1a1630,#12101a);--bg-card:rgba(25,20,45,.7);--bg-card-solid:#18132a;--bg-input:rgba(35,28,60,.4);--text:#ece8f0;--text-secondary:#8a80a0;--primary:#a78bfa;--primary-hover:#8b72e8;--primary-glow:rgba(167,139,250,.2);--border:rgba(167,139,250,.12)}
 body.theme-coral{--bg:linear-gradient(135deg,#1a0e0e,#2a1418,#1a0e0e);--bg-card:rgba(40,20,22,.7);--bg-card-solid:#221012;--bg-input:rgba(55,25,28,.4);--text:#f0e4e4;--text-secondary:#9a7a7a;--primary:#fb7185;--primary-hover:#f43f5e;--primary-glow:rgba(251,113,133,.2);--border:rgba(251,113,133,.12)}
 
+/* ─── Styles ─── */
+.style-editorial{--bg:#ffffff;--bg-alt:#f7f8fb;--bg-card:#ffffff;--bg-card-solid:#ffffff;--bg-input:#f7f8fb;--text:#13151b;--text-secondary:#525769;--primary:#000000;--primary-hover:#222;--primary-glow:rgba(0,0,0,.08);--border:#e4e6ee;--radius:64px;--shadow:0 1px 3px rgba(12,41,126,.07)}
+.style-midnight{--bg:#080812;--bg-alt:#0e0e1c;--bg-card:rgba(255,255,255,.04);--bg-card-solid:rgba(8,8,18,.9);--bg-input:rgba(255,255,255,.06);--text:#e8e8f0;--text-secondary:#a0a0c0;--primary:#6366F1;--primary-hover:#5558e6;--primary-glow:rgba(99,102,241,.2);--border:rgba(255,255,255,.08);--radius:14px;--shadow:0 8px 32px rgba(0,0,0,.3)}
+.style-brutalist{--bg:#e8e4de;--bg-alt:#d8d4ce;--bg-card:#e8e4de;--bg-card-solid:#e8e4de;--bg-input:#d8d4ce;--text:#1a1a1a;--text-secondary:#444;--primary:#ff3300;--primary-hover:#cc2900;--primary-glow:rgba(255,51,0,.15);--border:#1a1a1a;--radius:0px;--shadow:6px 6px 0px #1a1a1a}
+.style-neon{--bg:#0a0a0f;--bg-alt:#111118;--bg-card:#111118;--bg-card-solid:#0a0a0f;--bg-input:#111118;--text:#f0f0f5;--text-secondary:#8888aa;--primary:#00ff88;--primary-hover:#00cc6a;--primary-glow:rgba(0,255,136,.15);--border:#222233;--radius:12px;--shadow:0 0 20px rgba(0,255,136,.08)}
+.style-paper{--bg:#faf6f1;--bg-alt:#f3ede5;--bg-card:#ffffff;--bg-card-solid:#ffffff;--bg-input:#f3ede5;--text:#2c2416;--text-secondary:#6b5d4d;--primary:#c05621;--primary-hover:#a0471a;--primary-glow:rgba(192,86,33,.1);--border:#e0d5c8;--radius:12px;--shadow:0 2px 12px rgba(44,36,22,.08)}
+
 body{font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);min-height:100dvh;display:flex;align-items:center;justify-content:center;-webkit-font-smoothing:antialiased;background-attachment:fixed}
 .player-app{width:100%;max-width:420px;min-height:100dvh;padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .screen{display:none;width:100%}
@@ -191,7 +198,7 @@ p{font-size:14px;line-height:1.5;color:var(--text-secondary);text-align:center}
 </div>
 <script>
 // ─── Theme from URL ───
-(function(){const t=new URLSearchParams(window.location.search).get('theme');if(t&&t.trim())document.body.className='theme-'+t.trim()})();
+(function(){const t=new URLSearchParams(window.location.search).get('theme');if(t&&t.trim())document.body.className='theme-'+t.trim();const s=new URLSearchParams(window.location.search).get('style');if(s&&s.trim())document.body.classList.add('style-'+s.trim())})();
 
 let ws=null,playerId='',nickname='',currentPin='';
 const urlPin=(new URLSearchParams(window.location.search).get('pin')||'').trim();

@@ -7,12 +7,14 @@ type AppSettings = {
   default_time_seconds: number
   default_points: number
   theme: string
+  style: string
   internet_check: boolean
 }
 
 type Props = {
   onBack: () => void
   onThemeChange: (theme: string) => void
+  onStyleChange: (style: string) => void
 }
 
 const MODES = [
@@ -43,10 +45,20 @@ const THEMES = [
   { value: 'coral', label: 'Коралл', icon: '<circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12"/>', desc: 'Розово-коралловый' },
 ]
 
-export function Settings({ onBack, onThemeChange }: Props) {
+const STYLES = [
+  { value: 'editorial', label: 'Editorial', icon: '<path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/>', desc: 'Светлый, шрифты с засечками' },
+  { value: 'midnight', label: 'Midnight', icon: '<path d="M12 3a9 9 0 1 0 9 9"/><circle cx="12" cy="12" r="3"/>', desc: 'Тёмное стекло с индиго' },
+  { value: 'brutalist', label: 'Brutalist', icon: '<rect x="3" y="3" width="18" height="18" rx="0"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/>', desc: 'Бежевый, красный, острые углы' },
+  { value: 'neon', label: 'Neon', icon: '<circle cx="12" cy="12" r="8" fill="none"/><path d="M12 4v16M4 12h16" stroke-width="1"/>', desc: 'Тёмный, зелёное свечение' },
+  { value: 'paper', label: 'Paper', icon: '<path d="M4 6h16M4 12h16M4 18h12"/><circle cx="18" cy="18" r="3"/>', desc: 'Тёплый бежевый, терракот' },
+]
+
+export function Settings({ onBack, onThemeChange, onStyleChange }: Props) {
   const [settings, setSettings] = useState<AppSettings | null>(null)
   const [saved, setSaved] = useState(false)
   const [error, setError] = useState('')
+  const [showThemes, setShowThemes] = useState(false)
+  const [showStyles, setShowStyles] = useState(false)
 
   useEffect(() => {
     invoke<AppSettings>('get_settings').then(setSettings).catch(console.error)
@@ -119,28 +131,65 @@ export function Settings({ onBack, onThemeChange }: Props) {
         </div>
 
         <div className="settings-section">
-          <h3>Тема оформления</h3>
-          <div className="settings-row settings-themes">
-            {THEMES.map((t) => (
-              <button
-                key={t.value}
-                className={`settings-card theme-card theme-card-${t.value} ${settings.theme === t.value ? 'selected' : ''}`}
-                onClick={() => {
-                  update({ theme: t.value })
-                  onThemeChange(t.value)
-                  const newSettings = { ...settings, theme: t.value }
-                  invoke('save_settings', { settings: newSettings }).catch(() => {})
-                }}
-              >
-                <span className="settings-card-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" dangerouslySetInnerHTML={{ __html: t.icon }} />
-                </span>
-                <span className="settings-card-title">{t.label}</span>
-                <span className="settings-card-desc">{t.desc}</span>
-                <span className="theme-swatch" />
-              </button>
-            ))}
-          </div>
+          <button className="settings-collapse" onClick={() => setShowThemes(!showThemes)}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" style={{ transform: showThemes ? 'rotate(90deg)' : 'rotate(0deg)', transition: 'transform .2s' }}><polyline points="9 18 15 12 9 6"/></svg>
+            <h3>Темы</h3>
+            <span className="settings-count">{THEMES.length}</span>
+          </button>
+          {showThemes && (
+            <div className="settings-row settings-themes">
+              {THEMES.map((t) => (
+                <button
+                  key={t.value}
+                  className={`settings-card theme-card theme-card-${t.value} ${settings.theme === t.value ? 'selected' : ''}`}
+                  onClick={() => {
+                    update({ theme: t.value })
+                    onThemeChange(t.value)
+                    const newSettings = { ...settings, theme: t.value }
+                    invoke('save_settings', { settings: newSettings }).catch(() => {})
+                  }}
+                >
+                  <span className="settings-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" dangerouslySetInnerHTML={{ __html: t.icon }} />
+                  </span>
+                  <span className="settings-card-title">{t.label}</span>
+                  <span className="settings-card-desc">{t.desc}</span>
+                  <span className="theme-swatch" />
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div className="settings-section">
+          <button className="settings-collapse" onClick={() => setShowStyles(!showStyles)}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" style={{ transform: showStyles ? 'rotate(90deg)' : 'rotate(0deg)', transition: 'transform .2s' }}><polyline points="9 18 15 12 9 6"/></svg>
+            <h3>Стили</h3>
+            <span className="settings-count">{STYLES.length}</span>
+          </button>
+          {showStyles && (
+            <div className="settings-row settings-themes">
+              {STYLES.map((s) => (
+                <button
+                  key={s.value}
+                  className={`settings-card style-card style-card-${s.value} ${settings.style === s.value ? 'selected' : ''}`}
+                  onClick={() => {
+                    update({ style: s.value })
+                    onStyleChange(s.value)
+                    const newSettings = { ...settings, style: s.value }
+                    invoke('save_settings', { settings: newSettings }).catch(() => {})
+                  }}
+                >
+                  <span className="settings-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" dangerouslySetInnerHTML={{ __html: s.icon }} />
+                  </span>
+                  <span className="settings-card-title">{s.label}</span>
+                  <span className="settings-card-desc">{s.desc}</span>
+                  <span className="style-swatch" />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="settings-section">
