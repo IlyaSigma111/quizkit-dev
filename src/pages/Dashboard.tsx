@@ -108,12 +108,17 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
     invoke('delete_quiz', { id }).then(loadQuizzes).catch(console.error)
   }
 
-  const [showModePicker, setShowModePicker] = useState<string | null>(null)
+  interface ModePickerState {
+    quizId: string
+    step: 'type' | 'advance'
+    gameType?: 'live'
+  }
+  const [modePicker, setModePicker] = useState<ModePickerState | null>(null)
 
   const handleStart = async (quizId: string, mode: string, advance: string) => {
     try {
       const session = await invoke<GameSession>('start_game', { quizId, mode, advance })
-      setShowModePicker(null)
+      setModePicker(null)
       onStartGame(session.pin)
     } catch (e) {
       alert('Ошибка: ' + e)
@@ -182,7 +187,7 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
             </div>
             {quiz.description && <p className="quiz-desc">{quiz.description}</p>}
             <div className="quiz-card-actions">
-              <button className="btn btn-play" onClick={() => setShowModePicker(quiz.id)}>
+              <button className="btn btn-play" onClick={() => setModePicker({ quizId: quiz.id, step: 'type' })}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 Играть
               </button>
@@ -204,34 +209,65 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
         )}
       </div>
 
-      {showModePicker && (
-        <div className="modal-overlay" onClick={() => setShowModePicker(null)}>
+      {modePicker && (
+        <div className="modal-overlay" onClick={() => setModePicker(null)}>
           <div className="mode-picker" onClick={(e) => e.stopPropagation()}>
-            <h3>Выберите формат</h3>
-            <div className="mode-options">
-              <button className="mode-option" onClick={() => handleStart(showModePicker, 'test', 'auto')}>
-                <span className="mode-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-                </span>
-                <span className="mode-title">Проверочная работа</span>
-                <span className="mode-desc">Каждый ученик отвечает в своём темпе</span>
-              </button>
-              <button className="mode-option" onClick={() => handleStart(showModePicker, 'live', 'auto')}>
-                <span className="mode-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                </span>
-                <span className="mode-title">Викторина (авто)</span>
-                <span className="mode-desc">Таймер на каждый вопрос, авто-переход</span>
-              </button>
-              <button className="mode-option" onClick={() => handleStart(showModePicker, 'live', 'manual')}>
-                <span className="mode-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                </span>
-                <span className="mode-title">Викторина (вручную)</span>
-                <span className="mode-desc">Учитель сам листает вопросы</span>
-              </button>
-            </div>
-            <button className="btn btn-secondary" onClick={() => setShowModePicker(null)}>Отмена</button>
+            {modePicker.step === 'type' ? (
+              <>
+                <h3>Выберите формат</h3>
+                <div className="mode-options">
+                  <button className="mode-option" onClick={() => handleStart(modePicker.quizId, 'test', 'auto')}>
+                    <span className="mode-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                    </span>
+                    <span className="mode-title">Проверочная работа</span>
+                    <span className="mode-desc">Каждый ученик отвечает в своём темпе</span>
+                  </button>
+                  <button className="mode-option" onClick={() => setModePicker({ ...modePicker, step: 'advance', gameType: 'live' })}>
+                    <span className="mode-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </span>
+                    <span className="mode-title">Викторина</span>
+                    <span className="mode-desc">△◇○☆ — 4 варианта ответа</span>
+                  </button>
+                  <button className="mode-option" onClick={() => setModePicker({ ...modePicker, step: 'advance', gameType: 'live' })}>
+                    <span className="mode-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                    </span>
+                    <span className="mode-title">Правда и Ложь</span>
+                    <span className="mode-desc">✓✗ — 2 варианта ответа</span>
+                  </button>
+                </div>
+                <button className="btn btn-secondary" onClick={() => setModePicker(null)}>Отмена</button>
+              </>
+            ) : (
+              <>
+                <h3>{modePicker.gameType === 'live' ? 'Викторина / Правда и Ложь' : ''}</h3>
+                <p style={{ fontSize: 13, color: 'var(--text-secondary)', textAlign: 'center', marginBottom: 4 }}>
+                  Режим перехода между вопросами
+                </p>
+                <div className="mode-options">
+                  <button className="mode-option" onClick={() => handleStart(modePicker.quizId, 'live', 'auto')}>
+                    <span className="mode-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </span>
+                    <span className="mode-title">Автоматически</span>
+                    <span className="mode-desc">Таймер на каждый вопрос</span>
+                  </button>
+                  <button className="mode-option" onClick={() => handleStart(modePicker.quizId, 'live', 'manual')}>
+                    <span className="mode-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </span>
+                    <span className="mode-title">Вручную</span>
+                    <span className="mode-desc">Учитель сам листает вопросы</span>
+                  </button>
+                </div>
+                <div className="create-actions" style={{ width: '100%' }}>
+                  <button className="btn btn-secondary" onClick={() => setModePicker({ ...modePicker, step: 'type' })}>← Назад</button>
+                  <button className="btn btn-secondary" onClick={() => setModePicker(null)}>Отмена</button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}
