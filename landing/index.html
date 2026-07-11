@@ -118,6 +118,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:co
 .btn-download{background:var(--primary);color:#fff;padding:16px 32px;font-size:15px;border-radius:12px}
 .btn-download:hover{background:color-mix(in srgb,var(--primary) 80%,#000);transform:translateY(-2px);box-shadow:0 8px 30px color-mix(in srgb,var(--primary) 25%,transparent)}
 .btn-download small{font-weight:400;opacity:.7;font-size:11px;display:block;margin-top:2px}
+.download-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.btn-download-sm{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit;background:var(--primary);color:#fff;text-decoration:none}
+.btn-download-sm:hover{background:color-mix(in srgb,var(--primary) 80%,#000);transform:translateY(-2px);box-shadow:0 4px 20px color-mix(in srgb,var(--primary) 25%,transparent)}
+.btn-download-sm-outline{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.12)}
+.btn-download-sm-outline:hover{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.2)}
 .btn-outline{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.12);padding:16px 32px;font-size:15px;border-radius:12px}
 .btn-outline:hover{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.2);transform:translateY(-2px)}
 .btn-emerald{background:color-mix(in srgb,var(--accent),#000 25%);color:#fff;padding:16px 32px;font-size:15px;border-radius:12px}
@@ -327,15 +332,18 @@ footer a:hover{color:var(--text)}
   <h2 class="section-title">Попробуйте прямо сейчас</h2>
   <p class="section-desc" style="margin:0 auto">Скачайте бета-версию и проведите свою первую викторину за пару минут</p>
   <div class="download-grid">
-    <a href="https://github.com/IlyaSigma111/quizkit/releases/download/v0.4.0/ilya-klass.exe" download="IlyaQlass.exe" class="download-card glass" style="text-decoration:none;display:block">
+    <div class="download-card glass" style="display:block">
       <div class="os-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 8h6"/><path d="M9 12h6"/><path d="M9 16h4"/></svg>
       </div>
       <h3>Windows 10 / 11</h3>
-      <p>x64 • один .exe</p>
-      <span class="btn-download" style="display:inline-flex;font-size:13px;padding:10px 20px">Скачать</span>
-      <div class="file-info">~10 МБ • портабельная версия</div>
-    </a>
+      <p>x64 • ~10 МБ</p>
+      <div class="download-actions">
+        <a href="https://github.com/IlyaSigma111/quizkit/releases/download/v0.4.0/ilya-klass.exe" download="IlyaQlass.exe" class="btn-download-sm">Портативная</a>
+        <a href="https://github.com/IlyaSigma111/quizkit/releases/download/v0.4.0/IlyaKlass_0.1.0_x64-setup.exe" class="btn-download-sm btn-download-sm-outline">Установщик</a>
+      </div>
+      <div class="file-info">.exe — запуск без установки / .exe — установка</div>
+    </div>
     <div class="download-card glass soon" style="position:relative">
       <div class="os-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
