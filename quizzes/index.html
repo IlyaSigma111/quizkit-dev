@@ -3,58 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Тематические викторины — QuizKit</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🦉</text></svg>">
+<title>Готовые квизы — QuizKit</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' stroke='%23A78BFA' stroke-width='2' fill='none' opacity='.3'/><path d='M50 22c-8 0-14 6-14 14v6h-4c-3 0-6 3-6 6v24c0 3 3 6 6 6h36c3 0 6-3 6-6V48c0-3-3-6-6-6h-4v-6c0-8-6-14-14-14zm-8 20V36a8 8 0 1 1 16 0v6H42zm-6 10h28v20H36V52z' fill='%23A78BFA'/><circle cx='50' cy='60' r='4' fill='%23A78BFA' opacity='.6'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+:root {
+  --bg-site: #07070d;
+  --bg-elevated: #0b0b14;
+  --accent: #7C3AED;
+  --accent-light: #A78BFA;
+  --accent-glow: rgba(124,58,237,0.25);
+  --cta: #F43F5E;
+  --cta-hover: #E11D48;
+  --text-primary: #ededef;
+  --text-secondary: #686878;
+  --text-muted: #585868;
+  --glass-bg: rgba(255,255,255,0.03);
+  --glass-border: rgba(255,255,255,0.06);
+  --glass-hover-bg: rgba(124,58,237,0.04);
+  --glass-hover-border: rgba(124,58,237,0.15);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#08080e;color:#ededef;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);background:var(--bg-site);color:var(--text-primary);line-height:1.6;-webkit-font-smoothing:antialiased;position:relative}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 50% 15%,rgba(124,58,237,.07),transparent 60%),radial-gradient(ellipse at 80% 85%,rgba(124,58,237,.03),transparent 50%);pointer-events:none;z-index:-1}
+body::after{content:'';position:fixed;inset:0;background-image:radial-gradient(rgba(255,255,255,.025) 1px,transparent 0);background-size:28px 28px;pointer-events:none;z-index:-1}
 a{color:inherit;text-decoration:none}
-::selection{background:rgba(120,80,255,.35)}
+::selection{background:rgba(124,58,237,.3)}
+:focus-visible{outline:2px solid var(--accent-light);outline-offset:2px;border-radius:4px}
+button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--text-muted);border-radius:10px}
+::-webkit-scrollbar-thumb:hover{background:var(--text-secondary)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rgba(8,8,14,.75);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.05)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;background:rgba(7,7,13,.8);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--glass-border)}
 .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
-.nav-logo{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#ededef}
+.nav-logo{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:var(--text-primary);font-family:var(--font-heading)}
 .nav-logo svg{width:22px;height:22px}
+.nav-back{font-size:13px;color:var(--text-secondary);transition:color .2s;display:inline-flex;align-items:center;gap:4px;padding:4px 8px;border-radius:var(--radius-sm);margin:0 -8px}
+.nav-back svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none}
+.nav-back:hover{color:var(--text-primary);background:rgba(255,255,255,.04)}
 
-.hero{text-align:center;padding:120px 24px 40px}
-.hero h1{font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-1px;margin-bottom:10px}
-.hero p{color:#686878;font-size:15px;max-width:500px;margin:0 auto}
+.hero{text-align:center;padding:120px 24px 40px;position:relative}
+.hero::before{content:'';position:absolute;top:50%;left:50%;translate:-50% -50%;width:500px;height:500px;background:radial-gradient(circle,rgba(124,58,237,.08),transparent 70%);pointer-events:none}
+.hero-icon{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(124,58,237,.05));margin-bottom:16px;color:var(--accent-light);position:relative}
+.hero-icon svg{width:26px;height:26px;stroke:currentColor;stroke-width:2;fill:none}
+.hero h1{font-family:var(--font-heading);font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-1px;margin-bottom:10px;position:relative}
+.hero p{color:var(--text-secondary);font-size:15px;max-width:500px;margin:0 auto;position:relative}
+.hero-sub{color:var(--text-muted);font-size:13px;margin-top:10px;position:relative}
 
-.section-title{margin:0 auto;max-width:1000px;padding:32px 24px 16px;font-size:18px;font-weight:600;color:#ededef}
+.tabs{display:flex;justify-content:center;gap:6px;margin:0 auto 8px;max-width:400px;background:rgba(255,255,255,.04);padding:4px;border-radius:var(--radius-md);border:1px solid var(--glass-border)}
+.tab-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:8px 14px;border-radius:var(--radius-sm);border:none;background:transparent;color:var(--text-secondary);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:var(--font-body)}
+.tab-btn svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none}
+.tab-btn:hover{color:var(--text-primary);background:rgba(255,255,255,.05)}
+.tab-btn.active{background:var(--accent);color:#fff;box-shadow:0 2px 12px var(--accent-glow)}
+.tab-content{display:none}
+.tab-content.active{display:block;animation:fadeUp .35s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
-.quiz-grid{max-width:1000px;margin:0 auto;padding:0 24px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.quiz-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;transition:all .25s;display:flex;flex-direction:column}
-.quiz-card:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);transform:translateY(-4px)}
-.quiz-card .icon{font-size:32px;margin-bottom:10px}
-.quiz-card .cat-badge{font-size:11px;color:#a080ff;background:rgba(120,80,255,.1);padding:2px 10px;border-radius:100px;display:inline-block;margin-bottom:8px;width:fit-content}
-.quiz-card h3{font-size:16px;font-weight:600;margin-bottom:4px}
-.quiz-card .desc{color:#686878;font-size:13px;margin-bottom:12px;flex:1;line-height:1.5}
-.quiz-card .meta{display:flex;gap:12px;font-size:12px;color:#585868;margin-bottom:14px}
-.quiz-card .meta span{display:flex;align-items:center;gap:4px}
-.quiz-card .btns{display:flex;gap:8px}
-.quiz-card .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 14px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;border:none;font-family:inherit;flex:1}
-.quiz-card .btn-primary{background:#7850ff;color:#fff}
-.quiz-card .btn-primary:hover{background:#6840ef;transform:translateY(-1px);box-shadow:0 4px 16px rgba(120,80,255,.25)}
-.quiz-card .btn-secondary{background:rgba(255,255,255,.06);color:#ededef;border:1px solid rgba(255,255,255,.08)}
-.quiz-card .btn-secondary:hover{background:rgba(255,255,255,.1);transform:translateY(-1px)}
+.section-title{display:flex;align-items:center;gap:8px;margin:0 auto;max-width:1000px;padding:32px 24px 12px;font-family:var(--font-heading);font-size:18px;font-weight:600;color:var(--text-primary);border-bottom:1px solid var(--glass-border);margin-bottom:0}
+.section-title svg{width:20px;height:20px;stroke:var(--accent-light);stroke-width:2;fill:none}
 
-footer{text-align:center;padding:32px 24px;color:#585868;font-size:12px;border-top:1px solid rgba(255,255,255,.05)}
-footer a{color:#686878}
-footer a:hover{color:#ededef}
+.quiz-grid{max-width:1000px;margin:0 auto;padding:16px 24px 24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.quiz-card{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-lg);padding:24px;transition:all .3s;display:flex;flex-direction:column;cursor:pointer;position:relative;overflow:hidden;will-change:transform}
+.quiz-card::before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,transparent 60%,rgba(124,58,237,.04));opacity:0;transition:opacity .3s;pointer-events:none}
+.quiz-card::after{content:'';position:absolute;top:0;left:24px;right:24px;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity .3s}
+.quiz-card:hover{background:var(--glass-hover-bg);border-color:var(--glass-hover-border);transform:translateY(-4px);box-shadow:0 8px 32px rgba(124,58,237,.08)}
+.quiz-card:hover::before{opacity:1}
+.quiz-card:hover::after{opacity:1}
+.quiz-card .icon-wrap{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.quiz-card .cat-icon{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:var(--radius-sm);background:rgba(124,58,237,.08);flex-shrink:0}
+.quiz-card .cat-icon svg{width:18px;height:18px;stroke:var(--accent-light);stroke-width:2;fill:none}
+.quiz-card .cat-badge{font-size:11px;color:var(--accent-light);background:rgba(124,58,237,.1);padding:2px 10px;border-radius:100px;display:inline-block;width:fit-content;font-weight:500}
+.quiz-card h3{font-size:17px;font-weight:600;margin-bottom:6px;font-family:var(--font-heading);line-height:1.3}
+.quiz-card .desc{color:var(--text-secondary);font-size:13px;margin-bottom:14px;flex:1;line-height:1.55}
+.quiz-card .meta{display:flex;gap:16px;font-size:12px;color:var(--text-muted);margin-bottom:16px}
+.quiz-card .meta span{display:flex;align-items:center;gap:5px}
+.quiz-card .meta svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none}
+.quiz-card .btns{display:flex;gap:8px;position:relative;z-index:1}
+.quiz-card .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 14px;border-radius:var(--radius-sm);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;border:none;font-family:var(--font-body);flex:1;text-decoration:none}
+.quiz-card .btn-primary{background:var(--accent);color:#fff;position:relative;overflow:hidden}
+.quiz-card .btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 40%,rgba(255,255,255,.08));pointer-events:none}
+.quiz-card .btn-primary:hover{background:#6d28d9;transform:translateY(-1px);box-shadow:0 4px 16px var(--accent-glow)}
+.quiz-card .btn-secondary{background:rgba(255,255,255,.06);color:var(--text-primary);border:1px solid var(--glass-border)}
+.quiz-card .btn-secondary:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.12)}
+.btn svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none}
 
-.modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:24px;overflow-y:auto}
+.contact-section{text-align:center;padding:60px 24px 48px;max-width:480px;margin:0 auto}
+.contact-card{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-lg);padding:36px 28px;transition:all .3s}
+.contact-card:hover{border-color:var(--glass-hover-border);box-shadow:0 8px 32px rgba(124,58,237,.06)}
+.contact-card p{color:var(--text-secondary);font-size:14px;margin-bottom:16px;line-height:1.6}
+.contact-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent-light);font-size:14px;font-weight:600;padding:10px 20px;border-radius:var(--radius-sm);border:1px solid rgba(124,58,237,.2);transition:all .2s;text-decoration:none}
+.contact-link svg{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none}
+.contact-link:hover{background:rgba(124,58,237,.08);border-color:var(--accent-light);color:#c0a0ff;transform:translateY(-1px)}
+
+footer{text-align:center;padding:32px 24px;color:var(--text-muted);font-size:12px;border-top:1px solid var(--glass-border)}
+footer a{color:var(--text-secondary);transition:color .2s}
+footer a:hover{color:var(--text-primary)}
+
+.modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:24px;overflow-y:auto}
 .modal-overlay.open{display:flex}
-.modal{background:#12121c;border:1px solid rgba(255,255,255,.08);border-radius:16px;max-width:700px;width:100%;max-height:90vh;overflow-y:auto;padding:32px;position:relative}
-.modal-close{position:sticky;top:0;float:right;background:none;border:none;color:#686878;font-size:22px;cursor:pointer;padding:4px 8px;border-radius:6px}
-.modal-close:hover{color:#ededef;background:rgba(255,255,255,.05)}
-.modal h2{font-size:20px;font-weight:700;margin-bottom:6px;padding-right:32px}
-.modal .modal-sub{color:#686878;font-size:13px;margin-bottom:24px}
-.q-item{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px;margin-bottom:12px}
+.modal-overlay.open .modal{animation:modalIn .25s ease}
+@keyframes modalIn{from{opacity:0;transform:scale(.96) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal{background:var(--bg-elevated);border:1px solid var(--glass-border);border-radius:var(--radius-lg);max-width:700px;width:100%;max-height:90vh;overflow-y:auto;padding:32px;position:relative}
+.modal-close{position:sticky;top:0;float:right;background:rgba(255,255,255,.05);border:none;color:var(--text-secondary);cursor:pointer;padding:8px;border-radius:var(--radius-sm);transition:all .2s;display:flex;align-items:center;justify-content:center}
+.modal-close svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none}
+.modal-close:hover{color:var(--text-primary);background:rgba(255,255,255,.1)}
+.modal h2{font-size:20px;font-weight:700;margin-bottom:6px;padding-right:32px;font-family:var(--font-heading)}
+.modal .modal-sub{color:var(--text-secondary);font-size:13px;margin-bottom:24px;line-height:1.5}
+.q-item{background:rgba(255,255,255,.02);border:1px solid var(--glass-border);border-radius:var(--radius-md);padding:20px;margin-bottom:12px}
 .q-item h4{font-size:14px;font-weight:500;margin-bottom:12px;line-height:1.5}
 .q-opts{display:flex;flex-direction:column;gap:6px}
-.q-opts label{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,.03);font-size:13px;cursor:default;border:1px solid transparent;transition:all .15s}
-.q-opts input[type="radio"]{appearance:none;width:14px;height:14px;border:2px solid #585868;border-radius:50%;flex-shrink:0;position:relative}
+.q-opts label{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:var(--radius-sm);background:rgba(255,255,255,.03);font-size:13px;cursor:default;border:1px solid transparent;transition:all .15s}
+.q-opts input[type="radio"]{appearance:none;width:14px;height:14px;border:2px solid var(--text-muted);border-radius:50%;flex-shrink:0;position:relative}
 .q-opts input[type="radio"]::after{content:'';position:absolute;inset:3px;border-radius:50%;background:transparent;transition:background .15s}
 .q-opts .correct{border-color:rgba(80,200,120,.3);background:rgba(80,200,120,.08)}
 .q-opts .correct input[type="radio"]{border-color:#50c878}
@@ -64,6 +134,7 @@ footer a:hover{color:#ededef}
 @media(max-width:600px){
   .modal{padding:20px 16px}
   .quiz-card .btns{flex-direction:column}
+  .hero::before{width:300px;height:300px}
 }
 </style>
 </head>
@@ -75,16 +146,29 @@ footer a:hover{color:#ededef}
     <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="2" opacity=".15"/><path d="M50 22c-8 0-14 6-14 14v6h-4c-3 0-6 3-6 6v24c0 3 3 6 6 6h36c3 0 6-3 6-6V48c0-3-3-6-6-6h-4v-6c0-8-6-14-14-14zm-8 20V36a8 8 0 1116 0v6H42zm-6 10h28v20H36V52z" fill="currentColor"/><circle cx="50" cy="60" r="4" fill="currentColor" opacity=".4"/></svg>
     QuizKit
   </a>
-  <a href="https://ilyasigma111.github.io/quizkit/" style="font-size:13px;color:#787888">← На главную</a>
+  <a href="https://ilyasigma111.github.io/quizkit/" class="nav-back"><svg viewBox="0 0 24 24" width="14" height="14"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> На главную</a>
 </div>
 </nav>
 
 <div class="hero">
-  <h1>📚 Тематические викторины</h1>
-  <p>Подборки вопросов про праздники России — скачивай или смотри прямо на сайте</p>
+  <div class="hero-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+  <h1>Готовые квизы</h1>
+  <p>Скачивай или смотри прямо на сайте — праздники, животные, космос и природа</p>
+  <div class="hero-sub">27 викторин · 10 стран мира и природы</div>
 </div>
 
+<div class="tabs" id="tabs"></div>
 <div id="content"></div>
+
+<div class="contact-section">
+  <div class="contact-card">
+    <p>Хотите запросить викторину на свою тему?<br>Напишите сюда</p>
+    <a href="https://vk.com/gulkovilya" target="_blank" class="contact-link">
+      <svg viewBox="0 0 24 24"><path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/><path d="M12 6v6"/><path d="M15 9H9"/></svg>
+      vk.com/gulkovilya
+    </a>
+  </div>
+</div>
 
 <footer>
   <a href="https://github.com/IlyaSigma111/quizkit">GitHub</a> &middot; 
@@ -93,7 +177,7 @@ footer a:hover{color:#ededef}
 
 <div class="modal-overlay" id="modal">
 <div class="modal">
-  <button class="modal-close" onclick="closeModal()">✕</button>
+  <button class="modal-close" onclick="closeModal()" aria-label="Закрыть"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
   <h2 id="modalTitle"></h2>
   <div class="modal-sub" id="modalSub"></div>
   <div id="modalBody"></div>
@@ -101,50 +185,70 @@ footer a:hover{color:#ededef}
 </div>
 
 <script>
-const CATS = {
-  '❄️': 'Зимние праздники',
-  '☀️': 'Летние праздники',
-  '🍂': 'Осенние праздники',
-  '🌍': 'Мир и природа'
+const S = {
+  list: '<svg viewBox="0 0 24 24"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg>',
+  zap: '<svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+  snowflake: '<svg viewBox="0 0 24 24"><path d="m10 20 4-16"/><path d="m4.5 6.5 15 11"/><path d="m4.5 17.5 15-11"/></svg>',
+  sun: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>',
+  leaf: '<svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>',
+  globe: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
+  eye: '<svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>',
+  download: '<svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
+  help: '<svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>',
+  alert: '<svg viewBox="0 0 24 24" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
 }
 
+const BADGES = {
+  'winter': { icon: S.snowflake, label: 'Зимние праздники' },
+  'summer': { icon: S.sun, label: 'Летние праздники' },
+  'autumn': { icon: S.leaf, label: 'Осенние праздники' },
+  'nature': { icon: S.globe, label: 'Мир и природа' }
+}
+
+const TABS = [
+  { id:'quiz', label:'Викторины', icon: S.list },
+  { id:'truefalse', label:'Правда и ложь', icon: S.zap }
+]
+
 const QUIZZES = [
-  { file:'heroes-day.json', icon:'🏅', cat:'❄️', title:'День Героев Отечества', desc:'Герои России, ордена и подвиги.', questions:23 },
-  { file:'constitution-day.json', icon:'📜', cat:'❄️', title:'День Конституции', desc:'Основной закон, права человека и история главного документа.', questions:27 },
-  { file:'grandpa-frost-birthday.json', icon:'🎅', cat:'❄️', title:'День рождения Деда Мороза', desc:'Великий Устюг, Снегурочка и зимняя сказка.', questions:27 },
-  { file:'new-year.json', icon:'🎄', cat:'❄️', title:'Новый год', desc:'Ёлка, оливье и главный фильм страны.', questions:28 },
+  { file:'heroes-day.json', icon:'🏅', tab:'quiz', badge:'winter', title:'День Героев Отечества', desc:'Герои России, ордена и подвиги.', questions:23 },
+  { file:'constitution-day.json', icon:'📜', tab:'quiz', badge:'winter', title:'День Конституции', desc:'Основной закон, права человека и история главного документа.', questions:27 },
+  { file:'grandpa-frost-birthday.json', icon:'🎅', tab:'quiz', badge:'winter', title:'День рождения Деда Мороза', desc:'Великий Устюг, Снегурочка и зимняя сказка.', questions:27 },
+  { file:'new-year.json', icon:'🎄', tab:'quiz', badge:'winter', title:'Новый год', desc:'Ёлка, оливье и главный фильм страны.', questions:28 },
 
-  { file:'family-day.json', icon:'💛', cat:'☀️', title:'День семьи, любви и верности', desc:'Пётр и Феврония, ромашки и семейные ценности.', questions:25 },
-  { file:'baptism-day.json', icon:'⛪', cat:'☀️', title:'День Крещения Руси', desc:'Князь Владимир, православие и история христианства.', questions:26 },
-  { file:'flag-day.json', icon:'🇷🇺', cat:'☀️', title:'День Государственного флага', desc:'Бело-сине-красный, история флага и символы России.', questions:25 },
+  { file:'family-day.json', icon:'💛', tab:'quiz', badge:'summer', title:'День семьи, любви и верности', desc:'Пётр и Феврония, ромашки и семейные ценности.', questions:25 },
+  { file:'baptism-day.json', icon:'⛪', tab:'quiz', badge:'summer', title:'День Крещения Руси', desc:'Князь Владимир, православие и история христианства.', questions:26 },
+  { file:'flag-day.json', icon:'🇷🇺', tab:'quiz', badge:'summer', title:'День Государственного флага', desc:'Бело-сине-красный, история флага и символы России.', questions:25 },
 
-  { file:'knowledge-day.json', icon:'📚', cat:'🍂', title:'День знаний', desc:'Первое сентября, линейки и традиции первоклассников.', questions:27 },
-  { file:'elderly-day.json', icon:'👴', cat:'🍂', title:'День пожилых людей', desc:'Уважение к старшим, геронтология и забота.', questions:26 },
-  { file:'teachers-day.json', icon:'🍎', cat:'🍂', title:'День учителя', desc:'Педагогика, цветы и мировые традиции.', questions:25 },
-  { file:'fathers-day.json', icon:'👨', cat:'🍂', title:'День отца', desc:'Роль отца, семейные традиции и известные папы.', questions:24 },
-  { file:'mothers-day.json', icon:'👩', cat:'🍂', title:'День матери', desc:'Материнство, любовь и забота о детях.', questions:24 },
-  { file:'unity-day.json', icon:'🤝', cat:'🍂', title:'День народного единства', desc:'Минин и Пожарский, ополчение и история 4 ноября.', questions:26 },
+  { file:'knowledge-day.json', icon:'📚', tab:'quiz', badge:'autumn', title:'День знаний', desc:'Первое сентября, линейки и традиции первоклассников.', questions:27 },
+  { file:'elderly-day.json', icon:'👴', tab:'quiz', badge:'autumn', title:'День пожилых людей', desc:'Уважение к старшим, геронтология и забота.', questions:26 },
+  { file:'teachers-day.json', icon:'🍎', tab:'quiz', badge:'autumn', title:'День учителя', desc:'Педагогика, цветы и мировые традиции.', questions:25 },
+  { file:'fathers-day.json', icon:'👨', tab:'quiz', badge:'autumn', title:'День отца', desc:'Роль отца, семейные традиции и известные папы.', questions:24 },
+  { file:'mothers-day.json', icon:'👩', tab:'quiz', badge:'autumn', title:'День матери', desc:'Материнство, любовь и забота о детях.', questions:24 },
+  { file:'unity-day.json', icon:'🤝', tab:'quiz', badge:'autumn', title:'День народного единства', desc:'Минин и Пожарский, ополчение и история 4 ноября.', questions:26 },
 
-  { file:'animals.json', icon:'🐘', cat:'🌍', title:'Удивительные животные', desc:'Правда или вымысел? Проверь, как хорошо ты знаешь фауну нашей планеты', questions:10 },
-  { file:'oceans.json', icon:'🌊', cat:'🌍', title:'Загадки океанов', desc:'Проверь свои знания о морях, океанах и их обитателях', questions:11 },
-  { file:'plants.json', icon:'🌿', cat:'🌍', title:'Удивительные растения', desc:'Правда о растениях: от бананов до секвой', questions:10 },
-  { file:'space.json', icon:'🚀', cat:'🌍', title:'Космос и планеты', desc:'Проверь, что ты знаешь о космосе, планетах и звёздах', questions:11 },
-  { file:'geography.json', icon:'🌏', cat:'🌍', title:'Географические рекорды', desc:'Рекорды нашей планеты: от Нила до Эвереста', questions:11 },
-  { file:'weather.json', icon:'🌤', cat:'🌍', title:'Погода и климат', desc:'Факты о погоде, климате и природных явлениях', questions:11 },
-  { file:'dinosaurs.json', icon:'🦕', cat:'🌍', title:'Динозавры и древний мир', desc:'Тираннозавры, стегозавры и тайна вымирания — что здесь правда?', questions:11 },
-  { file:'mountains.json', icon:'⛰', cat:'🌍', title:'Горы и вулканы', desc:'Эверест, вулканы и горные рекорды — отделяем факты от мифов', questions:11 },
-  { file:'water.json', icon:'💧', cat:'🌍', title:'Вода', desc:'Удивительные факты о самой обычной и необычной жидкости на планете', questions:11 },
-  { file:'ecology.json', icon:'♻️', cat:'🌍', title:'Экология и природа', desc:'Проверь свою экологическую грамотность', questions:11 },
+  { file:'animals.json', icon:'🐘', tab:'truefalse', badge:'nature', title:'Удивительные животные', desc:'Правда или вымысел? Проверь, как хорошо ты знаешь фауну нашей планеты', questions:10 },
+  { file:'oceans.json', icon:'🌊', tab:'truefalse', badge:'nature', title:'Загадки океанов', desc:'Проверь свои знания о морях, океанах и их обитателях', questions:11 },
+  { file:'plants.json', icon:'🌿', tab:'truefalse', badge:'nature', title:'Удивительные растения', desc:'Правда о растениях: от бананов до секвой', questions:10 },
+  { file:'space.json', icon:'🚀', tab:'truefalse', badge:'nature', title:'Космос и планеты', desc:'Проверь, что ты знаешь о космосе, планетах и звёздах', questions:11 },
+  { file:'geography.json', icon:'🌏', tab:'truefalse', badge:'nature', title:'Географические рекорды', desc:'Рекорды нашей планеты: от Нила до Эвереста', questions:11 },
+  { file:'weather.json', icon:'🌤', tab:'truefalse', badge:'nature', title:'Погода и климат', desc:'Факты о погоде, климате и природных явлениях', questions:11 },
+  { file:'dinosaurs.json', icon:'🦕', tab:'truefalse', badge:'nature', title:'Динозавры и древний мир', desc:'Тираннозавры, стегозавры и тайна вымирания — что здесь правда?', questions:11 },
+  { file:'mountains.json', icon:'⛰', tab:'truefalse', badge:'nature', title:'Горы и вулканы', desc:'Эверест, вулканы и горные рекорды — отделяем факты от мифов', questions:11 },
+  { file:'water.json', icon:'💧', tab:'truefalse', badge:'nature', title:'Вода', desc:'Удивительные факты о самой обычной и необычной жидкости на планете', questions:11 },
+  { file:'ecology.json', icon:'♻️', tab:'truefalse', badge:'nature', title:'Экология и природа', desc:'Проверь свою экологическую грамотность', questions:11 },
 ]
 
 const CONFIG_URL = 'https://raw.githubusercontent.com/IlyaSigma111/quizkit/master/quizzes/'
 
+let activeTab = 'quiz'
+
 function openModal(q) {
   const overlay = document.getElementById('modal')
-  document.getElementById('modalTitle').textContent = q.icon + ' ' + q.title
+  document.getElementById('modalTitle').textContent = q.title
   document.getElementById('modalSub').textContent = q.desc
   const body = document.getElementById('modalBody')
-  body.innerHTML = '<div style="text-align:center;padding:24px;color:#585868">Загрузка вопросов...</div>'
+  body.innerHTML = '<div style="text-align:center;padding:24px;color:var(--text-muted)">' + S.help + ' Загрузка вопросов...</div>'
   overlay.classList.add('open')
   document.body.style.overflow = 'hidden'
 
@@ -164,7 +268,7 @@ function openModal(q) {
       body.innerHTML = html
     })
     .catch(() => {
-      body.innerHTML = '<div style="text-align:center;padding:24px;color:#ff6060">Ошибка загрузки 😔</div>'
+      body.innerHTML = '<div style="text-align:center;padding:24px;color:#ff6060">' + S.alert + ' Ошибка загрузки</div>'
     })
 }
 
@@ -177,46 +281,69 @@ document.getElementById('modal').addEventListener('click', function(e) {
   if (e.target === this) closeModal()
 })
 
+function switchTab(tabId) {
+  activeTab = tabId
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabId))
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.toggle('active', c.id === 'tab-' + tabId))
+}
+
 function render() {
-  const cats = {}
-  QUIZZES.forEach(q => {
-    if (!cats[q.cat]) cats[q.cat] = []
-    cats[q.cat].push(q)
-  })
+  const tabContainer = document.getElementById('tabs')
+    tabContainer.innerHTML = TABS.map(t =>
+    `<button class="tab-btn${t.id === activeTab ? ' active' : ''}" data-tab="${t.id}" onclick="switchTab('${t.id}')">${t.icon} ${t.label}</button>`
+    ).join('')
 
   const container = document.getElementById('content')
   container.innerHTML = ''
 
-  Object.entries(CATS).forEach(([emoji, label]) => {
-    const items = cats[emoji]
-    if (!items) return
+  TABS.forEach(tab => {
+    const items = QUIZZES.filter(q => q.tab === tab.id)
+    if (!items.length) return
 
-    const section = document.createElement('div')
-    section.innerHTML = `<div class="section-title">${emoji} ${label}</div>`
-    const grid = document.createElement('div')
-    grid.className = 'quiz-grid'
+    const tabDiv = document.createElement('div')
+    tabDiv.className = 'tab-content' + (tab.id === activeTab ? ' active' : '')
+    tabDiv.id = 'tab-' + tab.id
 
+    const groups = {}
     items.forEach(q => {
-      const card = document.createElement('div')
-      card.className = 'quiz-card'
-      card.innerHTML = `
-        <div class="icon">${q.icon}</div>
-        <span class="cat-badge">${emoji} ${CATS[emoji]}</span>
-        <h3>${q.title}</h3>
-        <div class="desc">${q.desc}</div>
-        <div class="meta">
-          <span>📝 ${q.questions} вопросов</span>
-        </div>
-        <div class="btns">
-          <button class="btn btn-secondary" onclick='openModal(${JSON.stringify(q).replace(/'/g,"&#39;")})'>👁 Посмотреть</button>
-          <a href="${q.file}" download="${q.file}" class="btn btn-primary">⬇ Скачать</a>
-        </div>
-      `
-      grid.appendChild(card)
+      if (!groups[q.badge]) groups[q.badge] = []
+      groups[q.badge].push(q)
     })
 
-    section.appendChild(grid)
-    container.appendChild(section)
+    Object.entries(groups).forEach(([badge, quizList]) => {
+      const section = document.createElement('div')
+      const b = BADGES[badge]
+      section.innerHTML = `<div class="section-title">${b.icon} ${b.label}</div>`
+      const grid = document.createElement('div')
+      grid.className = 'quiz-grid'
+
+      quizList.forEach(q => {
+        const card = document.createElement('div')
+        card.className = 'quiz-card'
+        const cb = BADGES[q.badge]
+        card.innerHTML = `
+          <div class="icon-wrap">
+            <span class="cat-icon">${cb.icon}</span>
+            <span class="cat-badge">${cb.label}</span>
+          </div>
+          <h3>${q.title}</h3>
+          <div class="desc">${q.desc}</div>
+          <div class="meta">
+            <span>${S.help} ${q.questions} вопросов</span>
+          </div>
+          <div class="btns">
+            <button class="btn btn-secondary" onclick='openModal(${JSON.stringify(q).replace(/'/g,"&#39;")})'>${S.eye} Посмотреть</button>
+            <a href="${CONFIG_URL}${q.file}" download="${q.file}" class="btn btn-primary">${S.download} Скачать</a>
+          </div>
+        `
+        grid.appendChild(card)
+      })
+
+      section.appendChild(grid)
+      tabDiv.appendChild(section)
+    })
+
+    container.appendChild(tabDiv)
   })
 }
 
@@ -230,7 +357,6 @@ render()
         for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
         k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110110154', 'ym');
-
     ym(110110154, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/110110154" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
