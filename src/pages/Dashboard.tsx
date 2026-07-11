@@ -66,19 +66,31 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
         const raw = JSON.parse(ev.target?.result as string)
         const title = raw.title || 'Импортированный квиз'
         const description = raw.description || ''
-        const questions = (raw.questions || []).map((q: any, idx: number) => ({
-          id: `q-${Date.now()}-${idx}`,
-          text: q.text || `Вопрос ${idx + 1}`,
-          time_seconds: q.time_seconds || 30,
-          points: q.points || 10,
-          answers: (q.answers || []).map((a: any, ai: number) => ({
-            id: `a-${Date.now()}-${idx}-${ai}`,
-            text: a.text || `Ответ ${ai + 1}`,
-            is_correct: !!a.is_correct,
-            color: ['#FF4444', '#4488FF', '#FFBB33', '#44CC44'][ai] || '#666',
-            shape: ['△', '◇', '○', '☆'][ai] || '?',
-          })),
-        }))
+        const isServerFormat = raw.questions?.length && typeof raw.questions[0].question === 'string'
+        const questions = (raw.questions || []).map((q: any, idx: number) => {
+          const answers = isServerFormat
+            ? (q.answers as string[]).map((a: string, ai: number) => ({
+                id: `a-${Date.now()}-${idx}-${ai}`,
+                text: a,
+                is_correct: ai === q.correct,
+                color: ['#FF4444', '#4488FF', '#FFBB33', '#44CC44'][ai] || '#666',
+                shape: ['△', '◇', '○', '☆'][ai] || '?',
+              }))
+            : (q.answers || []).map((a: any, ai: number) => ({
+                id: `a-${Date.now()}-${idx}-${ai}`,
+                text: a.text || `Ответ ${ai + 1}`,
+                is_correct: !!a.is_correct,
+                color: ['#FF4444', '#4488FF', '#FFBB33', '#44CC44'][ai] || '#666',
+                shape: ['△', '◇', '○', '☆'][ai] || '?',
+              }))
+          return {
+            id: `q-${Date.now()}-${idx}`,
+            text: isServerFormat ? q.question : (q.text || `Вопрос ${idx + 1}`),
+            time_seconds: q.time_seconds || 30,
+            points: q.points || 10,
+            answers,
+          }
+        })
         const quiz = await invoke<Quiz>('create_quiz', { title, description })
         const saved = { ...quiz, questions }
         await invoke('save_quiz', { quiz: saved })
