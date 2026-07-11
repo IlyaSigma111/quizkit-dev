@@ -1,0 +1,106 @@
+[
+  {
+    "title": "Новый год",
+    "description": "Традиции Нового года со всего мира",
+    "emoji": "🎄",
+    "type": "quiz",
+    "questions": [
+      { "text": "В какой стране впервые начали украшать ёлку на Новый год?", "time_seconds": 20, "points": 10, "answers": [{ "text": "Германия", "is_correct": true }, { "text": "Россия", "is_correct": false }, { "text": "Франция", "is_correct": false }, { "text": "Италия", "is_correct": false }] },
+      { "text": "Какой год считается годом Змеи по восточному календарю?", "time_seconds": 20, "points": 10, "answers": [{ "text": "2025", "is_correct": true }, { "text": "2024", "is_correct": false }, { "text": "2026", "is_correct": false }, { "text": "2023", "is_correct": false }] },
+      { "text": "В какой стране на Новый год принято разбивать посуду?", "time_seconds": 20, "points": 10, "answers": [{ "text": "Дания", "is_correct": true }, { "text": "Испания", "is_correct": false }, { "text": "Япония", "is_correct": false }, { "text": "Бразилия", "is_correct": false }] },
+      { "text": "Что символизирует фейерверк в новогоднюю ночь?", "time_seconds": 20, "points": 10, "answers": [{ "text": "Отпугивание злых духов", "is_correct": true }, { "text": "Красоту", "is_correct": false }, { "text": "Богатство", "is_correct": false }, { "text": "Долголетие", "is_correct": false }] },
+      { "text": "В какой стране Дед Мороз называется Йоулупукки?", "time_seconds": 20, "points": 10, "answers": [{ "text": "Финляндия", "is_correct": true }, { "text": "Швеция", "is_correct": false }, { "text": "Норвегия", "is_correct": false }, { "text": "Исландия", "is_correct": false }] }
+    ]
+  },
+  {
+    "title": "Рождество",
+    "description": "Интересные факты о Рождестве",
+    "emoji": "⭐",
+    "type": "truefalse",
+    "questions": [
+      { "text": "Рождество празднуется 25 декабря во всех христианских странах.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": false }, { "text": "Неверно", "is_correct": true }] },
+      { "text": "Традиция ставить рождественскую ёлку пришла из Германии.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": true }, { "text": "Неверно", "is_correct": false }] },
+      { "text": "В Австралии Рождество отмечают летом.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": true }, { "text": "Неверно", "is_correct": false }] },
+      { "text": "Слово «Рождество» происходит от латинского «nativitas».", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": true }, { "text": "Неверно", "is_correct": false }] },
+      { "text": "В Исландии 13 рождественских Санта-Клаусов.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": true }, { "text": "Неверно", "is_correct": false }] }
+    ]
+  },
+  {
+    "title": "День Святого Валентина",
+    "description": "История и традиции Дня всех влюблённых",
+    "emoji": "💘",
+    "type": "quiz",
+    "questions": [
+      { "text": "В каком веке жил Святой Валентин?", "time_seconds": 20, "points": 10, "answers": [{ "text": "III век", "is_correct": true }, { "text": "V век", "is_correct": false }, { "text": "X век", "is_correct": false }, { "text": "XII век", "is_correct": false }] },
+      { "text": "Какая страна первой начала массово выпускать валентинки?", "time_seconds": 20, "points": 10, "answers": [{ "text": "США", "is_correct": true }, { "text": "Франция", "is_correct": false }, { "text": "Англия", "is_correct": false }, { "text": "Италия", "is_correct": false }] },
+      { "text": "Сколько валентинок отправляется в мире ежегодно?", "time_seconds": 20, "points": 10, "answers": [{ "text": "Около 1 миллиарда", "is_correct": true }, { "text": "Около 100 миллионов", "is_correct": false }, { "text": "Около 500 миллионов", "is_correct": false }, { "text": "Около 2 миллиардов", "is_correct": false }] },
+      { "text": "В какой стране на 14 февраля дарят не только валентинки, но и подарки друзьям?", "time_seconds": 20, "points": 10, "answers": [{ "text": "Япония", "is_correct": true }, { "text": "Китай", "is_correct": false }, { "text": "Корея", "is_correct": false }, { "text": "Тайланд", "is_correct": false }] },
+      { "text": "Какого цвета традиционно украшения на День Святого Валентина?", "time_seconds": 20, "points": 10, "answers": [{ "text": "Красный и белый", "is_correct": true }, { "text": "Розовый и фиолетовый", "is_correct": false }, { "text": "Красный и золотой", "is_correct": false }, { "text": "Белый и серебряный", "is_correct": false }] }
+    ]
+  },
+  {
+    "title": "8 Марта",
+    "description": "История Международного женского дня",
+    "emoji": "🌸",
+    "type": "truefalse",
+    "questions": [
+      { "text": "8 Марта изначально был днём борьбы за права женщин.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": true }, { "text": "Неверно", "is_correct": false }] },
+      { "text": "Первый Международный женский день отметили в 1857 году.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": false }, { "text": "Неверно", "is_correct": true }] },
+      { "text": "Клара Цеткин предложила учредить Международный женский день.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": true }, { "text": "Неверно", "is_correct": false }] },
+      { "text": "8 Марта является выходным днём в более чем 30 странах мира.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": true }, { "text": "Неверно", "is_correct": false }] },
+      { "text": "Символом 8 Марта является тюльпан.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": true }, { "text": "Неверно", "is_correct": false }] }
+    ]
+  },
+  {
+    "title": "День космонавтики",
+    "description": "Освоение космоса и великие открытия",
+    "emoji": "🚀",
+    "type": "quiz",
+    "questions": [
+      { "text": "Кто был первым человеком в космосе?", "time_seconds": 20, "points": 10, "answers": [{ "text": "Юрий Гагарин", "is_correct": true }, { "text": "Нил Армстронг", "is_correct": false }, { "text": "Валентина Терешкова", "is_correct": false }, { "text": "Алексей Леонов", "is_correct": false }] },
+      { "text": "В каком году состоялся первый полёт человека в космос?", "time_seconds": 20, "points": 10, "answers": [{ "text": "1961", "is_correct": true }, { "text": "1957", "is_correct": false }, { "text": "1965", "is_correct": false }, { "text": "1969", "is_correct": false }] },
+      { "text": "Сколько минут длился полёт Гагарина?", "time_seconds": 20, "points": 10, "answers": [{ "text": "108 минут", "is_correct": true }, { "text": "90 минут", "is_correct": false }, { "text": "120 минут", "is_correct": false }, { "text": "150 минут", "is_correct": false }] },
+      { "text": "Как назывался корабль Гагарина?", "time_seconds": 20, "points": 10, "answers": [{ "text": "Восток-1", "is_correct": true }, { "text": "Союз-1", "is_correct": false }, { "text": "Восход-1", "is_correct": false }, { "text": "Спутник-1", "is_correct": false }] },
+      { "text": "Какая женщина первой побывала в космосе?", "time_seconds": 20, "points": 10, "answers": [{ "text": "Валентина Терешкова", "is_correct": true }, { "text": "Светлана Савицкая", "is_correct": false }, { "text": "Пегги Уитсон", "is_correct": false }, { "text": "Салли Райд", "is_correct": false }] }
+    ]
+  },
+  {
+    "title": "День Победы",
+    "description": "Великая Отечественная война в фактах",
+    "emoji": "🏅",
+    "type": "truefalse",
+    "questions": [
+      { "text": "Вторая мировая война началась в 1939 году.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": true }, { "text": "Неверно", "is_correct": false }] },
+      { "text": "Блокада Ленинграда длилась 872 дня.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": true }, { "text": "Неверно", "is_correct": false }] },
+      { "text": "Битва за Москву произошла в 1943 году.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": false }, { "text": "Неверно", "is_correct": true }] },
+      { "text": "Георгиевская лента — символ Дня Победы.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": true }, { "text": "Неверно", "is_correct": false }] },
+      { "text": "Парад Победы состоялся 24 июня 1945 года.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": true }, { "text": "Неверно", "is_correct": false }] }
+    ]
+  },
+  {
+    "title": "1 Сентября — День знаний",
+    "description": "Школа, учёба и интересные факты об образовании",
+    "emoji": "📚",
+    "type": "quiz",
+    "questions": [
+      { "text": "В какой стране появилась первая в мире школа?", "time_seconds": 20, "points": 10, "answers": [{ "text": "Древний Египет", "is_correct": true }, { "text": "Древняя Греция", "is_correct": false }, { "text": "Древний Китай", "is_correct": false }, { "text": "Древний Рим", "is_correct": false }] },
+      { "text": "Сколько лет длится среднее образование в России?", "time_seconds": 20, "points": 10, "answers": [{ "text": "11 лет", "is_correct": true }, { "text": "10 лет", "is_correct": false }, { "text": "12 лет", "is_correct": false }, { "text": "9 лет", "is_correct": false }] },
+      { "text": "Какая страна тратит больше всего на образование?", "time_seconds": 20, "points": 10, "answers": [{ "text": "Норвегия", "is_correct": true }, { "text": "США", "is_correct": false }, { "text": "Швейцария", "is_correct": false }, { "text": "Финляндия", "is_correct": false }] },
+      { "text": "В какой стране самая длинная учебная неделя?", "time_seconds": 20, "points": 10, "answers": [{ "text": "Япония", "is_correct": true }, { "text": "Китай", "is_correct": false }, { "text": "Корея", "is_correct": false }, { "text": "Израиль", "is_correct": false }] },
+      { "text": "Какой предмет изучают во всех школах мира?", "time_seconds": 20, "points": 10, "answers": [{ "text": "Математика", "is_correct": true }, { "text": "История", "is_correct": false }, { "text": "Литература", "is_correct": false }, { "text": "География", "is_correct": false }] }
+    ]
+  },
+  {
+    "title": "Хэллоуин",
+    "description": "Мистические традиции и история Хэллоуина",
+    "emoji": "🎃",
+    "type": "truefalse",
+    "questions": [
+      { "text": "Хэллоуин берёт начало от кельтского праздника Самайн.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": true }, { "text": "Неверно", "is_correct": false }] },
+      { "text": "Тыква — единственный овощ, из которого делают светильники на Хэллоуин.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": false }, { "text": "Неверно", "is_correct": true }] },
+      { "text": "Традиция «кошелёк или жизнь» появилась в США в XX веке.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": true }, { "text": "Неверно", "is_correct": false }] },
+      { "text": "Оранжевый и чёрный — традиционные цвета Хэллоуина.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": true }, { "text": "Неверно", "is_correct": false }] },
+      { "text": "Хэллоуин отмечают 31 октября во всём мире одинаково.", "time_seconds": 15, "points": 10, "answers": [{ "text": "Верно", "is_correct": false }, { "text": "Неверно", "is_correct": true }] }
+    ]
+  }
+]
