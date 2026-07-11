@@ -1,0 +1,581 @@
+{
+  "title": "День Государственного флага РФ",
+  "questions": [
+    {
+      "text": "В каком году был официально утверждён триколор в качестве государственного флага России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1991",
+          "is_correct": true
+        },
+        {
+          "text": "1993",
+          "is_correct": false
+        },
+        {
+          "text": "1995",
+          "is_correct": false
+        },
+        {
+          "text": "2000",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что означает белый цвет на флаге России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Власть",
+          "is_correct": false
+        },
+        {
+          "text": "Духовность",
+          "is_correct": false
+        },
+        {
+          "text": "Благородство",
+          "is_correct": true
+        },
+        {
+          "text": "Победа",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто ввёл триколор на российских судах?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Пётр I",
+          "is_correct": true
+        },
+        {
+          "text": "Александр II",
+          "is_correct": false
+        },
+        {
+          "text": "Николай I",
+          "is_correct": false
+        },
+        {
+          "text": "Екатерина II",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком порядке расположены цвета на современном флаге России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Красный-синий-белый",
+          "is_correct": false
+        },
+        {
+          "text": "Белый-синий-красный",
+          "is_correct": true
+        },
+        {
+          "text": "Белый-красный-синий",
+          "is_correct": false
+        },
+        {
+          "text": "Синий-белый-красный",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как назывался праздник, связанный с флагом до революции?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "День флага",
+          "is_correct": false
+        },
+        {
+          "text": "Белый день",
+          "is_correct": false
+        },
+        {
+          "text": "День вензелей",
+          "is_correct": true
+        },
+        {
+          "text": "День Романовых",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой флаг был у России после Октябрьской революции 1917 года?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Красный",
+          "is_correct": true
+        },
+        {
+          "text": "Синий",
+          "is_correct": false
+        },
+        {
+          "text": "Зелёный",
+          "is_correct": false
+        },
+        {
+          "text": "Чёрный",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком году красное знамя было заменено на триколор?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1989",
+          "is_correct": false
+        },
+        {
+          "text": "1991",
+          "is_correct": true
+        },
+        {
+          "text": "1993",
+          "is_correct": false
+        },
+        {
+          "text": "1995",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что символизирует синий цвет на флаге РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Победу",
+          "is_correct": false
+        },
+        {
+          "text": "Власть",
+          "is_correct": false
+        },
+        {
+          "text": "Благородство",
+          "is_correct": false
+        },
+        {
+          "text": "Верность и честность",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Что символизирует красный цвет на флаге РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Мужество и энергию",
+          "is_correct": true
+        },
+        {
+          "text": "Богатство",
+          "is_correct": false
+        },
+        {
+          "text": "Мудрость",
+          "is_correct": false
+        },
+        {
+          "text": "Мир",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой флаг использовался при Петре I?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Бело-сине-красный",
+          "is_correct": true
+        },
+        {
+          "text": "Красный",
+          "is_correct": false
+        },
+        {
+          "text": "Чёрно-жёлто-белый",
+          "is_correct": false
+        },
+        {
+          "text": "Синий",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой флаг был императорским при Александре II?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Бело-сине-красный",
+          "is_correct": false
+        },
+        {
+          "text": "Чёрно-жёлто-белый",
+          "is_correct": true
+        },
+        {
+          "text": "Красный",
+          "is_correct": false
+        },
+        {
+          "text": "Жёлто-синий",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какое соотношение сторон у флага России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1:1",
+          "is_correct": false
+        },
+        {
+          "text": "2:3",
+          "is_correct": true
+        },
+        {
+          "text": "3:4",
+          "is_correct": false
+        },
+        {
+          "text": "1:2",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Где впервые был поднят триколор в новейшей истории России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "На Кремле",
+          "is_correct": false
+        },
+        {
+          "text": "На здании правительства",
+          "is_correct": false
+        },
+        {
+          "text": "На Останкинской башне",
+          "is_correct": false
+        },
+        {
+          "text": "На Белом доме",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Какой день в России считается Днём флага?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "22 июня",
+          "is_correct": false
+        },
+        {
+          "text": "22 июля",
+          "is_correct": false
+        },
+        {
+          "text": "22 августа",
+          "is_correct": true
+        },
+        {
+          "text": "22 сентября",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что означают цвета флага в неофициальной трактовке?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Небо, Земля, Кровь",
+          "is_correct": false
+        },
+        {
+          "text": "Мир, Мудрость, Власть",
+          "is_correct": false
+        },
+        {
+          "text": "Вера, Надежда, Любовь",
+          "is_correct": true
+        },
+        {
+          "text": "Свобода, Равенство, Братство",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как назывался флаг России до 1705 года?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Стяг",
+          "is_correct": true
+        },
+        {
+          "text": "Штандарт",
+          "is_correct": false
+        },
+        {
+          "text": "Вымпел",
+          "is_correct": false
+        },
+        {
+          "text": "Знамя",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком городе установлен самый большой флаг России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Москва",
+          "is_correct": true
+        },
+        {
+          "text": "Санкт-Петербург",
+          "is_correct": false
+        },
+        {
+          "text": "Сочи",
+          "is_correct": false
+        },
+        {
+          "text": "Калининград",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой указ Петра I утвердил триколор?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "О торговых судах",
+          "is_correct": true
+        },
+        {
+          "text": "О военных кораблях",
+          "is_correct": false
+        },
+        {
+          "text": "Об административных зданиях",
+          "is_correct": false
+        },
+        {
+          "text": "О иностранных посольствах",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько полос на флаге Российской империи было сначала?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "2",
+          "is_correct": false
+        },
+        {
+          "text": "3",
+          "is_correct": true
+        },
+        {
+          "text": "4",
+          "is_correct": false
+        },
+        {
+          "text": "5",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой флаг был государственным при Николае II?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Бело-сине-красный",
+          "is_correct": true
+        },
+        {
+          "text": "Чёрно-жёлто-белый",
+          "is_correct": false
+        },
+        {
+          "text": "Красный",
+          "is_correct": false
+        },
+        {
+          "text": "Синий",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Когда День флага был установлен указом Президента РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1994",
+          "is_correct": true
+        },
+        {
+          "text": "1995",
+          "is_correct": false
+        },
+        {
+          "text": "1996",
+          "is_correct": false
+        },
+        {
+          "text": "1997",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что изображено в центре флага России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Герб",
+          "is_correct": false
+        },
+        {
+          "text": "Ничего",
+          "is_correct": true
+        },
+        {
+          "text": "Звезда",
+          "is_correct": false
+        },
+        {
+          "text": "Венок",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называлась первая русская яхта, где подняли триколор?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Святой Николай",
+          "is_correct": true
+        },
+        {
+          "text": "Святой Пётр",
+          "is_correct": false
+        },
+        {
+          "text": "Святой Андрей",
+          "is_correct": false
+        },
+        {
+          "text": "Святой Александр",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой флаг висел на первых русских кораблях в XVII веке?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Андреевский",
+          "is_correct": false
+        },
+        {
+          "text": "Красный",
+          "is_correct": true
+        },
+        {
+          "text": "Триколор",
+          "is_correct": false
+        },
+        {
+          "text": "Синий",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой цвет символизирует власть на флаге России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Белый",
+          "is_correct": false
+        },
+        {
+          "text": "Синий",
+          "is_correct": false
+        },
+        {
+          "text": "Красный",
+          "is_correct": true
+        },
+        {
+          "text": "Жёлтый",
+          "is_correct": false
+        }
+      ]
+    }
+  ],
+  "description": "22 августа — проверь свои знания о символе нашей страны"
+}

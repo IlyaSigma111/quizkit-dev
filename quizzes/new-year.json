@@ -1,0 +1,650 @@
+{
+  "title": "Новый год",
+  "questions": [
+    {
+      "text": "В каком году Пётр I ввёл празднование Нового года 1 января?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1699",
+          "is_correct": true
+        },
+        {
+          "text": "1700",
+          "is_correct": false
+        },
+        {
+          "text": "1701",
+          "is_correct": false
+        },
+        {
+          "text": "1702",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой символ является главным на Новый год?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Ёлка",
+          "is_correct": true
+        },
+        {
+          "text": "Снегурочка",
+          "is_correct": false
+        },
+        {
+          "text": "Дед Мороз",
+          "is_correct": false
+        },
+        {
+          "text": "Подарки",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали Деда Мороза в Древней Руси?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Морозко",
+          "is_correct": true
+        },
+        {
+          "text": "Мороз Иванович",
+          "is_correct": false
+        },
+        {
+          "text": "Коляда",
+          "is_correct": false
+        },
+        {
+          "text": "Зимник",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какая резиденция у Деда Мороза?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Москва",
+          "is_correct": false
+        },
+        {
+          "text": "Великий Устюг",
+          "is_correct": true
+        },
+        {
+          "text": "Кострома",
+          "is_correct": false
+        },
+        {
+          "text": "Вологодская область",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали Снегурочку в русских сказках?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Снегурочка",
+          "is_correct": true
+        },
+        {
+          "text": "Снежная королева",
+          "is_correct": false
+        },
+        {
+          "text": "Зимняя дева",
+          "is_correct": false
+        },
+        {
+          "text": "Ледяная дева",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком году был впервые показан советский фильм Снегурочка?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1968",
+          "is_correct": true
+        },
+        {
+          "text": "1970",
+          "is_correct": false
+        },
+        {
+          "text": "1972",
+          "is_correct": false
+        },
+        {
+          "text": "1975",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой фильм стал классикой новогоднего просмотра?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Ирония судьбы",
+          "is_correct": false
+        },
+        {
+          "text": "С лёгким паром",
+          "is_correct": false
+        },
+        {
+          "text": "Карнавальная ночь",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Как называется новогодний стол в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Оливье",
+          "is_correct": false
+        },
+        {
+          "text": "Шуба",
+          "is_correct": false
+        },
+        {
+          "text": "Мандарины",
+          "is_correct": false
+        },
+        {
+          "text": "Всё перечисленное",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Какой фрукт является символом Нового года в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Мандарин",
+          "is_correct": true
+        },
+        {
+          "text": "Апельсин",
+          "is_correct": false
+        },
+        {
+          "text": "Яблоко",
+          "is_correct": false
+        },
+        {
+          "text": "Груша",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется новогодний обряд в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Колядки",
+          "is_correct": false
+        },
+        {
+          "text": "Щедровки",
+          "is_correct": false
+        },
+        {
+          "text": "Рождественские гадания",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Какой цвет является символом Нового года?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Красный",
+          "is_correct": false
+        },
+        {
+          "text": "Зелёный",
+          "is_correct": true
+        },
+        {
+          "text": "Синий",
+          "is_correct": false
+        },
+        {
+          "text": "Жёлтый",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется сказка про Деда Мороза и Снегурочку?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Снегурочка",
+          "is_correct": true
+        },
+        {
+          "text": "Морозко",
+          "is_correct": false
+        },
+        {
+          "text": "Дед Мороз",
+          "is_correct": false
+        },
+        {
+          "text": "Зимняя сказка",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько ударов часов считается полночью на Новый год?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "6",
+          "is_correct": false
+        },
+        {
+          "text": "10",
+          "is_correct": false
+        },
+        {
+          "text": "12",
+          "is_correct": true
+        },
+        {
+          "text": "24",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется новогодний фейерверк?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Салют",
+          "is_correct": true
+        },
+        {
+          "text": "Фейерверк",
+          "is_correct": false
+        },
+        {
+          "text": "Петарда",
+          "is_correct": false
+        },
+        {
+          "text": "Хлопушка",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой год будет по китайскому календарю в 2026?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Крысы",
+          "is_correct": false
+        },
+        {
+          "text": "Коровы",
+          "is_correct": true
+        },
+        {
+          "text": "Тигра",
+          "is_correct": false
+        },
+        {
+          "text": "Кролика",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется новогодняя песня в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "В лесу родилась ёлочка",
+          "is_correct": true
+        },
+        {
+          "text": "Jingle Bells",
+          "is_correct": false
+        },
+        {
+          "text": "Снег",
+          "is_correct": false
+        },
+        {
+          "text": "Зимняя ночь",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто написал В лесу родилась ёлочка?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Чуковский",
+          "is_correct": false
+        },
+        {
+          "text": "Маршак",
+          "is_correct": false
+        },
+        {
+          "text": "Солоухин",
+          "is_correct": true
+        },
+        {
+          "text": "Усачёв",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой предмет используют для украшения ёлки?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Гирлянда",
+          "is_correct": false
+        },
+        {
+          "text": "Игрушки",
+          "is_correct": false
+        },
+        {
+          "text": "Звезда",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Когда в России отмечают Старый Новый год?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "13 января",
+          "is_correct": true
+        },
+        {
+          "text": "14 января",
+          "is_correct": false
+        },
+        {
+          "text": "15 января",
+          "is_correct": false
+        },
+        {
+          "text": "16 января",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой подарок традиционно дарят на Новый год?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Книги",
+          "is_correct": false
+        },
+        {
+          "text": "Игрушки",
+          "is_correct": false
+        },
+        {
+          "text": "Сладости",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Как называется новогодний персонаж в американской традиции?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Санта-Клаус",
+          "is_correct": true
+        },
+        {
+          "text": "Дед Мороз",
+          "is_correct": false
+        },
+        {
+          "text": "Николас",
+          "is_correct": false
+        },
+        {
+          "text": "Коляда",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько дней длятся новогодние каникулы в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "7",
+          "is_correct": true
+        },
+        {
+          "text": "8",
+          "is_correct": false
+        },
+        {
+          "text": "9",
+          "is_correct": false
+        },
+        {
+          "text": "10",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что символизирует новогодняя ёлка?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Вечность",
+          "is_correct": false
+        },
+        {
+          "text": "Жизнь",
+          "is_correct": false
+        },
+        {
+          "text": "Плодородие",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Какой традиционный танец исполняют на Новый год?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Хоровод",
+          "is_correct": true
+        },
+        {
+          "text": "Вальс",
+          "is_correct": false
+        },
+        {
+          "text": "Танго",
+          "is_correct": false
+        },
+        {
+          "text": "Рок-н-ролл",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется новогодний утренник в детском саду?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Ёлка",
+          "is_correct": true
+        },
+        {
+          "text": "Сказка",
+          "is_correct": false
+        },
+        {
+          "text": "Праздник",
+          "is_correct": false
+        },
+        {
+          "text": "Утренник",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что пьют на Новый год в России?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Шампанское",
+          "is_correct": true
+        },
+        {
+          "text": "Вино",
+          "is_correct": false
+        },
+        {
+          "text": "Квас",
+          "is_correct": false
+        },
+        {
+          "text": "Компот",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали деда мороза в финской традиции?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Йоулупукки",
+          "is_correct": true
+        },
+        {
+          "text": "Санта-Клаус",
+          "is_correct": false
+        },
+        {
+          "text": "Пэр Ноель",
+          "is_correct": false
+        },
+        {
+          "text": "Святой Николай",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком году был впервые показан фильм Карнавальная ночь?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1956",
+          "is_correct": true
+        },
+        {
+          "text": "1960",
+          "is_correct": false
+        },
+        {
+          "text": "1965",
+          "is_correct": false
+        },
+        {
+          "text": "1970",
+          "is_correct": false
+        }
+      ]
+    }
+  ],
+  "description": "31 декабря — проверь свои знания о самом волшебном празднике"
+}

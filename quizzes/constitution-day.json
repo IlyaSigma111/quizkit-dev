@@ -1,0 +1,627 @@
+{
+  "title": "День Конституции РФ",
+  "questions": [
+    {
+      "text": "В каком году была принята Конституция РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1991",
+          "is_correct": false
+        },
+        {
+          "text": "1993",
+          "is_correct": true
+        },
+        {
+          "text": "1995",
+          "is_correct": false
+        },
+        {
+          "text": "2000",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько глав в Конституции РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "8",
+          "is_correct": false
+        },
+        {
+          "text": "9",
+          "is_correct": true
+        },
+        {
+          "text": "10",
+          "is_correct": false
+        },
+        {
+          "text": "11",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Кто является гарантом Конституции РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Премьер-министр",
+          "is_correct": false
+        },
+        {
+          "text": "Председатель Совета Федерации",
+          "is_correct": false
+        },
+        {
+          "text": "Президент РФ",
+          "is_correct": true
+        },
+        {
+          "text": "Генеральный прокурор",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой принцип НЕ закреплён в Конституции РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Разделение властей",
+          "is_correct": false
+        },
+        {
+          "text": "Идеологическое многообразие",
+          "is_correct": false
+        },
+        {
+          "text": "Монархия",
+          "is_correct": true
+        },
+        {
+          "text": "Республиканская форма правления",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько статей в Конституции РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "127",
+          "is_correct": false
+        },
+        {
+          "text": "133",
+          "is_correct": false
+        },
+        {
+          "text": "137",
+          "is_correct": true
+        },
+        {
+          "text": "141",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком году в Конституцию РФ вносили поправки?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "2008",
+          "is_correct": false
+        },
+        {
+          "text": "2014",
+          "is_correct": false
+        },
+        {
+          "text": "2020",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Какой орган обладает правом законодательной инициативы?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Президент",
+          "is_correct": false
+        },
+        {
+          "text": "Правительство",
+          "is_correct": false
+        },
+        {
+          "text": "Парламент",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Сколько лет должен длиться срок президентства по Конституции?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "4 года",
+          "is_correct": false
+        },
+        {
+          "text": "5 лет",
+          "is_correct": false
+        },
+        {
+          "text": "6 лет",
+          "is_correct": true
+        },
+        {
+          "text": "7 лет",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какие права закреплены в Конституции РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Право на жизнь",
+          "is_correct": false
+        },
+        {
+          "text": "Право на свободу слова",
+          "is_correct": false
+        },
+        {
+          "text": "Право на образование",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Что такое конституционный строй?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Форма правления",
+          "is_correct": false
+        },
+        {
+          "text": "Порядок управления",
+          "is_correct": false
+        },
+        {
+          "text": "Система законов",
+          "is_correct": false
+        },
+        {
+          "text": "Все перечисленные",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Как называется высший законодательный орган РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Государственная дума",
+          "is_correct": false
+        },
+        {
+          "text": "Совет Федерации",
+          "is_correct": false
+        },
+        {
+          "text": "Федеральное собрание",
+          "is_correct": true
+        },
+        {
+          "text": "Правительство",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько палат в Федеральном собрании РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1",
+          "is_correct": false
+        },
+        {
+          "text": "2",
+          "is_correct": true
+        },
+        {
+          "text": "3",
+          "is_correct": false
+        },
+        {
+          "text": "4",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что такое президентский срок по новой Конституции?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "4 года",
+          "is_correct": false
+        },
+        {
+          "text": "6 лет",
+          "is_correct": true
+        },
+        {
+          "text": "8 лет",
+          "is_correct": false
+        },
+        {
+          "text": "10 лет",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой орган осуществляет правосудие в РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Суд",
+          "is_correct": true
+        },
+        {
+          "text": "Правительство",
+          "is_correct": false
+        },
+        {
+          "text": "Парламент",
+          "is_correct": false
+        },
+        {
+          "text": "Президент",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что такое гарант прав и свобод человека?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Президент",
+          "is_correct": true
+        },
+        {
+          "text": "Суд",
+          "is_correct": false
+        },
+        {
+          "text": "Правительство",
+          "is_correct": false
+        },
+        {
+          "text": "Парламент",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько статей в Конституции РФ посвящено правам человека?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Около 20",
+          "is_correct": false
+        },
+        {
+          "text": "Около 30",
+          "is_correct": false
+        },
+        {
+          "text": "Около 40",
+          "is_correct": true
+        },
+        {
+          "text": "Около 50",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется праздник, посвящённый Конституции?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "День Конституции",
+          "is_correct": true
+        },
+        {
+          "text": "День закона",
+          "is_correct": false
+        },
+        {
+          "text": "День прав",
+          "is_correct": false
+        },
+        {
+          "text": "День свободы",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком году был учреждён День Конституции?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1994",
+          "is_correct": true
+        },
+        {
+          "text": "1995",
+          "is_correct": false
+        },
+        {
+          "text": "1996",
+          "is_correct": false
+        },
+        {
+          "text": "1997",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что изображено на обложке Конституции?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Герб",
+          "is_correct": true
+        },
+        {
+          "text": "Кремль",
+          "is_correct": false
+        },
+        {
+          "text": "Флаг",
+          "is_correct": false
+        },
+        {
+          "text": "Книга",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какая религия является государственной по Конституции?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Православие",
+          "is_correct": false
+        },
+        {
+          "text": "Ислам",
+          "is_correct": false
+        },
+        {
+          "text": "Буддизм",
+          "is_correct": false
+        },
+        {
+          "text": "Никакая",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "text": "Что такое норма права?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Правило поведения",
+          "is_correct": true
+        },
+        {
+          "text": "Закон",
+          "is_correct": false
+        },
+        {
+          "text": "Конституция",
+          "is_correct": false
+        },
+        {
+          "text": "Указ",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Какой документ определяет правовой статус человека в РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Конституция",
+          "is_correct": true
+        },
+        {
+          "text": "Гражданский кодекс",
+          "is_correct": false
+        },
+        {
+          "text": "Уголовный кодекс",
+          "is_correct": false
+        },
+        {
+          "text": "Трудовой кодекс",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Что означает преамбула Конституции?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Вступление",
+          "is_correct": true
+        },
+        {
+          "text": "Заключение",
+          "is_correct": false
+        },
+        {
+          "text": "Глава",
+          "is_correct": false
+        },
+        {
+          "text": "Раздел",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как называется система государственных органов в РФ?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Государственная власть",
+          "is_correct": true
+        },
+        {
+          "text": "Политическая система",
+          "is_correct": false
+        },
+        {
+          "text": "Конституционный строй",
+          "is_correct": false
+        },
+        {
+          "text": "Правопорядок",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "В каком году прошёл референдум по принятию Конституции?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "1991",
+          "is_correct": false
+        },
+        {
+          "text": "1993",
+          "is_correct": true
+        },
+        {
+          "text": "1995",
+          "is_correct": false
+        },
+        {
+          "text": "2000",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Как звали президента в момент принятия Конституции?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "Ельцин",
+          "is_correct": true
+        },
+        {
+          "text": "Путин",
+          "is_correct": false
+        },
+        {
+          "text": "Горбачёв",
+          "is_correct": false
+        },
+        {
+          "text": "Медведев",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "text": "Сколько поправок было внесено в Конституцию в 2020 году?",
+      "time_seconds": 30,
+      "points": 10,
+      "answers": [
+        {
+          "text": "~100",
+          "is_correct": false
+        },
+        {
+          "text": "~150",
+          "is_correct": false
+        },
+        {
+          "text": "~200",
+          "is_correct": true
+        },
+        {
+          "text": "~250",
+          "is_correct": false
+        }
+      ]
+    }
+  ],
+  "description": "12 декабря — проверь свои знания о главном законе страны"
+}
