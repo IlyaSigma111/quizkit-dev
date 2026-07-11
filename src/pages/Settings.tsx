@@ -35,6 +35,12 @@ const THEMES = [
   { value: 'sky', label: 'Небо', icon: '<path d="M2 12h20"/><path d="M6 6h4"/><path d="M14 18h6"/>', desc: 'Голубой и свежий' },
   { value: 'violet', label: 'Фиалка', icon: '<polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/>', desc: 'Фиолетовый акцент' },
   { value: 'cyberpunk', label: 'Киберпанк', icon: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/>', desc: 'Неон и контраст' },
+  { value: 'aurora', label: 'Северное сияние', icon: '<path d="M2 12h20M6 6h12M10 18h4"/><path d="M4 8h16M8 16h8"/>', desc: 'Бирюзово-фиолетовый' },
+  { value: 'midnight', label: 'Полночь', icon: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/>', desc: 'Глубокий тёмно-синий' },
+  { value: 'amber', label: 'Янтарь', icon: '<polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/>', desc: 'Тёплый золотой' },
+  { value: 'mint', label: 'Мята', icon: '<path d="M12 2C6 2 2 6 2 12s4 10 10 10"/><path d="M8 12l3 3 5-5"/>', desc: 'Свежий зелёный' },
+  { value: 'lavender', label: 'Лаванда', icon: '<path d="M12 2a10 10 0 0 1 10 10"/><path d="M2 12a10 10 0 0 1 10-10"/><path d="M12 22a10 10 0 0 1-10-10"/>', desc: 'Нежный фиолетовый' },
+  { value: 'coral', label: 'Коралл', icon: '<circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12"/>', desc: 'Розово-коралловый' },
 ]
 
 export function Settings({ onBack, onThemeChange }: Props) {

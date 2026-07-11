@@ -25,6 +25,126 @@ const TEMPLATE_JSON = `{
   ]
 }`
 
+interface HolidayTemplate {
+  title: string
+  description: string
+  emoji: string
+  type: 'quiz' | 'truefalse'
+  questions: Array<{
+    text: string
+    time_seconds: number
+    points: number
+    answers: Array<{ text: string; is_correct: boolean }>
+  }>
+}
+
+const HOLIDAY_TEMPLATES: HolidayTemplate[] = [
+  {
+    title: 'Новый год',
+    description: 'Традиции Нового года со всего мира',
+    emoji: '\u{1F384}',
+    type: 'quiz',
+    questions: [
+      { text: 'В какой стране впервые начали украшать ёлку на Новый год?', time_seconds: 20, points: 10, answers: [{ text: 'Германия', is_correct: true }, { text: 'Россия', is_correct: false }, { text: 'Франция', is_correct: false }, { text: 'Италия', is_correct: false }] },
+      { text: 'Какой год считается годом Змеи по восточному календарю?', time_seconds: 20, points: 10, answers: [{ text: '2025', is_correct: true }, { text: '2024', is_correct: false }, { text: '2026', is_correct: false }, { text: '2023', is_correct: false }] },
+      { text: 'В какой стране на Новый год принято разбивать посуду?', time_seconds: 20, points: 10, answers: [{ text: 'Дания', is_correct: true }, { text: 'Испания', is_correct: false }, { text: 'Япония', is_correct: false }, { text: 'Бразилия', is_correct: false }] },
+      { text: 'Что символизирует фейерверк в новогоднюю ночь?', time_seconds: 20, points: 10, answers: [{ text: 'Отпугивание злых духов', is_correct: true }, { text: 'Красоту', is_correct: false }, { text: 'Богатство', is_correct: false }, { text: 'Долголетие', is_correct: false }] },
+      { text: 'В какой стране Дед Мороз называется Йоулупукки?', time_seconds: 20, points: 10, answers: [{ text: 'Финляндия', is_correct: true }, { text: 'Швеция', is_correct: false }, { text: 'Норвегия', is_correct: false }, { text: 'Исландия', is_correct: false }] },
+    ]
+  },
+  {
+    title: 'Рождество',
+    description: 'Интересные факты о Рождестве',
+    emoji: '\u{2B50}',
+    type: 'truefalse',
+    questions: [
+      { text: 'Рождество празднуется 25 декабря во всех христианских странах.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: false }, { text: 'Неверно', is_correct: true }] },
+      { text: 'Традиция ставить рождественскую ёлку пришла из Германии.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: true }, { text: 'Неверно', is_correct: false }] },
+      { text: 'В Австралии Рождество отмечают летом.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: true }, { text: 'Неверно', is_correct: false }] },
+      { text: 'Слово «Рождество» происходит от латинского «nativitas».', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: true }, { text: 'Неверно', is_correct: false }] },
+      { text: 'В Исландии 13 рождественских Санта-Клаусов.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: true }, { text: 'Неверно', is_correct: false }] },
+    ]
+  },
+  {
+    title: 'День Святого Валентина',
+    description: 'История и традиции Дня всех влюблённых',
+    emoji: '\u{1F498}',
+    type: 'quiz',
+    questions: [
+      { text: 'В каком веке жил Святой Валентин?', time_seconds: 20, points: 10, answers: [{ text: 'III век', is_correct: true }, { text: 'V век', is_correct: false }, { text: 'X век', is_correct: false }, { text: 'XII век', is_correct: false }] },
+      { text: 'Какая страна первой начала массово выпускать валентинки?', time_seconds: 20, points: 10, answers: [{ text: 'США', is_correct: true }, { text: 'Франция', is_correct: false }, { text: 'Англия', is_correct: false }, { text: 'Италия', is_correct: false }] },
+      { text: 'Сколько валентинок отправляется в мире ежегодно?', time_seconds: 20, points: 10, answers: [{ text: 'Около 1 миллиарда', is_correct: true }, { text: 'Около 100 миллионов', is_correct: false }, { text: 'Около 500 миллионов', is_correct: false }, { text: 'Около 2 миллиардов', is_correct: false }] },
+      { text: 'В какой стране на 14 февраля дарят не только валентинки, но и подарки друзьям?', time_seconds: 20, points: 10, answers: [{ text: 'Япония', is_correct: true }, { text: 'Китай', is_correct: false }, { text: 'Корея', is_correct: false }, { text: 'Тайланд', is_correct: false }] },
+      { text: 'Какого цвета традиционно украшения на День Святого Валентина?', time_seconds: 20, points: 10, answers: [{ text: 'Красный и белый', is_correct: true }, { text: 'Розовый и фиолетовый', is_correct: false }, { text: 'Красный и золотой', is_correct: false }, { text: 'Белый и серебряный', is_correct: false }] },
+    ]
+  },
+  {
+    title: '8 Марта',
+    description: 'История Международного женского дня',
+    emoji: '\u{1F338}',
+    type: 'truefalse',
+    questions: [
+      { text: '8 Марта изначально был днём борьбы за права женщин.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: true }, { text: 'Неверно', is_correct: false }] },
+      { text: 'Первый Международный женский день отметили в 1857 году.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: false }, { text: 'Неверно', is_correct: true }] },
+      { text: 'Клара Цеткин предложила учредить Международный женский день.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: true }, { text: 'Неверно', is_correct: false }] },
+      { text: '8 Марта является выходным днём в более чем 30 странах мира.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: true }, { text: 'Неверно', is_correct: false }] },
+      { text: 'Символом 8 Марта является тюльпан.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: true }, { text: 'Неверно', is_correct: false }] },
+    ]
+  },
+  {
+    title: 'День космонавтики',
+    description: 'Освоение космоса и великие открытия',
+    emoji: '\u{1F680}',
+    type: 'quiz',
+    questions: [
+      { text: 'Кто был первым человеком в космосе?', time_seconds: 20, points: 10, answers: [{ text: 'Юрий Гагарин', is_correct: true }, { text: 'Нил Армстронг', is_correct: false }, { text: 'Валентина Терешкова', is_correct: false }, { text: 'Алексей Леонов', is_correct: false }] },
+      { text: 'В каком году состоялся первый полёт человека в космос?', time_seconds: 20, points: 10, answers: [{ text: '1961', is_correct: true }, { text: '1957', is_correct: false }, { text: '1965', is_correct: false }, { text: '1969', is_correct: false }] },
+      { text: 'Сколько минут длился полёт Гагарина?', time_seconds: 20, points: 10, answers: [{ text: '108 минут', is_correct: true }, { text: '90 минут', is_correct: false }, { text: '120 минут', is_correct: false }, { text: '150 минут', is_correct: false }] },
+      { text: 'Как назывался корабль Гагарина?', time_seconds: 20, points: 10, answers: [{ text: 'Восток-1', is_correct: true }, { text: 'Союз-1', is_correct: false }, { text: 'Восход-1', is_correct: false }, { text: 'Спутник-1', is_correct: false }] },
+      { text: 'Какая женщина первой побывала в космосе?', time_seconds: 20, points: 10, answers: [{ text: 'Валентина Терешкова', is_correct: true }, { text: 'Светлана Савицкая', is_correct: false }, { text: 'Пегги Уитсон', is_correct: false }, { text: 'Салли Райд', is_correct: false }] },
+    ]
+  },
+  {
+    title: 'День Победы',
+    description: 'Великая Отечественная война в фактах',
+    emoji: '\u{1F3C5}',
+    type: 'truefalse',
+    questions: [
+      { text: 'Вторая мировая война началась в 1939 году.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: true }, { text: 'Неверно', is_correct: false }] },
+      { text: 'Блокада Ленинграда длилась 872 дня.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: true }, { text: 'Неверно', is_correct: false }] },
+      { text: 'Битва за Москву произошла в 1943 году.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: false }, { text: 'Неверно', is_correct: true }] },
+      { text: 'Георгиевская лента — символ Дня Победы.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: true }, { text: 'Неверно', is_correct: false }] },
+      { text: 'Парад Победы состоялся 24 июня 1945 года.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: true }, { text: 'Неверно', is_correct: false }] },
+    ]
+  },
+  {
+    title: '1 Сентября — День знаний',
+    description: 'Школа, учёба и интересные факты об образовании',
+    emoji: '\u{1F4DA}',
+    type: 'quiz',
+    questions: [
+      { text: 'В какой стране появилась первая в мире школа?', time_seconds: 20, points: 10, answers: [{ text: 'Древний Египет', is_correct: true }, { text: 'Древняя Греция', is_correct: false }, { text: 'Древний Китай', is_correct: false }, { text: 'Древний Рим', is_correct: false }] },
+      { text: 'Сколько лет длится среднее образование в России?', time_seconds: 20, points: 10, answers: [{ text: '11 лет', is_correct: true }, { text: '10 лет', is_correct: false }, { text: '12 лет', is_correct: false }, { text: '9 лет', is_correct: false }] },
+      { text: 'Какая страна тратит больше всего на образование?', time_seconds: 20, points: 10, answers: [{ text: 'Норвегия', is_correct: true }, { text: 'США', is_correct: false }, { text: 'Швейцария', is_correct: false }, { text: 'Финляндия', is_correct: false }] },
+      { text: 'В какой стране самая длинная учебная неделя?', time_seconds: 20, points: 10, answers: [{ text: 'Япония', is_correct: true }, { text: 'Китай', is_correct: false }, { text: 'Корея', is_correct: false }, { text: 'Израиль', is_correct: false }] },
+      { text: 'Какой предмет изучают во всех школах мира?', time_seconds: 20, points: 10, answers: [{ text: 'Математика', is_correct: true }, { text: 'История', is_correct: false }, { text: 'Литература', is_correct: false }, { text: 'География', is_correct: false }] },
+    ]
+  },
+  {
+    title: 'Хэллоуин',
+    description: 'Мистические традиции и история Хэллоуина',
+    emoji: '\u{1F383}',
+    type: 'truefalse',
+    questions: [
+      { text: 'Хэллоуин берёт начало от кельтского праздника Самайн.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: true }, { text: 'Неверно', is_correct: false }] },
+      { text: 'Тыква — единственный овощ, из которого делают светильники на Хэллоуин.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: false }, { text: 'Неверно', is_correct: true }] },
+      { text: 'Традиция «кошелёк или жизнь» появилась в США в XX веке.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: true }, { text: 'Неверно', is_correct: false }] },
+      { text: 'Оранжевый и чёрный — традиционные цвета Хэллоуина.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: true }, { text: 'Неверно', is_correct: false }] },
+      { text: 'Хэллоуин отмечают 31 октября во всём мире одинаково.', time_seconds: 15, points: 10, answers: [{ text: 'Верно', is_correct: false }, { text: 'Неверно', is_correct: true }] },
+    ]
+  },
+]
+
 export function Dashboard({ onEditQuiz, onStartGame }: Props) {
   const [quizzes, setQuizzes] = useState<Quiz[]>([])
   const [search, setSearch] = useState('')
@@ -32,6 +152,7 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
   const [newTitle, setNewTitle] = useState('')
   const [newDesc, setNewDesc] = useState('')
   const [showTemplate, setShowTemplate] = useState(false)
+  const [showHolidayPicker, setShowHolidayPicker] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
 
   const loadQuizzes = () => {
@@ -55,6 +176,36 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
 
   const handleImport = () => {
     fileRef.current?.click()
+  }
+
+  const handleCreateFromTemplate = (t: HolidayTemplate) => {
+    const id = crypto.randomUUID?.() || Math.random().toString(36).slice(2)
+    const colors = ['#FF4444','#4488FF','#FFBB33','#44CC44']
+    const shapes = ['△','◇','○','☆']
+    const now = new Date().toISOString()
+    const quiz: Quiz = {
+      id, title: t.title, description: t.description, created_at: now,
+      questions: t.questions.map((q, qi) => ({
+        id: crypto.randomUUID?.() || id + '-q' + qi,
+        text: q.text,
+        time_seconds: q.time_seconds,
+        points: q.points,
+        answers: q.answers.map((a, ai) => ({
+          id: crypto.randomUUID?.() || id + '-q' + qi + '-a' + ai,
+          text: a.text,
+          is_correct: a.is_correct,
+          color: colors[ai] || '#666',
+          shape: shapes[ai] || '●',
+        }))
+      }))
+    }
+    invoke<Quiz>('save_quiz', { quiz })
+      .then(() => {
+        setQuizzes((prev) => [quiz, ...prev])
+        setShowHolidayPicker(false)
+        onEditQuiz(quiz.id)
+      })
+      .catch(console.error)
   }
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -168,9 +319,13 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
           <div className="create-actions">
             <button className="btn btn-primary" onClick={handleCreate}>Создать</button>
             <button className="btn btn-secondary" onClick={() => setShowCreate(false)}>Отмена</button>
-            <button className="btn btn-secondary" onClick={() => setShowTemplate(true)} style={{ marginLeft: 'auto' }}>
+            <button className="btn btn-secondary" onClick={() => setShowHolidayPicker(true)} style={{ marginLeft: 'auto' }}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M12 2l3 7h7l-5 5 2 8-7-4-7 4 2-8-5-5h7z"/></svg>
+              Готовые шаблоны
+            </button>
+            <button className="btn btn-secondary" onClick={() => setShowTemplate(true)}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-              Формат JSON
+              Формат
             </button>
           </div>
         </div>
@@ -181,9 +336,17 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
           <div key={quiz.id} className="quiz-card">
             <div className="quiz-card-header">
               <h3>{quiz.title}</h3>
-              <span className="question-count">
-                {quiz.questions.length} вопросов
-              </span>
+              <div style={{ display: 'flex', gap: 6, alignItems: 'center', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+                <span className="question-count">
+                  {quiz.questions.length} вопросов
+                </span>
+                {(() => {
+                  const n = quiz.questions[0]?.answers?.length
+                  if (n === 2) return <span className="quiz-tag">Правда или Ложь</span>
+                  if (n === 4) return <span className="quiz-tag">Викторина</span>
+                  return null
+                })()}
+              </div>
             </div>
             {quiz.description && <p className="quiz-desc">{quiz.description}</p>}
             <div className="quiz-card-actions">
@@ -292,6 +455,30 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
               }}>Копировать</button>
               <button className="btn btn-secondary" style={{ flex: 1 }} onClick={() => setShowTemplate(false)}>Закрыть</button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {showHolidayPicker && (
+        <div className="modal-overlay" onClick={() => setShowHolidayPicker(false)}>
+          <div className="mode-picker" onClick={(e) => e.stopPropagation()} style={{ maxWidth: 580 }}>
+            <h3>Готовые шаблоны квизов</h3>
+            <p style={{ fontSize: 13, color: 'var(--text-secondary)', textAlign: 'center', marginBottom: 4 }}>
+              Выберите готовый квиз к празднику — он сразу откроется в редакторе
+            </p>
+            <div className="holiday-grid">
+              {HOLIDAY_TEMPLATES.map((t, idx) => (
+                <button key={idx} className="holiday-card" onClick={() => handleCreateFromTemplate(t)}>
+                  <span className="holiday-emoji">{t.emoji}</span>
+                  <span className="holiday-title">{t.title}</span>
+                  <span className="holiday-desc">{t.description}</span>
+                  <span className={`holiday-type ${t.type === 'truefalse' ? 'holiday-type--tf' : ''}`}>
+                    {t.type === 'truefalse' ? '✓✗ Правда/Ложь' : '△◇ Викторина'}
+                  </span>
+                </button>
+              ))}
+            </div>
+            <button className="btn btn-secondary" onClick={() => setShowHolidayPicker(false)}>Закрыть</button>
           </div>
         </div>
       )}
