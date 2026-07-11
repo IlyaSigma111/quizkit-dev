@@ -257,11 +257,13 @@ function openModal(q) {
     .then(data => {
       let html = ''
       data.questions.forEach((item, i) => {
-        html += `<div class="q-item"><h4>${i + 1}. ${item.question}</h4><div class="q-opts">`
+        const qText = item.text || item.question
+        html += `<div class="q-item"><h4>${i + 1}. ${qText}</h4><div class="q-opts">`
         item.answers.forEach((a, j) => {
-          const isCorrect = j === item.correct
+          const isCorrect = typeof a === 'string' ? j === item.correct : a.is_correct
+          const aText = typeof a === 'string' ? a : a.text
           const cls = isCorrect ? 'correct' : ''
-          html += `<label class="${cls}"><input type="radio" disabled${isCorrect ? ' checked' : ''}><span>${a}</span>${isCorrect ? '<span class="check-label">✓ Правильный ответ</span>' : ''}</label>`
+          html += `<label class="${cls}"><input type="radio" disabled${isCorrect ? ' checked' : ''}><span>${aText}</span>${isCorrect ? '<span class="check-label">✓ Правильный ответ</span>' : ''}</label>`
         })
         html += '</div></div>'
       })
