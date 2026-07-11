@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>╨в╨╡╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕╨╡ ╨▓╨╕╨║╤В╨╛╤А╨╕╨╜╤Л тАФ QuizKit</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>ЁЯжЙ</text></svg>">
+<title>Тематические викторины — QuizKit</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🦉</text></svg>">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -75,25 +75,25 @@ footer a:hover{color:#ededef}
     <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" stroke="currentColor" stroke-width="2" opacity=".15"/><path d="M50 22c-8 0-14 6-14 14v6h-4c-3 0-6 3-6 6v24c0 3 3 6 6 6h36c3 0 6-3 6-6V48c0-3-3-6-6-6h-4v-6c0-8-6-14-14-14zm-8 20V36a8 8 0 1116 0v6H42zm-6 10h28v20H36V52z" fill="currentColor"/><circle cx="50" cy="60" r="4" fill="currentColor" opacity=".4"/></svg>
     QuizKit
   </a>
-  <a href="https://ilyasigma111.github.io/quizkit/" style="font-size:13px;color:#787888">тЖР ╨Э╨░ ╨│╨╗╨░╨▓╨╜╤Г╤О</a>
+  <a href="https://ilyasigma111.github.io/quizkit/" style="font-size:13px;color:#787888">← На главную</a>
 </div>
 </nav>
 
 <div class="hero">
-  <h1>ЁЯУЪ ╨в╨╡╨╝╨░╤В╨╕╤З╨╡╤Б╨║╨╕╨╡ ╨▓╨╕╨║╤В╨╛╤А╨╕╨╜╤Л</h1>
-  <p>╨Я╨╛╨┤╨▒╨╛╤А╨║╨╕ ╨▓╨╛╨┐╤А╨╛╤Б╨╛╨▓ ╨┐╤А╨╛ ╨┐╤А╨░╨╖╨┤╨╜╨╕╨║╨╕ ╨а╨╛╤Б╤Б╨╕╨╕ тАФ ╤Б╨║╨░╤З╨╕╨▓╨░╨╣ ╨╕╨╗╨╕ ╤Б╨╝╨╛╤В╤А╨╕ ╨┐╤А╤П╨╝╨╛ ╨╜╨░ ╤Б╨░╨╣╤В╨╡</p>
+  <h1>📚 Тематические викторины</h1>
+  <p>Подборки вопросов про праздники России — скачивай или смотри прямо на сайте</p>
 </div>
 
 <div id="content"></div>
 
 <footer>
   <a href="https://github.com/IlyaSigma111/quizkit">GitHub</a> &middot; 
-  <a href="https://github.com/IlyaSigma111/quizkit/issues">╨Я╤А╨╡╨┤╨╗╨╛╨╢╨╕╤В╤М ╤В╨╡╨╝╤Г</a>
+  <a href="https://github.com/IlyaSigma111/quizkit/issues">Предложить тему</a>
 </footer>
 
 <div class="modal-overlay" id="modal">
 <div class="modal">
-  <button class="modal-close" onclick="closeModal()">тЬХ</button>
+  <button class="modal-close" onclick="closeModal()">✕</button>
   <h2 id="modalTitle"></h2>
   <div class="modal-sub" id="modalSub"></div>
   <div id="modalBody"></div>
@@ -102,39 +102,39 @@ footer a:hover{color:#ededef}
 
 <script>
 const CATS = {
-  'тЭДя╕П': '╨Ч╨╕╨╝╨╜╨╕╨╡ ╨┐╤А╨░╨╖╨┤╨╜╨╕╨║╨╕',
-  'тШАя╕П': '╨Ы╨╡╤В╨╜╨╕╨╡ ╨┐╤А╨░╨╖╨┤╨╜╨╕╨║╨╕',
-  'ЁЯНВ': '╨Ю╤Б╨╡╨╜╨╜╨╕╨╡ ╨┐╤А╨░╨╖╨┤╨╜╨╕╨║╨╕',
-  'ЁЯМН': '╨Ь╨╕╤А ╨╕ ╨┐╤А╨╕╤А╨╛╨┤╨░'
+  '❄️': 'Зимние праздники',
+  '☀️': 'Летние праздники',
+  '🍂': 'Осенние праздники',
+  '🌍': 'Мир и природа'
 }
 
 const QUIZZES = [
-  { file:'heroes-day.json', icon:'ЁЯПЕ', cat:'тЭДя╕П', title:'╨Ф╨╡╨╜╤М ╨У╨╡╤А╨╛╨╡╨▓ ╨Ю╤В╨╡╤З╨╡╤Б╤В╨▓╨░', desc:'╨У╨╡╤А╨╛╨╕ ╨а╨╛╤Б╤Б╨╕╨╕, ╨╛╤А╨┤╨╡╨╜╨░ ╨╕ ╨┐╨╛╨┤╨▓╨╕╨│╨╕.', questions:23 },
-  { file:'constitution-day.json', icon:'ЁЯУЬ', cat:'тЭДя╕П', title:'╨Ф╨╡╨╜╤М ╨Ъ╨╛╨╜╤Б╤В╨╕╤В╤Г╤Ж╨╕╨╕', desc:'╨Ю╤Б╨╜╨╛╨▓╨╜╨╛╨╣ ╨╖╨░╨║╨╛╨╜, ╨┐╤А╨░╨▓╨░ ╤З╨╡╨╗╨╛╨▓╨╡╨║╨░ ╨╕ ╨╕╤Б╤В╨╛╤А╨╕╤П ╨│╨╗╨░╨▓╨╜╨╛╨│╨╛ ╨┤╨╛╨║╤Г╨╝╨╡╨╜╤В╨░.', questions:27 },
-  { file:'grandpa-frost-birthday.json', icon:'ЁЯОЕ', cat:'тЭДя╕П', title:'╨Ф╨╡╨╜╤М ╤А╨╛╨╢╨┤╨╡╨╜╨╕╤П ╨Ф╨╡╨┤╨░ ╨Ь╨╛╤А╨╛╨╖╨░', desc:'╨Т╨╡╨╗╨╕╨║╨╕╨╣ ╨г╤Б╤В╤О╨│, ╨б╨╜╨╡╨│╤Г╤А╨╛╤З╨║╨░ ╨╕ ╨╖╨╕╨╝╨╜╤П╤П ╤Б╨║╨░╨╖╨║╨░.', questions:27 },
-  { file:'new-year.json', icon:'ЁЯОД', cat:'тЭДя╕П', title:'╨Э╨╛╨▓╤Л╨╣ ╨│╨╛╨┤', desc:'╨Б╨╗╨║╨░, ╨╛╨╗╨╕╨▓╤М╨╡ ╨╕ ╨│╨╗╨░╨▓╨╜╤Л╨╣ ╤Д╨╕╨╗╤М╨╝ ╤Б╤В╤А╨░╨╜╤Л.', questions:28 },
+  { file:'heroes-day.json', icon:'🏅', cat:'❄️', title:'День Героев Отечества', desc:'Герои России, ордена и подвиги.', questions:23 },
+  { file:'constitution-day.json', icon:'📜', cat:'❄️', title:'День Конституции', desc:'Основной закон, права человека и история главного документа.', questions:27 },
+  { file:'grandpa-frost-birthday.json', icon:'🎅', cat:'❄️', title:'День рождения Деда Мороза', desc:'Великий Устюг, Снегурочка и зимняя сказка.', questions:27 },
+  { file:'new-year.json', icon:'🎄', cat:'❄️', title:'Новый год', desc:'Ёлка, оливье и главный фильм страны.', questions:28 },
 
-  { file:'family-day.json', icon:'ЁЯТЫ', cat:'тШАя╕П', title:'╨Ф╨╡╨╜╤М ╤Б╨╡╨╝╤М╨╕, ╨╗╤О╨▒╨▓╨╕ ╨╕ ╨▓╨╡╤А╨╜╨╛╤Б╤В╨╕', desc:'╨Я╤С╤В╤А ╨╕ ╨д╨╡╨▓╤А╨╛╨╜╨╕╤П, ╤А╨╛╨╝╨░╤И╨║╨╕ ╨╕ ╤Б╨╡╨╝╨╡╨╣╨╜╤Л╨╡ ╤Ж╨╡╨╜╨╜╨╛╤Б╤В╨╕.', questions:25 },
-  { file:'baptism-day.json', icon:'тЫк', cat:'тШАя╕П', title:'╨Ф╨╡╨╜╤М ╨Ъ╤А╨╡╤Й╨╡╨╜╨╕╤П ╨а╤Г╤Б╨╕', desc:'╨Ъ╨╜╤П╨╖╤М ╨Т╨╗╨░╨┤╨╕╨╝╨╕╤А, ╨┐╤А╨░╨▓╨╛╤Б╨╗╨░╨▓╨╕╨╡ ╨╕ ╨╕╤Б╤В╨╛╤А╨╕╤П ╤Е╤А╨╕╤Б╤В╨╕╨░╨╜╤Б╤В╨▓╨░.', questions:26 },
-  { file:'flag-day.json', icon:'ЁЯЗ╖ЁЯЗ║', cat:'тШАя╕П', title:'╨Ф╨╡╨╜╤М ╨У╨╛╤Б╤Г╨┤╨░╤А╤Б╤В╨▓╨╡╨╜╨╜╨╛╨│╨╛ ╤Д╨╗╨░╨│╨░', desc:'╨С╨╡╨╗╨╛-╤Б╨╕╨╜╨╡-╨║╤А╨░╤Б╨╜╤Л╨╣, ╨╕╤Б╤В╨╛╤А╨╕╤П ╤Д╨╗╨░╨│╨░ ╨╕ ╤Б╨╕╨╝╨▓╨╛╨╗╤Л ╨а╨╛╤Б╤Б╨╕╨╕.', questions:25 },
+  { file:'family-day.json', icon:'💛', cat:'☀️', title:'День семьи, любви и верности', desc:'Пётр и Феврония, ромашки и семейные ценности.', questions:25 },
+  { file:'baptism-day.json', icon:'⛪', cat:'☀️', title:'День Крещения Руси', desc:'Князь Владимир, православие и история христианства.', questions:26 },
+  { file:'flag-day.json', icon:'🇷🇺', cat:'☀️', title:'День Государственного флага', desc:'Бело-сине-красный, история флага и символы России.', questions:25 },
 
-  { file:'knowledge-day.json', icon:'ЁЯУЪ', cat:'ЁЯНВ', title:'╨Ф╨╡╨╜╤М ╨╖╨╜╨░╨╜╨╕╨╣', desc:'╨Я╨╡╤А╨▓╨╛╨╡ ╤Б╨╡╨╜╤В╤П╨▒╤А╤П, ╨╗╨╕╨╜╨╡╨╣╨║╨╕ ╨╕ ╤В╤А╨░╨┤╨╕╤Ж╨╕╨╕ ╨┐╨╡╤А╨▓╨╛╨║╨╗╨░╤Б╤Б╨╜╨╕╨║╨╛╨▓.', questions:27 },
-  { file:'elderly-day.json', icon:'ЁЯС┤', cat:'ЁЯНВ', title:'╨Ф╨╡╨╜╤М ╨┐╨╛╨╢╨╕╨╗╤Л╤Е ╨╗╤О╨┤╨╡╨╣', desc:'╨г╨▓╨░╨╢╨╡╨╜╨╕╨╡ ╨║ ╤Б╤В╨░╤А╤И╨╕╨╝, ╨│╨╡╤А╨╛╨╜╤В╨╛╨╗╨╛╨│╨╕╤П ╨╕ ╨╖╨░╨▒╨╛╤В╨░.', questions:26 },
-  { file:'teachers-day.json', icon:'ЁЯНО', cat:'ЁЯНВ', title:'╨Ф╨╡╨╜╤М ╤Г╤З╨╕╤В╨╡╨╗╤П', desc:'╨Я╨╡╨┤╨░╨│╨╛╨│╨╕╨║╨░, ╤Ж╨▓╨╡╤В╤Л ╨╕ ╨╝╨╕╤А╨╛╨▓╤Л╨╡ ╤В╤А╨░╨┤╨╕╤Ж╨╕╨╕.', questions:25 },
-  { file:'fathers-day.json', icon:'ЁЯСи', cat:'ЁЯНВ', title:'╨Ф╨╡╨╜╤М ╨╛╤В╤Ж╨░', desc:'╨а╨╛╨╗╤М ╨╛╤В╤Ж╨░, ╤Б╨╡╨╝╨╡╨╣╨╜╤Л╨╡ ╤В╤А╨░╨┤╨╕╤Ж╨╕╨╕ ╨╕ ╨╕╨╖╨▓╨╡╤Б╤В╨╜╤Л╨╡ ╨┐╨░╨┐╤Л.', questions:24 },
-  { file:'mothers-day.json', icon:'ЁЯСй', cat:'ЁЯНВ', title:'╨Ф╨╡╨╜╤М ╨╝╨░╤В╨╡╤А╨╕', desc:'╨Ь╨░╤В╨╡╤А╨╕╨╜╤Б╤В╨▓╨╛, ╨╗╤О╨▒╨╛╨▓╤М ╨╕ ╨╖╨░╨▒╨╛╤В╨░ ╨╛ ╨┤╨╡╤В╤П╤Е.', questions:24 },
-  { file:'unity-day.json', icon:'ЁЯдЭ', cat:'ЁЯНВ', title:'╨Ф╨╡╨╜╤М ╨╜╨░╤А╨╛╨┤╨╜╨╛╨│╨╛ ╨╡╨┤╨╕╨╜╤Б╤В╨▓╨░', desc:'╨Ь╨╕╨╜╨╕╨╜ ╨╕ ╨Я╨╛╨╢╨░╤А╤Б╨║╨╕╨╣, ╨╛╨┐╨╛╨╗╤З╨╡╨╜╨╕╨╡ ╨╕ ╨╕╤Б╤В╨╛╤А╨╕╤П 4 ╨╜╨╛╤П╨▒╤А╤П.', questions:26 },
+  { file:'knowledge-day.json', icon:'📚', cat:'🍂', title:'День знаний', desc:'Первое сентября, линейки и традиции первоклассников.', questions:27 },
+  { file:'elderly-day.json', icon:'👴', cat:'🍂', title:'День пожилых людей', desc:'Уважение к старшим, геронтология и забота.', questions:26 },
+  { file:'teachers-day.json', icon:'🍎', cat:'🍂', title:'День учителя', desc:'Педагогика, цветы и мировые традиции.', questions:25 },
+  { file:'fathers-day.json', icon:'👨', cat:'🍂', title:'День отца', desc:'Роль отца, семейные традиции и известные папы.', questions:24 },
+  { file:'mothers-day.json', icon:'👩', cat:'🍂', title:'День матери', desc:'Материнство, любовь и забота о детях.', questions:24 },
+  { file:'unity-day.json', icon:'🤝', cat:'🍂', title:'День народного единства', desc:'Минин и Пожарский, ополчение и история 4 ноября.', questions:26 },
 
-  { file:'animals.json', icon:'ЁЯРШ', cat:'ЁЯМН', title:'╨г╨┤╨╕╨▓╨╕╤В╨╡╨╗╤М╨╜╤Л╨╡ ╨╢╨╕╨▓╨╛╤В╨╜╤Л╨╡', desc:'╨Я╤А╨░╨▓╨┤╨░ ╨╕╨╗╨╕ ╨▓╤Л╨╝╤Л╤Б╨╡╨╗? ╨Я╤А╨╛╨▓╨╡╤А╤М, ╨║╨░╨║ ╤Е╨╛╤А╨╛╤И╨╛ ╤В╤Л ╨╖╨╜╨░╨╡╤И╤М ╤Д╨░╤Г╨╜╤Г ╨╜╨░╤И╨╡╨╣ ╨┐╨╗╨░╨╜╨╡╤В╤Л', questions:10 },
-  { file:'oceans.json', icon:'ЁЯМК', cat:'ЁЯМН', title:'╨Ч╨░╨│╨░╨┤╨║╨╕ ╨╛╨║╨╡╨░╨╜╨╛╨▓', desc:'╨Я╤А╨╛╨▓╨╡╤А╤М ╤Б╨▓╨╛╨╕ ╨╖╨╜╨░╨╜╨╕╤П ╨╛ ╨╝╨╛╤А╤П╤Е, ╨╛╨║╨╡╨░╨╜╨░╤Е ╨╕ ╨╕╤Е ╨╛╨▒╨╕╤В╨░╤В╨╡╨╗╤П╤Е', questions:11 },
-  { file:'plants.json', icon:'ЁЯМ┐', cat:'ЁЯМН', title:'╨г╨┤╨╕╨▓╨╕╤В╨╡╨╗╤М╨╜╤Л╨╡ ╤А╨░╤Б╤В╨╡╨╜╨╕╤П', desc:'╨Я╤А╨░╨▓╨┤╨░ ╨╛ ╤А╨░╤Б╤В╨╡╨╜╨╕╤П╤Е: ╨╛╤В ╨▒╨░╨╜╨░╨╜╨╛╨▓ ╨┤╨╛ ╤Б╨╡╨║╨▓╨╛╨╣', questions:10 },
-  { file:'space.json', icon:'ЁЯЪА', cat:'ЁЯМН', title:'╨Ъ╨╛╤Б╨╝╨╛╤Б ╨╕ ╨┐╨╗╨░╨╜╨╡╤В╤Л', desc:'╨Я╤А╨╛╨▓╨╡╤А╤М, ╤З╤В╨╛ ╤В╤Л ╨╖╨╜╨░╨╡╤И╤М ╨╛ ╨║╨╛╤Б╨╝╨╛╤Б╨╡, ╨┐╨╗╨░╨╜╨╡╤В╨░╤Е ╨╕ ╨╖╨▓╤С╨╖╨┤╨░╤Е', questions:11 },
-  { file:'geography.json', icon:'ЁЯМП', cat:'ЁЯМН', title:'╨У╨╡╨╛╨│╤А╨░╤Д╨╕╤З╨╡╤Б╨║╨╕╨╡ ╤А╨╡╨║╨╛╤А╨┤╤Л', desc:'╨а╨╡╨║╨╛╤А╨┤╤Л ╨╜╨░╤И╨╡╨╣ ╨┐╨╗╨░╨╜╨╡╤В╤Л: ╨╛╤В ╨Э╨╕╨╗╨░ ╨┤╨╛ ╨н╨▓╨╡╤А╨╡╤Б╤В╨░', questions:11 },
-  { file:'weather.json', icon:'ЁЯМд', cat:'ЁЯМН', title:'╨Я╨╛╨│╨╛╨┤╨░ ╨╕ ╨║╨╗╨╕╨╝╨░╤В', desc:'╨д╨░╨║╤В╤Л ╨╛ ╨┐╨╛╨│╨╛╨┤╨╡, ╨║╨╗╨╕╨╝╨░╤В╨╡ ╨╕ ╨┐╤А╨╕╤А╨╛╨┤╨╜╤Л╤Е ╤П╨▓╨╗╨╡╨╜╨╕╤П╤Е', questions:11 },
-  { file:'dinosaurs.json', icon:'ЁЯжХ', cat:'ЁЯМН', title:'╨Ф╨╕╨╜╨╛╨╖╨░╨▓╤А╤Л ╨╕ ╨┤╤А╨╡╨▓╨╜╨╕╨╣ ╨╝╨╕╤А', desc:'╨в╨╕╤А╨░╨╜╨╜╨╛╨╖╨░╨▓╤А╤Л, ╤Б╤В╨╡╨│╨╛╨╖╨░╨▓╤А╤Л ╨╕ ╤В╨░╨╣╨╜╨░ ╨▓╤Л╨╝╨╕╤А╨░╨╜╨╕╤П тАФ ╤З╤В╨╛ ╨╖╨┤╨╡╤Б╤М ╨┐╤А╨░╨▓╨┤╨░?', questions:11 },
-  { file:'mountains.json', icon:'тЫ░', cat:'ЁЯМН', title:'╨У╨╛╤А╤Л ╨╕ ╨▓╤Г╨╗╨║╨░╨╜╤Л', desc:'╨н╨▓╨╡╤А╨╡╤Б╤В, ╨▓╤Г╨╗╨║╨░╨╜╤Л ╨╕ ╨│╨╛╤А╨╜╤Л╨╡ ╤А╨╡╨║╨╛╤А╨┤╤Л тАФ ╨╛╤В╨┤╨╡╨╗╤П╨╡╨╝ ╤Д╨░╨║╤В╤Л ╨╛╤В ╨╝╨╕╤Д╨╛╨▓', questions:11 },
-  { file:'water.json', icon:'ЁЯТз', cat:'ЁЯМН', title:'╨Т╨╛╨┤╨░', desc:'╨г╨┤╨╕╨▓╨╕╤В╨╡╨╗╤М╨╜╤Л╨╡ ╤Д╨░╨║╤В╤Л ╨╛ ╤Б╨░╨╝╨╛╨╣ ╨╛╨▒╤Л╤З╨╜╨╛╨╣ ╨╕ ╨╜╨╡╨╛╨▒╤Л╤З╨╜╨╛╨╣ ╨╢╨╕╨┤╨║╨╛╤Б╤В╨╕ ╨╜╨░ ╨┐╨╗╨░╨╜╨╡╤В╨╡', questions:11 },
-  { file:'ecology.json', icon:'тЩ╗я╕П', cat:'ЁЯМН', title:'╨н╨║╨╛╨╗╨╛╨│╨╕╤П ╨╕ ╨┐╤А╨╕╤А╨╛╨┤╨░', desc:'╨Я╤А╨╛╨▓╨╡╤А╤М ╤Б╨▓╨╛╤О ╤Н╨║╨╛╨╗╨╛╨│╨╕╤З╨╡╤Б╨║╤Г╤О ╨│╤А╨░╨╝╨╛╤В╨╜╨╛╤Б╤В╤М', questions:11 },
+  { file:'animals.json', icon:'🐘', cat:'🌍', title:'Удивительные животные', desc:'Правда или вымысел? Проверь, как хорошо ты знаешь фауну нашей планеты', questions:10 },
+  { file:'oceans.json', icon:'🌊', cat:'🌍', title:'Загадки океанов', desc:'Проверь свои знания о морях, океанах и их обитателях', questions:11 },
+  { file:'plants.json', icon:'🌿', cat:'🌍', title:'Удивительные растения', desc:'Правда о растениях: от бананов до секвой', questions:10 },
+  { file:'space.json', icon:'🚀', cat:'🌍', title:'Космос и планеты', desc:'Проверь, что ты знаешь о космосе, планетах и звёздах', questions:11 },
+  { file:'geography.json', icon:'🌏', cat:'🌍', title:'Географические рекорды', desc:'Рекорды нашей планеты: от Нила до Эвереста', questions:11 },
+  { file:'weather.json', icon:'🌤', cat:'🌍', title:'Погода и климат', desc:'Факты о погоде, климате и природных явлениях', questions:11 },
+  { file:'dinosaurs.json', icon:'🦕', cat:'🌍', title:'Динозавры и древний мир', desc:'Тираннозавры, стегозавры и тайна вымирания — что здесь правда?', questions:11 },
+  { file:'mountains.json', icon:'⛰', cat:'🌍', title:'Горы и вулканы', desc:'Эверест, вулканы и горные рекорды — отделяем факты от мифов', questions:11 },
+  { file:'water.json', icon:'💧', cat:'🌍', title:'Вода', desc:'Удивительные факты о самой обычной и необычной жидкости на планете', questions:11 },
+  { file:'ecology.json', icon:'♻️', cat:'🌍', title:'Экология и природа', desc:'Проверь свою экологическую грамотность', questions:11 },
 ]
 
 const CONFIG_URL = 'https://raw.githubusercontent.com/IlyaSigma111/quizkit/master/quizzes/'
@@ -144,7 +144,7 @@ function openModal(q) {
   document.getElementById('modalTitle').textContent = q.icon + ' ' + q.title
   document.getElementById('modalSub').textContent = q.desc
   const body = document.getElementById('modalBody')
-  body.innerHTML = '<div style="text-align:center;padding:24px;color:#585868">╨Ч╨░╨│╤А╤Г╨╖╨║╨░ ╨▓╨╛╨┐╤А╨╛╤Б╨╛╨▓...</div>'
+  body.innerHTML = '<div style="text-align:center;padding:24px;color:#585868">Загрузка вопросов...</div>'
   overlay.classList.add('open')
   document.body.style.overflow = 'hidden'
 
@@ -157,14 +157,14 @@ function openModal(q) {
         item.answers.forEach((a, j) => {
           const isCorrect = j === item.correct
           const cls = isCorrect ? 'correct' : ''
-          html += `<label class="${cls}"><input type="radio" disabled${isCorrect ? ' checked' : ''}><span>${a}</span>${isCorrect ? '<span class="check-label">тЬУ ╨Я╤А╨░╨▓╨╕╨╗╤М╨╜╤Л╨╣ ╨╛╤В╨▓╨╡╤В</span>' : ''}</label>`
+          html += `<label class="${cls}"><input type="radio" disabled${isCorrect ? ' checked' : ''}><span>${a}</span>${isCorrect ? '<span class="check-label">✓ Правильный ответ</span>' : ''}</label>`
         })
         html += '</div></div>'
       })
       body.innerHTML = html
     })
     .catch(() => {
-      body.innerHTML = '<div style="text-align:center;padding:24px;color:#ff6060">╨Ю╤И╨╕╨▒╨║╨░ ╨╖╨░╨│╤А╤Г╨╖╨║╨╕ ЁЯШФ</div>'
+      body.innerHTML = '<div style="text-align:center;padding:24px;color:#ff6060">Ошибка загрузки 😔</div>'
     })
 }
 
@@ -205,11 +205,11 @@ function render() {
         <h3>${q.title}</h3>
         <div class="desc">${q.desc}</div>
         <div class="meta">
-          <span>ЁЯУЭ ${q.questions} ╨▓╨╛╨┐╤А╨╛╤Б╨╛╨▓</span>
+          <span>📝 ${q.questions} вопросов</span>
         </div>
         <div class="btns">
-          <button class="btn btn-secondary" onclick='openModal(${JSON.stringify(q).replace(/'/g,"&#39;")})'>ЁЯСБ ╨Я╨╛╤Б╨╝╨╛╤В╤А╨╡╤В╤М</button>
-          <a href="${q.file}" download="${q.file}" class="btn btn-primary">тмЗ ╨б╨║╨░╤З╨░╤В╤М</a>
+          <button class="btn btn-secondary" onclick='openModal(${JSON.stringify(q).replace(/'/g,"&#39;")})'>👁 Посмотреть</button>
+          <a href="${q.file}" download="${q.file}" class="btn btn-primary">⬇ Скачать</a>
         </div>
       `
       grid.appendChild(card)
