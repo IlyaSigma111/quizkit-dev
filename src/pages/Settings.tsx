@@ -6,15 +6,15 @@ type AppSettings = {
   default_advance: string
   default_time_seconds: number
   default_points: number
-  theme: string
   style: string
+  dark_mode: boolean
   internet_check: boolean
 }
 
 type Props = {
   onBack: () => void
-  onThemeChange: (theme: string) => void
   onStyleChange: (style: string) => void
+  onDarkModeChange: (dark: boolean) => void
 }
 
 const MODES = [
@@ -27,24 +27,6 @@ const ADVANCES = [
   { value: 'manual', label: 'Вручную', icon: '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>', desc: 'Учитель переключает вопросы' },
 ]
 
-const THEMES = [
-  { value: 'spline', label: 'Spline Dark', icon: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>', desc: 'Минималистичный тёмный' },
-  { value: 'purple', label: 'Пурпурное стекло', icon: '<circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20"/>', desc: 'Тёмный с фиолетовым акцентом' },
-  { value: 'ocean', label: 'Океан', icon: '<path d="M2 12h20"/><path d="M2 6h20"/><path d="M2 18h20"/>', desc: 'Синяя глубина' },
-  { value: 'forest', label: 'Лес', icon: '<path d="M12 2L2 12l3 0 0 8 6 0 0-4 2 0 0 4 6 0 0-8 3 0z"/>', desc: 'Зелёный спокойный' },
-  { value: 'sunset', label: 'Закат', icon: '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>', desc: 'Тёплый оранжевый' },
-  { value: 'rose', label: 'Роза', icon: '<circle cx="12" cy="12" r="10"/><path d="M12 2C6 2 2 6 2 12s4 10 10 10"/>', desc: 'Розово-коралловый' },
-  { value: 'sky', label: 'Небо', icon: '<path d="M2 12h20"/><path d="M6 6h4"/><path d="M14 18h6"/>', desc: 'Голубой и свежий' },
-  { value: 'violet', label: 'Фиалка', icon: '<polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/>', desc: 'Фиолетовый акцент' },
-  { value: 'cyberpunk', label: 'Киберпанк', icon: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/>', desc: 'Неон и контраст' },
-  { value: 'aurora', label: 'Северное сияние', icon: '<path d="M2 12h20M6 6h12M10 18h4"/><path d="M4 8h16M8 16h8"/>', desc: 'Бирюзово-фиолетовый' },
-  { value: 'midnight', label: 'Полночь', icon: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/>', desc: 'Глубокий тёмно-синий' },
-  { value: 'amber', label: 'Янтарь', icon: '<polygon points="12 2 15 9 22 9 16 14 18 21 12 17 6 21 8 14 2 9 9 9"/>', desc: 'Тёплый золотой' },
-  { value: 'mint', label: 'Мята', icon: '<path d="M12 2C6 2 2 6 2 12s4 10 10 10"/><path d="M8 12l3 3 5-5"/>', desc: 'Свежий зелёный' },
-  { value: 'lavender', label: 'Лаванда', icon: '<path d="M12 2a10 10 0 0 1 10 10"/><path d="M2 12a10 10 0 0 1 10-10"/><path d="M12 22a10 10 0 0 1-10-10"/>', desc: 'Нежный фиолетовый' },
-  { value: 'coral', label: 'Коралл', icon: '<circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12"/>', desc: 'Розово-коралловый' },
-]
-
 const STYLES = [
   { value: 'editorial', label: 'Editorial', icon: '<path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/>', desc: 'Светлый, шрифты с засечками' },
   { value: 'midnight', label: 'Midnight', icon: '<path d="M12 3a9 9 0 1 0 9 9"/><circle cx="12" cy="12" r="3"/>', desc: 'Тёмное стекло с индиго' },
@@ -53,11 +35,10 @@ const STYLES = [
   { value: 'paper', label: 'Paper', icon: '<path d="M4 6h16M4 12h16M4 18h12"/><circle cx="18" cy="18" r="3"/>', desc: 'Тёплый бежевый, терракот' },
 ]
 
-export function Settings({ onBack, onThemeChange, onStyleChange }: Props) {
+export function Settings({ onBack, onStyleChange, onDarkModeChange }: Props) {
   const [settings, setSettings] = useState<AppSettings | null>(null)
   const [saved, setSaved] = useState(false)
   const [error, setError] = useState('')
-  const [showThemes, setShowThemes] = useState(false)
   const [showStyles, setShowStyles] = useState(false)
 
   useEffect(() => {
@@ -131,64 +112,55 @@ export function Settings({ onBack, onThemeChange, onStyleChange }: Props) {
         </div>
 
         <div className="settings-section">
-          <button className="settings-collapse" onClick={() => setShowThemes(!showThemes)}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" style={{ transform: showThemes ? 'rotate(90deg)' : 'rotate(0deg)', transition: 'transform .2s' }}><polyline points="9 18 15 12 9 6"/></svg>
-            <h3>Темы</h3>
-            <span className="settings-count">{THEMES.length}</span>
-          </button>
-          {showThemes && (
-            <div className="settings-row settings-themes">
-              {THEMES.map((t) => (
-                <button
-                  key={t.value}
-                  className={`settings-card theme-card theme-card-${t.value} ${settings.theme === t.value ? 'selected' : ''}`}
-                  onClick={() => {
-                    update({ theme: t.value })
-                    onThemeChange(t.value)
-                    const newSettings = { ...settings, theme: t.value }
-                    invoke('save_settings', { settings: newSettings }).catch(() => {})
-                  }}
-                >
-                  <span className="settings-card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" dangerouslySetInnerHTML={{ __html: t.icon }} />
-                  </span>
-                  <span className="settings-card-title">{t.label}</span>
-                  <span className="settings-card-desc">{t.desc}</span>
-                  <span className="theme-swatch" />
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-
-        <div className="settings-section">
           <button className="settings-collapse" onClick={() => setShowStyles(!showStyles)}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" style={{ transform: showStyles ? 'rotate(90deg)' : 'rotate(0deg)', transition: 'transform .2s' }}><polyline points="9 18 15 12 9 6"/></svg>
             <h3>Стили</h3>
             <span className="settings-count">{STYLES.length}</span>
           </button>
           {showStyles && (
-            <div className="settings-row settings-themes">
-              {STYLES.map((s) => (
-                <button
-                  key={s.value}
-                  className={`settings-card style-card style-card-${s.value} ${settings.style === s.value ? 'selected' : ''}`}
-                  onClick={() => {
-                    update({ style: s.value })
-                    onStyleChange(s.value)
-                    const newSettings = { ...settings, style: s.value }
-                    invoke('save_settings', { settings: newSettings }).catch(() => {})
-                  }}
-                >
-                  <span className="settings-card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" dangerouslySetInnerHTML={{ __html: s.icon }} />
-                  </span>
-                  <span className="settings-card-title">{s.label}</span>
-                  <span className="settings-card-desc">{s.desc}</span>
-                  <span className="style-swatch" />
-                </button>
-              ))}
-            </div>
+            <>
+              <div className="settings-row settings-themes">
+                {STYLES.map((s) => (
+                  <button
+                    key={s.value}
+                    className={`settings-card style-card style-card-${s.value} ${settings.style === s.value ? 'selected' : ''}`}
+                    onClick={() => {
+                      update({ style: s.value })
+                      onStyleChange(s.value)
+                      const newSettings = { ...settings, style: s.value }
+                      invoke('save_settings', { settings: newSettings }).catch(() => {})
+                    }}
+                  >
+                    <span className="settings-card-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" dangerouslySetInnerHTML={{ __html: s.icon }} />
+                    </span>
+                    <span className="settings-card-title">{s.label}</span>
+                    <span className="settings-card-desc">{s.desc}</span>
+                    <span className="style-swatch" />
+                  </button>
+                ))}
+              </div>
+              <button
+                className={`settings-card dark-toggle ${settings.dark_mode ? 'selected' : ''}`}
+                onClick={() => {
+                  const v = !settings.dark_mode
+                  update({ dark_mode: v })
+                  onDarkModeChange(v)
+                  const ns = { ...settings, dark_mode: v }
+                  invoke('save_settings', { settings: ns }).catch(() => {})
+                }}
+              >
+                <span className="settings-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                    {settings.dark_mode
+                      ? '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'
+                      : '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>'}
+                  </svg>
+                </span>
+                <span className="settings-card-title">{settings.dark_mode ? 'Светлая тема' : 'Тёмная тема'}</span>
+                <span className="settings-card-desc">{settings.dark_mode ? 'Переключить на светлую' : 'Переключить на тёмную'}</span>
+              </button>
+            </>
           )}
         </div>
 

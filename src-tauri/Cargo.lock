@@ -1828,7 +1828,7 @@ dependencies = [
 
 [[package]]
 name = "ilya-klass"
-version = "0.1.0"
+version = "0.6.5"
 dependencies = [
  "axum",
  "chrono",

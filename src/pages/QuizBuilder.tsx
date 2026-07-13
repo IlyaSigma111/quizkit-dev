@@ -5,9 +5,8 @@ import { invoke } from '@tauri-apps/api/core'
 type Props = {
   quizId: string | null
   onBack: () => void
+  onCreateOwn?: () => void
 }
-
-type QuizType = 'quiz' | 'truefalse'
 
 const COLORS = ['#FF4444', '#4488FF', '#FFBB33', '#44CC44']
 const SHAPES = ['triangle', 'diamond', 'circle', 'star']
@@ -35,8 +34,8 @@ function importFromJSON(json: Record<string, unknown>): Quiz {
           return {
             id: makeId(),
             text: String(question.question ?? ''),
-            time_seconds: 20,
-            points: 1000,
+              time_seconds: 0,
+              points: 1000,
             answers: answers.map((a: string, ai: number) => ({
               id: makeId(),
               text: a,
@@ -68,7 +67,7 @@ function exportToJSON(quiz: Quiz): string {
   return JSON.stringify(data, null, 2)
 }
 
-export function QuizBuilder({ quizId, onBack }: Props) {
+export function QuizBuilder({ quizId, onBack, onCreateOwn }: Props) {
   const [quiz, setQuiz] = useState<Quiz>(() => ({
     id: quizId || makeId(),
     title: '',
@@ -76,19 +75,13 @@ export function QuizBuilder({ quizId, onBack }: Props) {
     questions: [],
     created_at: String(Date.now()),
   }))
-  const [quizType, setQuizType] = useState<QuizType>('quiz')
   const [showJsonMenu, setShowJsonMenu] = useState(false)
   const jsonRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (quizId) {
       invoke<Quiz | null>('get_quiz', { id: quizId }).then((q) => {
-        if (q) {
-          setQuiz(q)
-          if (q.questions.length > 0) {
-            setQuizType(q.questions[0].answers.length === 2 ? 'truefalse' : 'quiz')
-          }
-        }
+        if (q) setQuiz(q)
       })
     }
   }, [quizId])
@@ -111,7 +104,8 @@ export function QuizBuilder({ quizId, onBack }: Props) {
   }
 
   const addQuestion = () => {
-    const count = quizType === 'truefalse' ? 2 : 4
+    const isTf = (quiz.tags || []).includes('Правда и Ложь')
+    const count = isTf ? 2 : 4
     const q: Question = {
       id: makeId(),
       text: '',
@@ -119,7 +113,7 @@ export function QuizBuilder({ quizId, onBack }: Props) {
       points: 1000,
       answers: Array.from({ length: count }, (_, i) => ({
         id: makeId(),
-        text: quizType === 'truefalse' ? (i === 0 ? 'Верно' : 'Неверно') : '',
+        text: isTf ? (i === 0 ? 'Верно' : 'Неверно') : '',
         is_correct: i === 0,
         color: COLOR_NAMES[i],
         shape: SHAPES[i],
@@ -164,39 +158,6 @@ export function QuizBuilder({ quizId, onBack }: Props) {
     })
   }
 
-  const changeQuizType = (newType: QuizType) => {
-    if (newType === quizType) return
-    if (quiz.questions.length > 0) {
-      if (!confirm('Сменить тип квиза? Все вопросы будут перестроены.')) return
-      const newQuestions = quiz.questions.map((q) => {
-        if (newType === 'truefalse') {
-          return {
-            ...q,
-            answers: q.answers.slice(0, 2).map((a, i) => ({
-              ...a,
-              text: a.text || (i === 0 ? 'Верно' : 'Неверно'),
-              color: COLOR_NAMES[i],
-              shape: SHAPES[i],
-            })),
-          }
-        }
-        const answers = [...q.answers]
-        while (answers.length < 4) {
-          answers.push({
-            id: makeId(),
-            text: '',
-            is_correct: false,
-            color: COLOR_NAMES[answers.length],
-            shape: SHAPES[answers.length],
-          })
-        }
-        return { ...q, answers }
-      })
-      setQuiz((prev) => ({ ...prev, questions: newQuestions }))
-    }
-    setQuizType(newType)
-  }
-
   const handleImport = () => {
     setShowJsonMenu(false)
     const input = document.createElement('input')
@@ -212,7 +173,8 @@ export function QuizBuilder({ quizId, onBack }: Props) {
           const imported = importFromJSON(data)
           setQuiz(imported)
           if (imported.questions.length > 0) {
-            setQuizType(imported.questions[0].answers.length === 2 ? 'truefalse' : 'quiz')
+            const tag = imported.questions[0].answers.length === 2 ? 'Правда и Ложь' : 'Викторина'
+            setQuiz(prev => ({ ...prev, tags: [tag] }))
           }
         } catch (err) {
           alert('Ошибка импорта: ' + (err as Error).message)
@@ -235,6 +197,8 @@ export function QuizBuilder({ quizId, onBack }: Props) {
     URL.revokeObjectURL(url)
   }
 
+  const TAGS = ['Проверочная работа', 'Викторина', 'Правда и Ложь']
+
   return (
     <div className="quiz-builder">
       <div className="builder-header">
@@ -251,10 +215,11 @@ export function QuizBuilder({ quizId, onBack }: Props) {
             </div>
           )}
         </div>
-        <button className="btn btn-primary" onClick={save}>
+          <button className="btn btn-primary" onClick={save}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
           Сохранить
         </button>
+        {onCreateOwn && <button className="btn btn-secondary" onClick={onCreateOwn}>🎙️ Свои вопросы</button>}
       </div>
 
       <div className="builder-meta">
@@ -270,20 +235,38 @@ export function QuizBuilder({ quizId, onBack }: Props) {
           value={quiz.description}
           onChange={(e) => setQuiz({ ...quiz, description: e.target.value })}
         />
-        <div className="quiz-type-toggle">
-          <button
-            className={`btn-type ${quizType === 'quiz' ? 'active' : ''}`}
-            onClick={() => changeQuizType('quiz')}
-          >
-            △◇ Викторина
-          </button>
-          <button
-            className={`btn-type ${quizType === 'truefalse' ? 'active' : ''}`}
-            onClick={() => changeQuizType('truefalse')}
-          >
-            ✓✗ Правда/Ложь
-          </button>
+        <div className="tag-selector">
+          <span className="tag-label">Формат:</span>
+          {TAGS.map(tag => {
+            const active = (quiz.tags || []).includes(tag)
+            return (
+              <button
+                key={tag}
+                className={`btn btn-sm ${active ? 'btn-primary' : 'btn-secondary'}`}
+                onClick={() => {
+                  setQuiz(prev => ({
+                    ...prev,
+                    tags: active ? (prev.tags || []).filter(t => t !== tag) : [...(prev.tags || []), tag],
+                  }))
+                }}
+              >
+                {tag === 'Проверочная работа' ? '📝' : tag === 'Викторина' ? '🎯' : '✓✗'} {tag}
+              </button>
+            )
+          })}
         </div>
+        {(quiz.tags || []).includes('Проверочная работа') && (
+          <div className="total-time-row">
+            <label>Общее время (сек):</label>
+            <input
+              type="number"
+              min={30}
+              max={3600}
+              value={quiz.total_time_seconds || 300}
+              onChange={(e) => setQuiz({ ...quiz, total_time_seconds: Number(e.target.value) })}
+            />
+          </div>
+        )}
       </div>
 
       <div className="questions-list">
@@ -301,16 +284,6 @@ export function QuizBuilder({ quizId, onBack }: Props) {
               className="q-text-input"
             />
             <div className="q-options">
-              <label>
-                Время: {q.time_seconds}с
-                <input
-                  type="range"
-                  min={5}
-                  max={120}
-                  value={q.time_seconds}
-                  onChange={(e) => updateQuestion(qi, 'time_seconds', Number(e.target.value))}
-                />
-              </label>
               <label>
                 Очки: {q.points}
                 <input

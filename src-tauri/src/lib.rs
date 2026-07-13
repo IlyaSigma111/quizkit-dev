@@ -4,6 +4,7 @@ mod server;
 mod storage;
 
 use game::AppSettings;
+use std::collections::HashMap;
 
 use game::*;
 use std::sync::Arc;
@@ -26,6 +27,8 @@ fn create_quiz(title: String, description: String) -> Quiz {
         description,
         questions: Vec::new(),
         created_at: format!("{}", SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_millis()),
+        tags: Vec::new(),
+        total_time_seconds: 0,
     };
     storage::save_quiz(&quiz).ok();
     quiz
@@ -59,6 +62,7 @@ async fn start_game(
     let game_mode = match mode.as_str() {
         "test" => GameMode::Test,
         "live" => GameMode::LiveQuiz,
+        "jeopardy" => GameMode::Jeopardy,
         _ => return Err("Неверный режим".to_string()),
     };
 
@@ -82,11 +86,80 @@ async fn start_game(
         player_progress: std::collections::HashMap::new(),
         question_start_time: 0,
         server_port: 0,
+        jeopardy_data: None,
+        jeopardy_state: None,
     };
 
     state.0.sessions.write().await.insert(pin.clone(), session.clone());
     state.0.ws_senders.write().await.insert(pin.clone(), Vec::new());
     state.0.host_senders.write().await.insert(pin.clone(), Vec::new());
+    state.0.ws_player_map.write().await.insert(pin.clone(), HashMap::new());
+
+    storage::save_active_session(&session).ok();
+
+    Ok(session)
+}
+
+#[tauri::command]
+async fn start_jeopardy_session(
+    data: JeopardySessionData,
+    board_mode: String,
+    state: tauri::State<'_, AppStateWrapper>,
+) -> Result<GameSession, String> {
+    let pin = format!("{:06}", rand::random::<u32>() % 1000000);
+
+    let board_mode_enum = match board_mode.as_str() {
+        "auto" => JeopardyBoardMode::Auto,
+        _ => JeopardyBoardMode::Manual,
+    };
+
+    let session = GameSession {
+        pin: pin.clone(),
+        quiz: Quiz {
+            id: "jeopardy".to_string(),
+            title: data.title.clone(),
+            description: data.description.clone(),
+            questions: Vec::new(),
+            created_at: format!("{}", SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_millis()),
+            tags: vec!["jeopardy".to_string()],
+            total_time_seconds: 0,
+        },
+        status: GameStatus::Lobby,
+        mode: GameMode::Jeopardy,
+        advance: AdvanceMode::Manual,
+        current_question_index: 0,
+        players: Vec::new(),
+        answers: Vec::new(),
+        player_progress: std::collections::HashMap::new(),
+        question_start_time: 0,
+        server_port: 0,
+        jeopardy_data: Some(data),
+        jeopardy_state: Some(JeopardyState {
+            board_mode: board_mode_enum,
+            turn_order: Vec::new(),
+            current_turn_idx: 0,
+            answered_cells: Vec::new(),
+            active_cell: None,
+            stealing: false,
+            steal_idx: 0,
+            pending_answer: None,
+            scores: std::collections::HashMap::new(),
+            final_wagers: std::collections::HashMap::new(),
+            final_answers: std::collections::HashMap::new(),
+            final_correct: std::collections::HashMap::new(),
+            reveal_places: Vec::new(),
+            reveal_idx: 0,
+            final_active: false,
+            final_player_idx: 0,
+        }),
+    };
+
+    state.0.sessions.write().await.insert(pin.clone(), session.clone());
+    state.0.ws_senders.write().await.insert(pin.clone(), Vec::new());
+    state.0.host_senders.write().await.insert(pin.clone(), Vec::new());
+    state.0.ws_player_map.write().await.insert(pin.clone(), HashMap::new());
+
+    storage::save_active_session(&session).ok();
 
     Ok(session)
 }
@@ -121,6 +194,16 @@ pub struct ServerInfoResult {
 }
 
 #[tauri::command]
+async fn check_active_sessions() -> Vec<GameSession> {
+    storage::load_active_sessions()
+}
+
+#[tauri::command]
+fn clear_active_session(pin: String) -> Result<(), String> {
+    storage::delete_active_session(&pin)
+}
+
+#[tauri::command]
 fn get_settings() -> AppSettings {
     storage::load_settings()
 }
@@ -128,6 +211,20 @@ fn get_settings() -> AppSettings {
 #[tauri::command]
 fn save_settings(settings: AppSettings) -> Result<(), String> {
     storage::save_settings(&settings)
+}
+
+#[tauri::command]
+async fn broadcast_style(style: String, dark: bool, state: tauri::State<'_, AppStateWrapper>) -> Result<(), String> {
+    let msg = serde_json::to_string(&game::ServerMessage::StyleUpdate { style, dark }).map_err(|e| e.to_string())?;
+    let pins: Vec<String> = state.0.ws_senders.read().await.keys().cloned().collect();
+    for pin in pins {
+        if let Some(senders) = state.0.ws_senders.read().await.get(&pin) {
+            for tx in senders {
+                let _ = tx.send(msg.clone());
+            }
+        }
+    }
+    Ok(())
 }
 
 #[tauri::command]
@@ -141,6 +238,7 @@ async fn export_results(pin: String, state: tauri::State<'_, AppStateWrapper>) -
         let mode_label = match session.mode {
             game::GameMode::Test => "Проверочная работа",
             game::GameMode::LiveQuiz => "Викторина",
+            game::GameMode::Jeopardy => "Своя игра",
         }.to_string();
         (players, title, mode_label)
     };
@@ -175,19 +273,37 @@ pub fn run() {
             get_quiz,
             delete_quiz,
             start_game,
+            start_jeopardy_session,
             get_game_state,
             get_server_info,
             get_settings,
             save_settings,
             export_results,
+            check_active_sessions,
+            clear_active_session,
+            broadcast_style,
         ]);
 
     #[cfg(desktop)]
     let builder = builder.setup(move |_app| {
         let state_clone = app_state.clone();
+
+        // Load persisted sessions into memory
+        let state = state_clone.clone();
+        tauri::async_runtime::spawn(async move {
+            let saved = storage::load_active_sessions();
+            let mut sessions = state.sessions.write().await;
+            for session in saved {
+                let pin = session.pin.clone();
+                sessions.insert(pin.clone(), session);
+                state.ws_senders.write().await.insert(pin.clone(), Vec::new());
+                state.host_senders.write().await.insert(pin.clone(), Vec::new());
+                state.ws_player_map.write().await.insert(pin.clone(), HashMap::new());
+            }
+        });
+
         tauri::async_runtime::spawn(async move {
             server::start_server(state_clone, 9876).await;
-            // port is stored inside start_server now
         });
         Ok(())
     });

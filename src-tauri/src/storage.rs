@@ -1,4 +1,4 @@
-use crate::game::{AppSettings, Quiz};
+use crate::game::{AppSettings, GameSession, Quiz};
 use serde_json;
 use std::fs;
 use std::path::PathBuf;
@@ -102,4 +102,45 @@ pub fn save_settings(settings: &AppSettings) -> Result<(), String> {
     let path = get_settings_path();
     let content = serde_json::to_string_pretty(settings).map_err(|e| e.to_string())?;
     fs::write(&path, content).map_err(|e| e.to_string())
+}
+
+fn get_sessions_dir() -> PathBuf {
+    let path = get_base_dir().join("sessions");
+    fs::create_dir_all(&path).ok();
+    path
+}
+
+pub fn save_active_session(session: &GameSession) -> Result<(), String> {
+    let dir = get_sessions_dir();
+    let path = dir.join(format!("{}.json", session.pin));
+    let content = serde_json::to_string_pretty(session).map_err(|e| e.to_string())?;
+    fs::write(&path, content).map_err(|e| e.to_string())
+}
+
+pub fn load_active_sessions() -> Vec<GameSession> {
+    let dir = get_sessions_dir();
+    let mut sessions = Vec::new();
+    if let Ok(entries) = fs::read_dir(&dir) {
+        for entry in entries.flatten() {
+            let path = entry.path();
+            if path.extension().map_or(false, |e| e == "json") {
+                if let Ok(content) = fs::read_to_string(&path) {
+                    if let Ok(session) = serde_json::from_str::<GameSession>(&content) {
+                        sessions.push(session);
+                    }
+                }
+            }
+        }
+    }
+    sessions
+}
+
+pub fn delete_active_session(pin: &str) -> Result<(), String> {
+    let dir = get_sessions_dir();
+    let path = dir.join(format!("{}.json", pin));
+    if path.exists() {
+        fs::remove_file(&path).map_err(|e| e.to_string())
+    } else {
+        Ok(())
+    }
 }

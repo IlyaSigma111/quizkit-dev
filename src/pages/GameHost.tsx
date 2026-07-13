@@ -3,6 +3,15 @@ import type { Player, ServerInfo, GameSession } from '../App'
 import { invoke } from '@tauri-apps/api/core'
 import { QRCodeSVG } from 'qrcode.react'
 
+function qrColor() {
+  return getComputedStyle(document.documentElement).getPropertyValue('--text').trim() || '#e8e8f0'
+}
+function qrBg() {
+  const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-card').trim()
+  if (!bg || bg.startsWith('rgba') || bg.startsWith('transparent')) return '#ffffff'
+  return bg
+}
+
 type Props = {
   pin: string
   serverInfo: ServerInfo | null
@@ -259,10 +268,10 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
               {serverInfo ? (
                 <>
                   <QRCodeSVG
-                    value={`http://${serverInfo.ip}:${serverInfo.port}/player?pin=${pin}&theme=${document.documentElement.className.match(/theme-(\S+)/)?.[1]||'spline'}&style=${document.documentElement.className.match(/style-(\S+)/)?.[1]||'editorial'}`}
+                    value={`http://${serverInfo.ip}:${serverInfo.port}/player?pin=${pin}&style=${document.documentElement.className.match(/style-(\S+)/)?.[1]||'editorial'}${document.documentElement.classList.contains('dark') ? '&dark=1' : ''}`}
                     size={180}
-                    bgColor="transparent"
-                    fgColor="#e8e8f0"
+                    bgColor={qrBg()}
+                    fgColor={qrColor()}
                     style={{ cursor: 'pointer', transition: 'transform .15s' }}
                     onClick={() => setQrExpanded(true)}
                     onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.03)')}
@@ -465,10 +474,10 @@ export function GameHost({ pin, serverInfo, onBack }: Props) {
         <div className="modal-overlay" onClick={() => setQrExpanded(false)}>
           <div className="qr-expanded" onClick={e => e.stopPropagation()}>
             <QRCodeSVG
-               value={`http://${serverInfo.ip}:${serverInfo.port}/player?pin=${pin}&theme=${document.documentElement.className.match(/theme-(\S+)/)?.[1]||'spline'}&style=${document.documentElement.className.match(/style-(\S+)/)?.[1]||'editorial'}`}
+               value={`http://${serverInfo.ip}:${serverInfo.port}/player?pin=${pin}&style=${document.documentElement.className.match(/style-(\S+)/)?.[1]||'editorial'}${document.documentElement.classList.contains('dark') ? '&dark=1' : ''}`}
               size={320}
-              bgColor="transparent"
-              fgColor="#e8e8f0"
+              bgColor={qrBg()}
+              fgColor={qrColor()}
             />
             <p className="qr-url">{serverInfo.ip}:{serverInfo.port}</p>
             <p className="qr-hint">Наведи камеру на QR</p>

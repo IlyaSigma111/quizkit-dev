@@ -1,10 +1,14 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import type { Quiz, GameSession } from '../App'
 import { invoke } from '@tauri-apps/api/core'
+
+const TEMPLATES_URL = 'https://ilyasigma111.github.io/quizkit/quizzes/'
+const TEMPLATES_REFRESH_MS = 60 * 60 * 1000
 
 type Props = {
   onEditQuiz: (id: string) => void
   onStartGame: (pin: string) => void
+  onCatalog: () => void
 }
 
 const TEMPLATE_JSON = `{
@@ -145,7 +149,7 @@ const HOLIDAY_TEMPLATES: HolidayTemplate[] = [
   },
 ]
 
-export function Dashboard({ onEditQuiz, onStartGame }: Props) {
+export function Dashboard({ onEditQuiz, onStartGame, onCatalog }: Props) {
   const [quizzes, setQuizzes] = useState<Quiz[]>([])
   const [search, setSearch] = useState('')
   const [showCreate, setShowCreate] = useState(false)
@@ -153,7 +157,50 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
   const [newDesc, setNewDesc] = useState('')
   const [showTemplate, setShowTemplate] = useState(false)
   const [showHolidayPicker, setShowHolidayPicker] = useState(false)
+  const [remoteTemplates, setRemoteTemplates] = useState<HolidayTemplate[] | null>(null)
   const fileRef = useRef<HTMLInputElement>(null)
+
+  const fetchTemplates = useCallback(async () => {
+    try {
+      const html = await fetch(TEMPLATES_URL).then(r => r.text())
+      const match = html.match(/const QUIZZES\s*=\s*(\[[\s\S]*?\]);/)
+      if (!match) throw new Error('QUIZZES not found')
+      const entries: any[] = new Function('return ' + match[1])()
+      const results: HolidayTemplate[] = []
+      for (const e of entries) {
+        try {
+          const res = await fetch(`https://ilyasigma111.github.io/quizkit/quizzes/${e.file}`)
+          if (!res.ok) continue
+          const data = await res.json()
+          results.push({
+            title: data.title || e.title,
+            description: data.description || e.desc,
+            emoji: e.icon,
+            type: e.tab,
+            questions: (data.questions || []).map((q: any) => ({
+              text: q.text || q.question,
+              time_seconds: q.time_seconds ?? 30,
+              points: q.points ?? 10,
+              answers: (q.answers || []).map((a: any, i: number) =>
+                typeof a === 'string' ? { text: a, is_correct: i === q.correct } : a
+              ),
+            })),
+          })
+        } catch { /* skip failed */ }
+      }
+      if (results.length) setRemoteTemplates(results)
+    } catch {
+      // offline — keep current templates
+    }
+  }, [])
+
+  useEffect(() => {
+    fetchTemplates()
+    const interval = setInterval(fetchTemplates, TEMPLATES_REFRESH_MS)
+    return () => clearInterval(interval)
+  }, [fetchTemplates])
+
+  const templates = remoteTemplates || HOLIDAY_TEMPLATES
 
   const loadQuizzes = () => {
     invoke<Quiz[]>('get_quizzes').then(setQuizzes).catch(console.error)
@@ -185,6 +232,7 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
     const now = new Date().toISOString()
     const quiz: Quiz = {
       id, title: t.title, description: t.description, created_at: now,
+      tags: [t.type === 'truefalse' ? 'Правда и Ложь' : 'Викторина'],
       questions: t.questions.map((q, qi) => ({
         id: crypto.randomUUID?.() || id + '-q' + qi,
         text: q.text,
@@ -294,6 +342,9 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
         <button className="btn btn-primary" onClick={() => setShowCreate(true)}>
           + Создать квиз
         </button>
+        <button className="btn btn-secondary" onClick={onCatalog}>
+          📚 Каталог
+        </button>
         <button className="btn btn-secondary" onClick={handleImport}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           JSON
@@ -341,6 +392,14 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
                   {quiz.questions.length} вопросов
                 </span>
                 {(() => {
+                  const q = quiz as Quiz
+                  const tags = q.tags || []
+                  if (tags.length > 0) {
+                    return tags.map(t => {
+                      const cls = t === 'Правда и Ложь' ? 'tag-tf' : t === 'Викторина' ? 'tag-quiz' : 'tag-test'
+                      return <span className={`tag ${cls}`} key={t}>{t}</span>
+                    })
+                  }
                   const n = quiz.questions[0]?.answers?.length
                   if (n === 2) return <span className="quiz-tag">Правда или Ложь</span>
                   if (n === 4) return <span className="quiz-tag">Викторина</span>
@@ -350,7 +409,17 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
             </div>
             {quiz.description && <p className="quiz-desc">{quiz.description}</p>}
             <div className="quiz-card-actions">
-              <button className="btn btn-play" onClick={() => setModePicker({ quizId: quiz.id, step: 'type' })}>
+              <button className="btn btn-play" onClick={() => {
+                const q = quiz as Quiz
+                const tags = q.tags || []
+                if (tags.includes('Проверочная работа')) {
+                  handleStart(quiz.id, 'test', 'auto')
+                } else if (tags.includes('Викторина') || tags.includes('Правда и Ложь')) {
+                  setModePicker({ quizId: quiz.id, step: 'advance', gameType: 'live' })
+                } else {
+                  setModePicker({ quizId: quiz.id, step: 'type' })
+                }
+              }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 Играть
               </button>
@@ -467,7 +536,7 @@ export function Dashboard({ onEditQuiz, onStartGame }: Props) {
               Выберите готовый квиз к празднику — он сразу откроется в редакторе
             </p>
             <div className="holiday-grid">
-              {HOLIDAY_TEMPLATES.map((t, idx) => (
+              {templates.map((t, idx) => (
                 <button key={idx} className="holiday-card" onClick={() => handleCreateFromTemplate(t)}>
                   <span className="holiday-emoji">{t.emoji}</span>
                   <span className="holiday-title">{t.title}</span>
