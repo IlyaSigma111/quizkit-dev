@@ -9,7 +9,19 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
-:root{--radius:14px;--shadow:0 8px 32px rgba(0,0,0,.3)}
+:root{--radius:14px;--shadow:0 8px 32px rgba(0,0,0,.3);--success:#22c55e;--danger:#e74c3c}
+
+/* ─── Styles ─── */
+.style-editorial{--bg:#ffffff;--bg-alt:#f7f8fb;--bg-card:#ffffff;--bg-card-solid:#ffffff;--bg-input:#f7f8fb;--text:#13151b;--text-secondary:#525769;--primary:#000000;--primary-hover:#222;--primary-glow:rgba(0,0,0,.08);--border:#e4e6ee;--radius:64px;--shadow:0 1px 3px rgba(12,41,126,.07)}
+.style-editorial.dark{--bg:#13151b;--bg-alt:#1a1c24;--bg-card:#1a1c24;--bg-card-solid:#13151b;--bg-input:#22242e;--text:#e8e8f0;--text-secondary:#8888b0;--primary:#ffffff;--primary-hover:#ddd;--primary-glow:rgba(255,255,255,.08);--border:#2a2c36;--shadow:0 8px 32px rgba(0,0,0,.3)}
+.style-midnight{--bg:#080812;--bg-alt:#0e0e1c;--bg-card:rgba(255,255,255,.04);--bg-card-solid:rgba(8,8,18,.9);--bg-input:rgba(255,255,255,.06);--text:#e8e8f0;--text-secondary:#a0a0c0;--primary:#6366F1;--primary-hover:#5558e6;--primary-glow:rgba(99,102,241,.2);--border:rgba(255,255,255,.08);--radius:14px;--shadow:0 8px 32px rgba(0,0,0,.3)}
+.style-midnight.dark{--bg:#04040a;--bg-alt:#080812;--bg-card:rgba(255,255,255,.02);--bg-card-solid:rgba(4,4,10,.95);--bg-input:rgba(255,255,255,.04);--border:rgba(255,255,255,.04)}
+.style-brutalist{--bg:#e8e4de;--bg-alt:#d8d4ce;--bg-card:#e8e4de;--bg-card-solid:#e8e4de;--bg-input:#d8d4ce;--text:#1a1a1a;--text-secondary:#444;--primary:#ff3300;--primary-hover:#cc2900;--primary-glow:rgba(255,51,0,.15);--border:#1a1a1a;--radius:0px;--shadow:6px 6px 0px #1a1a1a}
+.style-brutalist.dark{--bg:#1a1a1a;--bg-alt:#222;--bg-card:#1a1a1a;--bg-card-solid:#1a1a1a;--bg-input:#2a2a2a;--text:#e8e4de;--text-secondary:#999;--primary:#ff3300;--primary-hover:#ff4422;--primary-glow:rgba(255,51,0,.2);--border:#e8e4de;--shadow:6px 6px 0px #e8e4de}
+.style-neon{--bg:#0a0a0f;--bg-alt:#111118;--bg-card:#111118;--bg-card-solid:#0a0a0f;--bg-input:#111118;--text:#f0f0f5;--text-secondary:#8888aa;--primary:#00ff88;--primary-hover:#00cc6a;--primary-glow:rgba(0,255,136,.15);--border:#222233;--radius:12px;--shadow:0 0 20px rgba(0,255,136,.08)}
+.style-neon.dark{--bg:#050508;--bg-alt:#08080e;--bg-card:#08080e;--bg-input:#08080e;--border:#14141e}
+.style-paper{--bg:#faf6f1;--bg-alt:#f3ede5;--bg-card:#ffffff;--bg-card-solid:#ffffff;--bg-input:#f3ede5;--text:#2c2416;--text-secondary:#6b5d4d;--primary:#c05621;--primary-hover:#a0471a;--primary-glow:rgba(192,86,33,.1);--border:#e0d5c8;--radius:12px;--shadow:0 2px 12px rgba(44,36,22,.08)}
+.style-paper.dark{--bg:#2c2416;--bg-alt:#3a3020;--bg-card:#3a3020;--bg-card-solid:#2c2416;--bg-input:#4a3f2e;--text:#faf6f1;--text-secondary:#b0a090;--primary:#e88d4a;--primary-hover:#c05621;--primary-glow:rgba(232,141,74,.15);--border:#5a4f3e;--shadow:0 8px 32px rgba(0,0,0,.3)}
 
 body{font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);min-height:100dvh;display:flex;align-items:center;justify-content:center;-webkit-font-smoothing:antialiased;background-attachment:fixed}
 .player-app{width:100%;max-width:420px;min-height:100dvh;padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center}
@@ -277,6 +289,7 @@ case'steal':showStealScreen(s);break;
 case'result':showResultScreen(s);break;
 case'final_wager':showFinalWager(s);break;
 case'final_answer':showFinalAnswer(s);break;
+case'final_result':showFinalResult(s);break;
 case'reveal':show('waitingScreen');document.getElementById('waitingText').textContent='🏆 Учитель подводит итоги...';break;
 case'ended':show('waitingScreen');document.getElementById('waitingText').textContent='Игра окончена! Ожидайте результаты...';break;
 default:show('waitingScreen');

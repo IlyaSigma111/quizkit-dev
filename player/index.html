@@ -9,7 +9,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
-:root{--radius:14px;--shadow:0 8px 32px rgba(0,0,0,.3)}
+:root{--radius:14px;--shadow:0 8px 32px rgba(0,0,0,.3);--success:#22c55e;--success-glow:rgba(34,197,94,.25);--danger:#e74c3c}
 
 /* ─── Styles ─── */
 .style-editorial{--bg:#ffffff;--bg-alt:#f7f8fb;--bg-card:#ffffff;--bg-card-solid:#ffffff;--bg-input:#f7f8fb;--text:#13151b;--text-secondary:#525769;--primary:#000000;--primary-hover:#222;--primary-glow:rgba(0,0,0,.08);--border:#e4e6ee;--radius:64px;--shadow:0 1px 3px rgba(12,41,126,.07)}
@@ -44,6 +44,7 @@ p{font-size:14px;line-height:1.5;color:var(--text-secondary);text-align:center}
 .btn-primary{background:var(--primary);color:#fff;box-shadow:0 4px 16px var(--primary-glow)}
 .btn-primary:hover{background:var(--primary-hover);transform:translateY(-1px);box-shadow:0 6px 24px var(--primary-glow)}
 .btn-primary:disabled{opacity:.4;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+.btn-secondary{background:var(--bg-input);color:var(--text);border:1px solid var(--border)}
 
 .error{color:var(--danger);font-size:13px;text-align:center;background:rgba(231,76,60,.1);padding:10px 14px;border-radius:8px;width:100%;display:none;border:1px solid rgba(231,76,60,.2)}
 .error.show{display:block}
@@ -148,6 +149,15 @@ p{font-size:14px;line-height:1.5;color:var(--text-secondary);text-align:center}
 <p class="q-progress" id="qProgress">Вопрос 1 / 5</p>
 <h2 class="q-text" id="qText"></h2>
 <div class="answers-grid" id="answersContainer"></div>
+</div>
+</div>
+
+<div id="resultScreen" class="screen">
+<div class="card" style="gap:12px;padding:36px 24px">
+<div class="result-icon" id="resultIcon"></div>
+<h2 id="resultTitle"></h2>
+<div class="result-points" id="resultPoints"></div>
+<button class="btn btn-primary" id="nextBtn" style="display:none">Далее ▶</button>
 </div>
 </div>
 
