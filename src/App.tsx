@@ -116,7 +116,7 @@ function App() {
       questions: questions.map((q, qi) => ({
         id: crypto.randomUUID?.() || id + '-q' + qi,
         text: q.text,
-        time_seconds: 0,
+        time_seconds: q.time_seconds || 20,
         points: q.points || 10,
         answers: q.answers.map((a: any, ai: number) => ({
           id: crypto.randomUUID?.() || id + '-q' + qi + '-a' + ai,

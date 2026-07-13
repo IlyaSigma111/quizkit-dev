@@ -34,7 +34,7 @@ function importFromJSON(json: Record<string, unknown>): Quiz {
           return {
             id: makeId(),
             text: String(question.question ?? ''),
-              time_seconds: 0,
+              time_seconds: (question.time_seconds as number) || 20,
               points: 1000,
             answers: answers.map((a: string, ai: number) => ({
               id: makeId(),

@@ -1,6 +1,6 @@
 [package]
 name = "ilya-klass"
-version = "0.6.5"
+version = "0.6.6"
 description = "ИльЯкласс — проверочные работы"
 authors = ["ИльЯкласс"]
 edition = "2021"
