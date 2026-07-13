@@ -394,6 +394,13 @@ else{nb.style.display='none'}
 
 function showComplete(msg){show('completeScreen');document.getElementById('completeScore').textContent=msg.score+' баллов'}
 
+function submitAnswer(i){
+ if(ws&&ws.readyState===WebSocket.OPEN){
+  show('waitingScreen');
+  ws.send(JSON.stringify({type:'answer',pin:currentPin,answer_index:i}))
+ }
+}
+
 function submitTestAnswers(){
 if(testTimerInterval){clearInterval(testTimerInterval);testTimerInterval=null}
 const answers=testAnswers.map((ans,i)=>({question_index:i,answer_index:ans})).filter(a=>a.answer_index!==-1);
