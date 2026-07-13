@@ -1,0 +1,2851 @@
+[
+  {
+    "title": "Новый год",
+    "description": "Традиции Нового года со всего мира",
+    "emoji": "🎄",
+    "type": "quiz",
+    "questions": [
+      {
+        "text": "В какой стране впервые начали украшать ёлку на Новый год?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Германия",
+            "is_correct": true
+          },
+          {
+            "text": "Россия",
+            "is_correct": false
+          },
+          {
+            "text": "Франция",
+            "is_correct": false
+          },
+          {
+            "text": "Италия",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране на Новый год принято разбивать посуду?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Дания",
+            "is_correct": true
+          },
+          {
+            "text": "Испания",
+            "is_correct": false
+          },
+          {
+            "text": "Япония",
+            "is_correct": false
+          },
+          {
+            "text": "Бразилия",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране Дед Мороз называется Йоулупукки?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Финляндия",
+            "is_correct": true
+          },
+          {
+            "text": "Швеция",
+            "is_correct": false
+          },
+          {
+            "text": "Норвегия",
+            "is_correct": false
+          },
+          {
+            "text": "Исландия",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какой год считается годом Змеи по восточному календарю?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "2025",
+            "is_correct": true
+          },
+          {
+            "text": "2024",
+            "is_correct": false
+          },
+          {
+            "text": "2026",
+            "is_correct": false
+          },
+          {
+            "text": "2023",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Что символизирует фейерверк в новогоднюю ночь?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Отпугивание злых духов",
+            "is_correct": true
+          },
+          {
+            "text": "Красоту",
+            "is_correct": false
+          },
+          {
+            "text": "Богатство",
+            "is_correct": false
+          },
+          {
+            "text": "Долголетие",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране едят 12 виноградин на Новый год под бой курантов?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Испания",
+            "is_correct": true
+          },
+          {
+            "text": "Италия",
+            "is_correct": false
+          },
+          {
+            "text": "Португалия",
+            "is_correct": false
+          },
+          {
+            "text": "Греция",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране на Новый год дарят красные конверты с деньгами?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Китай",
+            "is_correct": true
+          },
+          {
+            "text": "Япония",
+            "is_correct": false
+          },
+          {
+            "text": "Корея",
+            "is_correct": false
+          },
+          {
+            "text": "Вьетнам",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Как зовут Деда Мороза в США?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Санта-Клаус",
+            "is_correct": true
+          },
+          {
+            "text": "Крис Крингл",
+            "is_correct": false
+          },
+          {
+            "text": "Святой Николай",
+            "is_correct": false
+          },
+          {
+            "text": "Фатер Кристмас",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране на Новый год прыгают со стульев в полночь?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Дания",
+            "is_correct": true
+          },
+          {
+            "text": "Швеция",
+            "is_correct": false
+          },
+          {
+            "text": "Норвегия",
+            "is_correct": false
+          },
+          {
+            "text": "Финляндия",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране новогоднее дерево — не ёлка, а веточка омелы?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Ирландия",
+            "is_correct": true
+          },
+          {
+            "text": "Шотландия",
+            "is_correct": false
+          },
+          {
+            "text": "Англия",
+            "is_correct": false
+          },
+          {
+            "text": "Уэльс",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какое блюдо традиционно готовят на Новый год в Японии?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Моти (рисовые лепёшки)",
+            "is_correct": true
+          },
+          {
+            "text": "Суши",
+            "is_correct": false
+          },
+          {
+            "text": "Рамэн",
+            "is_correct": false
+          },
+          {
+            "text": "Тэмпура",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Сколько раз бьют куранты в новогоднюю ночь в России?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "12 раз",
+            "is_correct": true
+          },
+          {
+            "text": "10 раз",
+            "is_correct": false
+          },
+          {
+            "text": "24 раза",
+            "is_correct": false
+          },
+          {
+            "text": "6 раз",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране Новый год отмечают в апреле?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Таиланд (Сонгкран)",
+            "is_correct": true
+          },
+          {
+            "text": "Индия",
+            "is_correct": false
+          },
+          {
+            "text": "Индонезия",
+            "is_correct": false
+          },
+          {
+            "text": "Бангладеш",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какой цвет одежды приносит удачу на Новый год в Италии?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Красный",
+            "is_correct": true
+          },
+          {
+            "text": "Зелёный",
+            "is_correct": false
+          },
+          {
+            "text": "Жёлтый",
+            "is_correct": false
+          },
+          {
+            "text": "Синий",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Кто является прообразом Деда Мороза?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Святой Николай Чудотворец",
+            "is_correct": true
+          },
+          {
+            "text": "Святой Пётр",
+            "is_correct": false
+          },
+          {
+            "text": "Святой Георгий",
+            "is_correct": false
+          },
+          {
+            "text": "Святой Андрей",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране на Новый год принято выбрасывать старые вещи из окон?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Италия",
+            "is_correct": true
+          },
+          {
+            "text": "Франция",
+            "is_correct": false
+          },
+          {
+            "text": "Греция",
+            "is_correct": false
+          },
+          {
+            "text": "Испания",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Сколько дней длятся новогодние праздники в России?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "8 дней",
+            "is_correct": true
+          },
+          {
+            "text": "5 дней",
+            "is_correct": false
+          },
+          {
+            "text": "10 дней",
+            "is_correct": false
+          },
+          {
+            "text": "14 дней",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране вместо Деда Мороза детей поздравляет ведьма Бефана?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Италия",
+            "is_correct": true
+          },
+          {
+            "text": "Франция",
+            "is_correct": false
+          },
+          {
+            "text": "Испания",
+            "is_correct": false
+          },
+          {
+            "text": "Греция",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какое дерево является символом Нового года в Китае?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Мандариновое дерево",
+            "is_correct": true
+          },
+          {
+            "text": "Ёлка",
+            "is_correct": false
+          },
+          {
+            "text": "Сосна",
+            "is_correct": false
+          },
+          {
+            "text": "Бамбук",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране первыми встречают Новый год?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Кирибати (о-ва Лайн)",
+            "is_correct": true
+          },
+          {
+            "text": "Япония",
+            "is_correct": false
+          },
+          {
+            "text": "Австралия",
+            "is_correct": false
+          },
+          {
+            "text": "Новая Зеландия",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране на Новый год дарят носки?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Венгрия",
+            "is_correct": true
+          },
+          {
+            "text": "Чехия",
+            "is_correct": false
+          },
+          {
+            "text": "Польша",
+            "is_correct": false
+          },
+          {
+            "text": "Словакия",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какой напиток традиционно пьют на Новый год в Великобритании?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Пунш",
+            "is_correct": true
+          },
+          {
+            "text": "Глинтвейн",
+            "is_correct": false
+          },
+          {
+            "text": "Шампанское",
+            "is_correct": false
+          },
+          {
+            "text": "Сидр",
+            "is_correct": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Рождество",
+    "description": "Интересные факты о Рождестве",
+    "emoji": "⭐",
+    "type": "truefalse",
+    "questions": [
+      {
+        "text": "Рождество празднуется 25 декабря во всех христианских странах.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": false
+          },
+          {
+            "text": "Неверно",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "text": "Традиция ставить рождественскую ёлку пришла из Германии.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В Австралии Рождество отмечают летом.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Слово «Рождество» происходит от латинского «nativitas».",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В Исландии 13 рождественских Санта-Клаусов.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Рождественский венок символизирует бесконечность жизни.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В России Рождество отмечают 7 января.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Традиция дарить подарки на Рождество связана с волхвами.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Рождественская звезда — это растение пуансеттия.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В Англии Санта-Клауса называют Father Christmas.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В Швеции Рождественский сезон начинается 1 декабря.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": false
+          },
+          {
+            "text": "Неверно",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "text": "В Японии Рождество — государственный праздник.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": false
+          },
+          {
+            "text": "Неверно",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "text": "Омела — символ Рождества, под которой целуются.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В Германии рождественские ярмарки называются Christkindlmarkt.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Слово «Рождество» на английском — Christmas — означает «Месса Христа».",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В Эфиопии Рождество отмечают 7 января.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Песня «Jingle Bells» была написана для Рождества.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": false
+          },
+          {
+            "text": "Неверно",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "text": "Святой Николай жил в IV веке в городе Мира (Ликия).",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В Финляндии Санта-Клаус живёт в Лапландии в горе Корватунтури.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Католическое Рождество всегда отмечают раньше православного.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В Греции на Рождество жгут рождественское полено — символ тепла.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "8 Марта",
+    "description": "История Международного женского дня",
+    "emoji": "🌸",
+    "type": "truefalse",
+    "questions": [
+      {
+        "text": "8 Марта изначально был днём борьбы за права женщин.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Первый Международный женский день отметили в 1857 году.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": false
+          },
+          {
+            "text": "Неверно",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "text": "Клара Цеткин предложила учредить Международный женский день.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "8 Марта является выходным днём в более чем 30 странах мира.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Символом 8 Марта является тюльпан.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В СССР 8 Марта стало выходным днём в 1965 году.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Роза Люксембург была одной из инициаторов праздника.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": false
+          },
+          {
+            "text": "Неверно",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "text": "ООН официально признала 8 Марта в 1975 году.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В Китае 8 Марта — нерабочий день только для женщин.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В Италии на 8 Марта дарят мимозы.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "До 1914 года 8 Марта отмечали в разные дни в разных странах.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Первая «марше пустых кастрюль» прошёл в Нью-Йорке в 1857 году.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В России 8 Марта празднуется с 1913 года.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В Германии 8 Марта — официальный выходной в Берлине.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Женский день отмечают 8 марта более чем в 100 странах.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": false
+          },
+          {
+            "text": "Неверно",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "text": "Цветы — самый популярный подарок на 8 Марта в России.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В Японии вместо 8 Марта отмечают Хинамацури — праздник девочек 3 марта.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Александра Коллонтай способствовала признанию праздника в России.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В современном Китае 8 Марта называют «Днём богинь».",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Праздник 8 Марта возник из протеста текстильщиц в Нью-Йорке.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Во Вьетнаме 8 Марта — государственный праздник.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "День космонавтики",
+    "description": "Освоение космоса и великие открытия",
+    "emoji": "🚀",
+    "type": "quiz",
+    "questions": [
+      {
+        "text": "Кто был первым человеком в космосе?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Юрий Гагарин",
+            "is_correct": true
+          },
+          {
+            "text": "Нил Армстронг",
+            "is_correct": false
+          },
+          {
+            "text": "Валентина Терешкова",
+            "is_correct": false
+          },
+          {
+            "text": "Алексей Леонов",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В каком году состоялся первый полёт человека в космос?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "1961",
+            "is_correct": true
+          },
+          {
+            "text": "1957",
+            "is_correct": false
+          },
+          {
+            "text": "1965",
+            "is_correct": false
+          },
+          {
+            "text": "1969",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Сколько минут длился полёт Гагарина?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "108 минут",
+            "is_correct": true
+          },
+          {
+            "text": "90 минут",
+            "is_correct": false
+          },
+          {
+            "text": "120 минут",
+            "is_correct": false
+          },
+          {
+            "text": "150 минут",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Как назывался корабль Гагарина?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Восток-1",
+            "is_correct": true
+          },
+          {
+            "text": "Союз-1",
+            "is_correct": false
+          },
+          {
+            "text": "Восход-1",
+            "is_correct": false
+          },
+          {
+            "text": "Спутник-1",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какая женщина первой побывала в космосе?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Валентина Терешкова",
+            "is_correct": true
+          },
+          {
+            "text": "Светлана Савицкая",
+            "is_correct": false
+          },
+          {
+            "text": "Пегги Уитсон",
+            "is_correct": false
+          },
+          {
+            "text": "Салли Райд",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Кто первым вышел в открытый космос?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Алексей Леонов",
+            "is_correct": true
+          },
+          {
+            "text": "Эд Уайт",
+            "is_correct": false
+          },
+          {
+            "text": "Нил Армстронг",
+            "is_correct": false
+          },
+          {
+            "text": "Юрий Гагарин",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В каком году человек впервые высадился на Луну?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "1969",
+            "is_correct": true
+          },
+          {
+            "text": "1972",
+            "is_correct": false
+          },
+          {
+            "text": "1965",
+            "is_correct": false
+          },
+          {
+            "text": "1971",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Как назывался первый искусственный спутник Земли?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Спутник-1",
+            "is_correct": true
+          },
+          {
+            "text": "Восток-1",
+            "is_correct": false
+          },
+          {
+            "text": "Эксплорер-1",
+            "is_correct": false
+          },
+          {
+            "text": "Спутник-2",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Сколько планет в Солнечной системе?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "8 планет",
+            "is_correct": true
+          },
+          {
+            "text": "9 планет",
+            "is_correct": false
+          },
+          {
+            "text": "7 планет",
+            "is_correct": false
+          },
+          {
+            "text": "10 планет",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какая планета самая большая в Солнечной системе?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Юпитер",
+            "is_correct": true
+          },
+          {
+            "text": "Сатурн",
+            "is_correct": false
+          },
+          {
+            "text": "Нептун",
+            "is_correct": false
+          },
+          {
+            "text": "Уран",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какая планета известна своими кольцами?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Сатурн",
+            "is_correct": true
+          },
+          {
+            "text": "Юпитер",
+            "is_correct": false
+          },
+          {
+            "text": "Нептун",
+            "is_correct": false
+          },
+          {
+            "text": "Уран",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Что такое МКС?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Международная космическая станция",
+            "is_correct": true
+          },
+          {
+            "text": "Марсианская космическая станция",
+            "is_correct": false
+          },
+          {
+            "text": "Межгалактическая космическая система",
+            "is_correct": false
+          },
+          {
+            "text": "Малая космическая станция",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Кто был первым американцем в космосе?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Алан Шепард",
+            "is_correct": true
+          },
+          {
+            "text": "Нил Армстронг",
+            "is_correct": false
+          },
+          {
+            "text": "Джон Гленн",
+            "is_correct": false
+          },
+          {
+            "text": "Базз Олдрин",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какая планета самая близкая к Солнцу?",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Меркурий",
+            "is_correct": true
+          },
+          {
+            "text": "Венера",
+            "is_correct": false
+          },
+          {
+            "text": "Земля",
+            "is_correct": false
+          },
+          {
+            "text": "Марс",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Сколько времени нужно свету от Солнца до Земли?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Около 8 минут",
+            "is_correct": true
+          },
+          {
+            "text": "Около 5 минут",
+            "is_correct": false
+          },
+          {
+            "text": "Около 12 минут",
+            "is_correct": false
+          },
+          {
+            "text": "Около 1 минуты",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какая страна запустила первый спутник?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "СССР",
+            "is_correct": true
+          },
+          {
+            "text": "США",
+            "is_correct": false
+          },
+          {
+            "text": "Великобритания",
+            "is_correct": false
+          },
+          {
+            "text": "Германия",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Как звали первую собаку в космосе?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Лайка",
+            "is_correct": true
+          },
+          {
+            "text": "Белка",
+            "is_correct": false
+          },
+          {
+            "text": "Стрелка",
+            "is_correct": false
+          },
+          {
+            "text": "Жучка",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какая планета известна как «Красная планета»?",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Марс",
+            "is_correct": true
+          },
+          {
+            "text": "Венера",
+            "is_correct": false
+          },
+          {
+            "text": "Юпитер",
+            "is_correct": false
+          },
+          {
+            "text": "Меркурий",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Кто произнёс фразу «Маленький шаг для человека, но гигантский скачок для человечества»?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Нил Армстронг",
+            "is_correct": true
+          },
+          {
+            "text": "Юрий Гагарин",
+            "is_correct": false
+          },
+          {
+            "text": "Базз Олдрин",
+            "is_correct": false
+          },
+          {
+            "text": "Джон Кеннеди",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какая температура на поверхности Солнца?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "~5500°C",
+            "is_correct": true
+          },
+          {
+            "text": "~10000°C",
+            "is_correct": false
+          },
+          {
+            "text": "~3000°C",
+            "is_correct": false
+          },
+          {
+            "text": "~15000°C",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Как называется галактика, в которой мы живём?",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Млечный Путь",
+            "is_correct": true
+          },
+          {
+            "text": "Туманность Андромеды",
+            "is_correct": false
+          },
+          {
+            "text": "Галактика Треугольника",
+            "is_correct": false
+          },
+          {
+            "text": "Магелланово Облако",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Что такое чёрная дыра?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Область с огромной гравитацией",
+            "is_correct": true
+          },
+          {
+            "text": "Звезда без света",
+            "is_correct": false
+          },
+          {
+            "text": "Пустота в пространстве",
+            "is_correct": false
+          },
+          {
+            "text": "Пещера на Луне",
+            "is_correct": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "День Победы",
+    "description": "Великая Отечественная война в фактах",
+    "emoji": "🏅",
+    "type": "truefalse",
+    "questions": [
+      {
+        "text": "Вторая мировая война началась в 1939 году.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Блокада Ленинграда длилась 872 дня.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Битва за Москву произошла в 1943 году.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": false
+          },
+          {
+            "text": "Неверно",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "text": "Георгиевская лента — символ Дня Победы.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Парад Победы состоялся 24 июня 1945 года.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Сталинградская битва длилась 200 дней.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Курская дуга — крупнейшее танковое сражение.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Город-герой — почётное звание, установленное в 1945 году.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Знамя Победы было водружено над Рейхстагом 1 мая 1945 года.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Великая Отечественная война длилась 4 года.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Дорога жизни проходила по Ладожскому озеру.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Маршал Жуков командовал Парадом Победы.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": false
+          },
+          {
+            "text": "Неверно",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "text": "Пионеры-герои — юные участники войны.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Брестская крепость держалась месяц в 1941 году.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Ленд-лиз — помощь США союзникам.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Берлинская операция началась 16 апреля 1945 года.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Катюша — это танк времён войны.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": false
+          },
+          {
+            "text": "Неверно",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "text": "В блокадном Ленинграде работало метро.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": false
+          },
+          {
+            "text": "Неверно",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "text": "Битва за Москву была первой победой СССР.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Могила Неизвестного Солдата в Москве — символ памяти.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Военный парад 7 ноября 1941 года прошёл в Москве.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "СССР потерял в войне более 26 миллионов человек.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "1 Сентября — День знаний",
+    "description": "Школа, учёба и интересные факты об образовании",
+    "emoji": "📚",
+    "type": "quiz",
+    "questions": [
+      {
+        "text": "В какой стране появилась первая в мире школа?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Древний Египет",
+            "is_correct": true
+          },
+          {
+            "text": "Древняя Греция",
+            "is_correct": false
+          },
+          {
+            "text": "Древний Китай",
+            "is_correct": false
+          },
+          {
+            "text": "Древний Рим",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Сколько лет длится среднее образование в России?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "11 лет",
+            "is_correct": true
+          },
+          {
+            "text": "10 лет",
+            "is_correct": false
+          },
+          {
+            "text": "12 лет",
+            "is_correct": false
+          },
+          {
+            "text": "9 лет",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какая страна тратит больше всего на образование?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Норвегия",
+            "is_correct": true
+          },
+          {
+            "text": "США",
+            "is_correct": false
+          },
+          {
+            "text": "Швейцария",
+            "is_correct": false
+          },
+          {
+            "text": "Финляндия",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какой предмет изучают во всех школах мира?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Математика",
+            "is_correct": true
+          },
+          {
+            "text": "История",
+            "is_correct": false
+          },
+          {
+            "text": "Литература",
+            "is_correct": false
+          },
+          {
+            "text": "География",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране самая длинная учебная неделя?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Япония",
+            "is_correct": true
+          },
+          {
+            "text": "Китай",
+            "is_correct": false
+          },
+          {
+            "text": "Корея",
+            "is_correct": false
+          },
+          {
+            "text": "Израиль",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Что означает слово «школа» в переводе с греческого?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Досуг, отдых",
+            "is_correct": true
+          },
+          {
+            "text": "Учение",
+            "is_correct": false
+          },
+          {
+            "text": "Здание",
+            "is_correct": false
+          },
+          {
+            "text": "Знание",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране ввели всеобщее начальное образование первой?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Пруссия (Германия)",
+            "is_correct": true
+          },
+          {
+            "text": "Франция",
+            "is_correct": false
+          },
+          {
+            "text": "Англия",
+            "is_correct": false
+          },
+          {
+            "text": "Россия",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Сколько стран входят в программу PISA?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Более 80",
+            "is_correct": true
+          },
+          {
+            "text": "Около 50",
+            "is_correct": false
+          },
+          {
+            "text": "Более 100",
+            "is_correct": false
+          },
+          {
+            "text": "Около 30",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какая страна лидирует по числу студентов на душу населения?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Южная Корея",
+            "is_correct": true
+          },
+          {
+            "text": "США",
+            "is_correct": false
+          },
+          {
+            "text": "Финляндия",
+            "is_correct": false
+          },
+          {
+            "text": "Канада",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране 1 сентября не является Днём знаний?",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Япония (учебный год в апреле)",
+            "is_correct": true
+          },
+          {
+            "text": "Франция",
+            "is_correct": false
+          },
+          {
+            "text": "Германия",
+            "is_correct": false
+          },
+          {
+            "text": "Италия",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какой древнегреческий философ основал Академию?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Платон",
+            "is_correct": true
+          },
+          {
+            "text": "Аристотель",
+            "is_correct": false
+          },
+          {
+            "text": "Сократ",
+            "is_correct": false
+          },
+          {
+            "text": "Пифагор",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какой университет считается старейшим в мире?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Университет аль-Карауин (Марокко)",
+            "is_correct": true
+          },
+          {
+            "text": "Болонский университет",
+            "is_correct": false
+          },
+          {
+            "text": "Оксфорд",
+            "is_correct": false
+          },
+          {
+            "text": "Сорбонна",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Сколько минут длится стандартный урок в России?",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "45 минут",
+            "is_correct": true
+          },
+          {
+            "text": "40 минут",
+            "is_correct": false
+          },
+          {
+            "text": "50 минут",
+            "is_correct": false
+          },
+          {
+            "text": "60 минут",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране дети идут в школу с 6 лет?",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "В большинстве стран мира",
+            "is_correct": true
+          },
+          {
+            "text": "Только в России",
+            "is_correct": false
+          },
+          {
+            "text": "Только в Европе",
+            "is_correct": false
+          },
+          {
+            "text": "Только в Азии",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Как каллиграфия влияет на мозг?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Развивает когнитивные способности",
+            "is_correct": true
+          },
+          {
+            "text": "Никак не влияет",
+            "is_correct": false
+          },
+          {
+            "text": "Замедляет мышление",
+            "is_correct": false
+          },
+          {
+            "text": "Улучшает только почерк",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Из скольких букв состоит русский алфавит?",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "33 буквы",
+            "is_correct": true
+          },
+          {
+            "text": "32 буквы",
+            "is_correct": false
+          },
+          {
+            "text": "34 буквы",
+            "is_correct": false
+          },
+          {
+            "text": "31 буква",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какая страна имеет самую высокую грамотность населения?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Финляндия",
+            "is_correct": true
+          },
+          {
+            "text": "Япония",
+            "is_correct": false
+          },
+          {
+            "text": "Канада",
+            "is_correct": false
+          },
+          {
+            "text": "Сингапур",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране нет школьной формы?",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Финляндия",
+            "is_correct": true
+          },
+          {
+            "text": "Англия",
+            "is_correct": false
+          },
+          {
+            "text": "Япония",
+            "is_correct": false
+          },
+          {
+            "text": "Китай",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Что изучают на уроке «краеведение»?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Историю и природу родного края",
+            "is_correct": true
+          },
+          {
+            "text": "Географию мира",
+            "is_correct": false
+          },
+          {
+            "text": "Экономику",
+            "is_correct": false
+          },
+          {
+            "text": "Иностранный язык",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Сколько классов в японской средней школе?",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "9 классов (3+3+3)",
+            "is_correct": true
+          },
+          {
+            "text": "11 классов",
+            "is_correct": false
+          },
+          {
+            "text": "10 классов",
+            "is_correct": false
+          },
+          {
+            "text": "12 классов",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В какой стране зарплата учителей самая высокая?",
+        "time_seconds": 20,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Люксембург",
+            "is_correct": true
+          },
+          {
+            "text": "Швейцария",
+            "is_correct": false
+          },
+          {
+            "text": "Германия",
+            "is_correct": false
+          },
+          {
+            "text": "США",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Какой экзамен сдают в 9 классе в России?",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "ОГЭ",
+            "is_correct": true
+          },
+          {
+            "text": "ЕГЭ",
+            "is_correct": false
+          },
+          {
+            "text": "ВПР",
+            "is_correct": false
+          },
+          {
+            "text": "ГВЭ",
+            "is_correct": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Хэллоуин",
+    "description": "Мистические традиции и история Хэллоуина",
+    "emoji": "🎃",
+    "type": "truefalse",
+    "questions": [
+      {
+        "text": "Хэллоуин берёт начало от кельтского праздника Самайн.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Тыква — единственный овощ, из которого делают светильники на Хэллоуин.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": false
+          },
+          {
+            "text": "Неверно",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "text": "Традиция «кошелёк или жизнь» появилась в США в XX веке.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Оранжевый и чёрный — традиционные цвета Хэллоуина.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Хэллоуин отмечают 31 октября во всём мире одинаково.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": false
+          },
+          {
+            "text": "Неверно",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "text": "Изначально на Самайн вместо тыквы использовали репу.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Слово «Хэллоуин» происходит от «All Hallows Eve».",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В Мексике вместо Хэллоуина отмечают День мёртвых.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Самайн — это кельтский Новый год.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В США на Хэллоуин тратят больше всего на конфеты.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Чёрный кот на Хэллоуин — символ удачи.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": false
+          },
+          {
+            "text": "Неверно",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "text": "Джек-фонарь (Jack-o'-lantern) назван в честь скупого кузнеца Джека.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В Японии Хэллоуин популярнее, чем в США.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": false
+          },
+          {
+            "text": "Неверно",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "text": "Летучие мыши — символ Хэллоуина.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Паутина на Хэллоуин символизирует судьбу.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В Шотландии на Хэллоуин играют в игру «ныряние за яблоками».",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Самый большой тыквенный пирог весил более 3 тонн.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В Китае Хэллоуин — государственный праздник.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": false
+          },
+          {
+            "text": "Неверно",
+            "is_correct": true
+          }
+        ]
+      },
+      {
+        "text": "Традиция вырезать тыкву пришла из ирландской легенды.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "В США более 70% домов раздают конфеты на Хэллоуин.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      },
+      {
+        "text": "Самый популярный костюм на Хэллоуин — ведьма.",
+        "time_seconds": 15,
+        "points": 10,
+        "answers": [
+          {
+            "text": "Верно",
+            "is_correct": true
+          },
+          {
+            "text": "Неверно",
+            "is_correct": false
+          }
+        ]
+      }
+    ]
+  }
+]
