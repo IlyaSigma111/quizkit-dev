@@ -33,6 +33,12 @@ const STYLES = [
   { value: 'brutalist', label: 'Brutalist', icon: '<rect x="3" y="3" width="18" height="18" rx="0"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/>', desc: 'Бежевый, красный, острые углы' },
   { value: 'neon', label: 'Neon', icon: '<circle cx="12" cy="12" r="8" fill="none"/><path d="M12 4v16M4 12h16" stroke-width="1"/>', desc: 'Тёмный, зелёное свечение' },
   { value: 'paper', label: 'Paper', icon: '<path d="M4 6h16M4 12h16M4 18h12"/><circle cx="18" cy="18" r="3"/>', desc: 'Тёплый бежевый, терракот' },
+  { value: 'candy', label: 'Candy', icon: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>', desc: 'Розовый пастельный, игривый' },
+  { value: 'ocean', label: 'Ocean', icon: '<path d="M2 12h20M2 12a10 10 0 0 1 10-10M2 12a10 10 0 0 0 10 10M22 12a10 10 0 0 0-10 10M22 12a10 10 0 0 0-10-10"/>', desc: 'Глубокий сине-бирюзовый' },
+  { value: 'nord', label: 'Nord', icon: '<path d="M6 18h12M6 6h12M6 12h12"/><circle cx="12" cy="12" r="3"/>', desc: 'Скандинавский, морозная голубизна' },
+  { value: 'ember', label: 'Ember', icon: '<path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6a6 6 0 1 0 6 6"/><circle cx="12" cy="12" r="3"/>', desc: 'Тёплый закат, янтарь и охра' },
+  { value: 'lavender', label: 'Lavender', icon: '<path d="M12 2a12 12 0 0 0-8 20"/><path d="M12 2a12 12 0 0 1 8 20"/><circle cx="12" cy="12" r="4"/>', desc: 'Спокойный фиолетовый, лаванда' },
+  { value: 'forest', label: 'Forest', icon: '<path d="M12 2L2 12h4v8h12v-8h4L12 2z"/><path d="M12 14v-4"/><circle cx="12" cy="16" r="1"/>', desc: 'Глубокий зелёный, сосновый бор' },
 ]
 
 export function Settings({ onBack, onStyleChange, onDarkModeChange }: Props) {
