@@ -256,13 +256,13 @@ case'style_update':{document.body.className='style-'+msg.style;if(msg.dark)docum
 let countdownTimer=null,timerInterval=null;
 
 function showCountdown(msg){
-let n=msg.countdown||3;
-const el=document.getElementById('countdownNumber');
-const animate=()=>{el.textContent=n;el.style.animation='none';void el.offsetWidth;el.style.animation='countPulse .6s ease'};
-animate();
-if(countdownTimer)clearInterval(countdownTimer);
-countdownTimer=setInterval(()=>{n--;if(n>0){animate()}else{clearInterval(countdownTimer);countdownTimer=null;show('questionScreen')}},1000);
-show('countdownScreen');
+ let n=msg.countdown||3;
+ const el=document.getElementById('countdownNumber');
+ const animate=()=>{el.textContent=n;el.style.animation='none';void el.offsetWidth;el.style.animation='countPulse .6s ease'};
+ animate();
+ if(countdownTimer)clearInterval(countdownTimer);
+ countdownTimer=setInterval(()=>{n--;if(n>0){animate()}else{clearInterval(countdownTimer);countdownTimer=null}},1000);
+ show('countdownScreen');
 }
 
 const ANS_COLORS=['#FF4444','#4488FF','#FFBB33','#44CC44'];
@@ -397,7 +397,7 @@ function showComplete(msg){show('completeScreen');document.getElementById('compl
 function submitAnswer(i){
  if(ws&&ws.readyState===WebSocket.OPEN){
   show('waitingScreen');
-  ws.send(JSON.stringify({type:'answer',pin:currentPin,answer_index:i}))
+  ws.send(JSON.stringify({type:'submit_answer',pin:currentPin,answer_index:i}))
  }
 }
 
