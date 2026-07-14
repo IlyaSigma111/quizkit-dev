@@ -247,12 +247,14 @@ function App() {
             onCreateOwn={() => setPage('create-own')}
           />
         )}
-        {page === 'game' && gamePin && (
-          <GameHost
-            pin={gamePin}
-            serverInfo={serverInfo}
-            onBack={() => { setGamePin(null); setPage('dashboard') }}
-          />
+        {gamePin && (
+          <div style={{ display: page === 'game' ? '' : 'none' }}>
+            <GameHost
+              pin={gamePin}
+              serverInfo={serverInfo}
+              onBack={() => { setGamePin(null); setPage('dashboard') }}
+            />
+          </div>
         )}
         {page === 'settings' && (
           <Settings
