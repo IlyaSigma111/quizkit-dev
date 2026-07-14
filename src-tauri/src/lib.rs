@@ -204,6 +204,13 @@ fn clear_active_session(pin: String) -> Result<(), String> {
 }
 
 #[tauri::command]
+fn get_app_info() -> serde_json::Value {
+    let version = env!("CARGO_PKG_VERSION");
+    let channel = if version.contains("dev") { "dev" } else { "stable" };
+    serde_json::json!({ "version": version, "channel": channel })
+}
+
+#[tauri::command]
 fn get_settings() -> AppSettings {
     storage::load_settings()
 }
@@ -282,6 +289,7 @@ pub fn run() {
             check_active_sessions,
             clear_active_session,
             broadcast_style,
+            get_app_info,
         ]);
 
     #[cfg(desktop)]

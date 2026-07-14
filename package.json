@@ -1,7 +1,7 @@
 {
   "name": "ilyaklass",
   "private": true,
-  "version": "0.6.7",
+  "version": "0.6.8-dev",
   "type": "module",
   "scripts": {
     "dev": "vite",

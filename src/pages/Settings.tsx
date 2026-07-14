@@ -40,9 +40,11 @@ export function Settings({ onBack, onStyleChange, onDarkModeChange }: Props) {
   const [saved, setSaved] = useState(false)
   const [error, setError] = useState('')
   const [showStyles, setShowStyles] = useState(false)
+  const [appInfo, setAppInfo] = useState<{ version: string; channel: string } | null>(null)
 
   useEffect(() => {
     invoke<AppSettings>('get_settings').then(setSettings).catch(console.error)
+    invoke<{ version: string; channel: string }>('get_app_info').then(setAppInfo).catch(() => {})
   }, [])
 
   const update = (patch: Partial<AppSettings>) => {
@@ -205,6 +207,10 @@ export function Settings({ onBack, onStyleChange, onDarkModeChange }: Props) {
           <button className="btn btn-primary" onClick={handleSave}>
             {saved ? '✓ Сохранено' : 'Сохранить настройки'}
           </button>
+        </div>
+
+        <div className="settings-version">
+          {appInfo ? `v${appInfo.version} — ${appInfo.channel === 'dev' ? 'dev' : 'stable'}` : ''}
         </div>
       </div>
     </div>

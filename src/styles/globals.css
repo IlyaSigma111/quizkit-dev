@@ -311,6 +311,7 @@ input:focus{outline:none;border-color:var(--primary)!important}
 .settings-defaults input:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-glow)}
 .settings-actions{display:flex;gap:12px;margin-top:8px}
 .settings-error{color:var(--danger);font-size:13px;text-align:center}
+.settings-version{text-align:center;font-size:11px;color:var(--text-secondary);padding-top:8px;border-top:1px solid var(--border);margin-top:4px}
 
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
 ::-webkit-scrollbar{width:6px}
